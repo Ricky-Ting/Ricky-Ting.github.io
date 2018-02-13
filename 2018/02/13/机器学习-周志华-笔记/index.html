@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/13/机器学习-周志华-笔记/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="机器学习笔记(学习中 进度堪忧)第1章 绪论1.1 引言通过对经验的利用，就能对新情况做出有效的决策。计算机在这方面可以帮忙。 机器学习致力于研究如何通过计算的手段，利用经验来改善系统自身的性能。机器学习所研究的主要内容，是关于在计算机上从数据中产生“模型”(model)的算法，即”学习算法”(learning algorithm).">
-<meta property="og:updated_time" content="2018-02-13T06:13:28.620Z">
+<meta property="og:updated_time" content="2018-02-13T10:11:23.509Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习(周志华)笔记">
 <meta name="twitter:description" content="机器学习笔记(学习中 进度堪忧)第1章 绪论1.1 引言通过对经验的利用，就能对新情况做出有效的决策。计算机在这方面可以帮忙。 机器学习致力于研究如何通过计算的手段，利用经验来改善系统自身的性能。机器学习所研究的主要内容，是关于在计算机上从数据中产生“模型”(model)的算法，即”学习算法”(learning algorithm).">
@@ -246,7 +246,56 @@
 <p>回归任务最常用的性能度量是”均方误差”(mean squared error) <strong>公式待补</strong></p>
 <p>下面主要介绍分类任务中常用的性能度量.</p>
 <h4 id="2-3-1-错误率与精度"><a href="#2-3-1-错误率与精度" class="headerlink" title="2.3.1 错误率与精度"></a>2.3.1 错误率与精度</h4><p>这是分类任务中最常用的两种性能度量，既适用于二分类任务，也适用于多分类任务 <strong>公式待补</strong></p>
-<h4 id="2-3-2-查准率-precision-、查全率-recall-与F1"><a href="#2-3-2-查准率-precision-、查全率-recall-与F1" class="headerlink" title="2.3.2 查准率(precision)、查全率(recall)与F1"></a>2.3.2 查准率(precision)、查全率(recall)与F1</h4><p>对于二分类问题,可将样例根据其真实类别与学习器预测类别的组合划分为</p>
+<h4 id="2-3-2-查准率-precision-、查全率-recall-与F1"><a href="#2-3-2-查准率-precision-、查全率-recall-与F1" class="headerlink" title="2.3.2 查准率(precision)、查全率(recall)与F1"></a>2.3.2 查准率(precision)、查全率(recall)与F1</h4><p>对于二分类问题,可将样例根据其真实类别与学习器预测类别的组合划分为真正例(true positive,TP)、假正例(false positive,FP)、真反例(true negative,TN)、假反例(false negative,FN)四种情形。<br>分类结果的”混淆矩阵”(confusion matrix)</p>
+<table>
+<thead>
+<tr>
+<th>真实情况</th>
+<th>预测结果</th>
+<th>预测结果 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>真实情况</td>
+<td>正例</td>
+<td>反例</td>
+</tr>
+<tr>
+<td>正例</td>
+<td>TP(真正例)</td>
+<td>FN(假反例)</td>
+</tr>
+<tr>
+<td>反例</td>
+<td>FP(假正例)</td>
+<td>TN(真反例)</td>
+</tr>
+</tbody>
+</table>
+<p>查准率P与查全率R分别定义为:<br>$$ P=\frac{TP}{TP+FP} $$</p>
+<p>$$R=\frac{TP}{TP+FN}$$</p>
+<p>查准率和查全率是一对矛盾的度量.一般来说，查准率高时，查全率往往偏低;反之类似.</p>
+<p>查准率-查全率曲线,简称”P-R曲线“，显示该曲线的图称为”P-R图“.</p>
+<p>若一个学习器的P-R曲线被另一个学习器的曲线完全”包住”，则可断言后者的性能优于前者.</p>
+<p>若两个学习器的P-R曲线发生了交叉,则一般难以一般性地断言两者孰优孰劣,只能在具体的查准率或查全率条件下进行比较.仍希望比个高低,这时一个比较合理的判据是比较P-R曲线下面积的大小。</p>
+<p>人们设计了一些综合考察查准率、查全率的性能度量.</p>
+<p>”平衡点“(Break-Even Point,简称BEP)就是这样一个度量,它是”查准率=查全率“时的取值</p>
+<p>但BEP还是过于简化了些，更常用的是F1度量:</p>
+<p>$$F1=\frac{2 \times P \times R}{P+R} = \frac{2 \times TP}{样例总数+TP-TN}$$</p>
+<p>F1是基于查准率与查全率的调和平均(harmonic mean)定义的</p>
+<p>F1的一般形式是$F<em>{\beta}$，能让我们表达出对查准率/查全率的不同偏好,$F</em>{\beta}$是加权调和平均.</p>
+<p>$$F_{\beta} = \frac{1+\beta^2 \times P \times R}{(\beta^2 \times P) + R}$$</p>
+<p>其中$\beta &gt;0$度量了查全率对查准率的相对重要性.$\beta = 1$时退化为标准的F1;$\beta &gt;1$时查全率有更大影响；$\beta &lt;1$时查准率有更大影响</p>
+<p>我们希望在n个二分类混淆矩阵上综合考察查准率和查全率.</p>
+<p>一种直接的做法是先在各混淆矩阵上分别计算出查准率和查全率，然后计算平均值,这样就得到”宏查准率”(macro-P)、”宏查全率”(macro-R),以及相应的”宏F1”(macro-F1):</p>
+<p>还有一种:先将各混淆矩阵的对应的元素进行平均,再基于这些平均值计算出”微查准率”(micro-P)、”微查全率”(micro-R)和”微F1”(micro-F1)</p>
+<h4 id="2-3-3-ROC与AUC"><a href="#2-3-3-ROC与AUC" class="headerlink" title="2.3.3 ROC与AUC"></a>2.3.3 ROC与AUC</h4><p>分类阈值(threshold) 截断点(cut point)</p>
+<p>排序本身的质量好坏,体现了综合考虑学习器在不同任务下的”期望泛化性能”的好坏，或者说，”一般情况下“泛化性能的好坏，ROC曲线则是从这个角度出发来研究学习器泛化性能的有力工具.</p>
+<p>ROC全称是”受试者工作特征“(Receiver Operating Characteristic)曲线</p>
+<p>ROC曲线的纵轴是”真正例率“(True Positive Rate,简称”TPR”),横轴是”假正例率”(False Positive Rate,简称FPR)</p>
+<p>$$TPR = \frac{TP}{TP+FN}$$</p>
+<p>$$FPR = \frac{FP}{TN+FP}$$</p>
 
       
 
@@ -471,15 +520,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">flag</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">计划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -487,15 +528,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color5">flag</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color3">计划</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,6 +549,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
             
             <div class="clearfix"></div>
