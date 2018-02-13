@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/13/机器学习-周志华-笔记/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="机器学习笔记(学习中 进度堪忧)第1章 绪论1.1 引言通过对经验的利用，就能对新情况做出有效的决策。计算机在这方面可以帮忙。 机器学习致力于研究如何通过计算的手段，利用经验来改善系统自身的性能。机器学习所研究的主要内容，是关于在计算机上从数据中产生“模型”(model)的算法，即”学习算法”(learning algorithm).">
-<meta property="og:updated_time" content="2018-02-13T03:44:17.093Z">
+<meta property="og:updated_time" content="2018-02-13T04:59:59.906Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习(周志华)笔记">
 <meta name="twitter:description" content="机器学习笔记(学习中 进度堪忧)第1章 绪论1.1 引言通过对经验的利用，就能对新情况做出有效的决策。计算机在这方面可以帮忙。 机器学习致力于研究如何通过计算的手段，利用经验来改善系统自身的性能。机器学习所研究的主要内容，是关于在计算机上从数据中产生“模型”(model)的算法，即”学习算法”(learning algorithm).">
@@ -223,7 +223,21 @@
 <p>欠拟合比较容易克服,例如在决策树学习中扩展分支、在神经网络学习中增加训练轮数等</p>
 <p>过拟合是机器学习面临的关键障碍,过拟合是无法彻底避免的,我们所能做的只是”缓解”.只要相信P $\not=$ NP,过拟合就不可避免.</p>
 <p>机器学习中的”模型选择”(model selection)问题,如何进行模型评估与选择呢？</p>
-<h3 id="2-2-评估方法"><a href="#2-2-评估方法" class="headerlink" title="2.2 评估方法"></a>2.2 评估方法</h3><p>通常，我们可通过实验测试来对学习器的泛化误差进行评估并进而做出选择.为此</p>
+<p><strong>疑惑：这里的评估是对学习算法在这特定问题上表现的评估吧？</strong></p>
+<h3 id="2-2-评估方法"><a href="#2-2-评估方法" class="headerlink" title="2.2 评估方法"></a>2.2 评估方法</h3><p>通常，我们可通过实验测试来对学习器的泛化误差进行评估并进而做出选择.为此，需使用一个“测试集”(testing set)来测试学习器对新样本的判别能力,然后以测试集上的“测试误差”(testing error)作为泛化误差的近似.测试集应该尽可能与训练集互斥.</p>
+<p>有限的数据集,如何产生训练集<em>S</em>和测试集<em>T</em>.下面是几种常见的做法</p>
+<h4 id="2-2-1-留出法-hold-out"><a href="#2-2-1-留出法-hold-out" class="headerlink" title="2.2.1 留出法(hold-out)"></a>2.2.1 留出法(hold-out)</h4><p>直接将数据集<em>D</em>划分为两个互斥的集合。</p>
+<p>训练/测试集的划分要尽可能保持数据分布的一致性,避免因数据划分过程中中引入额外的偏差而对最终结果产生影响.”分层采样”(stratified sampling).</p>
+<p>单次使用留出法得到的估计结果往往不够稳定可靠,在使用留出法时,一般要采用若干次随机划分、重复进行试验评估后取平均值作为留出法的评估结果.</p>
+<p>保真性(fidelity),划分比例过大或过小导致的问题没有完美的解决方案,常见做法是将大约2/3~4/5的样本用于训练，剩余样本用于测试.</p>
+<h4 id="2-2-2-交叉验证法-cross-validation"><a href="#2-2-2-交叉验证法-cross-validation" class="headerlink" title="2.2.2 交叉验证法(cross validation)"></a>2.2.2 交叉验证法(cross validation)</h4><p>将数据集<em>D</em>划分为k个子集,保证每个子集数据分布的一致性(可以通过分层采样).每次用k-1个子集训练，剩下的一个做测试集。这样可以得到k组.最后返回k个测试结果的均值.</p>
+<p>这种方法的稳定性和保真性在很大程度上取决于k的取值，通常把这种方法称为”k折交叉验证”(<em>k</em>-fold cross validation).通常k取10</p>
+<p>把数据集D划分为k个子集存在多种方式,所以为了减小划分不同引入的误差,通常要随机使用不同的划分重复p次,最终的评估结果是这p次k折交叉验证结果的均值.</p>
+<p>假定数据集D中包含m个样本,若令k=m，则得到了交叉验证法的一个特例:留一法(Leave-One-Out,简称LOO)。显然，留一法不受随机样本划分方式的影响.留一法的评估结果往往被认为比较准确.留一法也有缺陷:在数据集比较大时，训练m个模型的计算开销可能是难以忍受的.而且这还是在未考虑算法调参的情况下.留一法的估计结果也未必永远比其他评估方法准确.</p>
+<p>“没有免费午餐”定理对实验评估方法同样适用。</p>
+<h4 id="2-2-3-自助法-bootstrapping-可重复采样"><a href="#2-2-3-自助法-bootstrapping-可重复采样" class="headerlink" title="2.2.3 自助法(bootstrapping)=可重复采样"></a>2.2.3 自助法(bootstrapping)=可重复采样</h4><p>有没有什么办法可以减少训练样本规模不同造成的影响,同时还能比较高效地进行实验估计呢？</p>
+<p>”自助法“是一个比较好的解决方案,它直接以自助采样法(bootstrap sampling)为基础.就是相当于摸小球放回知道摸的次数与小球数相等。</p>
+<p>样本在m次采样中始终不被采到的概率是 $(1-\frac{1}{m})^m$</p>
 
       
 
@@ -460,7 +474,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -468,7 +482,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -484,11 +502,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>
