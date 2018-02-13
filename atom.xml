@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-13T05:16:32.576Z</updated>
+  <updated>2018-02-13T05:19:21.685Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/02/13/2017%E7%A7%8B%E5%AF%92%E5%81%87%E5%BE%85%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9-%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87flag-2018-2/"/>
     <id>http://yoursite.com/2018/02/13/2017秋寒假待学习内容-这是一篇flag-2018-2/</id>
     <published>2018-02-13T05:14:08.000Z</published>
-    <updated>2018-02-13T05:16:32.576Z</updated>
+    <updated>2018-02-13T05:19:21.685Z</updated>
     
-    <content type="html"><![CDATA[<ul><li>机器学习</li><li>编写可读代码的艺术</li><li>离散数学及其应用</li><li>配置软件</li><li>github学习</li><li>git学习</li><li>想zzw大佬学习</li><li>…</li></ul>]]></content>
+    <content type="html"><![CDATA[<ul><li>机器学习</li><li>编写可读代码的艺术</li><li>离散数学及其应用</li><li>配置软件</li><li>github学习</li><li>git学习</li><li>向zzw大佬学习</li><li>…</li></ul>]]></content>
     
     <summary type="html">
     
@@ -36,7 +36,7 @@
 &lt;li&gt;配置软件&lt;/li&gt;
 &lt;li&gt;github学习&lt;/li&gt;
 &lt;li&gt;git学习&lt;/li&gt;
-&lt;li&gt;想zzw大佬学习&lt;/li&gt;
+&lt;li&gt;向zzw大佬学习&lt;/li&gt;
 &lt;li&gt;…&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -209,9 +209,9 @@
     </summary>
     
     
-      <category term="LaTex" scheme="http://yoursite.com/tags/LaTex/"/>
-    
       <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="LaTex" scheme="http://yoursite.com/tags/LaTex/"/>
     
   </entry>
   
@@ -234,9 +234,9 @@
     </summary>
     
     
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
