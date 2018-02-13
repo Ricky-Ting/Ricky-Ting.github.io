@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/13/机器学习-周志华-笔记/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="机器学习笔记(学习中 进度堪忧)第1章 绪论1.1 引言通过对经验的利用，就能对新情况做出有效的决策。计算机在这方面可以帮忙。 机器学习致力于研究如何通过计算的手段，利用经验来改善系统自身的性能。机器学习所研究的主要内容，是关于在计算机上从数据中产生“模型”(model)的算法，即”学习算法”(learning algorithm).">
-<meta property="og:updated_time" content="2018-02-13T04:59:59.906Z">
+<meta property="og:updated_time" content="2018-02-13T05:13:38.984Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习(周志华)笔记">
 <meta name="twitter:description" content="机器学习笔记(学习中 进度堪忧)第1章 绪论1.1 引言通过对经验的利用，就能对新情况做出有效的决策。计算机在这方面可以帮忙。 机器学习致力于研究如何通过计算的手段，利用经验来改善系统自身的性能。机器学习所研究的主要内容，是关于在计算机上从数据中产生“模型”(model)的算法，即”学习算法”(learning algorithm).">
@@ -237,7 +237,9 @@
 <p>“没有免费午餐”定理对实验评估方法同样适用。</p>
 <h4 id="2-2-3-自助法-bootstrapping-可重复采样"><a href="#2-2-3-自助法-bootstrapping-可重复采样" class="headerlink" title="2.2.3 自助法(bootstrapping)=可重复采样"></a>2.2.3 自助法(bootstrapping)=可重复采样</h4><p>有没有什么办法可以减少训练样本规模不同造成的影响,同时还能比较高效地进行实验估计呢？</p>
 <p>”自助法“是一个比较好的解决方案,它直接以自助采样法(bootstrap sampling)为基础.就是相当于摸小球放回知道摸的次数与小球数相等。</p>
-<p>样本在m次采样中始终不被采到的概率是 $(1-\frac{1}{m})^m$</p>
+<p>样本在m次采样中始终不被采到的概率是 $(1-\frac{1}{m})^m$，取极限为 $\frac{1}{e} \approx 0.368$ ,将未被抽中的作为测试集。这样的测试结果，亦称”包外估计”(out-of-bag estimate).</p>
+<p>自助法在数据集较小、难以有效划分训练/测试集时很有用；此时，自助法能从初始数据集中产生多个不同训练集,这对集成学习等学习方法有很大的好处。然而，自助法产生的数据集改变了初始数据集的分布，会引入估计偏差.因此在初始数据量足够时，留出法和交叉验证法更常用一些.</p>
+<h4 id="2-2-4-调参-parameter-tuning-与最终模型"><a href="#2-2-4-调参-parameter-tuning-与最终模型" class="headerlink" title="2.2.4 调参(parameter tuning)与最终模型"></a>2.2.4 调参(parameter tuning)与最终模型</h4><p>参数可能在实数范围内取值，有着极大的调参工作量,以至于在不少应用任务中,参数调的好不好往往对最终模型性能有关键性影响。</p>
 
       
 
@@ -324,6 +326,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/02/13/2017秋寒假待学习内容-这是一篇flag-2018-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          2017秋寒假待学习内容(这是一篇flag) 2018.2
+        
+      </div>
+    </a>
   
   
     <a href="/2018/02/10/mac已装软件目录/" id="article-nav-older" class="article-nav-link-wrap">
@@ -472,6 +483,14 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">flag</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">计划</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
