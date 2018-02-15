@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-13T05:19:21.685Z</updated>
+  <updated>2018-02-15T07:06:31.534Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Unix Programming Tools</title>
+    <link href="http://yoursite.com/2018/02/15/Unix-Programming-Tools/"/>
+    <id>http://yoursite.com/2018/02/15/Unix-Programming-Tools/</id>
+    <published>2018-02-15T04:43:11.000Z</published>
+    <updated>2018-02-15T07:06:31.534Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>已弃坑 待更</strong></p><h1 id="gcc"><a href="#gcc" class="headerlink" title="gcc"></a>gcc</h1><p>Gcc can compile C,C++(maybe g++),and objective-C. It is both a compiler and linker.</p><p>一步到位：<code>gcc main.c module1.c module2.c -o program</code></p><p>分开：<code>gcc -c main.c</code> <code>gcc -c module1.c</code> <code>gcc -c module2.c</code> <code>gcc main.o module1.o module2.o -o program</code></p><h2 id="command-line-options"><a href="#command-line-options" class="headerlink" title="command-line options"></a>command-line options</h2><p>-c <em>files</em> : Direct gcc to compile the source files into an object files without going through the linking stage. Makefiles (below) use this option to compile files one at a time.</p><p>-o <em>file</em> : Specifies that gcc’s output should be named file. If this option is not specified, then the default name used depends on the context…(a) if compiling a source .c file, the output object file will be named with the same name but with a .o extension. Alternately, (b) if linking to create an executable, the output file will be named a.out. Most often, the -o option is used to specify the output filename when linking an executable, while for compiling, people just let the default .c/.o naming take over.It’s a memorable error if your -o option gets switched around in the command line so it accidentally comes before a source file like “…-o foo.c program” – this can overwrite your source file – bye bye source file!</p><p>-g : Directs the compiler to include extra debugging information in its output. We recommend that you always compile your source with this option set, since we encourage you to gain proficiency using the debugger such as gdb (below).</p><p>-Wall : Give warnings about possible errors in the source code. </p><p>-I<em>dir</em> : Adds the directory dir to the list of directories searched for #include files.</p><p>-l<em>mylib</em> : (lower case ‘L’) Search the library named mylib for unresolved symbols (functions, global variables) when linking. The actual name of the file will be libmylib.a, and must be found in either the default locations for libraries or in a directory added with the -L flag (below).</p><p>-L<em>dir</em> </p><h1 id="make"><a href="#make" class="headerlink" title="make"></a>make</h1><p>The “make” utility automates the process of compiling and linking.</p><p>run make with no arguments in the project directory.and it will search for a file called <code>Makefile</code> or <code>makefile</code> for its build instructions.</p><h2 id="Makefiles"><a href="#Makefiles" class="headerlink" title="Makefiles"></a>Makefiles</h2><p>variable: for example <code>CC=gcc</code></p><p>standard variable names: </p><p>CC: The name of the C compiler, this will default to cc or gcc in most versions of make.</p><p>CFLAGS: A list of options to pass on to the C compiler for all of your source files. This is commonly used to set the include path to include non- standard directories (-I) or build debugging versions (-g).</p><p>LDFLAGS: A list of options to pass on to the linker. This is most commonly used to include application specific library files (-l) and set the library search path (-L).</p><p>To refer to the value of a variable, put a dollar sign ($) followed by the name in parenthesis or curly braces…</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CFLAGS = -g -I/usr/class/cs107/include</span><br><span class="line">$(CC) $(CFLAGS) -c binky.c</span><br></pre></td></tr></table></figure><p>The second major component of a makefile is the dependency/build rule.</p><p>A rule generally consists of two lines: a dependency line followed by a command line.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">binky.o : binky.c binky.h akbar.h </span><br><span class="line">tab$(CC) $(CFLAGS) -c binky.c</span><br></pre></td></tr></table></figure><p>参考:<a href="http://cslibrary.stanford.edu/107/UnixProgrammingTools.pdf" target="_blank" rel="noopener">Unix Programming Tools from Standford Univer</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;已弃坑 待更&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;gcc&quot;&gt;&lt;a href=&quot;#gcc&quot; class=&quot;headerlink&quot; title=&quot;gcc&quot;&gt;&lt;/a&gt;gcc&lt;/h1&gt;&lt;p&gt;Gcc can compile C,C++(maybe g++),an
+      
+    
+    </summary>
+    
+    
+      <category term="Unix" scheme="http://yoursite.com/tags/Unix/"/>
+    
+      <category term="Tools" scheme="http://yoursite.com/tags/Tools/"/>
+    
+      <category term="Programming" scheme="http://yoursite.com/tags/Programming/"/>
+    
+  </entry>
   
   <entry>
     <title>2017秋寒假待学习内容(这是一篇flag) 2018.2</title>
