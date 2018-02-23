@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-16T06:38:57.802Z</updated>
+  <updated>2018-02-23T04:17:01.190Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>读的书与想读的书(除计算机)</title>
+    <link href="http://yoursite.com/2018/02/23/%E8%AF%BB%E7%9A%84%E4%B9%A6%E4%B8%8E%E6%83%B3%E8%AF%BB%E7%9A%84%E4%B9%A6-%E9%99%A4%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <id>http://yoursite.com/2018/02/23/读的书与想读的书-除计算机/</id>
+    <published>2018-02-23T04:14:49.000Z</published>
+    <updated>2018-02-23T04:17:01.190Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="读的书与想读的书-除计算机"><a href="#读的书与想读的书-除计算机" class="headerlink" title="读的书与想读的书(除计算机)"></a>读的书与想读的书(除计算机)</h1><p>斜体为未读，粗体为在读</p> <a id="more"></a><h2 id="文学"><a href="#文学" class="headerlink" title="文学"></a>文学</h2><ul><li><em>中国文学欣赏举隅</em></li><li>吾国吾民</li><li>罗生门</li></ul><h2 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h2><h2 id="科普类"><a href="#科普类" class="headerlink" title="科普类"></a>科普类</h2><ul><li><strong>无法解出的方程</strong></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;读的书与想读的书-除计算机&quot;&gt;&lt;a href=&quot;#读的书与想读的书-除计算机&quot; class=&quot;headerlink&quot; title=&quot;读的书与想读的书(除计算机)&quot;&gt;&lt;/a&gt;读的书与想读的书(除计算机)&lt;/h1&gt;&lt;p&gt;斜体为未读，粗体为在读&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="计划" scheme="http://yoursite.com/tags/%E8%AE%A1%E5%88%92/"/>
+    
+      <category term="记录" scheme="http://yoursite.com/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读的书与想读的书(计算机)</title>
+    <link href="http://yoursite.com/2018/02/23/%E8%AF%BB%E7%9A%84%E4%B9%A6%E4%B8%8E%E6%83%B3%E8%AF%BB%E7%9A%84%E4%B9%A6-%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    <id>http://yoursite.com/2018/02/23/读的书与想读的书-计算机/</id>
+    <published>2018-02-23T04:14:26.000Z</published>
+    <updated>2018-02-23T04:16:14.977Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="读的书与想读的书-计算机方面"><a href="#读的书与想读的书-计算机方面" class="headerlink" title="读的书与想读的书(计算机方面)"></a>读的书与想读的书(计算机方面)</h1><p>斜体为未读，粗体为在读</p> <a id="more"></a><h2 id="程序语言方面"><a href="#程序语言方面" class="headerlink" title="程序语言方面:"></a>程序语言方面:</h2><h3 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h3><ul><li><em>C++ Primer</em></li></ul><h2 id="算法方面："><a href="#算法方面：" class="headerlink" title="算法方面："></a>算法方面：</h2><ul><li><em>算法导论</em></li></ul><h2 id="数学方面"><a href="#数学方面" class="headerlink" title="数学方面"></a>数学方面</h2><ul><li><strong>离散数学及其应用</strong></li><li><em>具体数学</em></li></ul><h2 id="Linux-Unix-Mac-OS-X-方面"><a href="#Linux-Unix-Mac-OS-X-方面" class="headerlink" title="Linux/Unix/Mac OS X 方面"></a>Linux/Unix/Mac OS X 方面</h2><h2 id="体系结构方面"><a href="#体系结构方面" class="headerlink" title="体系结构方面"></a>体系结构方面</h2><ul><li><em>深入理解计算机系统</em></li></ul><h2 id="科普类"><a href="#科普类" class="headerlink" title="科普类"></a>科普类</h2><ul><li><em>编码：隐匿在计算机软硬件背后的语言</em></li><li><em>黑客与画家</em></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;读的书与想读的书-计算机方面&quot;&gt;&lt;a href=&quot;#读的书与想读的书-计算机方面&quot; class=&quot;headerlink&quot; title=&quot;读的书与想读的书(计算机方面)&quot;&gt;&lt;/a&gt;读的书与想读的书(计算机方面)&lt;/h1&gt;&lt;p&gt;斜体为未读，粗体为在读&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="计划" scheme="http://yoursite.com/tags/%E8%AE%A1%E5%88%92/"/>
+    
+      <category term="记录" scheme="http://yoursite.com/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Unix Programming Tools</title>
@@ -122,11 +166,11 @@
     </summary>
     
     
+      <category term="记录" scheme="http://yoursite.com/tags/%E8%AE%B0%E5%BD%95/"/>
+    
       <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
     
       <category term="软件" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6/"/>
-    
-      <category term="记录" scheme="http://yoursite.com/tags/%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
