@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-23T04:17:01.190Z</updated>
+  <updated>2018-02-25T05:04:30.483Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>无法接触的方程</title>
+    <link href="http://yoursite.com/2018/02/25/%E6%97%A0%E6%B3%95%E6%8E%A5%E8%A7%A6%E7%9A%84%E6%96%B9%E7%A8%8B/"/>
+    <id>http://yoursite.com/2018/02/25/无法接触的方程/</id>
+    <published>2018-02-25T05:02:36.000Z</published>
+    <updated>2018-02-25T05:04:30.483Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="无法解出的方程"><a href="#无法解出的方程" class="headerlink" title="无法解出的方程"></a>无法解出的方程</h1><p>平移对称 旋转对称 反射对称 滑移反射对称 置换 </p><a id="more"></a><p>量子力学是以概率的语言表述的</p><p>立体视觉,两只眼睛看到的像是不同的</p><p>这样一个问题:在我们周围的环境中，可以进行什么操作而让描述所有观察到的现象的规律不变？</p><p>棋盘是世界，棋子是宇宙中的诸现象，游戏规则是我们所称的自然规律。当代物理学家希望自然规律不仅代表游戏规则，而且可以解释棋盘和棋子本身的存在与特点！</p><p>有关宇宙唯一可以确定的是各种结果的概率，而非结果本身。上帝确实在掷骰子。</p><p>对称性是破解大自然设计奥秘的一种最重要的工具。</p><p>定义一个群的特点是：</p><ol><li>封闭性</li><li>结合律</li><li>单位元</li><li>逆元素</li></ol><p>由这个简单的定义可以产生一种包含和统一了世界上所有对称性的理论，这个事实一直令数学家吃惊。</p><p>群论被称为“数学抽象地顶尖艺术”</p><p>任何系统的所有对称变换集总是形成一个群。</p><p>爱因斯坦在”科学与幸福”的演讲中谈到:”对于人类自身及其命运的关注组成了所有技术努力的主要目标”</p><p>丢番图方程:如<code>29x+4=8y</code>(整数解).历史上最著名的丢番图方程是被称为费马大定理的那个方程<code>x^n + y^n = z^n</code>对于<code>n&gt;2</code>没有整数解。</p><p>阿贝尔和伽罗瓦</p><p>置换是伽罗瓦证明中的精华</p><p>魔方谜题的解答完全可以用群论的语言来说明</p><p>对置换性质的分析使我们可以自信地预测最终的结果，而不必实际进行试验。这也是伽罗瓦理论背后的基本哲学。</p><p>一个群中元素的数量叫做群的阶。例如，三个对象的置换群$S_3$的阶是6.</p><p>任何对象的对称集合构成一个群。</p><p>每一个群都映射在具有相同的模的置换群上。(同构)</p><p>子群。母群的阶除以子群的阶等于指数，指数总为整数。有限子群的阶总是等分其有限母群的阶。</p><p>正规子群</p><p>伽罗瓦证明，一个方程要有公式解，方程必须具有一种特定类型的伽罗瓦群特别地，如果由后代最大正规子群产生的每一个单独的指数是一个素数，那么伽罗瓦称这个群是可解的。一个方程存在公式解的条件是其伽罗瓦群可解。</p><p>伽罗瓦对五次方程解的寻找产生了“数学抽象地顶尖艺术”——群论。</p><p>一种相同的群结构可以描述似乎全然不同的概念</p><p>公式语言在计算机科学和复杂性理论(涉及计算任务内在的复杂性)方面起着重要作用。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;无法解出的方程&quot;&gt;&lt;a href=&quot;#无法解出的方程&quot; class=&quot;headerlink&quot; title=&quot;无法解出的方程&quot;&gt;&lt;/a&gt;无法解出的方程&lt;/h1&gt;&lt;p&gt;平移对称 旋转对称 反射对称 滑移反射对称 置换 &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="读书" scheme="http://yoursite.com/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>读的书与想读的书(除计算机)</title>
@@ -166,11 +188,11 @@
     </summary>
     
     
-      <category term="记录" scheme="http://yoursite.com/tags/%E8%AE%B0%E5%BD%95/"/>
-    
       <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
     
       <category term="软件" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+      <category term="记录" scheme="http://yoursite.com/tags/%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
