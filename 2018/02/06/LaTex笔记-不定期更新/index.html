@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/06/LaTex笔记-不定期更新/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="Latex 笔记（不定期更新）标题，章和节   命令 效果 命令 效果     \title 标题 \author 作者   \date 日期 \maketitle 生成标题   \section 节标题 \subsection 小节标题   \subsubsection 次小节标题 \paragraph 段标题   \subparagraph 小段标题 \part 部分标题   \appendi">
-<meta property="og:updated_time" content="2018-02-06T10:01:57.214Z">
+<meta property="og:updated_time" content="2018-03-08T00:30:46.646Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LaTex笔记(不定期更新)">
 <meta name="twitter:description" content="Latex 笔记（不定期更新）标题，章和节   命令 效果 命令 效果     \title 标题 \author 作者   \date 日期 \maketitle 生成标题   \section 节标题 \subsection 小节标题   \subsubsection 次小节标题 \paragraph 段标题   \subparagraph 小段标题 \part 部分标题   \appendi">
@@ -234,7 +234,10 @@
 <h3 id="带序号"><a href="#带序号" class="headerlink" title="带序号"></a>带序号</h3><p> 关于{enumerate}，这是用于带序号的列表。 默认生成 1，2，3。如果想要其他修饰，如(1) (2)….或step-1，step2，需要加载 \usepackage{enumerate}，然后如下使用</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;enumerate&#125;[step 1]</span><br><span class="line">\item something</span><br><span class="line">\item something</span><br><span class="line">\end&#123;enumerate&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="引入参考文献"><a href="#引入参考文献" class="headerlink" title="引入参考文献"></a>引入参考文献</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;thebibliography&#125;&#123;99&#125;</span><br><span class="line">\bibitem&#123;a&#125; something</span><br><span class="line">\bibitem&#123;b&#125; something</span><br><span class="line">\end&#123;thebibliography&#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;graphicx&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\includegraphics[width=1.77in,height=1.75in]&#123;pic.jpg&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="插入代码"><a href="#插入代码" class="headerlink" title="插入代码"></a>插入代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;listings&#125;</span><br><span class="line">\lstset&#123;language=C++&#125;%这条命令可以让LaTeX排版时将C++键字突出显示</span><br><span class="line"></span><br><span class="line">\lstset&#123;breaklines&#125;%这条命令可以让LaTeX自动将长的代码行换行排版</span><br><span class="line"></span><br><span class="line">\lstset&#123;extendedchars=false&#125;%这一条命令可以解决代码跨页时，章节标题，页眉等汉字不显示的问题</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;lstlisting&#125;</span><br><span class="line"></span><br><span class="line">\end&#123;lstlisting&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -482,18 +485,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">软件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Unix</a>
               </li>
              
@@ -506,11 +497,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
             
             <div class="clearfix"></div>
