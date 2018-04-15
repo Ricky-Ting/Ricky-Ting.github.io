@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-26T03:11:58.432Z</updated>
+  <updated>2018-04-15T07:12:18.627Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git笔记</title>
+    <link href="http://yoursite.com/2018/04/15/git%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2018/04/15/git笔记/</id>
+    <published>2018-04-15T07:11:08.000Z</published>
+    <updated>2018-04-15T07:12:18.627Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="git笔记"><a href="#git笔记" class="headerlink" title="git笔记"></a>git笔记</h1><p><code>git init</code> 初始化</p> <a id="more"></a><p>单独执行”git”指令会显示辅助说明;执行”git help -a”则显示完整的指令列表;执行 “git 指令 -help”(例如 “git init -help”) 则会显示该指令的网页说明文件。</p><p><code>git add filename</code></p><p><code>git commit -m &quot;description&quot; --author=&quot;name &lt;email&gt;&quot;</code>        </p><p><code>git commit --amend -m &#39;new description&#39; --author=&quot;name &lt;email&gt;&quot;</code></p><p><code>exit</code></p><p><code>.gitignore</code>忽略特定文件</p><p>Git有三个不同级别的配置文件,它们有不同的优先权.</p><ol><li>文件夹”.git”子文件夹内的config文件(只对它所在的文档库有效)</li><li>登陆账号的home directory中的.gitconfig文件(只对此账号登陆的用户有效)</li><li>Git程序的安装文件夹中的etc\gitconfig文件(对所有登陆账号和所有Git文档库都有效)</li></ol><p><code>git congif -l</code> 显示当前git的设置值。会显示三个配置文件中所有的设置项，顺序是先显示优先权最低的设置</p><p><code>git config --system -l</code><br><code>git config --global -l</code></p><p><code>git config user.name &quot;name&quot;</code><br><code>git config user.email &quot;email&quot;</code></p><p><code>git config --unset user.name</code></p><p><code>git config alias.指令别名 &#39;正式的指令和选项&#39;</code> 别名    </p><p><code>git commit</code> 启动文本编辑器来输入commit</p><p><code>git diff</code>    </p><p>Git 会将文件和文件夹分成以下三类:</p><ol><li>被追踪的(tracked);</li><li>忽略的(ignored);</li><li>不被追踪的(untracked);</li></ol><p><code>touch .gitignore</code></p><p><code>git rm --cached 文件名</code> add之后删除 这个文件将从tracked状态变成untracked状态</p><p><code>git reset HEAD 文件名</code> commit之后</p><p>取出文件:<code>git checkout commit 节点标识符或标签 文件1 文件2 ...</code>文件夹中的文件会被取出的文件覆盖</p><p><code>git grep</code></p><p><code>git blame</code></p><p><code>git mb 原文件名 新文件名</code> </p><p><code>git gc</code> 清理文档库</p><p><code>git log</code></p><p><code>git branch</code></p><p>一般情况下在切换分支之前，会先把最新的文件内容存入文档库</p><p><code>git branch -d 要删除的分支名称</code></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;git笔记&quot;&gt;&lt;a href=&quot;#git笔记&quot; class=&quot;headerlink&quot; title=&quot;git笔记&quot;&gt;&lt;/a&gt;git笔记&lt;/h1&gt;&lt;p&gt;&lt;code&gt;git init&lt;/code&gt; 初始化&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>OJ笔记#1</title>
@@ -322,9 +344,9 @@
     </summary>
     
     
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="LaTex" scheme="http://yoursite.com/tags/LaTex/"/>
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -347,9 +369,9 @@
     </summary>
     
     
-      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
-    
       <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
     
   </entry>
   
