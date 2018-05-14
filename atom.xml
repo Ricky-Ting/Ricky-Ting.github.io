@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-15T07:12:18.627Z</updated>
+  <updated>2018-05-14T12:49:56.146Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微积分五讲</title>
+    <link href="http://yoursite.com/2018/05/14/%E5%BE%AE%E7%A7%AF%E5%88%86%E4%BA%94%E8%AE%B2/"/>
+    <id>http://yoursite.com/2018/05/14/微积分五讲/</id>
+    <published>2018-05-14T12:47:58.000Z</published>
+    <updated>2018-05-14T12:49:56.146Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="微积分五讲-笔记"><a href="#微积分五讲-笔记" class="headerlink" title="微积分五讲 笔记"></a>微积分五讲 笔记</h1><p>希尔伯特的演讲：数学中每一步真正的发展都与更有力的工具和更简单的方法的发现密切联系着，这些工具和方法同时会有助于理解已有的理论并把陈旧的、复杂的东西抛到一边。数学科学发展的这种特点是根深蒂固。</p><a id="more"></a><p>黎曼几何  爱因斯坦的相对论正是以“Riemann几何”作为其数学工具的</p><p>学习数学实际上就是一个以”高级“替代“低级”的过程，否则靠死记硬背，最后将会忘掉一切。</p><p>一元微积分的微积分基本定理的建立标志着微积分的诞生；分析算术化的胜利标志着微积分严格化的完成；外微分形式的产生，建立了多元微积分的微积分基本定理，标志着微积分的完成，并从古典走向近代。</p><p>非标准分析</p><p>分析算术化不是微积分严格化的唯一途径。</p><p>可微一定可积吗？ 不一定 导函数可能无界</p><p>扩展微积分：Lebesgue积分理论，现在称为实变函数或实分析</p><p>形象表述：先按钞票面值的大小分类，然后计算每一类的面额总值，再相加，这就是我的积分思想。如不按面值大小分类，而是按从钱袋中摸出的先后次序来计算总是，那就是Riemann积分的思想</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;微积分五讲-笔记&quot;&gt;&lt;a href=&quot;#微积分五讲-笔记&quot; class=&quot;headerlink&quot; title=&quot;微积分五讲 笔记&quot;&gt;&lt;/a&gt;微积分五讲 笔记&lt;/h1&gt;&lt;p&gt;希尔伯特的演讲：数学中每一步真正的发展都与更有力的工具和更简单的方法的发现密切联系着，这些工具和方法同时会有助于理解已有的理论并把陈旧的、复杂的东西抛到一边。数学科学发展的这种特点是根深蒂固。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>git笔记</title>
@@ -234,11 +254,11 @@
     </summary>
     
     
-      <category term="记录" scheme="http://yoursite.com/tags/%E8%AE%B0%E5%BD%95/"/>
-    
       <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
     
       <category term="软件" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+      <category term="记录" scheme="http://yoursite.com/tags/%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
@@ -271,9 +291,9 @@
     </summary>
     
     
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -346,9 +366,9 @@
     </summary>
     
     
-      <category term="LaTex" scheme="http://yoursite.com/tags/LaTex/"/>
-    
       <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="LaTex" scheme="http://yoursite.com/tags/LaTex/"/>
     
   </entry>
   
