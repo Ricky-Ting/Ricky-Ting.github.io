@@ -9,13 +9,13 @@
   <title>LaTex笔记(不定期更新) | Ricky Ting&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Latex 笔记（不定期更新）标题，章和节   命令 效果 命令 效果     \title 标题 \author 作者   \date 日期 \maketitle 生成标题   \section 节标题 \subsection 小节标题   \subsubsection 次小节标题 \paragraph 段标题   \subparagraph 小段标题 \part 部分标题   \appendi">
-<meta name="keywords" content="笔记,LaTex">
+<meta name="keywords" content="LaTex,笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaTex笔记(不定期更新)">
 <meta property="og:url" content="http://yoursite.com/2018/02/06/LaTex笔记-不定期更新/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="Latex 笔记（不定期更新）标题，章和节   命令 效果 命令 效果     \title 标题 \author 作者   \date 日期 \maketitle 生成标题   \section 节标题 \subsection 小节标题   \subsubsection 次小节标题 \paragraph 段标题   \subparagraph 小段标题 \part 部分标题   \appendi">
-<meta property="og:updated_time" content="2018-05-14T12:45:57.636Z">
+<meta property="og:updated_time" content="2018-06-04T11:22:59.280Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LaTex笔记(不定期更新)">
 <meta name="twitter:description" content="Latex 笔记（不定期更新）标题，章和节   命令 效果 命令 效果     \title 标题 \author 作者   \date 日期 \maketitle 生成标题   \section 节标题 \subsection 小节标题   \subsubsection 次小节标题 \paragraph 段标题   \subparagraph 小段标题 \part 部分标题   \appendi">
@@ -241,7 +241,7 @@
 <h2 id="插入表格"><a href="#插入表格" class="headerlink" title="插入表格"></a>插入表格</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;tabular&#125;&#123;|c|c|&#125; %通过添加 | 来表示是否需要绘制竖线</span><br><span class="line">\hline  % 在表格最上方绘制横线</span><br><span class="line">sth &amp; sth\\</span><br><span class="line">\hline  %在第一行和第二行之间绘制横线</span><br><span class="line">...\\</span><br><span class="line">\hline</span><br><span class="line">\end&#123;tabular&#125;</span><br></pre></td></tr></table></figure>
 <p>如果要添加斜线<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;diagbox&#125;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">\diagbox&#123;&#125;&#123;&#125;&#123;&#125;...</span><br></pre></td></tr></table></figure></p>
 <h2 id="大括号"><a href="#大括号" class="headerlink" title="大括号"></a>大括号</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$$T(n)=</span><br><span class="line">\begin&#123;cases&#125;</span><br><span class="line">0    &amp;  \text&#123;n=0&#125;\\</span><br><span class="line">2T(n-1) &amp; n \ge 1</span><br><span class="line">\end&#123;cases&#125;$$</span><br></pre></td></tr></table></figure>
-<h2 id="插入伪代码"><a href="#插入伪代码" class="headerlink" title="插入伪代码"></a>插入伪代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;algorithm&#125;</span><br><span class="line">\usepackage&#123;algpseudocode&#125;</span><br><span class="line"></span><br><span class="line">\begin&#123;algorithm&#125;[H]</span><br><span class="line">\caption&#123;$\textsc&#123;SomeAlgorithm&#125;$&#125;</span><br><span class="line">\begin&#123;algorithmic&#125;</span><br><span class="line">	\If&#123;$condition$&#125;</span><br><span class="line">		\State $something$</span><br><span class="line">	\Else</span><br><span class="line">		\State $something else$</span><br><span class="line">	\EndIf</span><br><span class="line">	</span><br><span class="line">	\For&#123;$i=1$ to $n$&#125;</span><br><span class="line">		\State $something$</span><br><span class="line">		\State $something else$</span><br><span class="line">	\EndFor</span><br><span class="line">	</span><br><span class="line">	\While&#123;$condition$&#125;</span><br><span class="line">		\State $something$</span><br><span class="line">	\EndWhile</span><br><span class="line">	</span><br><span class="line">	\Repeat</span><br><span class="line">		\State $something$</span><br><span class="line">	\Until&#123;$condition$&#125;</span><br><span class="line">\end&#123;algorithmic&#125;</span><br><span class="line">\end&#123;algorithm&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="插入伪代码"><a href="#插入伪代码" class="headerlink" title="插入伪代码"></a>插入伪代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;algorithm&#125;</span><br><span class="line">\usepackage&#123;algpseudocode&#125;</span><br><span class="line"></span><br><span class="line">\begin&#123;algorithm&#125;[H]</span><br><span class="line">\caption&#123;$\textsc&#123;SomeAlgorithm&#125;$&#125;</span><br><span class="line">\begin&#123;algorithmic&#125;</span><br><span class="line">	\If&#123;$condition$&#125;</span><br><span class="line">		\State $something$</span><br><span class="line">	\ElsIf&#123;$condition2$&#125;</span><br><span class="line">		\State $sth$</span><br><span class="line">	\Else</span><br><span class="line">		\State $something else$</span><br><span class="line">	\EndIf</span><br><span class="line">	</span><br><span class="line">	\For&#123;$i=1$ to $n$&#125;</span><br><span class="line">		\State $something$</span><br><span class="line">		\State $something else$</span><br><span class="line">	\EndFor</span><br><span class="line">	</span><br><span class="line">	\While&#123;$condition$&#125;</span><br><span class="line">		\State $something$</span><br><span class="line">	\EndWhile</span><br><span class="line">	</span><br><span class="line">	\Repeat</span><br><span class="line">		\State $something$</span><br><span class="line">	\Until&#123;$condition$&#125;</span><br><span class="line">\end&#123;algorithmic&#125;</span><br><span class="line">\end&#123;algorithm&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -255,11 +255,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTex</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">LaTex</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -466,7 +466,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -474,11 +474,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -487,6 +483,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">计划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,7 +506,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,15 +522,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
             
             <div class="clearfix"></div>
