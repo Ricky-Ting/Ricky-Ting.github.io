@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/07/08/2018-Spring-Problem-Solving-2/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="2018春问题求解笔记2-1 算法正确性(2018.3.7)程序和算法不等同 算法正确性是基础">
-<meta property="og:updated_time" content="2018-07-08T01:14:08.414Z">
+<meta property="og:updated_time" content="2018-08-03T08:06:00.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2018 Spring Problem Solving 2">
 <meta name="twitter:description" content="2018春问题求解笔记2-1 算法正确性(2018.3.7)程序和算法不等同 算法正确性是基础">
@@ -290,8 +290,8 @@
 <h4 id="Insertion-and-Deletion"><a href="#Insertion-and-Deletion" class="headerlink" title="Insertion and Deletion"></a>Insertion and Deletion</h4><p>插入找空位就可</p>
 <p>删除分三种情况：没有孩子(直接删除)、有一个孩子(直接登基)、有两个孩子(找后继)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Transplant(T,u,v)</span><br><span class="line">if u.p==NIL</span><br><span class="line">	T.root=v</span><br><span class="line">elseif u==u.p.left</span><br><span class="line">	u.p.left=v</span><br><span class="line">else</span><br><span class="line">	u.p.right=v</span><br><span class="line">if v!=NIL</span><br><span class="line">	v.p=u.p</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Tree-Delete(T,z)</span><br><span class="line">if z.left==NIL</span><br><span class="line">	Transplant(T,z,z.right)</span><br><span class="line">elseif z.right==NIL</span><br><span class="line">	Transplant(T,z,z.left)</span><br><span class="line">else</span><br><span class="line">	y=Tree-Minimum(z.right)</span><br><span class="line">	if y.p!=z</span><br><span class="line">		Transplant(T,y,y.right)</span><br><span class="line">		y.right=z.right</span><br><span class="line">		y.right.p=y</span><br><span class="line">	Transplant(T,z,y)</span><br><span class="line">	y.left=z.left</span><br><span class="line">	y.left.p=y</span><br><span class="line">``` </span><br><span class="line">### Red-Black Tree</span><br><span class="line"></span><br><span class="line">#### red-black properties</span><br><span class="line"></span><br><span class="line">1. Every node is either red or black</span><br><span class="line">2. The root is black</span><br><span class="line">3. Every leaf(NIL) is black</span><br><span class="line">4. If a node is red, then both its children are black.</span><br><span class="line">5. For each node, all simple paths from the node to descendant leaves contain the same number of black nodes.</span><br><span class="line"></span><br><span class="line">A red-black tree with n internal nodes has height at most $2\lg&#123;n+1&#125;$</span><br><span class="line"></span><br><span class="line">#### Rotations</span><br></pre></td></tr></table></figure>
-<p>Left-Rotate(T,x)<br>y=x.right<br>x.right=y.left<br>if y.left!=T.nil<br>    y.left.p=x<br>y.p=x.p<br>if x.p==T.nil<br>    T.root=y<br>elseif x==x.p.left<br>    x.p.left=y<br>else<br>    x.p.right=y<br>y.left=x<br>x.p=y<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">In every n-node binary search tree, there are exactly n-1 possible rotations.</span><br><span class="line"></span><br><span class="line">#### Insertion</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Tree-Delete(T,z)</span><br><span class="line">if z.left==NIL</span><br><span class="line">	Transplant(T,z,z.right)</span><br><span class="line">elseif z.right==NIL</span><br><span class="line">	Transplant(T,z,z.left)</span><br><span class="line">else</span><br><span class="line">	y=Tree-Minimum(z.right)</span><br><span class="line">	if y.p!=z</span><br><span class="line">		Transplant(T,y,y.right)</span><br><span class="line">		y.right=z.right</span><br><span class="line">		y.right.p=y</span><br><span class="line">	Transplant(T,z,y)</span><br><span class="line">	y.left=z.left</span><br><span class="line">	y.left.p=y</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">### Red-Black Tree</span><br><span class="line"></span><br><span class="line">#### red-black properties</span><br><span class="line"></span><br><span class="line">1. Every node is either red or black</span><br><span class="line">2. The root is black</span><br><span class="line">3. Every leaf(NIL) is black</span><br><span class="line">4. If a node is red, then both its children are black.</span><br><span class="line">5. For each node, all simple paths from the node to descendant leaves contain the same number of black nodes.</span><br><span class="line"></span><br><span class="line">A red-black tree with n internal nodes has height at most $2\lg&#123;n+1&#125;$</span><br><span class="line"></span><br><span class="line">#### Rotations</span><br></pre></td></tr></table></figure>
+<p>Left-Rotate(T,x)<br>y=x.right<br>x.right=y.left<br>if y.left!=T.nil<br>    y.left.p=x<br>y.p=x.p<br>if x.p==T.nil<br>    T.root=y<br>elseif x==x.p.left<br>    x.p.left=y<br>else<br>    x.p.right=y<br>y.left=x<br>x.p=y<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">In every n-node binary search tree, there are exactly n-1 possible rotations.</span><br><span class="line"></span><br><span class="line">#### Insertion</span><br></pre></td></tr></table></figure></p>
 <p>RB-INSERT(T,z)<br>y=T.nil<br>x=T.root<br>while x!=T.nil<br>    y=x<br>    if z.key&lt;x.key<br>        x=x.left<br>    else x=x.right<br>z.p=y<br>if y==T.nil<br>    T.root=z<br>elseif z.key&lt;y.key<br>    y.left=z<br>else y.right=z<br>z.left=T.nil<br>z.right=T.nil<br>z.color = RED<br>RB-INSERT-FIXUP(T,z)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 <p>RB-INSERT-FIXUP(T,z)<br>while z.p.color==RED<br>    if z.p==z.p.p.left<br>        y=z.p.p.right<br>        if y.color==RED<br>            z.p.color=BLACK                //case1<br>            y.color=BLACK                    //case1<br>            z.p.p.color=RED                //case1<br>            z=z.p.p                        //case1<br>        else if z==z.p.right<br>                z=z.p                        //case2<br>                LEFT-ROTATE(T,z)            //case2<br>            z.p.color=BLACK                //case3<br>            z.p.p.color=RED                //case3<br>            RIGHT-ROTATE(T,z.p.p)        //case3<br>        else (same as then clause with “right” and “left” exchanged)<br>T.root.color=BLACK<br>```</p>
 <h2 id="2-14-B树"><a href="#2-14-B树" class="headerlink" title="2-14 B树"></a>2-14 B树</h2><h2 id="Appendix-C"><a href="#Appendix-C" class="headerlink" title="Appendix C"></a>Appendix C</h2><p>Binomial bounds: C_n^k &gt;= (n/k)^k</p>
@@ -531,10 +531,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
               </li>
              
@@ -547,7 +543,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,11 +555,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,6 +572,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
