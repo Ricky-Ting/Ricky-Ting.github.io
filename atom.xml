@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-25T02:06:47.003Z</updated>
+  <updated>2018-08-25T02:14:45.462Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/08/25/%E5%9B%9E%E9%A1%BE%E4%B8%8E%E5%B1%95%E6%9C%9B-2018-8-25/"/>
     <id>http://yoursite.com/2018/08/25/回顾与展望-2018-8-25/</id>
     <published>2018-08-25T02:05:06.000Z</published>
-    <updated>2018-08-25T02:06:47.003Z</updated>
+    <updated>2018-08-25T02:14:45.462Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="暑假里干的事"><a href="#暑假里干的事" class="headerlink" title="暑假里干的事"></a>暑假里干的事</h2><a id="more"></a><ol><li>看了《数学之美》</li><li>看了《黑客与画家》</li><li>看了《1Q84》</li><li>看完CSAPP前三章，并完成汇编实验和作业，拆炸弹</li><li>进行《挑战程序设计竞赛》里的编程训练</li><li>看完《计算机系统基础》前三章，并看完ICS网课相应部分</li><li>完成《Hadoop技术内幕》的源代码分析环境搭建，并阅读前两章</li><li>重读论文。</li><li>看了n(&gt;20)部电影</li><li>湖北五日游</li><li>练车，过了科三</li></ol><p>总结：感觉效率还是不高，在家易涣散。技术学习和课外拓展较少。<del>导师的邮件让我意识到暑假里一事无成,趁着还有几天亡羊补牢吧</del></p><p>思考：</p><ul><li>计算机专业涵盖面太广，想学很多东西，但往往局限于了解。</li><li>其次需要学的多了的时候，易浮躁。</li><li>学会在信息的洪流中认准自己需要的，贪多不易得。</li><li>学习方法需要改进，经常在网上学习新知识的时候，易陷入递归状态，不断地点击超链接和查询新名词，导致经常开了十几个页面，最后只了解了皮毛，自暴自弃把所有页面关了。</li><li>要养成随时学习的习惯，保持对技术和知识的热情。</li><li>在做中学。 </li><li>ddl是第一生产力，没有ddl，就只能靠自己自觉了。</li><li><del>大神们的博客太有趣了，看着看着就荒废了一天。</del></li></ul><h2 id="新学期展望"><a href="#新学期展望" class="headerlink" title="新学期展望"></a>新学期展望</h2><h3 id="需要养成的习惯或改掉的坏习惯"><a href="#需要养成的习惯或改掉的坏习惯" class="headerlink" title="需要养成的习惯或改掉的坏习惯"></a>需要养成的习惯或改掉的坏习惯</h3><ul><li>养成daily record的习惯，追踪自己的进展，不要到最后才发现一事无成。</li><li>进行学习思考。</li><li></li></ul><h3 id="新学期要做的事"><a href="#新学期要做的事" class="headerlink" title="新学期要做的事"></a>新学期要做的事</h3><ol><li>多看书 (阅读经典，技术书籍等)</li><li>专业课好好上，实验好好做</li><li>大数据学习和实践(java Hadoop spark)</li><li>广泛涉猎技术</li><li>练科二，争取寒假考过</li></ol><h3 id="大数据、云计算学习方面"><a href="#大数据、云计算学习方面" class="headerlink" title="大数据、云计算学习方面"></a>大数据、云计算学习方面</h3><ol><li>多动手，多找一些示例跑一跑。</li><li>养成借助google、Stack Overflow解决配置、运行时出现的问题</li><li>对源代码进行分析</li><li>学习java</li><li>多读经典paper，广泛涉猎</li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="暑假里干的事"><a href="#暑假里干的事" class="headerlink" title="暑假里干的事"></a>暑假里干的事</h2><a id="more"></a><ol><li>看了《数学之美》</li><li>看了《黑客与画家》</li><li>看了《1Q84》</li><li>看完CSAPP前三章，并完成汇编实验和作业，拆炸弹</li><li>进行《挑战程序设计竞赛》里的编程训练</li><li>看完《计算机系统基础》前三章，并看完ICS网课相应部分</li><li>完成《Hadoop技术内幕》的源代码分析环境搭建，并阅读前两章</li><li>看了n(&gt;20)部电影</li><li>湖北五日游</li><li>练车，过了科三</li></ol><p>总结：感觉效率还是不高，在家易涣散。技术学习和课外拓展较少。<del>导师的邮件让我意识到暑假里一事无成,趁着还有几天亡羊补牢吧</del></p><p>思考：</p><ul><li>计算机专业涵盖面太广，想学很多东西，但往往局限于了解。</li><li>其次需要学的多了的时候，易浮躁。</li><li>学会在信息的洪流中认准自己需要的，贪多不易得。</li><li>学习方法需要改进，经常在网上学习新知识的时候，易陷入递归状态，不断地点击超链接和查询新名词，导致经常开了十几个页面，最后只了解了皮毛，自暴自弃把所有页面关了。</li><li>要养成随时学习的习惯，保持对技术和知识的热情。</li><li>在做中学。 </li><li>ddl是第一生产力，没有ddl，就只能靠自己自觉了。</li><li><del>大神们的博客太有趣了，看着看着就荒废了一天。</del></li></ul><h2 id="新学期展望"><a href="#新学期展望" class="headerlink" title="新学期展望"></a>新学期展望</h2><h3 id="需要养成的习惯或改掉的坏习惯"><a href="#需要养成的习惯或改掉的坏习惯" class="headerlink" title="需要养成的习惯或改掉的坏习惯"></a>需要养成的习惯或改掉的坏习惯</h3><ul><li>养成daily record的习惯，追踪自己的进展，不要到最后才发现一事无成。</li><li>进行学习思考。</li><li></li></ul><h3 id="新学期要做的事"><a href="#新学期要做的事" class="headerlink" title="新学期要做的事"></a>新学期要做的事</h3><ol><li>多看书 (阅读经典，技术书籍等)</li><li>专业课好好上，实验好好做</li><li>大数据学习和实践(java Hadoop spark)</li><li>广泛涉猎技术</li><li>练科二，争取寒假考过</li></ol><h3 id="大数据、云计算学习方面"><a href="#大数据、云计算学习方面" class="headerlink" title="大数据、云计算学习方面"></a>大数据、云计算学习方面</h3><ol><li>多动手，多找一些示例跑一跑。</li><li>养成借助google、Stack Overflow解决配置、运行时出现的问题</li><li>对源代码进行分析</li><li>学习java</li><li>多读经典paper，广泛涉猎</li></ol>]]></content>
     
     <summary type="html">
     
@@ -543,9 +543,9 @@
     </summary>
     
     
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
