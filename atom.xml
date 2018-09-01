@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-01T12:24:52.829Z</updated>
+  <updated>2018-09-01T11:36:14.738Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Daily Records for 2018Sept</title>
-    <link href="http://yoursite.com/2018/09/01/Daily-Records-for-2018Sept/"/>
-    <id>http://yoursite.com/2018/09/01/Daily-Records-for-2018Sept/</id>
-    <published>2018-09-01T12:24:52.000Z</published>
-    <updated>2018-09-01T12:24:52.829Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>shared folder in virtual machine</title>
@@ -483,6 +469,81 @@
       <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LaTex笔记(不定期更新)</title>
+    <link href="http://yoursite.com/2018/02/06/LaTex%E7%AC%94%E8%AE%B0-%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0/"/>
+    <id>http://yoursite.com/2018/02/06/LaTex笔记-不定期更新/</id>
+    <published>2018-02-06T06:46:11.000Z</published>
+    <updated>2018-08-03T11:07:27.760Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Latex-笔记（不定期更新）"><a href="#Latex-笔记（不定期更新）" class="headerlink" title="Latex 笔记（不定期更新）"></a>Latex 笔记（不定期更新）</h1><h2 id="标题，章和节"><a href="#标题，章和节" class="headerlink" title="标题，章和节"></a>标题，章和节</h2><table><thead><tr><th>命令</th><th>效果</th><th>命令</th><th>效果</th></tr></thead><tbody><tr><td>\title</td><td>标题</td><td>\author</td><td>作者</td></tr><tr><td>\date</td><td>日期</td><td>\maketitle</td><td>生成标题</td></tr><tr><td>\section</td><td>节标题</td><td>\subsection</td><td>小节标题</td></tr><tr><td>\subsubsection</td><td>次小节标题</td><td>\paragraph</td><td>段标题</td></tr><tr><td>\subparagraph</td><td>小段标题</td><td>\part</td><td>部分标题</td></tr><tr><td>\appendix</td><td>附录标题</td><td>\tableofcontents</td><td>生成目录</td></tr><tr><td>\listoffigures</td><td>插图目录</td><td>\listoftables</td><td>表格目录</td></tr></tbody></table> <a id="more"></a><h2 id="打对数"><a href="#打对数" class="headerlink" title="打对数"></a>打对数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\log_&#123;b&#125;a</span><br></pre></td></tr></table></figure><h2 id="插入项目符号和编号"><a href="#插入项目符号和编号" class="headerlink" title="插入项目符号和编号"></a>插入项目符号和编号</h2><h3 id="不带序号"><a href="#不带序号" class="headerlink" title="不带序号"></a>不带序号</h3><p>关于{itemize}里序号的形式：latex默认生成的简单列表，默认为一个小圆点，而我们在写文章时可能想要一些不一样的列表符号，比如 -， * 之类的. 我们可以这样写</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;itemize&#125; </span><br><span class="line">\item[-] something</span><br><span class="line">\item[-] something</span><br><span class="line">\end&#123;itemize&#125;</span><br></pre></td></tr></table></figure><h3 id="带序号"><a href="#带序号" class="headerlink" title="带序号"></a>带序号</h3><p> 关于{enumerate}，这是用于带序号的列表。 默认生成 1，2，3。如果想要其他修饰，如(1) (2)….或step-1，step2，需要加载 \usepackage{enumerate}，然后如下使用</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;enumerate&#125;[step 1]</span><br><span class="line">\item something</span><br><span class="line">\item something</span><br><span class="line">\end&#123;enumerate&#125;</span><br></pre></td></tr></table></figure><h2 id="引入参考文献"><a href="#引入参考文献" class="headerlink" title="引入参考文献"></a>引入参考文献</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;thebibliography&#125;&#123;99&#125;</span><br><span class="line">\bibitem&#123;a&#125; something</span><br><span class="line">\bibitem&#123;b&#125; something</span><br><span class="line">\end&#123;thebibliography&#125;</span><br></pre></td></tr></table></figure><h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;graphicx&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\includegraphics[width=1.77in,height=1.75in]&#123;pic.jpg&#125;</span><br></pre></td></tr></table></figure><h2 id="插入代码"><a href="#插入代码" class="headerlink" title="插入代码"></a>插入代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;listings&#125;</span><br><span class="line">\lstset&#123;language=C++&#125;%这条命令可以让LaTeX排版时将C++键字突出显示</span><br><span class="line"></span><br><span class="line">\lstset&#123;breaklines&#125;%这条命令可以让LaTeX自动将长的代码行换行排版</span><br><span class="line"></span><br><span class="line">\lstset&#123;extendedchars=false&#125;%这一条命令可以解决代码跨页时，章节标题，页眉等汉字不显示的问题</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;lstlisting&#125;</span><br><span class="line"></span><br><span class="line">\end&#123;lstlisting&#125;</span><br></pre></td></tr></table></figure><h2 id="插入表格"><a href="#插入表格" class="headerlink" title="插入表格"></a>插入表格</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;tabular&#125;&#123;|c|c|&#125; %通过添加 | 来表示是否需要绘制竖线</span><br><span class="line">\hline  % 在表格最上方绘制横线</span><br><span class="line">sth &amp; sth\\</span><br><span class="line">\hline  %在第一行和第二行之间绘制横线</span><br><span class="line">...\\</span><br><span class="line">\hline</span><br><span class="line">\end&#123;tabular&#125;</span><br></pre></td></tr></table></figure><p>如果要添加斜线<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;diagbox&#125;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">\diagbox&#123;&#125;&#123;&#125;&#123;&#125;...</span><br></pre></td></tr></table></figure></p><h2 id="大括号"><a href="#大括号" class="headerlink" title="大括号"></a>大括号</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$$T(n)=</span><br><span class="line">\begin&#123;cases&#125;</span><br><span class="line">0    &amp;  \text&#123;n=0&#125;\\</span><br><span class="line">2T(n-1) &amp; n \ge 1</span><br><span class="line">\end&#123;cases&#125;$$</span><br></pre></td></tr></table></figure><h2 id="插入伪代码"><a href="#插入伪代码" class="headerlink" title="插入伪代码"></a>插入伪代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;algorithm&#125;</span><br><span class="line">\usepackage&#123;algpseudocode&#125;</span><br><span class="line"></span><br><span class="line">\begin&#123;algorithm&#125;[H]</span><br><span class="line">\caption&#123;$\textsc&#123;SomeAlgorithm&#125;$&#125;</span><br><span class="line">\begin&#123;algorithmic&#125;</span><br><span class="line">\If&#123;$condition$&#125;</span><br><span class="line">\State $something$</span><br><span class="line">\ElsIf&#123;$condition2$&#125;</span><br><span class="line">\State $sth$</span><br><span class="line">\Else</span><br><span class="line">\State $something else$</span><br><span class="line">\EndIf</span><br><span class="line"></span><br><span class="line">\For&#123;$i=1$ to $n$&#125;</span><br><span class="line">\State $something$</span><br><span class="line">\State $something else$</span><br><span class="line">\EndFor</span><br><span class="line"></span><br><span class="line">\While&#123;$condition$&#125;</span><br><span class="line">\State $something$</span><br><span class="line">\EndWhile</span><br><span class="line"></span><br><span class="line">\Repeat</span><br><span class="line">\State $something$</span><br><span class="line">\Until&#123;$condition$&#125;</span><br><span class="line">\end&#123;algorithmic&#125;</span><br><span class="line">\end&#123;algorithm&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Latex-笔记（不定期更新）&quot;&gt;&lt;a href=&quot;#Latex-笔记（不定期更新）&quot; class=&quot;headerlink&quot; title=&quot;Latex 笔记（不定期更新）&quot;&gt;&lt;/a&gt;Latex 笔记（不定期更新）&lt;/h1&gt;&lt;h2 id=&quot;标题，章和节&quot;&gt;&lt;a href=&quot;#标题，章和节&quot; class=&quot;headerlink&quot; title=&quot;标题，章和节&quot;&gt;&lt;/a&gt;标题，章和节&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;效果&lt;/th&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;效果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;\title&lt;/td&gt;
+&lt;td&gt;标题&lt;/td&gt;
+&lt;td&gt;\author&lt;/td&gt;
+&lt;td&gt;作者&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\date&lt;/td&gt;
+&lt;td&gt;日期&lt;/td&gt;
+&lt;td&gt;\maketitle&lt;/td&gt;
+&lt;td&gt;生成标题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\section&lt;/td&gt;
+&lt;td&gt;节标题&lt;/td&gt;
+&lt;td&gt;\subsection&lt;/td&gt;
+&lt;td&gt;小节标题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\subsubsection&lt;/td&gt;
+&lt;td&gt;次小节标题&lt;/td&gt;
+&lt;td&gt;\paragraph&lt;/td&gt;
+&lt;td&gt;段标题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\subparagraph&lt;/td&gt;
+&lt;td&gt;小段标题&lt;/td&gt;
+&lt;td&gt;\part&lt;/td&gt;
+&lt;td&gt;部分标题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\appendix&lt;/td&gt;
+&lt;td&gt;附录标题&lt;/td&gt;
+&lt;td&gt;\tableofcontents&lt;/td&gt;
+&lt;td&gt;生成目录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\listoffigures&lt;/td&gt;
+&lt;td&gt;插图目录&lt;/td&gt;
+&lt;td&gt;\listoftables&lt;/td&gt;
+&lt;td&gt;表格目录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="LaTex" scheme="http://yoursite.com/tags/LaTex/"/>
     
   </entry>
   
