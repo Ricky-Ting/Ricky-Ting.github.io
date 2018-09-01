@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-01T14:45:55.875Z</updated>
+  <updated>2018-09-01T14:47:27.100Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,18 +21,18 @@
     <link href="http://yoursite.com/2018/09/01/Daily-Records-for-2018-Sept/"/>
     <id>http://yoursite.com/2018/09/01/Daily-Records-for-2018-Sept/</id>
     <published>2018-09-01T14:42:22.000Z</published>
-    <updated>2018-09-01T14:45:55.875Z</updated>
+    <updated>2018-09-01T14:47:27.100Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a><h1 id="Sept-1"><a href="#Sept-1" class="headerlink" title="Sept 1"></a>Sept 1</h1><ul><li>复习汇编</li><li>汇编考试(2:00 pm - 4:00 pm)</li><li>重新搭建Hadoop环境(进度50%),修复了好多bug</li><li>装Windows XP 虚拟机</li></ul>]]></content>
+    <content type="html"><![CDATA[ <a id="more"></a><h1 id="Sept-1"><a href="#Sept-1" class="headerlink" title="Sept 1"></a>Sept 1</h1><ul><li>复习汇编</li><li>汇编考试(2:00 pm - 4:00 pm)</li><li>重新搭建Hadoop环境(进度50%),修复了好多bug</li><li>装Windows XP 虚拟机</li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+         &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;Sept-1&quot;&gt;&lt;a href=&quot;#Sept-1&quot; class=&quot;headerlink&quot; title=&quot;Sept 1&quot;&gt;&lt;/a&gt;Sept 1&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;复习汇编&lt;/li&gt;
-&lt;li&gt;汇编考试(2:00 pm - 4
+&lt;li&gt;汇编考试(2:00 pm - 
       
     
     </summary>
