@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ricky-ting.github.io/"/>
-  <updated>2018-09-02T14:54:59.800Z</updated>
+  <updated>2018-09-03T13:26:47.793Z</updated>
   <id>https://ricky-ting.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://ricky-ting.github.io/2018/09/01/Daily-Records-for-2018-Sept/"/>
     <id>https://ricky-ting.github.io/2018/09/01/Daily-Records-for-2018-Sept/</id>
     <published>2018-09-01T14:42:22.000Z</published>
-    <updated>2018-09-02T14:54:59.800Z</updated>
+    <updated>2018-09-03T13:26:47.793Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Sept-1"><a href="#Sept-1" class="headerlink" title="Sept 1"></a>Sept 1</h1><ul><li>复习汇编</li><li>汇编考试(2:00 pm - 4:00 pm)</li><li>重新搭建Hadoop环境(进度50%),修复了好多bug</li><li><p>装Windows XP 虚拟机(玩了三维弹球)</p><a id="more"></a></li></ul><h1 id="Sept-2"><a href="#Sept-2" class="headerlink" title="Sept 2"></a>Sept 2</h1><ul><li>搭建Hadoop环境完成</li><li>学习java(进度55/689)</li><li>吃火锅</li><li>看big bang(S1E1-S1E3)</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="Sept-1"><a href="#Sept-1" class="headerlink" title="Sept 1"></a>Sept 1</h1><ul><li>复习汇编</li><li>汇编考试(2:00 pm - 4:00 pm)</li><li>重新搭建Hadoop环境(进度50%),修复了好多bug</li><li><p>装Windows XP 虚拟机(玩了三维弹球)</p><a id="more"></a></li></ul><h1 id="Sept-2"><a href="#Sept-2" class="headerlink" title="Sept 2"></a>Sept 2</h1><ul><li>搭建Hadoop环境完成</li><li>学习java(进度55/689)</li><li>吃火锅</li><li>看big bang(S1E1-S1E3)</li></ul><h1 id="Sept-3-开学第一天"><a href="#Sept-3-开学第一天" class="headerlink" title="Sept 3(开学第一天)"></a>Sept 3(开学第一天)</h1><ul><li>装windows7虚拟机，并安装Quartus，重新做了实验0(数字逻辑电路真好玩 雾)</li></ul><p><img src="/images/dailyrecordfor2018sept/sept3_1.JPG" alt=""></p>]]></content>
     
     <summary type="html">
     
@@ -103,9 +103,9 @@
     </summary>
     
     
-      <category term="记录" scheme="https://ricky-ting.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
-    
       <category term="计划" scheme="https://ricky-ting.github.io/tags/%E8%AE%A1%E5%88%92/"/>
+    
+      <category term="记录" scheme="https://ricky-ting.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
@@ -342,9 +342,9 @@
     </summary>
     
     
-      <category term="记录" scheme="https://ricky-ting.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
-    
       <category term="计划" scheme="https://ricky-ting.github.io/tags/%E8%AE%A1%E5%88%92/"/>
+    
+      <category term="记录" scheme="https://ricky-ting.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
@@ -364,9 +364,9 @@
     </summary>
     
     
-      <category term="记录" scheme="https://ricky-ting.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
-    
       <category term="计划" scheme="https://ricky-ting.github.io/tags/%E8%AE%A1%E5%88%92/"/>
+    
+      <category term="记录" scheme="https://ricky-ting.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
