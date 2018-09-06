@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ricky-ting.github.io/"/>
-  <updated>2018-09-06T01:08:57.577Z</updated>
+  <updated>2018-09-06T07:39:19.023Z</updated>
   <id>https://ricky-ting.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://ricky-ting.github.io/2018/09/06/Debian-install-sudo/"/>
     <id>https://ricky-ting.github.io/2018/09/06/Debian-install-sudo/</id>
     <published>2018-09-06T01:08:13.000Z</published>
-    <updated>2018-09-06T01:08:57.577Z</updated>
+    <updated>2018-09-06T07:39:19.023Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Debian-install-sudo"><a href="#Debian-install-sudo" class="headerlink" title="Debian install sudo"></a>Debian install sudo</h1><ol><li><code>su</code>切换至root</li><li><code>apt-get install sudo</code></li><li><code>visudo</code> 在<code>root ALL(AKK:ALL) ALL</code>后面加入一行<code>&lt;user&gt; ALL=(ALL:ALL) ALL</code></li><li>然后Ctrl-O 保存文件，要把文件名里的<code>.tmp</code>删除，两次yes， Ctrl-X退出编辑</li></ol><p><code>sudoers</code>文件目录为<code>/etc/sudoers</code></p><p><code>su</code>进入root, <code>exit</code>退出root</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Debian-install-sudo"><a href="#Debian-install-sudo" class="headerlink" title="Debian install sudo"></a>Debian install sudo</h1><ol><li><code>su</code>切换至root</li><li><code>apt-get install sudo</code></li><li><code>visudo</code> 在<code>root ALL(ALL:ALL) ALL</code>后面加入一行<code>&lt;user&gt; ALL=(ALL:ALL) ALL</code></li><li>然后Ctrl-O 保存文件，要把文件名里的<code>.tmp</code>删除，两次yes， Ctrl-X退出编辑</li></ol><p><code>sudoers</code>文件目录为<code>/etc/sudoers</code></p><p><code>su</code>进入root, <code>exit</code>退出root</p>]]></content>
     
     <summary type="html">
     
