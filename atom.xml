@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ricky-ting.github.io/"/>
-  <updated>2018-09-05T07:22:52.506Z</updated>
+  <updated>2018-09-06T01:08:57.577Z</updated>
   <id>https://ricky-ting.github.io/</id>
   
   <author>
@@ -17,13 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Debian install sudo</title>
+    <link href="https://ricky-ting.github.io/2018/09/06/Debian-install-sudo/"/>
+    <id>https://ricky-ting.github.io/2018/09/06/Debian-install-sudo/</id>
+    <published>2018-09-06T01:08:13.000Z</published>
+    <updated>2018-09-06T01:08:57.577Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Debian-install-sudo"><a href="#Debian-install-sudo" class="headerlink" title="Debian install sudo"></a>Debian install sudo</h1><ol><li><code>su</code>切换至root</li><li><code>apt-get install sudo</code></li><li><code>visudo</code> 在<code>root ALL(AKK:ALL) ALL</code>后面加入一行<code>&lt;user&gt; ALL=(ALL:ALL) ALL</code></li><li>然后Ctrl-O 保存文件，要把文件名里的<code>.tmp</code>删除，两次yes， Ctrl-X退出编辑</li></ol><p><code>sudoers</code>文件目录为<code>/etc/sudoers</code></p><p><code>su</code>进入root, <code>exit</code>退出root</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Debian-install-sudo&quot;&gt;&lt;a href=&quot;#Debian-install-sudo&quot; class=&quot;headerlink&quot; title=&quot;Debian install sudo&quot;&gt;&lt;/a&gt;Debian install sudo&lt;/h1&gt;&lt;ol&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="bug" scheme="https://ricky-ting.github.io/tags/bug/"/>
+    
+      <category term="solution" scheme="https://ricky-ting.github.io/tags/solution/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Daily-Records for 2018-Sept</title>
     <link href="https://ricky-ting.github.io/2018/09/01/Daily-Records-for-2018-Sept/"/>
     <id>https://ricky-ting.github.io/2018/09/01/Daily-Records-for-2018-Sept/</id>
     <published>2018-09-01T14:42:22.000Z</published>
-    <updated>2018-09-05T07:22:52.506Z</updated>
+    <updated>2018-09-06T01:09:20.455Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Sept-1"><a href="#Sept-1" class="headerlink" title="Sept 1"></a>Sept 1</h1><ul><li>复习汇编</li><li>汇编考试(2:00 pm - 4:00 pm)</li><li>重新搭建Hadoop环境(进度50%),修复了好多bug</li><li><p>装Windows XP 虚拟机(玩了三维弹球)</p><a id="more"></a></li></ul><h1 id="Sept-2"><a href="#Sept-2" class="headerlink" title="Sept 2"></a>Sept 2</h1><ul><li>搭建Hadoop环境完成</li><li>学习java(进度55/689)</li><li>吃火锅</li><li>看big bang(S1E1-S1E3)</li></ul><h1 id="Sept-3-开学第一天"><a href="#Sept-3-开学第一天" class="headerlink" title="Sept 3(开学第一天)"></a>Sept 3(开学第一天)</h1><ul><li>装windows7虚拟机，并安装Quartus，重新做了实验0(数字逻辑电路真好玩 雾)</li><li>学习Verilog(1/13)</li></ul><h1 id="Sept-4"><a href="#Sept-4" class="headerlink" title="Sept 4"></a>Sept 4</h1><ul><li>问题求解3-1(7/11)</li></ul><h1 id="Sept-5"><a href="#Sept-5" class="headerlink" title="Sept 5"></a>Sept 5</h1><ul><li>问题求解3-1(11/11)</li></ul><p><img src="/images/dailyrecordfor2018sept/sept3_1.JPG" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Sept-1"><a href="#Sept-1" class="headerlink" title="Sept 1"></a>Sept 1</h1><ul><li>复习汇编</li><li>汇编考试(2:00 pm - 4:00 pm)</li><li>重新搭建Hadoop环境(进度50%),修复了好多bug</li><li><p>装Windows XP 虚拟机(玩了三维弹球)</p><a id="more"></a></li></ul><h1 id="Sept-2"><a href="#Sept-2" class="headerlink" title="Sept 2"></a>Sept 2</h1><ul><li>搭建Hadoop环境完成</li><li>学习java(进度55/689)</li><li>吃火锅</li><li>看big bang(S1E1-S1E3)</li></ul><h1 id="Sept-3-开学第一天"><a href="#Sept-3-开学第一天" class="headerlink" title="Sept 3(开学第一天)"></a>Sept 3(开学第一天)</h1><ul><li>装windows7虚拟机，并安装Quartus，重新做了实验0(数字逻辑电路真好玩 雾)</li><li>学习Verilog(1/13)</li></ul><h1 id="Sept-4"><a href="#Sept-4" class="headerlink" title="Sept 4"></a>Sept 4</h1><ul><li>问题求解3-1(7/11)</li></ul><h1 id="Sept-5"><a href="#Sept-5" class="headerlink" title="Sept 5"></a>Sept 5</h1><ul><li>问题求解3-1(11/11)</li><li>PA0(1/5)</li></ul><p><img src="/images/dailyrecordfor2018sept/sept3_1.JPG" alt=""></p>]]></content>
     
     <summary type="html">
     
@@ -449,39 +475,6 @@
       <category term="笔记" scheme="https://ricky-ting.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="机器学习" scheme="https://ricky-ting.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mac已装软件目录</title>
-    <link href="https://ricky-ting.github.io/2018/02/10/mac%E5%B7%B2%E8%A3%85%E8%BD%AF%E4%BB%B6%E7%9B%AE%E5%BD%95/"/>
-    <id>https://ricky-ting.github.io/2018/02/10/mac已装软件目录/</id>
-    <published>2018-02-10T07:34:43.000Z</published>
-    <updated>2018-05-14T12:45:47.315Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Mac已装软件目录-更新至2018-5-14"><a href="#Mac已装软件目录-更新至2018-5-14" class="headerlink" title="Mac已装软件目录(更新至2018.5.14)"></a>Mac已装软件目录(更新至2018.5.14)</h1><h2 id="Develop"><a href="#Develop" class="headerlink" title="Develop"></a>Develop</h2><ul><li>Xcode</li><li>PyCharm Edu : for python</li><li>MATLAB_R2016b</li><li>Sublime Text</li><li>Mathematic</li><li>iTerm</li><li>Dash</li><li>ScriptFlow</li><li>IconKit<a id="more"></a></li></ul><h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><ul><li>Adobe Photoshop CC</li><li>Adobe Premiere Pro CC</li><li>Adobe Audition CC</li><li>Total Video Converter Lite</li><li>Sketch</li><li>xScope</li></ul><h2 id="Text"><a href="#Text" class="headerlink" title="Text"></a>Text</h2><ul><li>MacDown</li><li>Evernote</li><li>Texshop</li><li>Pages Keynote Numbers</li><li>VS Code</li></ul><h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><ul><li>Chrome</li><li>Firefox</li><li>Parallels Desktop</li><li>EuDic</li><li>iStat Menus</li><li>Baidu Netdisk</li><li>Reeder</li><li>iText</li><li>uTorrent</li><li>WonderPen</li><li>The Unarchiver</li><li>每日英语听力</li><li>XMind</li><li>Reflector 2</li><li>Qlpmsg</li><li>Focusky</li><li>DjView</li><li>CAJCloudViewer</li><li>Blackmagic Disk Speed Test</li><li>1Checker</li><li>1Keyboard</li><li>Disk Graph</li><li>PDF Expert</li><li>WiFi Explorer Pro</li><li>UltraEdit</li><li>WebTorrent</li><li>RescueTime</li><li>OmniGraffle</li><li>Xee</li><li>Workspaces</li></ul><h2 id="Entertainment"><a href="#Entertainment" class="headerlink" title="Entertainment"></a>Entertainment</h2><ul><li>youku</li><li>mpv</li><li>aiqiyi</li><li>QQ Music</li><li>Netease Music</li><li>Steam</li><li>Lep’s World 2</li><li>IINA</li></ul><h2 id="Social-Networking"><a href="#Social-Networking" class="headerlink" title="Social Networking"></a>Social Networking</h2><ul><li>WeChat</li><li>QQ</li></ul><h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><ul><li>Snap</li><li>ShadowsocksX-R</li><li>Irvue</li><li>Alfred 3</li><li>Kap : for screen capturing</li><li>Homebrew</li><li>zsh</li><li>pandoc : File converting</li><li>Bartender 3</li></ul><h2 id="Virtual-Machine"><a href="#Virtual-Machine" class="headerlink" title="Virtual Machine"></a>Virtual Machine</h2><ul><li>Windows 10</li><li>Ubuntu</li><li>Kali Linux </li></ul><h2 id="待装"><a href="#待装" class="headerlink" title="待装"></a>待装</h2><ul><li>SPSS</li><li>Dash</li><li>UltraEdit</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Mac已装软件目录-更新至2018-5-14&quot;&gt;&lt;a href=&quot;#Mac已装软件目录-更新至2018-5-14&quot; class=&quot;headerlink&quot; title=&quot;Mac已装软件目录(更新至2018.5.14)&quot;&gt;&lt;/a&gt;Mac已装软件目录(更新至2018.5.14)&lt;/h1&gt;&lt;h2 id=&quot;Develop&quot;&gt;&lt;a href=&quot;#Develop&quot; class=&quot;headerlink&quot; title=&quot;Develop&quot;&gt;&lt;/a&gt;Develop&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Xcode&lt;/li&gt;
-&lt;li&gt;PyCharm Edu : for python&lt;/li&gt;
-&lt;li&gt;MATLAB_R2016b&lt;/li&gt;
-&lt;li&gt;Sublime Text&lt;/li&gt;
-&lt;li&gt;Mathematic&lt;/li&gt;
-&lt;li&gt;iTerm&lt;/li&gt;
-&lt;li&gt;Dash&lt;/li&gt;
-&lt;li&gt;ScriptFlow&lt;/li&gt;
-&lt;li&gt;IconKit
-    
-    </summary>
-    
-    
-      <category term="记录" scheme="https://ricky-ting.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
-    
-      <category term="Mac" scheme="https://ricky-ting.github.io/tags/Mac/"/>
-    
-      <category term="软件" scheme="https://ricky-ting.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
