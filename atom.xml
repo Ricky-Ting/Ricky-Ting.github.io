@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ricky-ting.github.io/"/>
-  <updated>2018-09-21T11:51:03.970Z</updated>
+  <updated>2018-09-21T11:53:21.355Z</updated>
   <id>https://ricky-ting.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://ricky-ting.github.io/2018/09/16/PA%E6%8B%BE%E6%85%A7/"/>
     <id>https://ricky-ting.github.io/2018/09/16/PA拾慧/</id>
     <published>2018-09-16T15:03:19.000Z</published>
-    <updated>2018-09-21T11:51:03.970Z</updated>
+    <updated>2018-09-21T11:53:21.355Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>天将降PA于斯人也，必先使其STFW,RTFM,RTFSC, 所以动心忍性，曾益其所不能</strong></p><h1 id="tmux-分屏工具"><a href="#tmux-分屏工具" class="headerlink" title="tmux(分屏工具)"></a>tmux(分屏工具)</h1><p>Prefix: <code>Ctrl+B</code></p><p>左右分屏:<code>Prefix + %</code> 上下分屏: <code>Prefix + &quot;</code></p><p>切换: <code>Prefix + 方向键</code></p><h1 id="Vim配置"><a href="#Vim配置" class="headerlink" title="Vim配置"></a>Vim配置</h1><p>vim分屏：</p><p><code>Ctrl+W s</code>:上下分割当前打开的文件</p><p><code>:sp filename</code>:上下分割，并打开一个新的文件</p><p><code>Ctrl+W v</code>: 左右分割当前打开的文件</p><p><code>:vsp filename</code>: 左右分割，并打开一个新的文件</p><p><code>Ctrl+W l,h,k,j</code>: 在窗格见切换</p><h1 id="开源世界旅行手册"><a href="#开源世界旅行手册" class="headerlink" title="开源世界旅行手册"></a>开源世界旅行手册</h1><p><a href="https://i.linuxtoy.org/docs/guide/index.html" target="_blank" rel="noopener">链接</a></p><p>CLI下输入<code>bc</code>就可以启动计算器。</p><h1 id="C语言相关"><a href="#C语言相关" class="headerlink" title="C语言相关"></a>C语言相关</h1><p>顺时针法则</p><h1 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h1><p>多使用man</p><p>linux里的管道将不同程序的输入输出连起来。</p><p><code>time ./a.out</code> 可以测程序运行的时间。</p>]]></content>
+    <content type="html"><![CDATA[<p><strong>天将降PA于斯人也，必先使其STFW,RTFM,RTFSC, 所以动心忍性，曾益其所不能</strong></p><h1 id="tmux-分屏工具"><a href="#tmux-分屏工具" class="headerlink" title="tmux(分屏工具)"></a>tmux(分屏工具)</h1><p>Prefix: <code>Ctrl+B</code></p><p>左右分屏:<code>Prefix + %</code> 上下分屏: <code>Prefix + &quot;</code></p><p>切换: <code>Prefix + 方向键</code></p><h1 id="Vim配置"><a href="#Vim配置" class="headerlink" title="Vim配置"></a>Vim配置</h1><p>vim分屏：</p><p><code>Ctrl+W s</code>:上下分割当前打开的文件</p><p><code>:sp filename</code>:上下分割，并打开一个新的文件</p><p><code>Ctrl+W v</code>: 左右分割当前打开的文件</p><p><code>:vsp filename</code>: 左右分割，并打开一个新的文件</p><p><code>Ctrl+W l,h,k,j</code>: 在窗格见切换</p><h1 id="开源世界旅行手册"><a href="#开源世界旅行手册" class="headerlink" title="开源世界旅行手册"></a>开源世界旅行手册</h1><p><a href="https://i.linuxtoy.org/docs/guide/index.html" target="_blank" rel="noopener">链接</a></p><p>CLI下输入<code>bc</code>就可以启动计算器。</p><h1 id="C语言相关"><a href="#C语言相关" class="headerlink" title="C语言相关"></a>C语言相关</h1><p>顺时针法则</p><h1 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h1><p>多使用man</p><p>linux里的管道将不同程序的输入输出连起来。</p><p><code>time ./a.out</code> 可以测程序运行的时间。</p><p>在shell中使用终端设置别名:<code>alias cdblog=&#39;cd ~/Desktop/Github/Blog&#39;</code></p>]]></content>
     
     <summary type="html">
     
