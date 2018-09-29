@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2018/09/16/PA拾慧/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="天将降PA于斯人也，必先使其STFW,RTFM,RTFSC, 所以动心忍性，曾益其所不能 tmux(分屏工具)Prefix: Ctrl+B 左右分屏:Prefix + % 上下分屏: Prefix + &amp;quot; 切换: Prefix + 方向键 Vim配置vim分屏：Ctrl+W s:上下分割当前打开的文件 :sp filename:上下分割，并打开一个新的文件 Ctrl+W v: 左右分割当">
-<meta property="og:updated_time" content="2018-09-27T12:58:55.428Z">
+<meta property="og:updated_time" content="2018-09-29T03:25:38.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PA拾慧">
 <meta name="twitter:description" content="天将降PA于斯人也，必先使其STFW,RTFM,RTFSC, 所以动心忍性，曾益其所不能 tmux(分屏工具)Prefix: Ctrl+B 左右分屏:Prefix + % 上下分屏: Prefix + &amp;quot; 切换: Prefix + 方向键 Vim配置vim分屏：Ctrl+W s:上下分割当前打开的文件 :sp filename:上下分割，并打开一个新的文件 Ctrl+W v: 左右分割当">
@@ -191,6 +191,7 @@
 <li>修改vimrc: 加入下面两行 </li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set tags=[path]/tags</span><br><span class="line">set tags=./tags,tags;$HOME</span><br></pre></td></tr></table></figure>
+<h2 id="vim配置选项"><a href="#vim配置选项" class="headerlink" title="vim配置选项"></a>vim配置选项</h2><p><code>set laststatus=2</code></p>
 <p>跳转快捷键: <code>Ctrl+]</code>跳转,  <code>Ctrl+t</code> or <code>Ctrl+o</code>返回.</p>
 <p>在终端里输入<code>vim -t functionname</code> 可以直接跳转至你想跳转的函数.(来自StardustDL的补充)</p>
 <p>vim函数跳转部分参考<a href="https://mengzelev.github.io/2018/09/12/pa-inspirations/" target="_blank" rel="noopener">Mengzelve’s Blog</a> </p>
@@ -327,18 +328,16 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
- // id: "https://ricky-ting.github.io/2018/09/16/PA拾慧/",
-	id: "Sun Sep 16 2018 23:03:19 GMT+0800",
-  owner: 'Ricky-Ting',
-  repo: 'ricky-ting.github.io',
+  id: "<%=url%>",
+  owner: '<%=theme.gitment_owner%>',
+  repo: '<%=theme.gitment_repo%>',
   oauth: {
-    client_id: '5791c5e45aa204b34d62',
-    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
+    client_id: '<%=theme.gitment_oauth.client_id%>',
+    client_secret: '<%=theme.gitment_oauth.client_secret%>',
   },
 })
 gitment.render('gitment-ctn')
 </script>
-
   
 
 
@@ -453,6 +452,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
               </li>
              
@@ -461,7 +464,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -469,23 +472,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -493,11 +480,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">OJ</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,6 +505,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
