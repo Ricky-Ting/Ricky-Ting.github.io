@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ricky-ting.github.io/"/>
-  <updated>2018-09-29T03:25:38.472Z</updated>
+  <updated>2018-10-01T11:50:09.747Z</updated>
   <id>https://ricky-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Daily Records for 2018 Oct</title>
+    <link href="https://ricky-ting.github.io/2018/10/01/Daily-Records-for-2018-Oct/"/>
+    <id>https://ricky-ting.github.io/2018/10/01/Daily-Records-for-2018-Oct/</id>
+    <published>2018-10-01T11:48:48.000Z</published>
+    <updated>2018-10-01T11:50:09.747Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Oct-1"><a href="#Oct-1" class="headerlink" title="Oct 1"></a>Oct 1</h1><ul><li>Did some Lab1</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Oct-1&quot;&gt;&lt;a href=&quot;#Oct-1&quot; class=&quot;headerlink&quot; title=&quot;Oct 1&quot;&gt;&lt;/a&gt;Oct 1&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Did some Lab1&lt;/li&gt;
+&lt;/ul&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="记录" scheme="https://ricky-ting.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>PA拾慧</title>
@@ -71,9 +97,9 @@
     <link href="https://ricky-ting.github.io/2018/09/01/Daily-Records-for-2018-Sept/"/>
     <id>https://ricky-ting.github.io/2018/09/01/Daily-Records-for-2018-Sept/</id>
     <published>2018-09-01T14:42:22.000Z</published>
-    <updated>2018-09-27T12:45:47.430Z</updated>
+    <updated>2018-10-01T11:49:43.612Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Sept-1"><a href="#Sept-1" class="headerlink" title="Sept 1"></a>Sept 1</h1><ul><li>复习汇编</li><li>汇编考试(2:00 pm - 4:00 pm)</li><li>重新搭建Hadoop环境(进度50%),修复了好多bug</li><li><p>装Windows XP 虚拟机(玩了三维弹球)</p><a id="more"></a></li></ul><h1 id="Sept-2"><a href="#Sept-2" class="headerlink" title="Sept 2"></a>Sept 2</h1><ul><li>搭建Hadoop环境完成</li><li>学习java(进度55/689)</li><li>吃火锅</li><li>看big bang(S1E1-S1E3)</li></ul><h1 id="Sept-3-开学第一天"><a href="#Sept-3-开学第一天" class="headerlink" title="Sept 3(开学第一天)"></a>Sept 3(开学第一天)</h1><ul><li>装windows7虚拟机，并安装Quartus，重新做了实验0(数字逻辑电路真好玩 雾)</li><li>学习Verilog(1/13)</li></ul><p><img src="/images/dailyrecordfor2018sept/sept3_1.JPG" alt=""></p><h1 id="Sept-4"><a href="#Sept-4" class="headerlink" title="Sept 4"></a>Sept 4</h1><ul><li>问题求解3-1(7/11)</li></ul><h1 id="Sept-5"><a href="#Sept-5" class="headerlink" title="Sept 5"></a>Sept 5</h1><ul><li>问题求解3-1(11/11)</li><li>PA0(1/5)</li></ul><h1 id="Sept-6"><a href="#Sept-6" class="headerlink" title="Sept 6"></a>Sept 6</h1><ul><li>配置PA环境</li><li>学习使用vim</li></ul><h1 id="Sept-7"><a href="#Sept-7" class="headerlink" title="Sept 7"></a>Sept 7</h1><ul><li>completed Java OJ</li><li>Went to Shanghai </li></ul><h1 id="Sept-8"><a href="#Sept-8" class="headerlink" title="Sept 8"></a>Sept 8</h1><ul><li>Went to Shanghai Natrual History Museum with girlfriend</li><li>Walk along the river with girlfriend</li><li>Went to BBQ with girlfriend</li></ul><h1 id="Sept-9"><a href="#Sept-9" class="headerlink" title="Sept 9"></a>Sept 9</h1><ul><li>Went to Jiangwan Stadium with girlfriend</li><li>Had some dessert.</li><li>Went back to Nanjing</li><li>Completed PA0</li></ul><h1 id="Sept-10"><a href="#Sept-10" class="headerlink" title="Sept 10"></a>Sept 10</h1><ul><li>Completed Linear Algebra Exercise 1</li><li>Completed the cpu_state part of PA1</li><li>Completed exp02 in Digital Logical Circuits</li></ul><h1 id="Sept-11"><a href="#Sept-11" class="headerlink" title="Sept 11"></a>Sept 11</h1><ul><li>Completed PA1 stage1</li><li>Completed University Physics Homework</li></ul><h1 id="Sept-12"><a href="#Sept-12" class="headerlink" title="Sept 12"></a>Sept 12</h1><ul><li>Completed OJ(1/4)</li><li>Learned Java</li></ul><h1 id="Sept-13"><a href="#Sept-13" class="headerlink" title="Sept 13"></a>Sept 13</h1><ul><li>Completed OJ(4/4)</li><li>Completed Linear Algebra (4/4)</li><li>Completed ICS homework</li></ul><h1 id="Sept-14"><a href="#Sept-14" class="headerlink" title="Sept 14"></a>Sept 14</h1><ul><li>Completed Linear Algebra (3/3)</li></ul><h1 id="Sept-15"><a href="#Sept-15" class="headerlink" title="Sept 15"></a>Sept 15</h1><ul><li>Met the research supervisor</li><li>Did some problem solving</li><li>Played with my Hadoop</li></ul><h1 id="Sept-16"><a href="#Sept-16" class="headerlink" title="Sept 16"></a>Sept 16</h1><ul><li>Completed Problem Solving 3-2</li></ul><h1 id="Sept-17"><a href="#Sept-17" class="headerlink" title="Sept 17"></a>Sept 17</h1><h1 id="Sept-18"><a href="#Sept-18" class="headerlink" title="Sept 18"></a>Sept 18</h1><ul><li>Finished 形势与政策 homework</li><li>Did Expr04 of Digital Logical Circuits</li></ul><h1 id="Sept-19"><a href="#Sept-19" class="headerlink" title="Sept 19"></a>Sept 19</h1><ul><li>Completed PA1.2</li><li>Completed Linear Algebra(6/6)</li><li>Completed OJ(3/3)</li></ul><h1 id="Sept-20"><a href="#Sept-20" class="headerlink" title="Sept 20"></a>Sept 20</h1><ul><li>Completed OJ(1/1)</li><li>Completed Problem-Solving 3-3</li><li>Bug-fixing for PA1.2</li></ul><h1 id="Sept-21"><a href="#Sept-21" class="headerlink" title="Sept 21"></a>Sept 21</h1><ul><li>Completed Linear Algebra (3/3)</li></ul><h1 id="Sept-22"><a href="#Sept-22" class="headerlink" title="Sept 22"></a>Sept 22</h1><ul><li>Went downtown with girlfriend</li><li>Had a meal in Nanjing Univer(Xianling Campus) with girlfriend</li><li>Had a tour around the campus with girlfirend</li><li>Had some fruit mixed with yoghurt with girlfriend</li><li>Watched the Europe.Raiders with girlfriend</li></ul><h1 id="Sept-23"><a href="#Sept-23" class="headerlink" title="Sept 23"></a>Sept 23</h1><ul><li>Studied with girlfriend</li><li>Watched The.Little.Prince with girlfriend</li><li>Went to Nanjing University(Gulou Campus) for dinner with girlfriend</li><li>Went to Librairie Avant-Garde (Mount Wutai Branch) with girlfriend and bought a lucky package</li></ul><h1 id="Sept-24"><a href="#Sept-24" class="headerlink" title="Sept 24"></a>Sept 24</h1><ul><li>Went to a cat-featured coffee shop with girlfriend </li><li>Said farewell with girlfriend </li><li>Completed the OO-2 homework(Java)</li></ul><h1 id="Sept-25"><a href="#Sept-25" class="headerlink" title="Sept 25"></a>Sept 25</h1><ul><li>Finished Watchpoint of PA1.3</li></ul><h1 id="Sept-26"><a href="#Sept-26" class="headerlink" title="Sept 26"></a>Sept 26</h1><ul><li>Finished the report of PA1</li><li>Watched several episodes of Big Bang</li><li>Did some reading and learned something about philosophy</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="Sept-1"><a href="#Sept-1" class="headerlink" title="Sept 1"></a>Sept 1</h1><ul><li>复习汇编</li><li>汇编考试(2:00 pm - 4:00 pm)</li><li>重新搭建Hadoop环境(进度50%),修复了好多bug</li><li><p>装Windows XP 虚拟机(玩了三维弹球)</p><a id="more"></a></li></ul><h1 id="Sept-2"><a href="#Sept-2" class="headerlink" title="Sept 2"></a>Sept 2</h1><ul><li>搭建Hadoop环境完成</li><li>学习java(进度55/689)</li><li>吃火锅</li><li>看big bang(S1E1-S1E3)</li></ul><h1 id="Sept-3-开学第一天"><a href="#Sept-3-开学第一天" class="headerlink" title="Sept 3(开学第一天)"></a>Sept 3(开学第一天)</h1><ul><li>装windows7虚拟机，并安装Quartus，重新做了实验0(数字逻辑电路真好玩 雾)</li><li>学习Verilog(1/13)</li></ul><p><img src="/images/dailyrecordfor2018sept/sept3_1.JPG" alt=""></p><h1 id="Sept-4"><a href="#Sept-4" class="headerlink" title="Sept 4"></a>Sept 4</h1><ul><li>问题求解3-1(7/11)</li></ul><h1 id="Sept-5"><a href="#Sept-5" class="headerlink" title="Sept 5"></a>Sept 5</h1><ul><li>问题求解3-1(11/11)</li><li>PA0(1/5)</li></ul><h1 id="Sept-6"><a href="#Sept-6" class="headerlink" title="Sept 6"></a>Sept 6</h1><ul><li>配置PA环境</li><li>学习使用vim</li></ul><h1 id="Sept-7"><a href="#Sept-7" class="headerlink" title="Sept 7"></a>Sept 7</h1><ul><li>completed Java OJ</li><li>Went to Shanghai </li></ul><h1 id="Sept-8"><a href="#Sept-8" class="headerlink" title="Sept 8"></a>Sept 8</h1><ul><li>Went to Shanghai Natrual History Museum with girlfriend</li><li>Walk along the river with girlfriend</li><li>Went to BBQ with girlfriend</li></ul><h1 id="Sept-9"><a href="#Sept-9" class="headerlink" title="Sept 9"></a>Sept 9</h1><ul><li>Went to Jiangwan Stadium with girlfriend</li><li>Had some dessert.</li><li>Went back to Nanjing</li><li>Completed PA0</li></ul><h1 id="Sept-10"><a href="#Sept-10" class="headerlink" title="Sept 10"></a>Sept 10</h1><ul><li>Completed Linear Algebra Exercise 1</li><li>Completed the cpu_state part of PA1</li><li>Completed exp02 in Digital Logical Circuits</li></ul><h1 id="Sept-11"><a href="#Sept-11" class="headerlink" title="Sept 11"></a>Sept 11</h1><ul><li>Completed PA1 stage1</li><li>Completed University Physics Homework</li></ul><h1 id="Sept-12"><a href="#Sept-12" class="headerlink" title="Sept 12"></a>Sept 12</h1><ul><li>Completed OJ(1/4)</li><li>Learned Java</li></ul><h1 id="Sept-13"><a href="#Sept-13" class="headerlink" title="Sept 13"></a>Sept 13</h1><ul><li>Completed OJ(4/4)</li><li>Completed Linear Algebra (4/4)</li><li>Completed ICS homework</li></ul><h1 id="Sept-14"><a href="#Sept-14" class="headerlink" title="Sept 14"></a>Sept 14</h1><ul><li>Completed Linear Algebra (3/3)</li></ul><h1 id="Sept-15"><a href="#Sept-15" class="headerlink" title="Sept 15"></a>Sept 15</h1><ul><li>Met the research supervisor</li><li>Did some problem solving</li><li>Played with my Hadoop</li></ul><h1 id="Sept-16"><a href="#Sept-16" class="headerlink" title="Sept 16"></a>Sept 16</h1><ul><li>Completed Problem Solving 3-2</li></ul><h1 id="Sept-17"><a href="#Sept-17" class="headerlink" title="Sept 17"></a>Sept 17</h1><h1 id="Sept-18"><a href="#Sept-18" class="headerlink" title="Sept 18"></a>Sept 18</h1><ul><li>Finished 形势与政策 homework</li><li>Did Expr04 of Digital Logical Circuits</li></ul><h1 id="Sept-19"><a href="#Sept-19" class="headerlink" title="Sept 19"></a>Sept 19</h1><ul><li>Completed PA1.2</li><li>Completed Linear Algebra(6/6)</li><li>Completed OJ(3/3)</li></ul><h1 id="Sept-20"><a href="#Sept-20" class="headerlink" title="Sept 20"></a>Sept 20</h1><ul><li>Completed OJ(1/1)</li><li>Completed Problem-Solving 3-3</li><li>Bug-fixing for PA1.2</li></ul><h1 id="Sept-21"><a href="#Sept-21" class="headerlink" title="Sept 21"></a>Sept 21</h1><ul><li>Completed Linear Algebra (3/3)</li></ul><h1 id="Sept-22"><a href="#Sept-22" class="headerlink" title="Sept 22"></a>Sept 22</h1><ul><li>Went downtown with girlfriend</li><li>Had a meal in Nanjing Univer(Xianling Campus) with girlfriend</li><li>Had a tour around the campus with girlfirend</li><li>Had some fruit mixed with yoghurt with girlfriend</li><li>Watched the Europe.Raiders with girlfriend</li></ul><h1 id="Sept-23"><a href="#Sept-23" class="headerlink" title="Sept 23"></a>Sept 23</h1><ul><li>Studied with girlfriend</li><li>Watched The.Little.Prince with girlfriend</li><li>Went to Nanjing University(Gulou Campus) for dinner with girlfriend</li><li>Went to Librairie Avant-Garde (Mount Wutai Branch) with girlfriend and bought a lucky package</li></ul><h1 id="Sept-24"><a href="#Sept-24" class="headerlink" title="Sept 24"></a>Sept 24</h1><ul><li>Went to a cat-featured coffee shop with girlfriend </li><li>Said farewell with girlfriend </li><li>Completed the OO-2 homework(Java)</li></ul><h1 id="Sept-25"><a href="#Sept-25" class="headerlink" title="Sept 25"></a>Sept 25</h1><ul><li>Finished Watchpoint of PA1.3</li></ul><h1 id="Sept-26"><a href="#Sept-26" class="headerlink" title="Sept 26"></a>Sept 26</h1><ul><li>Finished the report of PA1</li><li>Watched several episodes of Big Bang</li><li>Did some reading and learned something about philosophy</li></ul><h1 id="Sept-27"><a href="#Sept-27" class="headerlink" title="Sept 27"></a>Sept 27</h1><ul><li>Did some coding</li></ul><h1 id="Sept-28"><a href="#Sept-28" class="headerlink" title="Sept 28"></a>Sept 28</h1><ul><li>Did some coding</li></ul><h1 id="Sept-29"><a href="#Sept-29" class="headerlink" title="Sept 29"></a>Sept 29</h1><ul><li>Did some coding</li><li>Did some Lab1</li></ul><h1 id="Sept-30"><a href="#Sept-30" class="headerlink" title="Sept 30"></a>Sept 30</h1><ul><li>Completed Linear Algebra(1/1)</li><li>Went home</li></ul>]]></content>
     
     <summary type="html">
     
@@ -442,40 +468,6 @@
       <category term="Tools" scheme="https://ricky-ting.github.io/tags/Tools/"/>
     
       <category term="Programming" scheme="https://ricky-ting.github.io/tags/Programming/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2017秋寒假待学习内容(这是一篇flag) 2018.2</title>
-    <link href="https://ricky-ting.github.io/2018/02/13/2017%E7%A7%8B%E5%AF%92%E5%81%87%E5%BE%85%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9-%E8%BF%99%E6%98%AF%E4%B8%80%E7%AF%87flag-2018-2/"/>
-    <id>https://ricky-ting.github.io/2018/02/13/2017秋寒假待学习内容-这是一篇flag-2018-2/</id>
-    <published>2018-02-13T05:14:08.000Z</published>
-    <updated>2018-07-08T01:13:43.931Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>机器学习</li><li>编写可读代码的艺术</li><li>离散数学及其应用</li><li>配置软件</li><li>github学习</li><li>git学习</li><li>…</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;机器学习&lt;/li&gt;
-&lt;li&gt;编写可读代码的艺术&lt;/li&gt;
-&lt;li&gt;离散数学及其应用&lt;/li&gt;
-&lt;li&gt;配置软件&lt;/li&gt;
-&lt;li&gt;github学习&lt;/li&gt;
-&lt;li&gt;git学习&lt;/li&gt;
-&lt;li&gt;…&lt;/li&gt;
-&lt;/ul&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="flag" scheme="https://ricky-ting.github.io/tags/flag/"/>
-    
-      <category term="计划" scheme="https://ricky-ting.github.io/tags/%E8%AE%A1%E5%88%92/"/>
     
   </entry>
   
