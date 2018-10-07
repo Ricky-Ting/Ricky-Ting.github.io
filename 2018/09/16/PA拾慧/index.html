@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2018/09/16/PA拾慧/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="天将降PA于斯人也，必先使其STFW,RTFM,RTFSC, 所以动心忍性，曾益其所不能 tmux(分屏工具)Prefix: Ctrl+B 左右分屏:Prefix + % 上下分屏: Prefix + &amp;quot; 切换: Prefix + 方向键 Vim配置vim分屏：Ctrl+W s:上下分割当前打开的文件 :sp filename:上下分割，并打开一个新的文件 Ctrl+W v: 左右分割当">
-<meta property="og:updated_time" content="2018-10-07T15:24:19.086Z">
+<meta property="og:updated_time" content="2018-10-07T15:30:53.143Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PA拾慧">
 <meta name="twitter:description" content="天将降PA于斯人也，必先使其STFW,RTFM,RTFSC, 所以动心忍性，曾益其所不能 tmux(分屏工具)Prefix: Ctrl+B 左右分屏:Prefix + % 上下分屏: Prefix + &amp;quot; 切换: Prefix + 方向键 Vim配置vim分屏：Ctrl+W s:上下分割当前打开的文件 :sp filename:上下分割，并打开一个新的文件 Ctrl+W v: 左右分割当">
@@ -197,6 +197,7 @@
 <p>vim函数跳转部分参考<a href="https://mengzelev.github.io/2018/09/12/pa-inspirations/" target="_blank" rel="noopener">Mengzelve’s Blog</a> </p>
 <h1 id="C语言相关"><a href="#C语言相关" class="headerlink" title="C语言相关"></a>C语言相关</h1><p>顺时针法则</p>
 <p>strcmp返回值为0是两个字符串相等</p>
+<p>结构体里利用位域实现位级访问</p>
 <h1 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h1><p>linux里的管道(pipeline)将不同程序的输入输出连起来。</p>
 <p><code>time ./a.out</code> 可以测程序运行的时间。</p>
 <p>在shell中使用终端设置别名:<code>alias cdblog=&#39;cd ~/Desktop/Github/Blog&#39;</code></p>
@@ -338,16 +339,18 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "<%=url%>",
-  owner: '<%=theme.gitment_owner%>',
-  repo: '<%=theme.gitment_repo%>',
+ // id: "https://ricky-ting.github.io/2018/09/16/PA拾慧/",
+	id: "Sun Sep 16 2018 23:03:19 GMT+0800",
+  owner: 'Ricky-Ting',
+  repo: 'ricky-ting.github.io',
   oauth: {
-    client_id: '<%=theme.gitment_oauth.client_id%>',
-    client_secret: '<%=theme.gitment_oauth.client_secret%>',
+    client_id: '5791c5e45aa204b34d62',
+    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
   },
 })
 gitment.render('gitment-ctn')
 </script>
+
   
 
 
@@ -478,23 +481,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">solution</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,7 +493,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">solution</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">OJ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,10 +522,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Programming</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
