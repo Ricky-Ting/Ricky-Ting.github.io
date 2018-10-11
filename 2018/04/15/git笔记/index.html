@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2018/04/15/git笔记/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="git笔记git init 初始化">
-<meta property="og:updated_time" content="2018-04-15T07:12:18.627Z">
+<meta property="og:updated_time" content="2018-04-15T07:12:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git笔记">
 <meta name="twitter:description" content="git笔记git init 初始化">
@@ -350,18 +350,16 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
- // id: "https://ricky-ting.github.io/2018/04/15/git笔记/",
-	id: "Sun Apr 15 2018 15:11:08 GMT+0800",
-  owner: 'Ricky-Ting',
-  repo: 'ricky-ting.github.io',
+  id: "<%=url%>",
+  owner: '<%=theme.gitment_owner%>',
+  repo: '<%=theme.gitment_repo%>',
   oauth: {
-    client_id: '5791c5e45aa204b34d62',
-    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
+    client_id: '<%=theme.gitment_oauth.client_id%>',
+    client_secret: '<%=theme.gitment_oauth.client_secret%>',
   },
 })
 gitment.render('gitment-ctn')
 </script>
-
   
 
 
@@ -476,6 +474,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
               </li>
              
@@ -484,7 +486,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -492,15 +494,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,19 +502,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">OJ</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,6 +519,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
