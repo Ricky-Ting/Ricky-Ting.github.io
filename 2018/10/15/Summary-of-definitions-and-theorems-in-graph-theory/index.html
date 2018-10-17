@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="https://ricky-ting.github.io">
   <title>Summary of definitions and theorems in graph theory | Ricky Ting&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Summary of definitions and theorems in graph theoryTrees4.1 BridgesAn edge $e=uv$ of a connected graph $G$ is called a bridge of $G$ if $G-e$ is disconnected.">
+  <meta name="description" content="Summary of definitions and theorems in graph theoryIntroductionTrees4.1 BridgesAn edge $e=uv$ of a connected graph $G$ is called a bridge of $G$ if $G-e$ is disconnected.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Summary of definitions and theorems in graph theory">
 <meta property="og:url" content="https://ricky-ting.github.io/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
-<meta property="og:description" content="Summary of definitions and theorems in graph theoryTrees4.1 BridgesAn edge $e=uv$ of a connected graph $G$ is called a bridge of $G$ if $G-e$ is disconnected.">
-<meta property="og:updated_time" content="2018-10-15T14:07:32.559Z">
+<meta property="og:description" content="Summary of definitions and theorems in graph theoryIntroductionTrees4.1 BridgesAn edge $e=uv$ of a connected graph $G$ is called a bridge of $G$ if $G-e$ is disconnected.">
+<meta property="og:updated_time" content="2018-10-16T09:47:23.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Summary of definitions and theorems in graph theory">
-<meta name="twitter:description" content="Summary of definitions and theorems in graph theoryTrees4.1 BridgesAn edge $e=uv$ of a connected graph $G$ is called a bridge of $G$ if $G-e$ is disconnected.">
+<meta name="twitter:description" content="Summary of definitions and theorems in graph theoryIntroductionTrees4.1 BridgesAn edge $e=uv$ of a connected graph $G$ is called a bridge of $G$ if $G-e$ is disconnected.">
   
     <link rel="alternative" href="/atom.xml" title="Ricky Ting&#39;s Blog" type="application/atom+xml">
   
@@ -173,7 +173,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Summary-of-definitions-and-theorems-in-graph-theory"><a href="#Summary-of-definitions-and-theorems-in-graph-theory" class="headerlink" title="Summary of definitions and theorems in graph theory"></a>Summary of definitions and theorems in graph theory</h1><h2 id="Trees"><a href="#Trees" class="headerlink" title="Trees"></a>Trees</h2><h3 id="4-1-Bridges"><a href="#4-1-Bridges" class="headerlink" title="4.1 Bridges"></a>4.1 Bridges</h3><p>An edge $e=uv$ of a connected graph $G$ is called a <strong>bridge</strong> of $G$ if $G-e$ is disconnected.</p>
+        <h1 id="Summary-of-definitions-and-theorems-in-graph-theory"><a href="#Summary-of-definitions-and-theorems-in-graph-theory" class="headerlink" title="Summary of definitions and theorems in graph theory"></a>Summary of definitions and theorems in graph theory</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h2 id="Trees"><a href="#Trees" class="headerlink" title="Trees"></a>Trees</h2><h3 id="4-1-Bridges"><a href="#4-1-Bridges" class="headerlink" title="4.1 Bridges"></a>4.1 Bridges</h3><p>An edge $e=uv$ of a connected graph $G$ is called a <strong>bridge</strong> of $G$ if $G-e$ is disconnected.</p>
 <a id="more"></a>
 <p>An edge $e$ is a <strong>bridge</strong> of a disconnected graph if $e$ is a bridge of some component of $G$.</p>
 <p>An edge $e$ is a bridge of a graph $G$ if and only if $k(G-e)=k(G)+1$</p>
@@ -201,7 +201,7 @@
 <p>The problem of finding a minimum spanning tree in a connected weighted graph is called the <strong>Minimum Spanning Tree Problem</strong>. </p>
 <p><strong>Kruskal’s Algorithm</strong>: For a connected weighted graph $G$, a spanning tree $T$ of $G$ is constructed as follows: For the first edge $e_1$ of $T$, we select any edge of $G$ of minimum weight and for the second edge $e_2$ of $T$, we select any remaining edge of $G$ of minimum weight. For the thrid edge $e_3$ of T, we choose any remaining edge of $G$ of minimum weight that does not produce a cycle with the previously selected edges. We continue in the manner until a spanning tree is produced.</p>
 <p><strong>Theorem 4.11</strong> <em>Kruskal’s Algorithm produces a minimum spanning tree in a connected weighted graph</em>.</p>
-<p><strong>Prim’s Algorithm</strong>: For a connected weighted graph $G$, a spanning tree $T$ of $G$ is constructed as follows: For an arbitrary vertex $u$ for $G$, an edge of minimum weight incident with $u$ is selected as the first edge $e_1$ of $T$. For subsequent edges $e_2$, $e<em>3$,..,$e</em>{n-1}$, we select an edge of minimum weight among those edges having exactly one of its vertices incident with an edge already selected.</p>
+<p><strong>Prim’s Algorithm</strong>: For a connected weighted graph $G$, a spanning tree $T$ of $G$ is constructed as follows: For an arbitrary vertex $u$ for $G$, an edge of minimum weight incident with $u$ is selected as the first edge $e_1$ of $T$. For subsequent edges $e_2$, $e<em>3$, ..,$e</em>{n-1}$, we select an edge of minimum weight among those edges having exactly one of its vertices incident with an edge already selected.</p>
 <p><strong>Theorem 4.12</strong> <em>Prim’s Algorithm produces a minimum spanning tree in a connected weighted graph.</em></p>
 <h3 id="4-4-Excursion-The-Number-of-Spanning-Trees"><a href="#4-4-Excursion-The-Number-of-Spanning-Trees" class="headerlink" title="4.4 Excursion: The Number of Spanning Trees"></a>4.4 Excursion: The Number of Spanning Trees</h3><p><strong>THeorem 4.15</strong> <em>The number of distinct trees of order n with a specified vertex set is $n^{n-2}$</em>.</p>
 <p><strong>Matrix Tree Theorem</strong></p>
@@ -278,6 +278,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/10/17/How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          How to make an installation USB for Linux or other OS in Mac OS X
+        
+      </div>
+    </a>
   
   
     <a href="/2018/10/01/Daily-Records-for-2018-Oct/" id="article-nav-older" class="article-nav-link-wrap">
@@ -446,6 +455,14 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
               </li>
              
@@ -454,11 +471,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,11 +479,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color4">solution</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">solution</a>
+                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -479,14 +492,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,6 +504,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">

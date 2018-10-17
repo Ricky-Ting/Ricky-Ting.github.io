@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ricky-ting.github.io">
-  <title>Archives: 2018/2 | Ricky Ting&#39;s Blog</title>
+  <title>How to make an installation USB for Linux or other OS in Mac OS X | Ricky Ting&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="计科生，不定期更新">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ricky Ting&#39;s Blog">
-<meta property="og:url" content="https://ricky-ting.github.io/archives/2018/02/page/2/index.html">
+  <meta name="description" content="How to make an installation USB for Linux or other OS in Mac OS XStep1: Download the image(iso) file from the Internet. Step2: Open a Terminal(the following command are all completed in a terminal)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to make an installation USB for Linux or other OS in Mac OS X">
+<meta property="og:url" content="https://ricky-ting.github.io/2018/10/17/How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
-<meta property="og:description" content="计科生，不定期更新">
+<meta property="og:description" content="How to make an installation USB for Linux or other OS in Mac OS XStep1: Download the image(iso) file from the Internet. Step2: Open a Terminal(the following command are all completed in a terminal)">
+<meta property="og:updated_time" content="2018-10-17T12:55:47.121Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ricky Ting&#39;s Blog">
-<meta name="twitter:description" content="计科生，不定期更新">
+<meta name="twitter:title" content="How to make an installation USB for Linux or other OS in Mac OS X">
+<meta name="twitter:description" content="How to make an installation USB for Linux or other OS in Mac OS XStep1: Download the image(iso) file from the Internet. Step2: Open a Terminal(the following command are all completed in a terminal)">
   
     <link rel="alternative" href="/atom.xml" title="Ricky Ting&#39;s Blog" type="application/atom+xml">
   
@@ -152,52 +153,161 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/02/hello-world/" class="archive-article-date">
-  	<time datetime="2018-02-02T05:02:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/02/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      How to make an installation USB for Linux or other OS in Mac OS X
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2018/10/17/How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X/" class="archive-article-date">
+  	<time datetime="2018-10-17T12:55:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X"><a href="#How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X" class="headerlink" title="How to make an installation USB for Linux or other OS in Mac OS X"></a>How to make an installation USB for Linux or other OS in Mac OS X</h1><p>Step1: Download the image(iso) file from the Internet.</p>
+<p>Step2: Open a Terminal(the following command are all completed in a terminal)</p>
+<a id="more"></a>
+<p>Step3: Trun <code>.iso</code> file into <code>.img</code> file by <code>hdiutil convert -format UDRW -o ~/path/to/target.img ~/path/from/src.iso</code>(The file created may end with <code>.dmg</code>)</p>
+<p>Step4: <code>diskutil list</code> to obtain the devices mounted.</p>
+<p>Step5: Insert your USB.</p>
+<p>Step6: <code>diskutil list</code> to see which is added(/dev/diskN).</p>
+<p>Step7: <code>diskutil unmountDisk /dev/diskN</code> to unmount USB</p>
+<p>Step8: <code>sudo dd if=/path/to/target.img of=/dev/rdiskN bs=1m</code> to write the installation file into the USB</p>
+<p>Step9: <code>diskutil eject /dev/diskN</code> to eject your USB.</p>
 
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://ricky-ting.github.io/2018/10/17/How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Summary of definitions and theorems in graph theory</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/02/">&laquo; Prev</a><a class="page-number" href="/archives/2018/02/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+ // id: "https://ricky-ting.github.io/2018/10/17/How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X/",
+	id: "Wed Oct 17 2018 20:55:11 GMT+0800",
+  owner: 'Ricky-Ting',
+  repo: 'ricky-ting.github.io',
+  oauth: {
+    client_id: '5791c5e45aa204b34d62',
+    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+
   
 
 
@@ -221,8 +331,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
