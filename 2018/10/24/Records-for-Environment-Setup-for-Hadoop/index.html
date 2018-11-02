@@ -9,12 +9,13 @@
   <title>Records for Environment Setup for Hadoop | Ricky Ting&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Hadoop环境搭建记录安装系统安装系统的时候出了很多问题，找不到引导，硬盘被锁啊，感觉不懂的还是很多，最后还是请学长帮忙装好了系统。">
+<meta name="keywords" content="记录,创新项目,大数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Records for Environment Setup for Hadoop">
 <meta property="og:url" content="https://ricky-ting.github.io/2018/10/24/Records-for-Environment-Setup-for-Hadoop/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="Hadoop环境搭建记录安装系统安装系统的时候出了很多问题，找不到引导，硬盘被锁啊，感觉不懂的还是很多，最后还是请学长帮忙装好了系统。">
-<meta property="og:updated_time" content="2018-10-24T03:22:19.501Z">
+<meta property="og:updated_time" content="2018-11-02T15:28:24.408Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Records for Environment Setup for Hadoop">
 <meta name="twitter:description" content="Hadoop环境搭建记录安装系统安装系统的时候出了很多问题，找不到引导，硬盘被锁啊，感觉不懂的还是很多，最后还是请学长帮忙装好了系统。">
@@ -175,7 +176,9 @@
       
         <h1 id="Hadoop环境搭建记录"><a href="#Hadoop环境搭建记录" class="headerlink" title="Hadoop环境搭建记录"></a>Hadoop环境搭建记录</h1><h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><p>安装系统的时候出了很多问题，找不到引导，硬盘被锁啊，感觉不懂的还是很多，最后还是请学长帮忙装好了系统。</p>
 <a id="more"></a>
-<h2 id="Hadoop环境的搭建"><a href="#Hadoop环境的搭建" class="headerlink" title="Hadoop环境的搭建"></a>Hadoop环境的搭建</h2><p><a href="https://blog.csdn.net/fanxin_i/article/details/80425461" target="_blank" rel="noopener">参考教程</a></p>
+<h2 id="Hadoop环境的搭建"><a href="#Hadoop环境的搭建" class="headerlink" title="Hadoop环境的搭建"></a>Hadoop环境的搭建</h2><p>Hadoop版本:2.2.0</p>
+<p><a href="https://blog.csdn.net/fanxin_i/article/details/80425461" target="_blank" rel="noopener">参考教程</a></p>
+<p>教程简版： 1.获取IP，添加解析。2.关闭防火墙 3.安装jdk 4.安装ssh，配置免密通信 5. 安装hadoop，在hdfs目录下创建文件夹(tmp,name,data). 6.修改Hadoop配置文件包括以下几个文件(core-site.xml hadoop-env.sh hdfs-site.xml yarn-env.sh yarn-site.xml slaves).(这些配置文件会备份在github中) 7.用scp将文件夹传到slave上。 然后在master上初始化namenode(hdfs namenode -format)</p>
 <p>我的理解是主要在master里执行namenode初始化就好了，初始化之前最好把master和slave里hdfs目录下删干净(以后可以写个脚本干这个事)。</p>
 <h2 id="写脚本"><a href="#写脚本" class="headerlink" title="写脚本"></a>写脚本</h2><p>写脚本实现只运行MapReduce和在HDFS上运行MapReduce。</p>
 <p>我的理解是只要改改配置文件就好，要运行哪一种方式只要把相应的配置文件拷进去就好。 因为不运行yarn，所以要把yarn的相关配置删除。</p>
@@ -189,6 +192,25 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">创新项目</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -252,6 +274,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/11/02/Records-for-Environment-Setup-for-Spark/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Records for Environment Setup for Spark
+        
+      </div>
+    </a>
   
   
     <a href="/2018/10/17/How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X/" id="article-nav-older" class="article-nav-link-wrap">
@@ -420,10 +451,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
               </li>
              
@@ -440,7 +467,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -448,11 +475,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -460,7 +483,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -473,6 +508,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">

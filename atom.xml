@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ricky-ting.github.io/"/>
-  <updated>2018-10-24T03:22:19.501Z</updated>
+  <updated>2018-11-02T15:42:07.389Z</updated>
   <id>https://ricky-ting.github.io/</id>
   
   <author>
@@ -17,13 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Records for Environment Setup for Spark</title>
+    <link href="https://ricky-ting.github.io/2018/11/02/Records-for-Environment-Setup-for-Spark/"/>
+    <id>https://ricky-ting.github.io/2018/11/02/Records-for-Environment-Setup-for-Spark/</id>
+    <published>2018-11-02T15:29:21.000Z</published>
+    <updated>2018-11-02T15:42:07.389Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Spark搭建记录-2018-11-2"><a href="#Spark搭建记录-2018-11-2" class="headerlink" title="Spark搭建记录(2018.11.2)"></a>Spark搭建记录(2018.11.2)</h1><p>建立在Hadoop的基础上。</p><p><a href="https://www.cnblogs.com/zyrblog/p/8527048.html" target="_blank" rel="noopener">参考教程</a></p><p>Spark版本：2.1.3.</p><p>在官网上下的直接编译好的文件。</p><p>Spark装之前需要装Scala。我的Scala版本是2.11.6。</p><p>然后解压spark压缩包，修改conf目录下的spark-env.sh(备份到github)。 修改slaves文件。</p><p>注意启动后报错，需要加入JAVA_HOME环境变量，也在spark-env.sh中.</p><h1 id="Spark编译记录"><a href="#Spark编译记录" class="headerlink" title="Spark编译记录"></a>Spark编译记录</h1><p><a href="https://blog.csdn.net/babyhuang/article/details/78656093" target="_blank" rel="noopener">参考教程</a></p><p>在官网下载Spark源码，安装maven(我安装的版本是3.3.9) ，添加maven镜像(已备份)，修改dev目录下的make-distribution.sh文件，将Spark，Hadoop，Scala版本都换为自己的。</p><p>然后用README里的命令编译。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Spark搭建记录-2018-11-2&quot;&gt;&lt;a href=&quot;#Spark搭建记录-2018-11-2&quot; class=&quot;headerlink&quot; title=&quot;Spark搭建记录(2018.11.2)&quot;&gt;&lt;/a&gt;Spark搭建记录(2018.11.2)&lt;/h1&gt;&lt;p&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="记录" scheme="https://ricky-ting.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+      <category term="创新项目" scheme="https://ricky-ting.github.io/tags/%E5%88%9B%E6%96%B0%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="大数据" scheme="https://ricky-ting.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Records for Environment Setup for Hadoop</title>
     <link href="https://ricky-ting.github.io/2018/10/24/Records-for-Environment-Setup-for-Hadoop/"/>
     <id>https://ricky-ting.github.io/2018/10/24/Records-for-Environment-Setup-for-Hadoop/</id>
     <published>2018-10-24T03:20:25.000Z</published>
-    <updated>2018-10-24T03:22:19.501Z</updated>
+    <updated>2018-11-02T15:28:24.408Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Hadoop环境搭建记录"><a href="#Hadoop环境搭建记录" class="headerlink" title="Hadoop环境搭建记录"></a>Hadoop环境搭建记录</h1><h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><p>安装系统的时候出了很多问题，找不到引导，硬盘被锁啊，感觉不懂的还是很多，最后还是请学长帮忙装好了系统。</p><a id="more"></a><h2 id="Hadoop环境的搭建"><a href="#Hadoop环境的搭建" class="headerlink" title="Hadoop环境的搭建"></a>Hadoop环境的搭建</h2><p><a href="https://blog.csdn.net/fanxin_i/article/details/80425461" target="_blank" rel="noopener">参考教程</a></p><p>我的理解是主要在master里执行namenode初始化就好了，初始化之前最好把master和slave里hdfs目录下删干净(以后可以写个脚本干这个事)。</p><h2 id="写脚本"><a href="#写脚本" class="headerlink" title="写脚本"></a>写脚本</h2><p>写脚本实现只运行MapReduce和在HDFS上运行MapReduce。</p><p>我的理解是只要改改配置文件就好，要运行哪一种方式只要把相应的配置文件拷进去就好。 因为不运行yarn，所以要把yarn的相关配置删除。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line"></span><br><span class="line">echo &quot;This is to run mapreduce on hdfs&quot;</span><br><span class="line">rm -rf ~/hadoop-2.2.0/etc/hadoop</span><br><span class="line">echo &quot;Original config files in hadoop-2.2.0/ect/hadoop deleted&quot;</span><br><span class="line">cp -r ~/hadoopconfig/hadoop-distributed ~/hadoop-2.2.0/etc/</span><br><span class="line">echo &quot;Copy config files of hdfs to hadoop-2.2.0/etc/hadoop&quot;</span><br><span class="line">mv ~/hadoop-2.2.0/etc/hadoop-distributed ~/hadoop-2.2.0/etc/hadoop</span><br><span class="line">echo &quot;Rename successfully&quot;</span><br><span class="line">cd ~/hadoop-2.2.0</span><br><span class="line">echo &quot;About to run start-dfs.sh&quot;</span><br><span class="line">start-dfs.sh</span><br><span class="line">echo &quot;About to run an example on hdfs&quot;</span><br><span class="line">hadoop jar /home/hadoop/hadoop-2.2.0/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.jar pi 10 10</span><br><span class="line">jps</span><br><span class="line">echo &quot;About to run stop-dfs.sh&quot;</span><br><span class="line">stop-dfs.sh</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line"></span><br><span class="line">echo &quot;This is to run mapreduce without hdfs&quot;</span><br><span class="line">rm -rf ~/hadoop-2.2.0/etc/hadoop</span><br><span class="line">cp -r ~/hadoopconfig/hadoop-native ~/hadoop-2.2.0/etc/</span><br><span class="line">mv ~/hadoop-2.2.0/etc/hadoop-native ~/hadoop-2.2.0/etc/hadoop</span><br><span class="line">cd ~/hadoop-2.2.0</span><br><span class="line">./bin/hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.jar pi 10 10</span><br><span class="line">~</span><br><span class="line">~</span><br><span class="line">~</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="Hadoop环境搭建记录"><a href="#Hadoop环境搭建记录" class="headerlink" title="Hadoop环境搭建记录"></a>Hadoop环境搭建记录</h1><h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><p>安装系统的时候出了很多问题，找不到引导，硬盘被锁啊，感觉不懂的还是很多，最后还是请学长帮忙装好了系统。</p><a id="more"></a><h2 id="Hadoop环境的搭建"><a href="#Hadoop环境的搭建" class="headerlink" title="Hadoop环境的搭建"></a>Hadoop环境的搭建</h2><p>Hadoop版本:2.2.0</p><p><a href="https://blog.csdn.net/fanxin_i/article/details/80425461" target="_blank" rel="noopener">参考教程</a></p><p>教程简版： 1.获取IP，添加解析。2.关闭防火墙 3.安装jdk 4.安装ssh，配置免密通信 5. 安装hadoop，在hdfs目录下创建文件夹(tmp,name,data). 6.修改Hadoop配置文件包括以下几个文件(core-site.xml hadoop-env.sh hdfs-site.xml yarn-env.sh yarn-site.xml slaves).(这些配置文件会备份在github中) 7.用scp将文件夹传到slave上。 然后在master上初始化namenode(hdfs namenode -format)</p><p>我的理解是主要在master里执行namenode初始化就好了，初始化之前最好把master和slave里hdfs目录下删干净(以后可以写个脚本干这个事)。</p><h2 id="写脚本"><a href="#写脚本" class="headerlink" title="写脚本"></a>写脚本</h2><p>写脚本实现只运行MapReduce和在HDFS上运行MapReduce。</p><p>我的理解是只要改改配置文件就好，要运行哪一种方式只要把相应的配置文件拷进去就好。 因为不运行yarn，所以要把yarn的相关配置删除。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line"></span><br><span class="line">echo &quot;This is to run mapreduce on hdfs&quot;</span><br><span class="line">rm -rf ~/hadoop-2.2.0/etc/hadoop</span><br><span class="line">echo &quot;Original config files in hadoop-2.2.0/ect/hadoop deleted&quot;</span><br><span class="line">cp -r ~/hadoopconfig/hadoop-distributed ~/hadoop-2.2.0/etc/</span><br><span class="line">echo &quot;Copy config files of hdfs to hadoop-2.2.0/etc/hadoop&quot;</span><br><span class="line">mv ~/hadoop-2.2.0/etc/hadoop-distributed ~/hadoop-2.2.0/etc/hadoop</span><br><span class="line">echo &quot;Rename successfully&quot;</span><br><span class="line">cd ~/hadoop-2.2.0</span><br><span class="line">echo &quot;About to run start-dfs.sh&quot;</span><br><span class="line">start-dfs.sh</span><br><span class="line">echo &quot;About to run an example on hdfs&quot;</span><br><span class="line">hadoop jar /home/hadoop/hadoop-2.2.0/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.jar pi 10 10</span><br><span class="line">jps</span><br><span class="line">echo &quot;About to run stop-dfs.sh&quot;</span><br><span class="line">stop-dfs.sh</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line"></span><br><span class="line">echo &quot;This is to run mapreduce without hdfs&quot;</span><br><span class="line">rm -rf ~/hadoop-2.2.0/etc/hadoop</span><br><span class="line">cp -r ~/hadoopconfig/hadoop-native ~/hadoop-2.2.0/etc/</span><br><span class="line">mv ~/hadoop-2.2.0/etc/hadoop-native ~/hadoop-2.2.0/etc/hadoop</span><br><span class="line">cd ~/hadoop-2.2.0</span><br><span class="line">./bin/hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.jar pi 10 10</span><br><span class="line">~</span><br><span class="line">~</span><br><span class="line">~</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -31,6 +58,12 @@
     
     </summary>
     
+    
+      <category term="记录" scheme="https://ricky-ting.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+      <category term="创新项目" scheme="https://ricky-ting.github.io/tags/%E5%88%9B%E6%96%B0%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="大数据" scheme="https://ricky-ting.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
   </entry>
   
@@ -432,28 +465,6 @@
       <category term="笔记" scheme="https://ricky-ting.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="OJ" scheme="https://ricky-ting.github.io/tags/OJ/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>无法接触的方程</title>
-    <link href="https://ricky-ting.github.io/2018/02/25/%E6%97%A0%E6%B3%95%E8%A7%A3%E5%87%BA%E7%9A%84%E6%96%B9%E7%A8%8B/"/>
-    <id>https://ricky-ting.github.io/2018/02/25/无法解出的方程/</id>
-    <published>2018-02-25T05:02:36.000Z</published>
-    <updated>2018-02-25T05:04:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="无法解出的方程"><a href="#无法解出的方程" class="headerlink" title="无法解出的方程"></a>无法解出的方程</h1><p>平移对称 旋转对称 反射对称 滑移反射对称 置换 </p><a id="more"></a><p>量子力学是以概率的语言表述的</p><p>立体视觉,两只眼睛看到的像是不同的</p><p>这样一个问题:在我们周围的环境中，可以进行什么操作而让描述所有观察到的现象的规律不变？</p><p>棋盘是世界，棋子是宇宙中的诸现象，游戏规则是我们所称的自然规律。当代物理学家希望自然规律不仅代表游戏规则，而且可以解释棋盘和棋子本身的存在与特点！</p><p>有关宇宙唯一可以确定的是各种结果的概率，而非结果本身。上帝确实在掷骰子。</p><p>对称性是破解大自然设计奥秘的一种最重要的工具。</p><p>定义一个群的特点是：</p><ol><li>封闭性</li><li>结合律</li><li>单位元</li><li>逆元素</li></ol><p>由这个简单的定义可以产生一种包含和统一了世界上所有对称性的理论，这个事实一直令数学家吃惊。</p><p>群论被称为“数学抽象地顶尖艺术”</p><p>任何系统的所有对称变换集总是形成一个群。</p><p>爱因斯坦在”科学与幸福”的演讲中谈到:”对于人类自身及其命运的关注组成了所有技术努力的主要目标”</p><p>丢番图方程:如<code>29x+4=8y</code>(整数解).历史上最著名的丢番图方程是被称为费马大定理的那个方程<code>x^n + y^n = z^n</code>对于<code>n&gt;2</code>没有整数解。</p><p>阿贝尔和伽罗瓦</p><p>置换是伽罗瓦证明中的精华</p><p>魔方谜题的解答完全可以用群论的语言来说明</p><p>对置换性质的分析使我们可以自信地预测最终的结果，而不必实际进行试验。这也是伽罗瓦理论背后的基本哲学。</p><p>一个群中元素的数量叫做群的阶。例如，三个对象的置换群$S_3$的阶是6.</p><p>任何对象的对称集合构成一个群。</p><p>每一个群都映射在具有相同的模的置换群上。(同构)</p><p>子群。母群的阶除以子群的阶等于指数，指数总为整数。有限子群的阶总是等分其有限母群的阶。</p><p>正规子群</p><p>伽罗瓦证明，一个方程要有公式解，方程必须具有一种特定类型的伽罗瓦群特别地，如果由后代最大正规子群产生的每一个单独的指数是一个素数，那么伽罗瓦称这个群是可解的。一个方程存在公式解的条件是其伽罗瓦群可解。</p><p>伽罗瓦对五次方程解的寻找产生了“数学抽象地顶尖艺术”——群论。</p><p>一种相同的群结构可以描述似乎全然不同的概念</p><p>公式语言在计算机科学和复杂性理论(涉及计算任务内在的复杂性)方面起着重要作用。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;无法解出的方程&quot;&gt;&lt;a href=&quot;#无法解出的方程&quot; class=&quot;headerlink&quot; title=&quot;无法解出的方程&quot;&gt;&lt;/a&gt;无法解出的方程&lt;/h1&gt;&lt;p&gt;平移对称 旋转对称 反射对称 滑移反射对称 置换 &lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="笔记" scheme="https://ricky-ting.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="读书" scheme="https://ricky-ting.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
     
   </entry>
   
