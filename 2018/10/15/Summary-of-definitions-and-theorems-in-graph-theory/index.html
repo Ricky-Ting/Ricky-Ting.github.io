@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
-<meta property="og:updated_time" content="2018-11-27T16:07:42.031Z">
+<meta property="og:updated_time" content="2018-11-28T08:58:55.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Summary of definitions and theorems in graph theory">
 <meta name="twitter:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
@@ -253,6 +253,11 @@
 <p>A set of vertices in a graph is <strong>independent</strong> if  no two vertices in the set are adjacent. The <strong>vertex independence number</strong> (or the <strong>independence number</strong>) $\alpha(G)$ of a graph $G$ is the maximum cardinality of an independent set of vertices in $G$. An independent set in $G$ of cardinality $\alpha(G)$ is called a <strong>maximum independent set</strong>. </p>
 <p>A <strong>vertex cover</strong> in a graph $G$ is a set of vertices that covers all edges of $G$. The minimum number of vertices in a vertex cover of $G$  is the <strong>vertex covering number</strong> $\beta(G)$  of $G$. A vertex cover of cardinality $\beta(G)$ is a <strong>minimum vertex cover</strong> in $G$.</p>
 <h3 id="8-2-Factorization"><a href="#8-2-Factorization" class="headerlink" title="8.2 Factorization"></a>8.2 Factorization</h3><p>A 1-regular spanning subgraph of a graph $G$ is also called a <strong>1-factor</strong> of $G$. A graph $G$ has a 1-factor if and only if $G$ has a perfect matching.</p>
+<p>A graph $G$ is said to be <strong>1-factorable</strong> if there exists 1-factors $F_1,F_2,…,F_r$ of $G$ such that ${E(F_1),E(F_2),..,E(F_r)}$ is a partition of $E(G)$.  We then say that $G$ is <strong>factored</strong> into the 1-factors $F_1.F_2,…,F_r$ , which form a <strong>1-factorization</strong> of $G$.</p>
+<p>A <strong>2-factor</strong> in a graph $G$ is a spanning 2-regular subgraph of $G$. Every component of a 2-factor is therefore a cycle. A graph $G$ is said to be <strong>2-factorable</strong> if there exist 2-factors $F_1,F_2,..,F_k$ such that ${E(F_1),E(F_2),…,E(F_k)}$ is a partition of $E(G)$.</p>
+<p>A spanning subgraph $F$ of a graph $G$ is called a <strong>factor</strong> of $G$. The graph $G$ is said to be <strong>factorable</strong> into the factors $F_1,F_2,…,F_k$ if ${E(F_1),E(F_2),…,E(F_k)}$ is a partition of $E(G)$. If each factor $F_i$ is isomorphic to some graph $G$, then $G$ is <strong>F-factorable</strong>.</p>
+<h3 id="8-3-Decompositions-and-Graceful-Labelings"><a href="#8-3-Decompositions-and-Graceful-Labelings" class="headerlink" title="8.3 Decompositions and Graceful Labelings"></a>8.3 Decompositions and Graceful Labelings</h3><p>A graph $G$ is said to be <strong>decomposable</strong> into the subgraphs $H_1,H_2,…,H_k$ if ${E(H_1),E(H_2),…,E(H_k)}$ is a partition of $E(G)$. Such a partition produces a <strong>decomposition</strong> of $G$.  If each $H_i$ is isomorphic to some graph $H$, then the graph $G$ is $H-$ <strong>decomposable</strong>  and the decomposition is an $H-$ <strong>decomposition</strong>. </p>
+<p>A <strong>Steiner triple system</strong> of order $n$ is a set $S$ of cardinality $n$ and a collection $T$ of 3-element subsets, called <strong>triples</strong>, such that every two distinct elements of $S$ belong to a unique triple in $T$.</p>
 <p>Reference:</p>
 <p>[1] G.Chartrand and P.Zhang, First Course in Graph Theory, New York: Dover Publications, 2012.</p>
 
@@ -503,6 +508,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
               </li>
              
@@ -511,15 +520,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">solution</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,10 +544,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">solution</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -547,11 +552,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">软件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,23 +584,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">软件</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
             
             <div class="clearfix"></div>
