@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
-<meta property="og:updated_time" content="2019-01-06T05:44:38.756Z">
+<meta property="og:updated_time" content="2019-01-06T05:54:39.045Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Summary of definitions and theorems in graph theory">
 <meta name="twitter:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
@@ -216,7 +216,8 @@
 <h2 id="Degrees"><a href="#Degrees" class="headerlink" title="Degrees"></a>Degrees</h2><h3 id="2-1-The-Degree-of-a-Vertex"><a href="#2-1-The-Degree-of-a-Vertex" class="headerlink" title="2.1 The Degree of a Vertex"></a>2.1 The Degree of a Vertex</h3><p>The <strong>degree of a vertex</strong> $v$ in a graph $G$ is the number of edges incident with $v$ and is denoted by $deg_G \ v$ or simply by $deg \ v$ if the graph $G$ is clear from the context.  The set $N(v)$ of neighbors of a vertex $v$  is called the <strong>neighborhood</strong> of $v$. Thus $deg \ v = |N(v)|$.</p>
 <p>A vertex of degree 0 is referred to as an <strong>isolated vertex</strong> and a vertex of degree 1 is an <strong>end-vertex</strong>(or a <strong>leaf</strong>). </p>
 <p>The <strong>minimum degree</strong> of $G$  is the minimum degree among the vertices of $G$ and is denoted by $\delta(G)$, the <strong>maximum degree</strong> of $G$ is denoted by $\Delta(G)$.</p>
-<p>For $G$ of order $n$,</p>
+<p>For $G$ of order $n$, we have $0 \le \delta(G) \le deg \ v \le \Delta(G) \le n-1$.</p>
+<p><strong>Theorem 2.1(The First Theorem of Graph Theory)</strong>  If $G$  is a graph of size $m$, then $\sum \limits_{v\in V(G)} deg \ v =2m$.</p>
 <h2 id="Trees"><a href="#Trees" class="headerlink" title="Trees"></a>Trees</h2><h3 id="4-1-Bridges"><a href="#4-1-Bridges" class="headerlink" title="4.1 Bridges"></a>4.1 Bridges</h3><p>An edge $e=uv$ of a connected graph $G$ is called a <strong>bridge</strong> of $G$ if $G-e$ is disconnected.</p>
 <a id="more"></a>
 <p>An edge $e$ is a <strong>bridge</strong> of a disconnected graph if $e$ is a bridge of some component of $G$.</p>
@@ -400,16 +401,18 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "<%=url%>",
-  owner: '<%=theme.gitment_owner%>',
-  repo: '<%=theme.gitment_repo%>',
+ // id: "https://ricky-ting.github.io/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/",
+	id: "Mon Oct 15 2018 22:06:07 GMT+0800",
+  owner: 'Ricky-Ting',
+  repo: 'ricky-ting.github.io',
   oauth: {
-    client_id: '<%=theme.gitment_oauth.client_id%>',
-    client_secret: '<%=theme.gitment_oauth.client_secret%>',
+    client_id: '5791c5e45aa204b34d62',
+    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
   },
 })
 gitment.render('gitment-ctn')
 </script>
+
   
 
 
@@ -540,15 +543,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">solution</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,10 +564,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,10 +579,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Unix</a>
               </li>
              
@@ -589,6 +588,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
