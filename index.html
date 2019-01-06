@@ -533,7 +533,16 @@
 <p>A vertex of even degree is called an <strong>even vertex</strong>, while a vertex of odd degree is an <strong>odd vertex</strong>.</p>
 <p><strong>Corollary 2.3</strong> Every graph has an even number of odd vertices.</p>
 <p>If a graph $G$ order $n$ contains a vertex of degree $n-1$, then $G$ is connected. However, this is not a necessary condition.</p>
-<p><strong>Theorem 2.4</strong> Let $G$ be a graph of order $n$. If $$deg \ u + deg \ v \ge n-1$$ for every two </p>
+<p><strong>Theorem 2.4</strong> Let $G$ be a graph of order $n$. If $deg \ u + deg \ v \ge n-1$, for every two nonadjacent vertices $u$ and $v$ of $G$ , then $G$ is connected and $diam(G) \le 2$.</p>
+<ul>
+<li>The bound of <strong>Theorem 2.4</strong> is sharp.</li>
+</ul>
+<p><strong>What if there is only one pair?</strong></p>
+<p><strong>Corollary 2.5</strong> If $G$  is a graph of order $n$ with $\delta(G) \ge (n-1)/2$, then $G$ is connected.</p>
+<p><strong>outdegree</strong> and <strong>indegree</strong>.</p>
+<h3 id="2-2-Regular-Graphs"><a href="#2-2-Regular-Graphs" class="headerlink" title="2.2 Regular Graphs"></a>2.2 Regular Graphs</h3><p>If $\delta(G)=\Delta(G)$, then the vertices of $G$  have the same degree and $G$  is called <strong>regular</strong>. If $deg \ r=r$ for every vertex $v$  of $G$, where $0 \le r \le n-1$, then $G$  is $r$ <strong>-regular</strong> or <strong>regular of degree r</strong>.</p>
+<p>A 3-regular graph is also referred to as a <strong>cubic graph</strong>. The best known cubic graph may very well be the <strong>Petersen graph</strong>.</p>
+<p>There are no r-regular graphs of order $n$ if $r$ and $n$  are both odd.</p>
 <h2 id="Trees"><a href="#Trees" class="headerlink" title="Trees"></a>Trees</h2><h3 id="4-1-Bridges"><a href="#4-1-Bridges" class="headerlink" title="4.1 Bridges"></a>4.1 Bridges</h3><p>An edge $e=uv$ of a connected graph $G$ is called a <strong>bridge</strong> of $G$ if $G-e$ is disconnected.</p>
         
           <a class="article-more-a" href="/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/#more">more >></a>
@@ -1137,15 +1146,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1165,27 +1174,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Unix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Tools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Programming</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1198,6 +1195,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Unix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Programming</a>
               </li>
              
               <li class="article-tag-list-item">
