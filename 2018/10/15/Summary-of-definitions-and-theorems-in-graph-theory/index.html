@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
-<meta property="og:updated_time" content="2019-01-06T09:31:05.733Z">
+<meta property="og:updated_time" content="2019-01-06T10:29:56.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Summary of definitions and theorems in graph theory">
 <meta name="twitter:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
@@ -300,7 +300,10 @@
 </ul>
 <h3 id="5-3-Connectivity"><a href="#5-3-Connectivity" class="headerlink" title="5.3 Connectivity"></a>5.3 Connectivity</h3><p>By a <strong>vertex-cut</strong> in a graph $G$, we mean a set $U$ of vertices of $G$ such that $G-U$ is disconnected. A vertex-cut of minimum cardinality in $G$ is called a <strong>minimum vertex-cut</strong>.</p>
 <p><strong>Note</strong>: A connected graph contains a vertex-cut if and only if $G$ is not complete.</p>
-<p>For a graph $G$ that is not complete, the <strong>vertex-connectivity</strong>(or simply the <strong>connectivity</strong>) $\kappa(G)$ of $G$ is defined as the cardinality of a minimum vertex-cut of $G$; if $G=K_n$ for some positive integer $n$, then $\kappa(G)$ is defined to be $n-1$. $$0 \le \kappa(G) \le n-1$$ </p>
+<p>For a graph $G$ that is not complete, the <strong>vertex-connectivity</strong>(or simply the <strong>connectivity</strong>) $\kappa(G)$ of $G$ is defined as the cardinality of a minimum vertex-cut of $G$; if $G=K_n$ for some positive integer $n$, then $\kappa(G)$ is defined to be $n-1$. $$0 \le \kappa(G) \le n-1$$.</p>
+<p>For a nonnegative integer $k$, a graph $G$ is said to be $k$<strong>-connected</strong> if $\kappa(G) \ge k$.</p>
+<p>An <strong>edge-cut</strong> in a nontrivial graph $G$  is a set $X$ of edges of $G$ such that $G-X$ is disconnected.</p>
+<p>An edge-cut $X$  of a connected graph $G$  is <strong>minimal</strong> if no proper subset of $X$ is an edge-cut of $G$. If $X$ is a minimal edge-cut of a connected graph $G$, then $G-X$ contains exactly two components $G_1$ and $G_2$. Necessarily  then , $X$ consists of all those edges of $G$  joining $G_1$ and $G_2$.</p>
 <h2 id="Traversability"><a href="#Traversability" class="headerlink" title="Traversability"></a>Traversability</h2><h3 id="6-1-Eulerian-Graphs"><a href="#6-1-Eulerian-Graphs" class="headerlink" title="6.1 Eulerian Graphs"></a>6.1 Eulerian Graphs</h3><p>A circuit $C$ in a graph $G$ is called an <strong>Eulerian circuit</strong> if $C$ contains every edge of $G$. Since no edges is repeated in a circuit, every edge appears exactly once in an Eulerian circuit. A connected graph that contains an Eulerian circuit is called an <strong>Eulerian graph</strong>.</p>
 <p>For a connected graph $G$, we refer to an open trial that contains every edge of $G$ as an <strong>Eulerian trial</strong>.</p>
 <h3 id="6-2-Hamiltonian-Graphs"><a href="#6-2-Hamiltonian-Graphs" class="headerlink" title="6.2 Hamiltonian Graphs"></a>6.2 Hamiltonian Graphs</h3><p>A cycle in a graph $G$ that contains every vertex of $G$ is called a <strong>Hamiltonian cycle</strong> of $G$. A <strong>Hamiltonian graph</strong> is a graph that contains a Hamiltonian cycle.</p>
@@ -452,16 +455,18 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "<%=url%>",
-  owner: '<%=theme.gitment_owner%>',
-  repo: '<%=theme.gitment_repo%>',
+ // id: "https://ricky-ting.github.io/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/",
+	id: "Mon Oct 15 2018 22:06:07 GMT+0800",
+  owner: 'Ricky-Ting',
+  repo: 'ricky-ting.github.io',
   oauth: {
-    client_id: '<%=theme.gitment_oauth.client_id%>',
-    client_secret: '<%=theme.gitment_oauth.client_secret%>',
+    client_id: '5791c5e45aa204b34d62',
+    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
   },
 })
 gitment.render('gitment-ctn')
 </script>
+
   
 
 
@@ -576,19 +581,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">计划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,11 +609,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,11 +625,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -633,10 +638,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">软件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -652,11 +653,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
             
             <div class="clearfix"></div>
