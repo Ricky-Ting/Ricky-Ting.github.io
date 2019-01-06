@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
-<meta property="og:updated_time" content="2019-01-06T05:54:39.045Z">
+<meta property="og:updated_time" content="2019-01-06T06:03:19.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Summary of definitions and theorems in graph theory">
 <meta name="twitter:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
@@ -218,6 +218,10 @@
 <p>The <strong>minimum degree</strong> of $G$  is the minimum degree among the vertices of $G$ and is denoted by $\delta(G)$, the <strong>maximum degree</strong> of $G$ is denoted by $\Delta(G)$.</p>
 <p>For $G$ of order $n$, we have $0 \le \delta(G) \le deg \ v \le \Delta(G) \le n-1$.</p>
 <p><strong>Theorem 2.1(The First Theorem of Graph Theory)</strong>  If $G$  is a graph of size $m$, then $\sum \limits_{v\in V(G)} deg \ v =2m$.</p>
+<p>A vertex of even degree is called an <strong>even vertex</strong>, while a vertex of odd degree is an <strong>odd vertex</strong>.</p>
+<p><strong>Corollary 2.3</strong> Every graph has an even number of odd vertices.</p>
+<p>If a graph $G$ order $n$ contains a vertex of degree $n-1$, then $G$ is connected. However, this is not a necessary condition.</p>
+<p><strong>Theorem 2.4</strong> Let $G$ be a graph of order $n$. If $$deg \ u + deg \ v \ge n-1$$ for every two </p>
 <h2 id="Trees"><a href="#Trees" class="headerlink" title="Trees"></a>Trees</h2><h3 id="4-1-Bridges"><a href="#4-1-Bridges" class="headerlink" title="4.1 Bridges"></a>4.1 Bridges</h3><p>An edge $e=uv$ of a connected graph $G$ is called a <strong>bridge</strong> of $G$ if $G-e$ is disconnected.</p>
 <a id="more"></a>
 <p>An edge $e$ is a <strong>bridge</strong> of a disconnected graph if $e$ is a bridge of some component of $G$.</p>
@@ -539,15 +543,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,18 +571,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Unix</a>
               </li>
              
@@ -588,6 +580,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
