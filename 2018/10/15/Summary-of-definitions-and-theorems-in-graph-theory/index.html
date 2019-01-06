@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
-<meta property="og:updated_time" content="2019-01-06T06:18:52.845Z">
+<meta property="og:updated_time" content="2019-01-06T07:16:39.143Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Summary of definitions and theorems in graph theory">
 <meta name="twitter:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
@@ -230,7 +230,23 @@
 <p><strong>outdegree</strong> and <strong>indegree</strong>.</p>
 <h3 id="2-2-Regular-Graphs"><a href="#2-2-Regular-Graphs" class="headerlink" title="2.2 Regular Graphs"></a>2.2 Regular Graphs</h3><p>If $\delta(G)=\Delta(G)$, then the vertices of $G$  have the same degree and $G$  is called <strong>regular</strong>. If $deg \ r=r$ for every vertex $v$  of $G$, where $0 \le r \le n-1$, then $G$  is $r$ <strong>-regular</strong> or <strong>regular of degree r</strong>.</p>
 <p>A 3-regular graph is also referred to as a <strong>cubic graph</strong>. The best known cubic graph may very well be the <strong>Petersen graph</strong>.</p>
-<p>There are no r-regular graphs of order $n$ if $r$ and $n$  are both odd.</p>
+<p><strong>Theorem 2.6</strong> Let $r$ and $n$  be integers with $0 \le r \le n-1$. There exists an r-regular graph of order $n$  if and only if at least one of $r$ and $n$  is even.</p>
+<ul>
+<li><p>How to construct this graph?  </p>
+</li>
+<li><p>The graphs $H_{r,n}$ are called <strong>Harary graph</strong></p>
+</li>
+</ul>
+<p><strong>Theorem 2.7</strong> For every graph $G$ and every integer $r \ge \Delta(G)$, there exists an r-regular graph $H$ containing $G$ as an induced subgraph.</p>
+<h3 id="2-3-Degree-Sequences"><a href="#2-3-Degree-Sequences" class="headerlink" title="2.3 Degree Sequences"></a>2.3 Degree Sequences</h3><p>If the degrees of the vertices of a graph $G$ are listed in a sequence $s$, then $s$  is called a <strong>degree sequence</strong> of $G$.</p>
+<p>A finite sequence of nonnegative integers is called <strong>graphical</strong> if it is a degree sequence of some graph.</p>
+<p><strong>Theorem 2.10</strong> A non-increasing sequence $s$: $d_1,d_2,…,d_n(n\ge 2)$ of non-negative integers, where $d_1 \ge 1$, is graphical if and only if the sequence $s_1：d_2-1,d<em>3-1,…,d</em>{d<em>1 + 1}-1,d</em>{d<em>1+1}-1,d</em>{d_1+2},…d_n $ is graphical.</p>
+<h2 id="Isomorphic-Graphs"><a href="#Isomorphic-Graphs" class="headerlink" title="Isomorphic Graphs"></a>Isomorphic Graphs</h2><h3 id="3-1-The-Definition-of-Isomorphism"><a href="#3-1-The-Definition-of-Isomorphism" class="headerlink" title="3.1 The Definition of Isomorphism"></a>3.1 The Definition of Isomorphism</h3><p>We call two graphs $G$ and $H$ “isomorphic” if they have the same structure and write $G \cong H$ to indicate this. </p>
+<p>Formally, two (labeled) graphs $G$ and $H$  are <strong>isomorphic</strong> (have the same structure) if there exists a one-to-one correspondence $\phi$ from $V(G)$ to $V(H)$ such that $uv \in E(G)$ if and only if $\phi(u)\phi(v) \in E(H)$. In this case, $\phi$  is called an <strong>isomorphism</strong> from $G$ to $H$.</p>
+<p><strong>Theorem 3.1</strong> Two graphs $G$ and $H$ are isomorphic if and only if their complements $\bar{G}$ and $\bar{H}$ are isomorphic.</p>
+<p>A graph $G$ is <strong>self-complementary</strong> if $G\cong \bar{G}$ . </p>
+<p><strong>Theorem 3.2</strong> If $G$ and $H$ are isomorphic graphs, then the degrees of the vertices of $G$ are the same as the degrees of the vertices of $H$.</p>
+<p><strong>Note</strong>: Having the same degree sequences don’t necessarilymean two graph are isomorphic.</p>
 <h2 id="Trees"><a href="#Trees" class="headerlink" title="Trees"></a>Trees</h2><h3 id="4-1-Bridges"><a href="#4-1-Bridges" class="headerlink" title="4.1 Bridges"></a>4.1 Bridges</h3><p>An edge $e=uv$ of a connected graph $G$ is called a <strong>bridge</strong> of $G$ if $G-e$ is disconnected.</p>
 <a id="more"></a>
 <p>An edge $e$ is a <strong>bridge</strong> of a disconnected graph if $e$ is a bridge of some component of $G$.</p>
@@ -568,7 +584,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,15 +592,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,15 +600,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">软件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -616,11 +624,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">软件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
             
             <div class="clearfix"></div>
