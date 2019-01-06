@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
-<meta property="og:updated_time" content="2019-01-06T03:46:37.408Z">
+<meta property="og:updated_time" content="2019-01-06T04:01:29.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Summary of definitions and theorems in graph theory">
 <meta name="twitter:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
@@ -202,7 +202,9 @@
 <p>The <strong>complement</strong> $\bar{G}$ of a graph $G$ is that graph whose vertex set is $V(G)$ and such that for each pair $u,v$ of distinct vertices of $G$, $uv$ is an edge of $\bar{G}$ if and only if $uv$ is not an edge of $G$.</p>
 <p>The graph $\bar{K_n}$ has $n$ vertices and no edges, it is called the <strong>empty graph</strong> of order $n$.</p>
 <p><strong>Theorem 1.11</strong> If $G$  is a disconnected graph, then $\bar{G}$ is connected.</p>
+<p><strong>Theorem 1.12</strong> A nontrivial graph $G$ is a bipartite graph if and only if $G$ contains no odd cycles.</p>
 <p>A graph $G$ is a <strong>bipartite graph</strong> if $V(G)$ can be partitioned into two subsets $U$ and $W$, called <strong>partite sets</strong>, such that every edge of $G$ joins a vertex of $U$ and a vertex of $W$.</p>
+<p>If every vertex of $U$  is adjacent to every vertex of $W$ , then we call $G$  a <strong>complete bipartite graph</strong> . A complete graph with $|U|=s$  and $|W|=t$ is denoted by $K<em>{s,t}$ or $K</em>{t,s}$. If either $s=1$ or $t=1$, then $K_{s,t}$ is a <strong>star</strong>.</p>
 <p>To be continued…</p>
 <h3 id="1-4-Multigraphs-and-Digraphs"><a href="#1-4-Multigraphs-and-Digraphs" class="headerlink" title="1.4 Multigraphs and Digraphs"></a>1.4 Multigraphs and Digraphs</h3><p>A <strong>multigraph</strong> $M$ consists of a finite nonempty set $V$ of vertices and a set $E$ of edges, where every two vertices of M are joined by a finite number of edges(possibly zero). If two or more edges join the same pair of (distinct) vertices, then these edges are called <strong>parallel</strong> edges.</p>
 <p>In a <strong>pseudograph</strong>, not only are parallel edges permitted but an edge is also permitted to join a vertex to itself. Such an edge is called a <strong>loop</strong>.</p>
@@ -391,16 +393,18 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "<%=url%>",
-  owner: '<%=theme.gitment_owner%>',
-  repo: '<%=theme.gitment_repo%>',
+ // id: "https://ricky-ting.github.io/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/",
+	id: "Mon Oct 15 2018 22:06:07 GMT+0800",
+  owner: 'Ricky-Ting',
+  repo: 'ricky-ting.github.io',
   oauth: {
-    client_id: '<%=theme.gitment_oauth.client_id%>',
-    client_secret: '<%=theme.gitment_oauth.client_secret%>',
+    client_id: '5791c5e45aa204b34d62',
+    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
   },
 })
 gitment.render('gitment-ctn')
 </script>
+
   
 
 
@@ -523,15 +527,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,15 +551,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">OJ</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -563,7 +567,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,15 +583,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
