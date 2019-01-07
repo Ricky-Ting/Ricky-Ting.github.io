@@ -520,7 +520,7 @@
 <p>A graph $G$  is a $k$<strong>-partite graph</strong> if $V(G)$ can be partitioned into $k$ subsets $V_1$,$V_2$,…,$V_k$,(called <strong>partite sets</strong>) such that if $uv$ is an edge of $G$, then $u$ and $v$ belong to different partite sets. If, in addition, every  two vertices in different partite sets are joined by an edge, then $G$ is a <strong>complete k-partite graph</strong>. If $|V_i|=n<em>i$ for $1 \le i \le k$, then we denote this graph by $K</em>{n1,n2,…,nk}$. </p>
 <p>The <strong>join</strong> $G+H$ consists of $G \cup H$ and all edges joining a vertex of $G$ and a vertex of $H$.</p>
 <p>The <strong>Cartesian product</strong> $G \times H$ has vertex set $V(G \times H) = V(G) \times V(H)$ . Two distinct vertices $(u,v$) and $(x,y)$ are adjacent in $G \times H$ if either (1) $u=x$ and $vy\in E(H)$ or (2) $v=y$ and $ux\in E(G)$.</p>
-<p>We define $Q_1$ to be $K<em>2$ and for $n \ge 2$, define $Q</em>{n}$ to be $Q_{n-1} \times K_2$. The graphs $Q_n$ are then called $n$<strong>-cubes</strong> or <strong>hypercubes</strong>.</p>
+<p>We define $Q_1 $ to be $ K<em>2 $ and for $n \ge 2$, define $Q</em>{n}$ to be $Q_{n-1} \times K_2 $. The graphs $Q_n $ are then called $n$<strong>-cubes</strong> or <strong>hypercubes</strong>.</p>
 <h3 id="1-4-Multigraphs-and-Digraphs"><a href="#1-4-Multigraphs-and-Digraphs" class="headerlink" title="1.4 Multigraphs and Digraphs"></a>1.4 Multigraphs and Digraphs</h3><p>A <strong>multigraph</strong> $M$ consists of a finite nonempty set $V$ of vertices and a set $E$ of edges, where every two vertices of M are joined by a finite number of edges(possibly zero). If two or more edges join the same pair of (distinct) vertices, then these edges are called <strong>parallel</strong> edges.</p>
 <p>In a <strong>pseudograph</strong>, not only are parallel edges permitted but an edge is also permitted to join a vertex to itself. Such an edge is called a <strong>loop</strong>.</p>
 <p>A <strong>digraph</strong>(or <strong>directed graph</strong>) $D$ is a finite nonempty set $V$ of objects called <strong>vertices</strong> together with a set $E$ of ordered pairs of distinct vertices. The elements of $E$ are called <strong>directed edges</strong> or <strong>arcs</strong>. If $(u,v)$ is a directed edge, then we indicate this in a diagram representing $D$ by drawing a directed line segment or curve from $u$ to $v$. Then u is said to be <strong>adjacent to</strong> v and v is <strong>adjacent from</strong> u.</p>
@@ -554,7 +554,7 @@
 <p><strong>Theorem 2.7</strong> For every graph $G$ and every integer $r \ge \Delta(G)$, there exists an r-regular graph $H$ containing $G$ as an induced subgraph.</p>
 <h3 id="2-3-Degree-Sequences"><a href="#2-3-Degree-Sequences" class="headerlink" title="2.3 Degree Sequences"></a>2.3 Degree Sequences</h3><p>If the degrees of the vertices of a graph $G$ are listed in a sequence $s$, then $s$  is called a <strong>degree sequence</strong> of $G$.</p>
 <p>A finite sequence of nonnegative integers is called <strong>graphical</strong> if it is a degree sequence of some graph.</p>
-<p><strong>Theorem 2.10</strong> A non-increasing sequence $s$: $d_1,d_2,…,d_n(n\ge 2)$ of non-negative integers, where $d_1 \ge 1$, is graphical if and only if the sequence $s_1：d_2-1,d<em>3-1,…,d</em>{d<em>1 + 1}-1,d</em>{d<em>1+1}-1,d</em>{d_1+2},…d_n $ is graphical.</p>
+<p><strong>Theorem 2.10</strong> A non-increasing sequence $s$: $d_1 ,d_2 ,…,d_n (n\ge 2)$ of non-negative integers, where $d_1 \ge 1$, is graphical if and only if the sequence $s_1：d<em>2 -1,d</em> 3-1,…,d<em>{d</em> 1 + 1}-1,d<em>{d</em> 1+1}-1,d<em>{d</em> 1+2},…d_ n $ is graphical.</p>
 <h2 id="Isomorphic-Graphs"><a href="#Isomorphic-Graphs" class="headerlink" title="Isomorphic Graphs"></a>Isomorphic Graphs</h2><h3 id="3-1-The-Definition-of-Isomorphism"><a href="#3-1-The-Definition-of-Isomorphism" class="headerlink" title="3.1 The Definition of Isomorphism"></a>3.1 The Definition of Isomorphism</h3><p>We call two graphs $G$ and $H$ “isomorphic” if they have the same structure and write $G \cong H$ to indicate this. </p>
 <p>Formally, two (labeled) graphs $G$ and $H$  are <strong>isomorphic</strong> (have the same structure) if there exists a one-to-one correspondence $\phi$ from $V(G)$ to $V(H)$ such that $uv \in E(G)$ if and only if $\phi(u)\phi(v) \in E(H)$. In this case, $\phi$  is called an <strong>isomorphism</strong> from $G$ to $H$.</p>
 <p><strong>Theorem 3.1</strong> Two graphs $G$ and $H$ are isomorphic if and only if their complements $\bar{G}$ and $\bar{H}$ are isomorphic.</p>
@@ -1156,15 +1156,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">flag</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">计划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1172,11 +1164,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">solution</a>
+                <a href="javascript:void(0)" class="js-tag color5">flag</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">计划</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1189,10 +1185,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1216,6 +1208,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -1228,11 +1224,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color4">solution</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
             
             <div class="clearfix"></div>
