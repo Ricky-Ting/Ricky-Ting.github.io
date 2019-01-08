@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
-<meta property="og:updated_time" content="2019-01-08T06:10:06.727Z">
+<meta property="og:updated_time" content="2019-01-08T06:11:07.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Summary of definitions and theorems in graph theory">
 <meta name="twitter:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
@@ -180,6 +180,7 @@
 <p>A graph with exactly one vertex is called a <strong>trivial graph</strong>, implying that the order of a <strong>nontrivial graph</strong> is at least 2.</p>
 <p><strong>labeled graph</strong> and <strong>unlabeled graph</strong></p>
 <p>A graph $G$ is called a <strong>word graph</strong> if $G$ is the word graph of some set $S$ of 3-letter words.</p>
+<a id="more"></a>
 <h3 id="1-2-Connected-Graphs"><a href="#1-2-Connected-Graphs" class="headerlink" title="1.2 Connected Graphs"></a>1.2 Connected Graphs</h3><p>The adjacent vertices $u$ and $v$ are said to be <strong>joined</strong> by the edge $e$. The vertices $u$ and $v$ are referred to as <strong>neighbors</strong> of each other. </p>
 <p>Distinct edges incident with a common vertex are <strong>adjacent edges</strong>.</p>
 <p>A graph $H$ is called a <strong>subgraph</strong> of a graph $G$, written $H \subseteq G$, if $V(H) \subseteq V(G)$ and $E(H) \subseteq E(G)$. We also say that $G$ contains $H$ as a subgraph. If $H \subseteq G$ and either $V(H)$ is a proper subset of $V(G)$ or $E(H)$ is a proper subset of $E(G)$, then $H$ is a <strong>proper subgraph</strong> of $G$. If a subgraph of a graph $G$ has the same vertex set as $G$, then it is a <strong>spanning subgraph</strong> of $G$.</p>
@@ -250,7 +251,6 @@
 <p><strong>Theorem 3.2</strong> If $G$ and $H$ are isomorphic graphs, then the degrees of the vertices of $G$ are the same as the degrees of the vertices of $H$.</p>
 <p><strong>Note</strong>: Having the same degree sequences don’t necessarily mean two graph are isomorphic.</p>
 <h2 id="Trees"><a href="#Trees" class="headerlink" title="Trees"></a>Trees</h2><h3 id="4-1-Bridges"><a href="#4-1-Bridges" class="headerlink" title="4.1 Bridges"></a>4.1 Bridges</h3><p>An edge $e=uv$ of a connected graph $G$ is called a <strong>bridge</strong> of $G$ if $G-e$ is disconnected.</p>
-<a id="more"></a>
 <p>An edge $e$ is a <strong>bridge</strong> of a disconnected graph if $e$ is a bridge of some component of $G$.</p>
 <p>An edge $e$ is a bridge of a graph $G$ if and only if $k(G-e)=k(G)+1$</p>
 <p>End-vertice: vertice with degree $1$.</p>
@@ -525,16 +525,18 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "<%=url%>",
-  owner: '<%=theme.gitment_owner%>',
-  repo: '<%=theme.gitment_repo%>',
+ // id: "https://ricky-ting.github.io/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/",
+	id: "Mon Oct 15 2018 22:06:07 GMT+0800",
+  owner: 'Ricky-Ting',
+  repo: 'ricky-ting.github.io',
   oauth: {
-    client_id: '<%=theme.gitment_oauth.client_id%>',
-    client_secret: '<%=theme.gitment_oauth.client_secret%>',
+    client_id: '5791c5e45aa204b34d62',
+    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
   },
 })
 gitment.render('gitment-ctn')
 </script>
+
   
 
 
@@ -649,10 +651,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
               </li>
              
@@ -661,11 +659,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -689,6 +691,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -705,11 +715,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -718,10 +724,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">软件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
