@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
-<meta property="og:updated_time" content="2019-01-08T05:15:00.541Z">
+<meta property="og:updated_time" content="2019-01-08T06:10:06.727Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Summary of definitions and theorems in graph theory">
 <meta name="twitter:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
@@ -386,7 +386,21 @@
 <p>By a <strong>proper coloring</strong> (or, more simply, a <strong>coloring</strong>)  of a graph $G$  ,  we mean an assignment of colors (elements of some set) to the vertices of $G$ , one color to each vertex, such that adjacent vertices are colored differently.  </p>
 <p>The smallest number of colors in any coloring of a graph $G$  is called the <strong>chromatic number</strong>  of $G$  and is denoted by $\chi(G)$.  If it is possible to color $G$ from a set of $k$  colors, then $G$  is said to be <strong>k-colorable</strong>. A coloring that uses $k$ colors is called a <strong>k-coloring</strong>. If $\chi(G)=k$, then $G$ is said to be <strong>k-chromatic</strong> and every $k-coloring$ of $G$ is a <strong>minimum coloring</strong> of $G$. </p>
 <p><strong>Theorem 10.1(The Four Color Theorem)</strong> The chromatic number of every planargraph is at most 4.</p>
-<p>If $G$  </p>
+<p>If $G$ is a k-chromatic graph, then it is possible to partition $V(G)$ into  $k-1$ independent sets $V_1 , V_2 , …., V_k $, called <strong>color classes</strong>, but it is not possible to partition $V(G)$ into $k-1$ independent sets.</p>
+<p><strong>Theorem 10.2</strong> A graph $G$ has chromantic number 2 if and only if $G$ is a nonempty bipartite graph.</p>
+<p>A graph $G$ of order $n$ has chromatic number $n$ if and only if $G =K_n$.</p>
+<p>If $H$ is a subgraph of $G$, then $\chi(H) \le \chi(G)$.</p>
+<p>A <strong>clique</strong> in a graph $G$ is a complete subgraph of $G$. The order of the largest clique ina graph $G$ is its <strong>clique number</strong>, which is denoted by $\omega(G)$.</p>
+<p>In fact,  $\alpha(G)=k$ if and only if $\omega(\bar{G})=k$.</p>
+<p><strong>Theorem 10.5</strong> For every graph $G$ of order $n$, $\chi(G \ge \omega(G))$ and $\chi(G) \ge \frac{n}{\alpha(G)}$.</p>
+<p><strong>Theorem 10.7</strong> For every graph $G$, $$\chi(G) \le 1 + \Delta(G)$$ </p>
+<p><strong>Theorem 10.8(Brooks’ Theorem)</strong> For every connected graph $G$ that is not an odd cycle or a complete graph, $\chi(G) \le \Delta(G)$.</p>
+<p><strong>Theorem 10.9</strong> For every graph $G$, $\chi(G) \le 1+ max{\delta(H)}$, where the maximum is taken over all induced subgraphs $H$ of $G$.</p>
+<p>The <strong>shadow graph</strong> $S(G)$ of a graph $G$ is obtained from $G$ by adding, for each vertex $v$ of $G$, a new vertex $v’$, called the <strong>shadow vertex</strong> of $v$ , and joining $v’$ to the neighbors of $v$ in $G$. Observe that (1) a vertex of $G$ and its shadow vertex are not adjacent in $S(G)$ and (2) no two shadow vertices are adjacent in $S(G)$.</p>
+<p><strong>Theorem 10.10</strong> For every integer $k \ge 3$, there exists a triangle-free graph with chromatic number $k$.</p>
+<p>A graph $G$ is called <strong>perfect</strong> if $\chi(H)=\omega(H)$ for every induced subgraph $H$ of $G$.</p>
+<p><strong>The Perfect Graph Theorem</strong> A graph is perfect if and only if its complement is perfect.</p>
+<p><strong>The Strong Perfect Graph T</strong> A graph $G$ is perfect if and only if neither $G$ nor $\bar{G}$ contains an induced odd cycle of length 5 or more.</p>
 <p>Reference:</p>
 <p>[1] G.Chartrand and P.Zhang, First Course in Graph Theory, New York: Dover Publications, 2012.</p>
 
@@ -511,18 +525,16 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
- // id: "https://ricky-ting.github.io/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/",
-	id: "Mon Oct 15 2018 22:06:07 GMT+0800",
-  owner: 'Ricky-Ting',
-  repo: 'ricky-ting.github.io',
+  id: "<%=url%>",
+  owner: '<%=theme.gitment_owner%>',
+  repo: '<%=theme.gitment_repo%>',
   oauth: {
-    client_id: '5791c5e45aa204b34d62',
-    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
+    client_id: '<%=theme.gitment_oauth.client_id%>',
+    client_secret: '<%=theme.gitment_oauth.client_secret%>',
   },
 })
 gitment.render('gitment-ctn')
 </script>
-
   
 
 
@@ -637,15 +649,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">计划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,14 +693,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Unix</a>
               </li>
              
@@ -701,7 +705,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -710,6 +718,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
