@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
-<meta property="og:updated_time" content="2019-01-07T16:30:28.644Z">
+<meta property="og:updated_time" content="2019-01-08T05:15:00.541Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Summary of definitions and theorems in graph theory">
 <meta name="twitter:description" content="Summary of definitions and theorems in graph theoryIntroduction1.1 Graphs and Graph ModelsA Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets">
@@ -338,28 +338,55 @@
 <p><strong>Theorem 6.11</strong> Let $G$ be a graph of order $n \ge 3$. If for every integer $j$ with $ 1 \le j &lt; \frac{n}{2}$, the number of vertices of $G$ with degree at most $j$ is less than $j$, then $G$ is Hamiltonian.</p>
 <h3 id="6-3-Hamiltonian-Walks"><a href="#6-3-Hamiltonian-Walks" class="headerlink" title="6.3 Hamiltonian Walks"></a>6.3 Hamiltonian Walks</h3><h2 id="Matchings-and-Factorization"><a href="#Matchings-and-Factorization" class="headerlink" title="Matchings and Factorization"></a>Matchings and Factorization</h2><h3 id="8-1-Matchings"><a href="#8-1-Matchings" class="headerlink" title="8.1 Matchings"></a>8.1 Matchings</h3><p>A set of edges in a graph is <strong>independent</strong> if no two edges in the set are adjacent.</p>
 <p>By a <strong>macthing</strong> in a graph $G$ , we mean an independent set of edges in $G$.</p>
-<p>The graph $G$ is said to satisfy <strong>Hall’s condition</strong> if $|N(X)\ge|X||$ for every nonempty subset $X$ of $U$.</p>
+<p>The graph $G$ is said to satisfy <strong>Hall’s condition</strong> if $|N(X)| \ge|X|$ for every nonempty subset $X$ of $U$.</p>
+<p><strong>Theorem 8.3</strong> Let $G$ be a bipartite graph with partite sets $U$ and $W$ such that $r= |U| \le |W|$. Then $G$ contains a matching of cardinality $r$ if and only if $G$ satisfies Hall’s condition.</p>
+<p><strong>Theorem 8.4</strong> A collection ${ S_1 , S_2 , … , S_n}$ of nonempty finite sets has a system of distinct representatives if and only if for each integer $k$ with $1 \le k \le n$, the union of any $k$ of these sets contains at elast $k$ elements.</p>
+<p><strong>Theorem 8.5(The Marriage Theorem)</strong> In a collection of $r$ women and $r$ men, a total of $r$ marriages between acquainted couples is possible if and only if for each integer $k$ with $1 \le k \le r$, every subset of $k$ women is collectively acquainted with at least $k$ men.</p>
 <p>A matching of maximum cardinality is called a <strong>maximum matching</strong>.  </p>
 <p>If a graph $G$ of order $2k$ has a matching $M$ of cardinality $k$, then this (necessarily maximum)  matching $M$ is called a <strong>perfect matching</strong> as $M$ matches every vertex of $G$ to some vertex of $G$ .</p>
+<p><strong>Theorem 8.6</strong> Every r-regular bipartite graph($r \ge 1$)  has a perfect matching.</p>
 <p>The <strong>edge independence number</strong> $\alpha’(G)$ of a graph $G$  is the maximum cardinality of an independent set of edges.</p>
+<p>Furthermore, a graph $G$ of order $n$ has a perfect matching if and only if $n$ is even and $\alpha ‘(G) = n/2$.</p>
 <p>A vertex and an incident edge are said to <strong>cover</strong> each other.</p>
 <p>An <strong>edge cover</strong> of a graph $G$ without isolated vertices is a set of edges of $G$ that covers all vertices of $G$.</p>
 <p>The <strong>edge covering number</strong> $\beta’(G)$ of a graph $G$ is the minimum cardlinality of an edge cover of $G$.  An edge cover of $G$ of cardinality $\beta’(G)$ is a <strong>minimum edge cover</strong> of $G$.</p>
+<p><strong>Theorem 8.7</strong> For every graph $G$ of order $n$ containing no isolated vertices, $$\alpha(G’)+ \beta(G’)=n$$.</p>
 <p>A set of vertices in a graph is <strong>independent</strong> if  no two vertices in the set are adjacent. The <strong>vertex independence number</strong> (or the <strong>independence number</strong>) $\alpha(G)$ of a graph $G$ is the maximum cardinality of an independent set of vertices in $G$. An independent set in $G$ of cardinality $\alpha(G)$ is called a <strong>maximum independent set</strong>. </p>
 <p>A <strong>vertex cover</strong> in a graph $G$ is a set of vertices that covers all edges of $G$. The minimum number of vertices in a vertex cover of $G$  is the <strong>vertex covering number</strong> $\beta(G)$  of $G$. A vertex cover of cardinality $\beta(G)$ is a <strong>minimum vertex cover</strong> in $G$.</p>
-<h3 id="8-2-Factorization"><a href="#8-2-Factorization" class="headerlink" title="8.2 Factorization"></a>8.2 Factorization</h3><p>A 1-regular spanning subgraph of a graph $G$ is also called a <strong>1-factor</strong> of $G$. A graph $G$ has a 1-factor if and only if $G$ has a perfect matching.</p>
+<p><strong>Theorem 8.8</strong> For every graph $G$ of order $n$ containing no isolated vertices, $$\alpha(G) + \beta(G) =n$$. </p>
+<h3 id="8-2-Factorization"><a href="#8-2-Factorization" class="headerlink" title="8.2 Factorization"></a>8.2 Factorization</h3><p>A 1-regular spanning subgraph of a graph $G$ is also called a <strong>1-factor</strong> of $G$. </p>
+<p>A graph $G$ has a 1-factor if and only if $G$ has a perfect matching.</p>
+<p>A component of a graph is <strong>odd</strong> or <strong>even</strong> according to whether its order is odd or even. We write $k_O (G)$ for the number of odd components of a graph $G$.</p>
+<p><strong>Theorem 8.10</strong> A graph $G$ contains a 1-factor if and only if $k_O (G-S) \le |S|$ for every proper subset $S$ of $V(G)$.</p>
+<p><strong>Theorem 8.11(Petersen’s Theorem)</strong> Every 3-regular bridgeless graph contains a 1-factor.</p>
+<p><strong>Theorem 8.12</strong> Every 3-regular graph with at most two bridges contains a 1-factor.</p>
 <p>A graph $G$ is said to be <strong>1-factorable</strong> if there exists 1-factors $F_1,F_2,…,F_r$ of $G$ such that ${E(F_1),E(F_2),..,E(F_r)}$ is a partition of $E(G)$.  We then say that $G$ is <strong>factored</strong> into the 1-factors $F_1.F_2,…,F_r$ , which form a <strong>1-factorization</strong> of $G$.</p>
+<p>Every 1-factorable graph is regular.</p>
+<p><strong>Theorem 8.13</strong> The Petersen graph is not 1-factorable.</p>
+<p><strong>Theorem 8.14</strong> For each positive integer $k$, the complete graph $K_{2k}$ is 1-factorable.</p>
+<p><strong>Theorem 8.15</strong> Every r-regular bipartite graph , $r\ge 1$, is factorable.</p>
 <p>A <strong>2-factor</strong> in a graph $G$ is a spanning 2-regular subgraph of $G$. Every component of a 2-factor is therefore a cycle. A graph $G$ is said to be <strong>2-factorable</strong> if there exist 2-factors $F_1,F_2,..,F_k$ such that ${E(F_1),E(F_2),…,E(F_k)}$ is a partition of $E(G)$.</p>
+<p><strong>Theorem 8.16</strong> A graph $G$ is 2-factorable if and only if $G$ is r-regular for some positive even integer $r$.</p>
 <p>A spanning subgraph $F$ of a graph $G$ is called a <strong>factor</strong> of $G$. The graph $G$ is said to be <strong>factorable</strong> into the factors $F_1,F_2,…,F_k$ if ${E(F_1),E(F_2),…,E(F_k)}$ is a partition of $E(G)$. If each factor $F_i$ is isomorphic to some graph $G$, then $G$ is <strong>F-factorable</strong>.</p>
+<p>TBC.</p>
 <h3 id="8-3-Decompositions-and-Graceful-Labelings"><a href="#8-3-Decompositions-and-Graceful-Labelings" class="headerlink" title="8.3 Decompositions and Graceful Labelings"></a>8.3 Decompositions and Graceful Labelings</h3><p>A graph $G$ is said to be <strong>decomposable</strong> into the subgraphs $H_1,H_2,…,H_k$ if ${E(H_1),E(H_2),…,E(H_k)}$ is a partition of $E(G)$. Such a partition produces a <strong>decomposition</strong> of $G$.  If each $H_i$ is isomorphic to some graph $H$, then the graph $G$ is $H-$ <strong>decomposable</strong>  and the decomposition is an $H-$ <strong>decomposition</strong>. </p>
 <p>A <strong>Steiner triple system</strong> of order $n$ is a set $S$ of cardinality $n$ and a collection $T$ of 3-element subsets, called <strong>triples</strong>, such that every two distinct elements of $S$ belong to a unique triple in $T$.</p>
+<p>TBC</p>
 <h2 id="Planarity"><a href="#Planarity" class="headerlink" title="Planarity"></a>Planarity</h2><h3 id="9-1-Planar-Graphs"><a href="#9-1-Planar-Graphs" class="headerlink" title="9.1 Planar Graphs"></a>9.1 Planar Graphs</h3><p>A graph $G$  is called a <strong>planar graph</strong> if $G$  can be drawn in the plane so that no two of its edges cross each other. A graph that is not planar is called <strong>nonplanar</strong>. A graph $G$ is called a <strong>plane graph</strong>  if it is drawn in the plane so that no two edges of $G$ cross. </p>
 <p>A plane graph divides the plane into connected pieces called <strong>regions</strong>. In every plane graph, there is always one region that is unbounded. This is the <strong>exterior region</strong>.  The subgraph of a plane graph whose vertices and edges are incident with a given region $R$  is the <strong>boundary</strong> of $R$. </p>
 <p><strong>Theorem 9.1(The Euler Identity)</strong> If $G$ is a connected plane graph of order $n$, size $m$ and having $r$ regions, then $n-m+r=2$.</p>
+<p><strong>Theorem 9.2</strong> If $G$ is a planar graph of order $n \ge 3$ and size $m$, then $$m \le 3n-6$$.</p>
+<p><strong>Corollary 9.3</strong> Every planar graph contains a vertex of degree 5 or less.</p>
+<p><strong>Corollary 9.4</strong> The complete graph $K_5$ is nonplanar.</p>
+<p><strong>Theorem 9.5</strong> The graph $K_{3,3}$ is nonplanar.</p>
 <p>A graph $G$ is <strong>maximal planar</strong> if $G$ is planar but the addition of an edge between any two nonadjacent vertices of $G$  results in a nonplanar graph.</p>
+<p>More formally, a graph is called a <strong>subdivision</strong> of a graph $G$ if $G’=G$ or one or more vertices of degree 2 are inserted into one or more edges of $G$.</p>
+<p><strong>Theorem 9.7(Kuratowski’s Theorem)</strong> A graph $G$ is planar if and only if $G$ does not contain a subdivision of $K<em>5$ or $K</em>{3,3}$ as a subgraph. </p>
 <h2 id="Coloring-Graphs"><a href="#Coloring-Graphs" class="headerlink" title="Coloring Graphs"></a>Coloring Graphs</h2><h3 id="10-2-Vertex-Coloring"><a href="#10-2-Vertex-Coloring" class="headerlink" title="10.2 Vertex Coloring"></a>10.2 Vertex Coloring</h3><p>With each map, there is associated a graph $G$  called the  <strong>dual</strong> of the map, whose vertices are the regions of the map and such that two vertices of $G$  are adjacent if the corresponding regions are neighboring regions.</p>
 <p>By a <strong>proper coloring</strong> (or, more simply, a <strong>coloring</strong>)  of a graph $G$  ,  we mean an assignment of colors (elements of some set) to the vertices of $G$ , one color to each vertex, such that adjacent vertices are colored differently.  </p>
 <p>The smallest number of colors in any coloring of a graph $G$  is called the <strong>chromatic number</strong>  of $G$  and is denoted by $\chi(G)$.  If it is possible to color $G$ from a set of $k$  colors, then $G$  is said to be <strong>k-colorable</strong>. A coloring that uses $k$ colors is called a <strong>k-coloring</strong>. If $\chi(G)=k$, then $G$ is said to be <strong>k-chromatic</strong> and every $k-coloring$ of $G$ is a <strong>minimum coloring</strong> of $G$. </p>
+<p><strong>Theorem 10.1(The Four Color Theorem)</strong> The chromatic number of every planargraph is at most 4.</p>
+<p>If $G$  </p>
 <p>Reference:</p>
 <p>[1] G.Chartrand and P.Zhang, First Course in Graph Theory, New York: Dover Publications, 2012.</p>
 
@@ -618,15 +645,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -634,7 +657,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">solution</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -643,6 +678,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,18 +698,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Programming</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -687,10 +718,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
             
             <div class="clearfix"></div>
