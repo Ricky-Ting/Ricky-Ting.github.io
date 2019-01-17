@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ricky-ting.github.io">
-  <title>Tag: 软件 | Ricky Ting&#39;s Blog</title>
+  <title>mac下ssh打开X11转发 | Ricky Ting&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="计科生，不定期更新">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ricky Ting&#39;s Blog">
-<meta property="og:url" content="https://ricky-ting.github.io/tags/软件/index.html">
+  <meta name="description" content="mac下ssh打开X11转发 首先确认linux下已开启X11转发： 123456sudo vim /etc/ssh/sshd_configX11Forwarding yesX11DisplayOffset 10service ssh restart    安装XQuartz  在mac端下开启： 123sudo vim /etc/ssh/ssh_configForwardX11 yes    s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mac下ssh打开X11转发">
+<meta property="og:url" content="https://ricky-ting.github.io/2019/01/17/mac下ssh打开X11转发/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
-<meta property="og:description" content="计科生，不定期更新">
+<meta property="og:description" content="mac下ssh打开X11转发 首先确认linux下已开启X11转发： 123456sudo vim /etc/ssh/sshd_configX11Forwarding yesX11DisplayOffset 10service ssh restart    安装XQuartz  在mac端下开启： 123sudo vim /etc/ssh/ssh_configForwardX11 yes    s">
+<meta property="og:updated_time" content="2019-01-17T07:14:20.352Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ricky Ting&#39;s Blog">
-<meta name="twitter:description" content="计科生，不定期更新">
+<meta name="twitter:title" content="mac下ssh打开X11转发">
+<meta name="twitter:description" content="mac下ssh打开X11转发 首先确认linux下已开启X11转发： 123456sudo vim /etc/ssh/sshd_configX11Forwarding yesX11DisplayOffset 10service ssh restart    安装XQuartz  在mac端下开启： 123sudo vim /etc/ssh/ssh_configForwardX11 yes    s">
   
     <link rel="alternative" href="/atom.xml" title="Ricky Ting&#39;s Blog" type="application/atom+xml">
   
@@ -152,68 +153,168 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-mac下ssh打开X11转发" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/10/mac已装软件目录/" class="archive-article-date">
-  	<time datetime="2018-02-10T07:34:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/10/mac已装软件目录/">mac已装软件目录</a>
+    <h1 class="article-title" itemprop="name">
+      mac下ssh打开X11转发
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Mac</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">软件</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        <a href="/2019/01/17/mac下ssh打开X11转发/" class="archive-article-date">
+  	<time datetime="2019-01-17T07:13:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mac下ssh打开X11转发"><a href="#mac下ssh打开X11转发" class="headerlink" title="mac下ssh打开X11转发"></a>mac下ssh打开X11转发</h1><ol>
+<li><p>首先确认linux下已开启X11转发：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/ssh/sshd_config</span><br><span class="line"></span><br><span class="line">X11Forwarding yes</span><br><span class="line">X11DisplayOffset 10</span><br><span class="line"></span><br><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p>安装XQuartz</p>
+</li>
+<li><p>在mac端下开启：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/ssh/ssh_config</span><br><span class="line"></span><br><span class="line">ForwardX11 yes</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p>ssh登陆</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -X username@ip</span><br></pre></td></tr></table></figure></li>
+</ol>
 
-          
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://ricky-ting.github.io/2019/01/17/mac下ssh打开X11转发/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/01/16/2019寒假计划-flag/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2019寒假计划(flag)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+ // id: "https://ricky-ting.github.io/2019/01/17/mac下ssh打开X11转发/",
+	id: "Thu Jan 17 2019 15:13:44 GMT+0800",
+  owner: 'Ricky-Ting',
+  repo: 'ricky-ting.github.io',
+  oauth: {
+    client_id: '5791c5e45aa204b34d62',
+    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+
+  
 
 
           </div>
@@ -236,9 +337,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
