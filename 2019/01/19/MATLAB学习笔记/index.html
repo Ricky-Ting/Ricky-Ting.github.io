@@ -16,7 +16,8 @@
 <meta property="og:description" content="MATLAB学习笔记常用命令 quit: 退出命令  clc: 擦除MATLAB工作窗中的所有显示内容，相当于命令行中的clear  clf: 擦除MATLAB的当前图形窗中的图形  clear: 清除内存中的变量和函数  dir: 列出指定目录下的文件和子目录清单  cd: 改变当前工作子目录  disp: (在运行中)显示变量和文字内容  who: 检查内存变量  whos: 列出内存变量的详">
 <meta property="og:image" content="https://ricky-ting.github.io/images/MATLAB学习笔记/MATLABop.png">
 <meta property="og:image" content="https://ricky-ting.github.io/images/MATLAB学习笔记/ColorAndLine.png">
-<meta property="og:updated_time" content="2019-01-19T10:37:56.399Z">
+<meta property="og:image" content="https://ricky-ting.github.io/images/MATLAB学习笔记/2D.png">
+<meta property="og:updated_time" content="2019-01-19T10:47:55.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MATLAB学习笔记">
 <meta name="twitter:description" content="MATLAB学习笔记常用命令 quit: 退出命令  clc: 擦除MATLAB工作窗中的所有显示内容，相当于命令行中的clear  clf: 擦除MATLAB的当前图形窗中的图形  clear: 清除内存中的变量和函数  dir: 列出指定目录下的文件和子目录清单  cd: 改变当前工作子目录  disp: (在运行中)显示变量和文字内容  who: 检查内存变量  whos: 列出内存变量的详">
@@ -309,6 +310,23 @@
 </li>
 </ul>
 <p><img src="/images/MATLAB学习笔记/ColorAndLine.png" alt=""></p>
+<ul>
+<li><p>可以加一些图形标记，如title, xlabel, ylabel, text,legend</p>
+</li>
+<li><p>axis([xmin,xmax,ymin,ymax]) 来设定坐标轴范围</p>
+</li>
+<li><p>hold on: 保持原有图形的基础上绘制新的图形</p>
+</li>
+<li><p>fplot(fname,lims,tol) lims为变量取值范围，tol为相对误差</p>
+</li>
+<li><p>loglog(x,y) 绘制双对数坐标图</p>
+</li>
+<li><p>semilogx(x,y) semilogy(x,y) 绘制单对数坐标图</p>
+</li>
+<li><p>polar(theta,rho) 用来绘制极坐标图</p>
+</li>
+</ul>
+<p><img src="/images/MATLAB学习笔记/2D.png" alt=""></p>
 
       
 
@@ -422,18 +440,16 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
- // id: "https://ricky-ting.github.io/2019/01/19/MATLAB学习笔记/",
-	id: "Sat Jan 19 2019 15:50:56 GMT+0800",
-  owner: 'Ricky-Ting',
-  repo: 'ricky-ting.github.io',
+  id: "<%=url%>",
+  owner: '<%=theme.gitment_owner%>',
+  repo: '<%=theme.gitment_repo%>',
   oauth: {
-    client_id: '5791c5e45aa204b34d62',
-    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
+    client_id: '<%=theme.gitment_oauth.client_id%>',
+    client_secret: '<%=theme.gitment_oauth.client_secret%>',
   },
 })
 gitment.render('gitment-ctn')
 </script>
-
   
 
 
@@ -548,6 +564,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
               </li>
              
@@ -556,11 +576,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,11 +584,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">solution</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,19 +604,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -612,6 +620,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -624,11 +640,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
             
             <div class="clearfix"></div>
