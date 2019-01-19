@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ricky-ting.github.io/"/>
-  <updated>2019-01-19T07:53:58.484Z</updated>
+  <updated>2019-01-19T08:58:04.069Z</updated>
   <id>https://ricky-ting.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://ricky-ting.github.io/2019/01/19/MATLAB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://ricky-ting.github.io/2019/01/19/MATLAB学习笔记/</id>
     <published>2019-01-19T07:50:56.000Z</published>
-    <updated>2019-01-19T07:53:58.484Z</updated>
+    <updated>2019-01-19T08:58:04.069Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="MATLAB学习笔记"><a href="#MATLAB学习笔记" class="headerlink" title="MATLAB学习笔记"></a>MATLAB学习笔记</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul><li><p>quit: 退出命令</p></li><li><p>clc: 擦除MATLAB工作窗中的所有显示内容，相当于命令行中的clear</p></li><li><p>clf: 擦除MATLAB的当前图形窗中的图形</p></li><li><p>clear: 清除内存中的变量和函数</p></li><li><p>dir: 列出指定目录下的文件和子目录清单</p></li><li><p>cd: 改变当前工作子目录</p></li><li><p>disp: (在运行中)显示变量和文字内容</p></li><li><p>who: 检查内存变量</p></li><li><p>whos: 列出内存变量的详细情况</p></li><li><p>save: 关闭前将变量保存到某一文件中</p></li><li><p>load: 从之前保存的文件中恢复变量</p></li><li><p>help: 非常有用</p></li><li><p>lookfor: 查找相关指令</p></li></ul><p><img src="/images/MATLAB学习笔记/MATLABop.png" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="MATLAB学习笔记"><a href="#MATLAB学习笔记" class="headerlink" title="MATLAB学习笔记"></a>MATLAB学习笔记</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul><li><p>quit: 退出命令</p></li><li><p>clc: 擦除MATLAB工作窗中的所有显示内容，相当于命令行中的clear</p></li><li><p>clf: 擦除MATLAB的当前图形窗中的图形</p></li><li><p>clear: 清除内存中的变量和函数</p></li><li><p>dir: 列出指定目录下的文件和子目录清单</p></li><li><p>cd: 改变当前工作子目录</p></li><li><p>disp: (在运行中)显示变量和文字内容</p></li><li><p>who: 检查内存变量</p></li><li><p>whos: 列出内存变量的详细情况</p></li><li><p>save: 关闭前将变量保存到某一文件中</p></li><li><p>load: 从之前保存的文件中恢复变量</p></li><li><p>help: 非常有用</p></li><li><p>lookfor: 查找相关指令</p></li><li><p>!之后可以加操作系统命令，如 !ls, !vim</p></li></ul><p><img src="/images/MATLAB学习笔记/MATLABop.png" alt=""></p><p>求解方程组时，用除法比用逆矩阵好。</p><h2 id="多项式"><a href="#多项式" class="headerlink" title="多项式"></a>多项式</h2><ul><li><p>用系数行向量表示：p=$[a_0 , a<em>1 , … , a</em>{n-1} , a_n ]$, ($p(x)= a_0 x_n + a<em>1 x</em>{n-1} + … + a<em>{n-1} x + a</em>{n} $).</p></li><li><p>可以用指令产生多项式系数向量: p=poly(AR). 如果AR是方阵，则多项式为特征多项式，如果AR为向量，则AR为多项式的解。</p></li><li><p>poly2str函数</p></li></ul><h3 id="一些常用多项式运算指令"><a href="#一些常用多项式运算指令" class="headerlink" title="一些常用多项式运算指令"></a>一些常用多项式运算指令</h3><ul><li><p>R=roots(p)   求多项式向量p的根</p></li><li><p>PA=polyval(p,S)  按照数组运算规则计算多项式值。 p为多项式，S为矩阵。 相当于求值。</p></li><li><p>PM=polyvalm(p;S) 按照矩阵运算规则计算多项式值。p为多项式，S为矩阵。</p></li><li><p>P=polyfit(x,y,n) 用n阶多项式拟合x,y向量给定的数据</p></li></ul><h2 id="数值积分"><a href="#数值积分" class="headerlink" title="数值积分"></a>数值积分</h2><ul><li><p>S=quad(‘fname’,a,b,tol,trace)  自适用递推Simpson数值积分法</p></li><li><p>S=quad8(‘fname’,a,b,tol,trace) 自适用递推Newton-Cotes数值积分法</p></li><li><p>tol是精度，trace是是否画图</p></li><li><p>quad8比quad有更高的积分精度</p></li></ul><h2 id="非线性方程求解"><a href="#非线性方程求解" class="headerlink" title="非线性方程求解"></a>非线性方程求解</h2><ul><li><p>对于多项式函数求根，r=roots(p)</p></li><li><p>单变量非线性方程求解, z=fzero(‘fname’,x0,tol,trace)</p></li><li><p>一般非线性方程(组)求解， X=fsolve(‘fname’,X0)</p></li></ul><h2 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h2><ul><li><p>fopen(“filename”,’specifier’)</p></li><li><p>fread(fd,..)</p></li><li><p>fwrite()</p></li><li><p>fclose</p></li></ul><h2 id="符号计算"><a href="#符号计算" class="headerlink" title="符号计算"></a>符号计算</h2>]]></content>
     
     <summary type="html">
     
@@ -143,9 +143,9 @@
     
       <category term="记录" scheme="https://ricky-ting.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
     
-      <category term="创新项目" scheme="https://ricky-ting.github.io/tags/%E5%88%9B%E6%96%B0%E9%A1%B9%E7%9B%AE/"/>
-    
       <category term="大数据" scheme="https://ricky-ting.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="创新项目" scheme="https://ricky-ting.github.io/tags/%E5%88%9B%E6%96%B0%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
@@ -167,9 +167,9 @@
     
       <category term="记录" scheme="https://ricky-ting.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
     
-      <category term="创新项目" scheme="https://ricky-ting.github.io/tags/%E5%88%9B%E6%96%B0%E9%A1%B9%E7%9B%AE/"/>
-    
       <category term="大数据" scheme="https://ricky-ting.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="创新项目" scheme="https://ricky-ting.github.io/tags/%E5%88%9B%E6%96%B0%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   

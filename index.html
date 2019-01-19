@@ -201,9 +201,58 @@
 </li>
 <li><p>lookfor: 查找相关指令</p>
 </li>
+<li><p>!之后可以加操作系统命令，如 !ls, !vim</p>
+</li>
 </ul>
 <p><img src="/images/MATLAB学习笔记/MATLABop.png" alt=""></p>
-
+<p>求解方程组时，用除法比用逆矩阵好。</p>
+<h2 id="多项式"><a href="#多项式" class="headerlink" title="多项式"></a>多项式</h2><ul>
+<li><p>用系数行向量表示：p=$[a_0 , a<em>1 , … , a</em>{n-1} , a_n ]$, ($p(x)= a_0 x_n + a<em>1 x</em>{n-1} + … + a<em>{n-1} x + a</em>{n} $).</p>
+</li>
+<li><p>可以用指令产生多项式系数向量: p=poly(AR). 如果AR是方阵，则多项式为特征多项式，如果AR为向量，则AR为多项式的解。</p>
+</li>
+<li><p>poly2str函数</p>
+</li>
+</ul>
+<h3 id="一些常用多项式运算指令"><a href="#一些常用多项式运算指令" class="headerlink" title="一些常用多项式运算指令"></a>一些常用多项式运算指令</h3><ul>
+<li><p>R=roots(p)   求多项式向量p的根</p>
+</li>
+<li><p>PA=polyval(p,S)  按照数组运算规则计算多项式值。 p为多项式，S为矩阵。 相当于求值。</p>
+</li>
+<li><p>PM=polyvalm(p;S) 按照矩阵运算规则计算多项式值。p为多项式，S为矩阵。</p>
+</li>
+<li><p>P=polyfit(x,y,n) 用n阶多项式拟合x,y向量给定的数据</p>
+</li>
+</ul>
+<h2 id="数值积分"><a href="#数值积分" class="headerlink" title="数值积分"></a>数值积分</h2><ul>
+<li><p>S=quad(‘fname’,a,b,tol,trace)  自适用递推Simpson数值积分法</p>
+</li>
+<li><p>S=quad8(‘fname’,a,b,tol,trace) 自适用递推Newton-Cotes数值积分法</p>
+</li>
+<li><p>tol是精度，trace是是否画图</p>
+</li>
+<li><p>quad8比quad有更高的积分精度</p>
+</li>
+</ul>
+<h2 id="非线性方程求解"><a href="#非线性方程求解" class="headerlink" title="非线性方程求解"></a>非线性方程求解</h2><ul>
+<li><p>对于多项式函数求根，r=roots(p)</p>
+</li>
+<li><p>单变量非线性方程求解, z=fzero(‘fname’,x0,tol,trace)</p>
+</li>
+<li><p>一般非线性方程(组)求解， X=fsolve(‘fname’,X0)</p>
+</li>
+</ul>
+<h2 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h2><ul>
+<li><p>fopen(“filename”,’specifier’)</p>
+</li>
+<li><p>fread(fd,..)</p>
+</li>
+<li><p>fwrite()</p>
+</li>
+<li><p>fclose</p>
+</li>
+</ul>
+<h2 id="符号计算"><a href="#符号计算" class="headerlink" title="符号计算"></a>符号计算</h2>
       
 
       
@@ -578,11 +627,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">创新项目</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">创新项目</a>
         		</li>
       		
 		</ul>
@@ -662,11 +711,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">创新项目</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大数据</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">创新项目</a>
         		</li>
       		
 		</ul>
@@ -1053,6 +1102,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
@@ -1061,19 +1114,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">solution</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1081,15 +1122,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1102,6 +1143,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
               </li>
              
               <li class="article-tag-list-item">
