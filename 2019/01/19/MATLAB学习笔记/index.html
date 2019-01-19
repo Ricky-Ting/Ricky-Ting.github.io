@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ricky-ting.github.io">
-  <title>How to make an installation USB for Linux or other OS in Mac OS X | Ricky Ting&#39;s Blog</title>
+  <title>MATLAB学习笔记 | Ricky Ting&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="How to make an installation USB for Linux or other OS in Mac OS XStep1: Download the image(iso) file from the Internet. Step2: Open a Terminal(the following command are all completed in a terminal)">
+  <meta name="description" content="MATLAB学习笔记常用命令 quit: 退出命令  clc: 擦除MATLAB工作窗中的所有显示内容，相当于命令行中的clear  clf: 擦除MATLAB的当前图形窗中的图形  clear: 清除内存中的变量和函数  dir: 列出指定目录下的文件和子目录清单  cd: 改变当前工作子目录  disp: (在运行中)显示变量和文字内容  who: 检查内存变量  whos: 列出内存变量的详">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to make an installation USB for Linux or other OS in Mac OS X">
-<meta property="og:url" content="https://ricky-ting.github.io/2018/10/17/How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X/index.html">
+<meta property="og:title" content="MATLAB学习笔记">
+<meta property="og:url" content="https://ricky-ting.github.io/2019/01/19/MATLAB学习笔记/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
-<meta property="og:description" content="How to make an installation USB for Linux or other OS in Mac OS XStep1: Download the image(iso) file from the Internet. Step2: Open a Terminal(the following command are all completed in a terminal)">
-<meta property="og:updated_time" content="2018-10-17T12:55:47.121Z">
+<meta property="og:description" content="MATLAB学习笔记常用命令 quit: 退出命令  clc: 擦除MATLAB工作窗中的所有显示内容，相当于命令行中的clear  clf: 擦除MATLAB的当前图形窗中的图形  clear: 清除内存中的变量和函数  dir: 列出指定目录下的文件和子目录清单  cd: 改变当前工作子目录  disp: (在运行中)显示变量和文字内容  who: 检查内存变量  whos: 列出内存变量的详">
+<meta property="og:image" content="https://ricky-ting.github.io/images/MATLAB学习笔记/MATLABop.png">
+<meta property="og:updated_time" content="2019-01-19T07:53:58.484Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="How to make an installation USB for Linux or other OS in Mac OS X">
-<meta name="twitter:description" content="How to make an installation USB for Linux or other OS in Mac OS XStep1: Download the image(iso) file from the Internet. Step2: Open a Terminal(the following command are all completed in a terminal)">
+<meta name="twitter:title" content="MATLAB学习笔记">
+<meta name="twitter:description" content="MATLAB学习笔记常用命令 quit: 退出命令  clc: 擦除MATLAB工作窗中的所有显示内容，相当于命令行中的clear  clf: 擦除MATLAB的当前图形窗中的图形  clear: 清除内存中的变量和函数  dir: 列出指定目录下的文件和子目录清单  cd: 改变当前工作子目录  disp: (在运行中)显示变量和文字内容  who: 检查内存变量  whos: 列出内存变量的详">
+<meta name="twitter:image" content="https://ricky-ting.github.io/images/MATLAB学习笔记/MATLABop.png">
   
     <link rel="alternative" href="/atom.xml" title="Ricky Ting&#39;s Blog" type="application/atom+xml">
   
@@ -153,36 +155,55 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-MATLAB学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      How to make an installation USB for Linux or other OS in Mac OS X
+      MATLAB学习笔记
     </h1>
   
 
         
-        <a href="/2018/10/17/How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X/" class="archive-article-date">
-  	<time datetime="2018-10-17T12:55:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
+        <a href="/2019/01/19/MATLAB学习笔记/" class="archive-article-date">
+  	<time datetime="2019-01-19T07:50:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X"><a href="#How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X" class="headerlink" title="How to make an installation USB for Linux or other OS in Mac OS X"></a>How to make an installation USB for Linux or other OS in Mac OS X</h1><p>Step1: Download the image(iso) file from the Internet.</p>
-<p>Step2: Open a Terminal(the following command are all completed in a terminal)</p>
-<a id="more"></a>
-<p>Step3: Trun <code>.iso</code> file into <code>.img</code> file by <code>hdiutil convert -format UDRW -o ~/path/to/target.img ~/path/from/src.iso</code>(The file created may end with <code>.dmg</code>)</p>
-<p>Step4: <code>diskutil list</code> to obtain the devices mounted.</p>
-<p>Step5: Insert your USB.</p>
-<p>Step6: <code>diskutil list</code> to see which is added(/dev/diskN).</p>
-<p>Step7: <code>diskutil unmountDisk /dev/diskN</code> to unmount USB</p>
-<p>Step8: <code>sudo dd if=/path/to/target.img of=/dev/rdiskN bs=1m</code> to write the installation file into the USB</p>
-<p>Step9: <code>diskutil eject /dev/diskN</code> to eject your USB.</p>
+        <h1 id="MATLAB学习笔记"><a href="#MATLAB学习笔记" class="headerlink" title="MATLAB学习笔记"></a>MATLAB学习笔记</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
+<li><p>quit: 退出命令</p>
+</li>
+<li><p>clc: 擦除MATLAB工作窗中的所有显示内容，相当于命令行中的clear</p>
+</li>
+<li><p>clf: 擦除MATLAB的当前图形窗中的图形</p>
+</li>
+<li><p>clear: 清除内存中的变量和函数</p>
+</li>
+<li><p>dir: 列出指定目录下的文件和子目录清单</p>
+</li>
+<li><p>cd: 改变当前工作子目录</p>
+</li>
+<li><p>disp: (在运行中)显示变量和文字内容</p>
+</li>
+<li><p>who: 检查内存变量</p>
+</li>
+<li><p>whos: 列出内存变量的详细情况</p>
+</li>
+<li><p>save: 关闭前将变量保存到某一文件中</p>
+</li>
+<li><p>load: 从之前保存的文件中恢复变量</p>
+</li>
+<li><p>help: 非常有用</p>
+</li>
+<li><p>lookfor: 查找相关指令</p>
+</li>
+</ul>
+<p><img src="/images/MATLAB学习笔记/MATLABop.png" alt=""></p>
 
       
 
@@ -241,7 +262,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://ricky-ting.github.io/2018/10/17/How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://ricky-ting.github.io/2019/01/19/MATLAB学习笔记/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -255,18 +276,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/10/24/Records-for-Environment-Setup-for-Hadoop/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Records for Environment Setup for Hadoop
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/10/15/Summary-of-definitions-and-theorems-in-graph-theory/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Summary of definitions and theorems in graph theory</div>
+    <a href="/2019/01/18/文章集锦/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">文章集锦</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -305,8 +317,8 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
- // id: "https://ricky-ting.github.io/2018/10/17/How-to-make-an-installation-USB-for-Linux-or-other-OS-in-Mac-OS-X/",
-	id: "Wed Oct 17 2018 20:55:11 GMT+0800",
+ // id: "https://ricky-ting.github.io/2019/01/19/MATLAB学习笔记/",
+	id: "Sat Jan 19 2019 15:50:56 GMT+0800",
   owner: 'Ricky-Ting',
   repo: 'ricky-ting.github.io',
   oauth: {
