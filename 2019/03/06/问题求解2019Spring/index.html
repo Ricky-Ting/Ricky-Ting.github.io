@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ricky-ting.github.io">
-  <title>读的书与想读的书(计算机) | Ricky Ting&#39;s Blog</title>
+  <title>问题求解2019Spring | Ricky Ting&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="读的书与想读的书(计算机方面)斜体为未读，粗体为在读">
-<meta name="keywords" content="计划,记录">
+  <meta name="description" content="问题求解 2019Spring4.1线性规划In linear programming, we do not allow strict inequalities. minimization linear program and maximization program The simplex algorithm does not run in polynomial time in the wors">
 <meta property="og:type" content="article">
-<meta property="og:title" content="读的书与想读的书(计算机)">
-<meta property="og:url" content="https://ricky-ting.github.io/2018/02/23/读的书与想读的书-计算机/index.html">
+<meta property="og:title" content="问题求解2019Spring">
+<meta property="og:url" content="https://ricky-ting.github.io/2019/03/06/问题求解2019Spring/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
-<meta property="og:description" content="读的书与想读的书(计算机方面)斜体为未读，粗体为在读">
-<meta property="og:updated_time" content="2019-01-19T11:13:36.291Z">
+<meta property="og:description" content="问题求解 2019Spring4.1线性规划In linear programming, we do not allow strict inequalities. minimization linear program and maximization program The simplex algorithm does not run in polynomial time in the wors">
+<meta property="og:image" content="https://ricky-ting.github.io/images/">
+<meta property="og:updated_time" content="2019-03-06T03:23:17.538Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="读的书与想读的书(计算机)">
-<meta name="twitter:description" content="读的书与想读的书(计算机方面)斜体为未读，粗体为在读">
+<meta name="twitter:title" content="问题求解2019Spring">
+<meta name="twitter:description" content="问题求解 2019Spring4.1线性规划In linear programming, we do not allow strict inequalities. minimization linear program and maximization program The simplex algorithm does not run in polynomial time in the wors">
+<meta name="twitter:image" content="https://ricky-ting.github.io/images/">
   
     <link rel="alternative" href="/atom.xml" title="Ricky Ting&#39;s Blog" type="application/atom+xml">
   
@@ -154,48 +155,52 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-读的书与想读的书-计算机" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-问题求解2019Spring" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      读的书与想读的书(计算机)
+      问题求解2019Spring
     </h1>
   
 
         
-        <a href="/2018/02/23/读的书与想读的书-计算机/" class="archive-article-date">
-  	<time datetime="2018-02-23T04:14:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-23</time>
+        <a href="/2019/03/06/问题求解2019Spring/" class="archive-article-date">
+  	<time datetime="2019-03-06T02:26:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="读的书与想读的书-计算机方面"><a href="#读的书与想读的书-计算机方面" class="headerlink" title="读的书与想读的书(计算机方面)"></a>读的书与想读的书(计算机方面)</h1><p>斜体为未读，粗体为在读</p>
- <a id="more"></a>
-<h2 id="程序语言方面"><a href="#程序语言方面" class="headerlink" title="程序语言方面:"></a>程序语言方面:</h2><h3 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h3><ul>
-<li><em>C++ Primer</em></li>
+        <h1 id="问题求解-2019Spring"><a href="#问题求解-2019Spring" class="headerlink" title="问题求解 2019Spring"></a>问题求解 2019Spring</h1><h2 id="4-1线性规划"><a href="#4-1线性规划" class="headerlink" title="4.1线性规划"></a>4.1线性规划</h2><p>In linear programming, we do not allow strict inequalities.</p>
+<p><strong>minimization linear program</strong> and <strong>maximization program</strong></p>
+<p>The simplex algorithm does not run in polynomial time in the worst case, but it is fairly efficient and widely used in practice.</p>
+<p>We use two forms, <strong>standard</strong> and <strong>slack</strong>.</p>
+<p>Informally, a linear program in standard form is the maximization of a linear function subject to linear inequalities, whereas a linear program in slack form is the maximization of a linear function subject to linear equalities.</p>
+<p>We call the feasible region formed by the intersection of these half-spaces a <strong>simplex</strong>.</p>
+<p>The <strong>simplex</strong> algorithm starts at some vertex of the simplex and performs a sequence of iterations. In each iteration, it moves along an edge of the simplex from a current vertex to a neighboring vertex whose objective value is no smaller than that of the current vertex(and usually is larger.) The simplex algorithm terminates when it reaches a local maximum, which is a vertex from which all neighboring vertices have a smaller objective value.</p>
+<p>If we add to a linear program the additional requirement that all variables take on integer values, we have an <strong>integer linear program</strong>.</p>
+<p>An arbitrary linear program need not have nonnegativity constraints, but standard form requires them.</p>
+<p>We say that two maximization linear programs $L$ and $L’$ are <strong>equivalent</strong> if for each feasible solution $\bar{x}$ to $L$ with objective value $z$, there is a corresponding feasible solution $\bar{x}’$ to $L’$  with objective value $z$ and for each feasible solution $\bar{x}’’$ to $L’$ with objective value $z$, there is a corresponding feasible solution $\bar{x}$ to $L$ with objective value $z$.(This definition does not imply a one-to-one correspondence between feasible solutions.)</p>
+<p>How to convert linear programs into standard form?</p>
+<p>如何添加非负限制的设计很精巧</p>
+<p>How to convert linear programs into slack form?</p>
+<p>We call $s$ a <strong>slack variable</strong> because it measures the <strong>slack</strong>, or the difference, between the left-hand and right-hand sides of equation.</p>
+<p>We call the variables on the left-hand side of the equalities <strong>basic variables</strong> and those on the right-hand side <strong>nonbasic variables</strong>.</p>
+<h2 id="4-2-群论初步"><a href="#4-2-群论初步" class="headerlink" title="4.2 群论初步"></a>4.2 群论初步</h2><p>A <strong>binary operation</strong> or <strong>law of composition</strong> on a set $G$ is a function $G \times G \rightarrow G$ that assigns to each pair $(a,b) \in G \times G$  a unique element  $a \circ b$, or $ab$ in $G$, called the composition of $a$ and $b$. A <strong>group</strong> $(G,\circ)$ is a set $G$ together with a law of composition $(a,b) \mapsto a \circ b$ that satisfies the following axioms.</p>
+<ul>
+<li><p><strong>associative</strong>:      </p>
+</li>
+<li><p><strong>identity element</strong>:</p>
+</li>
+<li><p><strong>inverse element</strong> :</p>
+</li>
 </ul>
-<h3 id="MATLAB"><a href="#MATLAB" class="headerlink" title="MATLAB"></a>MATLAB</h3><ul>
-<li>MATLAB 数学工具软件实例简明教程</li>
-</ul>
-<h2 id="算法方面："><a href="#算法方面：" class="headerlink" title="算法方面："></a>算法方面：</h2><ul>
-<li><strong>算法导论</strong></li>
-</ul>
-<h2 id="数学方面"><a href="#数学方面" class="headerlink" title="数学方面"></a>数学方面</h2><ul>
-<li><strong>离散数学及其应用</strong></li>
-<li><em>具体数学</em></li>
-</ul>
-<h2 id="Linux-Unix-Mac-OS-X-方面"><a href="#Linux-Unix-Mac-OS-X-方面" class="headerlink" title="Linux/Unix/Mac OS X 方面"></a>Linux/Unix/Mac OS X 方面</h2><h2 id="体系结构方面"><a href="#体系结构方面" class="headerlink" title="体系结构方面"></a>体系结构方面</h2><ul>
-<li><em>深入理解计算机系统</em></li>
-</ul>
-<h2 id="科普类"><a href="#科普类" class="headerlink" title="科普类"></a>科普类</h2><ul>
-<li>编码：隐匿在计算机软硬件背后的语言</li>
-<li>黑客与画家</li>
-</ul>
+<p>A group $G$ with the property that $a \circ b = b \circ a$ for all $a,b \in G$  is called <strong>abelian</strong> or <strong>commutative</strong>. Groups not satisfying this property are said to be <strong>nonabelian</strong> or <strong>noncommutative</strong>.</p>
+<p><img src="/images/" alt=""></p>
 
       
 
@@ -204,21 +209,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">计划</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -269,7 +259,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://ricky-ting.github.io/2018/02/23/读的书与想读的书-计算机/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://ricky-ting.github.io/2019/03/06/问题求解2019Spring/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,18 +273,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/02/23/读的书与想读的书-除计算机/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          读的书与想读的书(除计算机)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/02/15/Unix-Programming-Tools/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Unix Programming Tools</div>
+    <a href="/2019/01/19/MATLAB学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MATLAB学习笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -333,8 +314,8 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
- // id: "https://ricky-ting.github.io/2018/02/23/读的书与想读的书-计算机/",
-	id: "Fri Feb 23 2018 12:14:26 GMT+0800",
+ // id: "https://ricky-ting.github.io/2019/03/06/问题求解2019Spring/",
+	id: "Wed Mar 06 2019 10:26:24 GMT+0800",
   owner: 'Ricky-Ting',
   repo: 'ricky-ting.github.io',
   oauth: {
