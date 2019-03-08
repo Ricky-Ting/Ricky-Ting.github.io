@@ -189,17 +189,111 @@
 <p>How to convert linear programs into slack form?</p>
 <p>We call $s$ a <strong>slack variable</strong> because it measures the <strong>slack</strong>, or the difference, between the left-hand and right-hand sides of equation.</p>
 <p>We call the variables on the left-hand side of the equalities <strong>basic variables</strong> and those on the right-hand side <strong>nonbasic variables</strong>.</p>
-<h2 id="4-2-群论初步"><a href="#4-2-群论初步" class="headerlink" title="4.2 群论初步"></a>4.2 群论初步</h2><p>A <strong>binary operation</strong> or <strong>law of composition</strong> on a set $G$ is a function $G \times G \rightarrow G$ that assigns to each pair $(a,b) \in G \times G$  a unique element  $a \circ b$, or $ab$ in $G$, called the composition of $a$ and $b$. A <strong>group</strong> $(G,\circ)$ is a set $G$ together with a law of composition $(a,b) \mapsto a \circ b$ that satisfies the following axioms.</p>
+<h2 id="4-2-群论初步"><a href="#4-2-群论初步" class="headerlink" title="4.2 群论初步"></a>4.2 群论初步</h2><h3 id="Some-definations"><a href="#Some-definations" class="headerlink" title="Some definations"></a>Some definations</h3><p>A <strong>symmetry</strong> of a geometric figure is a rearrangement of the figure preserving the arrangement of its sides and vertices as well as its distances and angles. </p>
+<p>A map from the plane to itself preserving the symmetry of an object is called a <strong>rigid motion</strong>.</p>
+<p>A <strong>binary operation</strong> or <strong>law of composition</strong> on a set $G$ is a function $G \times G \rightarrow G$ that assigns to each pair $(a,b) \in G \times G$  a unique element  $a \circ b$, or $ab$ in $G$, called the composition of $a$ and $b$. A <strong>group</strong> $(G,\circ)$ is a set $G$ together with a law of composition $(a,b) \mapsto a \circ b$ that satisfies the following axioms.</p>
 <ul>
-<li><p><strong>associative</strong>:      </p>
+<li><p><strong>associative</strong>:     $(a \circ b) \circ c = a \circ (b \circ c)$ </p>
 </li>
-<li><p><strong>identity element</strong>:</p>
+<li><p><strong>identity element</strong>:  $e \circ a = a \circ e =a$</p>
 </li>
-<li><p><strong>inverse element</strong> :</p>
+<li><p><strong>inverse element</strong> : $a \circ a^{-1} = a^{-1} \circ a =e$ </p>
 </li>
 </ul>
 <p>A group $G$ with the property that $a \circ b = b \circ a$ for all $a,b \in G$  is called <strong>abelian</strong> or <strong>commutative</strong>. Groups not satisfying this property are said to be <strong>nonabelian</strong> or <strong>noncommutative</strong>.</p>
 <p><img src="/images/" alt=""></p>
+<p>A <strong>Cayley table</strong> .</p>
+<p>Every nonzero $k$ does have an inverse in $Z<em>{n}$ if $k$ is relatively prime to $n$. Denote the set of all such nonzero elements in $Z</em>{n}$ by $U(n)$. Then $U(n)$  is  a group called the <strong>group of units</strong> of $Z_{n}$ .</p>
+<p>The set of invertible matrices forms a group  called the <strong>general linear group</strong>. </p>
+<p>A group is <strong>finite</strong>, or has <strong>finite order</strong>, if it contains a finite number of elements; otherwise, the group is said to be <strong>infinite</strong> or to have <strong>infinite</strong> order. The <strong>order</strong> of a finite group is the number of elements that it contains.</p>
+<h3 id="Basic-Properties-of-Groups"><a href="#Basic-Properties-of-Groups" class="headerlink" title="Basic Properties of Groups"></a>Basic Properties of Groups</h3><p><strong>Proposition 3.17.</strong> The identity element in a group $G$ is unique; that is, there exists only one element $e \in G$</p>
+<p> such that $eg=ge=g$ for all $g \in G$.</p>
+<p><strong>Proposition 3.18.</strong> If $g$ is any element in a group $G$, then the inverse of $g$ , denoted by $g^{-1}$ , is unique.</p>
+<p><strong>Proposition 3.19</strong> Let $G$  be a group. If $a,b \in G$, then $(ab)^{-1} = b^{-1}a^{-1}$.</p>
+<p><strong>Proposition 3.20.</strong> Let $G$ be a group. For any $a \in G$, $(a^{-1})^{-1}=a$.</p>
+<p><strong>Proposition 3.21</strong> Let $G$ be a group and $a$ and $b$ be any two elements in $G$. Then the equations $ax=b$ and $xa=b$ have unique solutions in $G$.</p>
+<p><strong>Proposition 3.22. (right and left cancellation laws)</strong>  If $G$ is a group and $a,b,c\in G$, then $ba=ca$ implies $b=c$ and $ab=ac$ implies $b=c$.</p>
+<p><strong>Theorem 3.23.</strong> In a group, the usual laws of exponents hold; that is, for all $g,h \in G$,</p>
+<ol>
+<li><p>$g^m G^n = g^{m+n}$ for all $m,n \in Z$</p>
+</li>
+<li><p>$(g^m)^n = g^{mn}$ for all $m,n \in Z$ </p>
+</li>
+<li><p>$(gh)^n = (h^{-1} g^{-1})^{-n}$ for all $n\in Z$. Furthermore, if $G$ is abelian, then $(gh)^n = g^n h^n$.</p>
+</li>
+</ol>
+<h3 id="Subgroups"><a href="#Subgroups" class="headerlink" title="Subgroups"></a>Subgroups</h3><p>We define a <strong>subgroup</strong> $H$ of a group $G$ to be a subset $H$ of $G$ such that when the group operation of $G$ is restricted to $H$, $H$ is a group in its own right.</p>
+<p>Every group has at least two subgroups. The subgroup $H={e}$ of a group $G$ is called the <strong>trivial subgroup</strong>. A subgroup that is a proper subset of $G$ is called a <strong>proper subgroup</strong>.</p>
+<h3 id="Some-Subgroup-Theorems"><a href="#Some-Subgroup-Theorems" class="headerlink" title="Some Subgroup Theorems"></a>Some Subgroup Theorems</h3><p><strong>Proposition 3.30</strong> A subset $H$ of $G$ is a subgroup if and only if it satisfies the following conditions.</p>
+<ol>
+<li><p>The identity of $e$ of $G$ is in $H$.</p>
+</li>
+<li><p>If $h_1,h_2 \in H$, thne $h_1h_2 \in H$.</p>
+</li>
+<li><p>If $h \in H$, then $h^{-1} \in H$.</p>
+</li>
+</ol>
+<p><strong>Proposition 3.31</strong> Let $H$ be a subset of a group $G$. Then $H$ is a subgroup of $G$ if and only if $H \not= \emptyset$, and whenever $g,h \in H$ then $gh^{-1}$ is in $H$.</p>
+<h3 id="Cyclic-Subgroups"><a href="#Cyclic-Subgroups" class="headerlink" title="Cyclic Subgroups"></a>Cyclic Subgroups</h3><p><strong>Theorem 4.3</strong> Let $G$ be a group and $a$ be any element in $G$. Then the set $<a> = { a^k : k \in Z }$ is a subgroup of $G$. Furthermore, $<a>$ is the smallest subgroup of $G$ that contains $a$.</a></a></p>
+<p>For  $a\in G$, we call $<a>$ the <strong>cyclic subgroup</strong> generated by $a$. If $G$ contains some element $a$ such that $G=<a>$, then $G$ is a <strong>cyclic group</strong>. In this case $a$ is a <strong>generator</strong> of $G$. If $a$ is an element of a group $G$, we define the <strong>order</strong> of $a$ to be the smallest positive integer $n$ such that $a^n =e$, and we write $|a|=n$. If there is no such integer $n$, we say that the order of $a$ is inifinte and write $|a|= \infty$ to denote the order of $a$.</a></a></p>
+<p><strong>Theorem 4.9.</strong> Every cyclic group is abelian.</p>
+<p><strong>Theorem 4.10</strong> Every subgroup of a cyclic group is cyclic.</p>
+<p><strong>Corollary 4.11</strong> The subgroups of $Z$ are exactly $nZ$ for $n=0,1,2,….$</p>
+<p><strong>Proposition 4.12</strong> Let $G$ be a cyclic group of order $n$ and suppose that $a$ is a generator for $G$. Then $a^k=e$ if and only if $n$ divides $k$.</p>
+<p><strong>Theorem 4.13</strong> Let $G$ be a cyclic group of order $n$ and suppose that $a \in G$ is a generator of the group. If $b= a^k$, then the order of $b$ is $n/d$, where $d=gcd(k,n)$.</p>
+<p><strong>Corollary 4.14</strong> The generators of $Z_n$ are the integers $r$ such that $1 \le r &lt; n$ and $gcd(r,n)=1$.</p>
+<h3 id="置换群与拉格朗日定理"><a href="#置换群与拉格朗日定理" class="headerlink" title="置换群与拉格朗日定理"></a>置换群与拉格朗日定理</h3><p>In general, the permutations of a set $X$ form a group $S_X$. If $X$ is a finite set, we can assume $X={1,2,…,n}$. In this case we write $S_n$ instead of $S_X$.  We call this group the <strong>symmetric group</strong> on $n$ letters.</p>
+<p><strong>Theorem 5.1</strong> The symmetric group on $n$ letters, $S_n$ is a group with $n!$ elements, where the binary operation is the composition of maps.</p>
+<p>A subgroup of $S_n$ is called a <strong>permutation group</strong>.</p>
+<p>Permutation multiplication is not usually commutative.</p>
+<p>A permutation $\sigma \in S_X$ is a <strong>cycle of length</strong> $k$ if there exist elements $a_1, a_2, …, a_k \in X$ such that $ \sigma(a_1)=a_2,\sigma(a_2)=a_3,…,\sigma(a_k)=a_1  $ and $\sigma(x)=x$ for all other elements $x \in X$. We will write $(a_1,a_2,..,a_k)$ to denote the cycle $\sigma$. </p>
+<p>Cycles are the building blocks of all permutations.</p>
+<p>Two cycles in $S_X$ , $\sigma = (a_1, a_2,…,a_k)$ and $\tau = (b_1,b_2,…,b_l)$, are <strong>disjoint</strong> of $a_i \not= b_i$ for all $i$ and $j$.</p>
+<p><strong>Proposition 5.8.</strong> Let $\sigma$ and $\tau$ be two disjoint cycles in $S_X$. Then $\sigma \tau = \tau \sigma$.</p>
+<p><strong>Theorem 5.9</strong> Every permutation in $S_n$ can be written as the product of disjoint cycles.</p>
+<h4 id="Transpositions"><a href="#Transpositions" class="headerlink" title="Transpositions"></a>Transpositions</h4><p>The simplest permutation is a cycle of length $2$. Such cycles are called <strong>transpositions</strong>. Since $(a_1,a_2,…,a_n)=(a_1a_n)(a<em>1 a</em>{n-1})…(a_1a_3)(a_1a_2)$</p>
+<p><strong>Proposition 5.12.</strong> Any permutation of a finite set containing at least two elements can be written as the product of transpositions.</p>
+<p>No permutation can be written as the product of both an even number of transpositions and an odd number of transpositions.</p>
+<p><strong>Lemma 5.14</strong> If the identity is written as the product of $r$ transpositions, $id = \tau_1 \tau_2 \cdot \cdot \cdot \tau_r , $  then $r$ is an even number.   (Proof need to be understood)</p>
+<p><strong>Theorem 5.15</strong> If a permutation $\sigma$ can be expressed as the product of an even number of transpositions, then any other product of transpositions equaling $\sigma$ must also contain an even number of transpositions. Similarly, if $\sigma$ can be expressed as the product of an odd number of transpositions, then any other product of transpositions equaling $\sigma$ must also contain an odd number of transpositions.</p>
+<p><strong>My comment on the proof of 5.14:</strong>  The fact that the inverse of $\sigma$ is $\sigma_m \cdot \cdot \cdot  \sigma_1$ confuses me some time. By introducing the fact that two identity transpositions equals to the identity, it is much clear.  Also note that the inverse of any transposition is itself.</p>
+<p>We define a permutation to be <strong>even</strong> if it can be expressed as an even number of transpostions and <strong>odd</strong> if it can be expressed as an odd number of transpositions.</p>
+<h4 id="The-Alternating-Groups"><a href="#The-Alternating-Groups" class="headerlink" title="The Alternating Groups"></a>The Alternating Groups</h4><p>One of the most important subgroups of $S_n$ is the set of all even permutations, $A_n$. The group $A_n$ is called the <strong>alternating group on $n$ letters</strong>.</p>
+<p><strong>Theorem 5.16</strong> The set $A_n$ is a subgroup of $S_n$.</p>
+<p><strong>Proposition 5.17</strong> The number of even permutations in $S_n, n&gt;2$, is equal to the number of odd permutations; hence, the order of $A_n$ is $n!/2$ .</p>
+<h4 id="Dihedral-Groups"><a href="#Dihedral-Groups" class="headerlink" title="Dihedral Groups"></a>Dihedral Groups</h4><p>For $n=3,4,…,$, we define the $n$<strong>th dihedral group</strong> to be the group of rigid motions of a regular $n$-gon.</p>
+<p><strong>Theorem 5.20.</strong> The dihedral group, $D_n$, is a subgroup of $S_n$ of order $2n$.</p>
+<p><strong>Theorem 5.23.</strong> The group $D_n$ , $n \ge 3$, consists of all products of two elements $r$ and $s$, satisfying the relations $r^n=1, s^2=1, srs=r^{-1}$.</p>
+<p><strong>Proposition 5.27.</strong> The group of rigid motions of a cube contains $24$ elements.</p>
+<p><strong>Theorem 5.28.</strong> The group of rigid motions of a cube is $S_4$.</p>
+<h4 id="Cosets"><a href="#Cosets" class="headerlink" title="Cosets"></a>Cosets</h4><p>Let $G$ be a group and $H$ a subgroup of $G$. Define a <strong>left coset</strong> of $H$ with <strong>representative</strong> $g \in G$ to be the set $gH = { gh : h \in H }$. <strong>Right cosets</strong> can be defined similarly by $Hg = { hg:h \in H }$. </p>
+<p><strong>Lemma 6.3.</strong> Let $H$ be a subgroup of a group $G$ and suppose that $g_1,g_2 \in G$. The following conditions are equivalent.</p>
+<ol>
+<li><p>$g_1 H = g_2 H$</p>
+</li>
+<li><p>$H g_1^{-1} = H g_2^{-1}$</p>
+</li>
+<li><p>$g_1 H \subset g_2 H $</p>
+</li>
+<li><p>$g_2 \in g_1 H$</p>
+</li>
+<li><p>$ g_1^{-1} g_2 \in H$.</p>
+</li>
+</ol>
+<p><strong>Theorem 6.4</strong> Let $H$ be a subgroup of a group $G$. Then the left cosets of $H$ in $G$ partition $G$. That is, the group $G$ is the disjoint union of the left cosets of $H$ in $G$.</p>
+<p>Let $G$ be a group and $H$ be a subgroup of $G$. Define the <strong>index</strong> of $H$ in $G$ to be the number of left cosets of $H$ in $G$. We will denote the index by $[G:H]$.</p>
+<p><strong>Theorem 6.8.</strong>  Let $H$ be a subgroup of a group $G$. The number of left cosets of $H$ in $G$ is the same as the number of right cosets of $H$ in $G$.</p>
+<p><strong>Proposition 6.9.</strong> Let $H$ be a subgroup of $G$ with $g \in G$ and define a map $\phi : H \rightarrow gH$ by $\phi(h) = gh$. The map $\phi$ is bijective; hence, the number of elements in $H$ is the same as the number of elements in $gH$.</p>
+<p><strong>Theorem 6.10 Lagrange.</strong> Let $G$ be a finite group and let $H$ be a subgroup of $G$. Then $|G|/|H|=[G:H]$ is the number of distinct left cosets in $G$. In particular, the number of elements in $H$ must divide the number of elements in $G$.</p>
+<p><strong>Corollary 6.11.</strong> Suppose that $G$ is a finite group and $g \in G$. Then the order of $g$ must divide the number of elements in $G$.</p>
+<p><strong>Corollary 6.12</strong> Let $|G|=p$ with $p$ a prime number. Then $G$ is cyclic and any $g \in G$ such that $g\not= e$ is a generator.</p>
+<p><strong>Corollary 6.13.</strong> Let $H$ and $K$ be subgroups of a finite group $G$ such that $G \supset H \supset K.$ Then $[G:K]=[G:H][H:K].$</p>
+<p><strong>Proposition 6.15</strong> The group $A_4$ has no subgroup of order $6$.</p>
+<p><strong>Theorem 6.16.</strong> Two cycles $\tau$ and $\mu$ in $S_n$ have the same length if and only if there exists $a \sigma \in S_n$ such that $\mu = \sigma \tau \sigma^{-1}$.</p>
+<h4 id="Fermat’s-and-Euler’s-Theorems"><a href="#Fermat’s-and-Euler’s-Theorems" class="headerlink" title="Fermat’s and Euler’s Theorems"></a>Fermat’s and Euler’s Theorems</h4><p>The <strong>Euler</strong> $\phi$ <strong>-function</strong> is the map $\phi:N \rightarrow N$ defined by $\phi(n)=1$ for $n=1$, and, for $n&gt;1$, $\phi(n)$ is the number of positive integers $m$ with $1 \le m &lt; n$ and $gcd(m,n)=1$.</p>
+<p><strong>Theorem 6.17.</strong> Let $U(n)$ be the group of units in $Z_n$. Then $|U(n)| = \phi(n)$.</p>
+<p><strong>Theorem 6.18 Euler’s Theorem.</strong> Let $a$ and $n$ be integers such that $n&gt;0$ and $gcd(a,n)=1$. Then $a^{\phi(n)} \equiv 1$(mod $n$).</p>
+<p><strong>Theorem 6.19. Fermat’s Little Theorem.</strong> Let $p$ be any prime number and suppose that $ p \nmid a$ ($p$ does not divide $a$). Then $a^{p-1} \equiv 1$ (mod $p$). Furthermore, for any integer $b$, $b^p \equiv b$ (mod $p$). </p>
 
       
 
@@ -1032,15 +1126,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
+                <a href="javascript:void(0)" class="js-tag color4">solution</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1048,7 +1142,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">solution</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1064,19 +1158,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1092,6 +1174,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
@@ -1100,11 +1190,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
             
             <div class="clearfix"></div>
