@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="问题求解 2019Spring4.1线性规划In linear programming, we do not allow strict inequalities. minimization linear program and maximization program The simplex algorithm does not run in polynomial time in the wors">
 <meta property="og:image" content="https://ricky-ting.github.io/images/">
-<meta property="og:updated_time" content="2019-03-08T15:39:32.467Z">
+<meta property="og:updated_time" content="2019-03-12T06:05:23.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="问题求解2019Spring">
 <meta name="twitter:description" content="问题求解 2019Spring4.1线性规划In linear programming, we do not allow strict inequalities. minimization linear program and maximization program The simplex algorithm does not run in polynomial time in the wors">
@@ -180,6 +180,7 @@
 <p>The simplex algorithm does not run in polynomial time in the worst case, but it is fairly efficient and widely used in practice.</p>
 <p>We use two forms, <strong>standard</strong> and <strong>slack</strong>.</p>
 <p>Informally, a linear program in standard form is the maximization of a linear function subject to linear inequalities, whereas a linear program in slack form is the maximization of a linear function subject to linear equalities.</p>
+<a id="more"></a>
 <p>We call the feasible region formed by the intersection of these half-spaces a <strong>simplex</strong>.</p>
 <p>The <strong>simplex</strong> algorithm starts at some vertex of the simplex and performs a sequence of iterations. In each iteration, it moves along an edge of the simplex from a current vertex to a neighboring vertex whose objective value is no smaller than that of the current vertex(and usually is larger.) The simplex algorithm terminates when it reaches a local maximum, which is a vertex from which all neighboring vertices have a smaller objective value.</p>
 <p>If we add to a linear program the additional requirement that all variables take on integer values, we have an <strong>integer linear program</strong>.</p>
@@ -367,6 +368,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/03/12/数据通信笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据通信笔记
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/01/19/MATLAB学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">MATLAB学习笔记</div>
@@ -408,18 +418,16 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
- // id: "https://ricky-ting.github.io/2019/03/06/问题求解2019Spring/",
-	id: "Wed Mar 06 2019 10:26:24 GMT+0800",
-  owner: 'Ricky-Ting',
-  repo: 'ricky-ting.github.io',
+  id: "<%=url%>",
+  owner: '<%=theme.gitment_owner%>',
+  repo: '<%=theme.gitment_repo%>',
   oauth: {
-    client_id: '5791c5e45aa204b34d62',
-    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
+    client_id: '<%=theme.gitment_oauth.client_id%>',
+    client_secret: '<%=theme.gitment_oauth.client_secret%>',
   },
 })
 gitment.render('gitment-ctn')
 </script>
-
   
 
 
@@ -534,6 +542,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
               </li>
              
@@ -542,15 +554,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">solution</a>
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,15 +566,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,7 +574,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">solution</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,11 +606,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,15 +618,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
             
             <div class="clearfix"></div>
