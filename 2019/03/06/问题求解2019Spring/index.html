@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="问题求解 2019Spring4.1线性规划In linear programming, we do not allow strict inequalities. minimization linear program and maximization program The simplex algorithm does not run in polynomial time in the wors">
 <meta property="og:image" content="https://ricky-ting.github.io/images/">
-<meta property="og:updated_time" content="2019-03-12T06:05:23.497Z">
+<meta property="og:updated_time" content="2019-03-18T15:42:31.196Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="问题求解2019Spring">
 <meta name="twitter:description" content="问题求解 2019Spring4.1线性规划In linear programming, we do not allow strict inequalities. minimization linear program and maximization program The simplex algorithm does not run in polynomial time in the wors">
@@ -296,6 +296,82 @@
 <p><strong>Theorem 6.17.</strong> Let $U(n)$ be the group of units in $Z_n$. Then $|U(n)| = \phi(n)$.</p>
 <p><strong>Theorem 6.18 Euler’s Theorem.</strong> Let $a$ and $n$ be integers such that $n&gt;0$ and $gcd(a,n)=1$. Then $a^{\phi(n)} \equiv 1$(mod $n$).</p>
 <p><strong>Theorem 6.19. Fermat’s Little Theorem.</strong> Let $p$ be any prime number and suppose that $ p \nmid a$ ($p$ does not divide $a$). Then $a^{p-1} \equiv 1$ (mod $p$). Furthermore, for any integer $b$, $b^p \equiv b$ (mod $p$). </p>
+<h3 id="群同态基本定理与正规子群"><a href="#群同态基本定理与正规子群" class="headerlink" title="群同态基本定理与正规子群"></a>群同态基本定理与正规子群</h3><h4 id="Isomorphisms"><a href="#Isomorphisms" class="headerlink" title="Isomorphisms"></a>Isomorphisms</h4><p>Two groups $(G, \cdot )$ and $(H, \circ)$ are <strong>isomorphic</strong> if there exists a one-to-one and onto map $\phi : G \rightarrow H$ such that the group operation is preserved; that is, $\phi (a \cdot b) = \phi(a) \circ \phi (b)$ for all $a$ and $b$ in $G$. If $G$ is isomorphic to $H$, we write $G \cong H$. The map $\phi$ is called an <strong>isomorphism</strong>.</p>
+<p><strong>Theorem 9.6.</strong> Let $\phi : G \rightarrow H$ be an isomorphism of two subgroups. Then the following statements are true.</p>
+<ol>
+<li><p>$\phi^{-1}: H \rightarrow G$ is an isomorphism.</p>
+</li>
+<li><p>$|G| = |H|.$</p>
+</li>
+<li><p>If $G$ is abelian, then $H$ is abelian.</p>
+</li>
+<li><p>If $G$ is cyclic, then $H$ is cyclic.</p>
+</li>
+<li><p>If $G$ has a subgroup of order $n$, then $H$ has a subgroup of order $n$.</p>
+</li>
+</ol>
+<p><strong>Theorem 9.7.</strong> All cyclic groups of infinite order are isomorphic to $Z$.</p>
+<p><strong>Theorem 9.8.</strong> If $G$ is a cyclic group of order $n$, then $G$ is isomorphic to $Z_n$.</p>
+<p><strong>Corollary 9.9.</strong> If $G$ is a group of order $p$, where $p$ is a prime number, then $G$ is isomorphic to $Z_p$.</p>
+<p><strong>Theorem 9.10.</strong> The isomorphism of groups determines an equivalence relation on the class of all groups.</p>
+<p><strong>Theorem 9.12 Cayley.</strong> Every group is isomorphic to a group of permutations.</p>
+<p>The isomorphism $g \mapsto \lambda_g$ is known as the <strong>left regular representation</strong> of $G$.</p>
+<h4 id="External-Direct-Products"><a href="#External-Direct-Products" class="headerlink" title="External Direct Products"></a>External Direct Products</h4><p>If $(G, \cdot)$ and $(H,\circ)$ are groups, then we can make the Cartesian product of $G$ and $H$ into a new group. As a set, our group is just the ordered pairs $(g,h) \in G \times H$ where $g \in G$ and $h \in H$. We can define a binary operation on $G \times H$ by $(g_1,h_1)(g_2,h_2) = (g_1 \cdot g_2, h_1 \cdot h_2)$.</p>
+<p><strong>Proposition 9.13.</strong> Let $G$ and $H$ be groups. The set $G \times H$ is a group under the operation $(g_1,h_2)(g_2,h_2) = (g_1g_2, h_1h_2)$ where $g_1,g_2 \in G$ and $h_1,h_2 \in H$.</p>
+<p>The group $G \times H$ is called the <strong>external direct product</strong> of $G$ and $H$. </p>
+<p><strong>Theorem 9.17.</strong> Let $(g,h) \in G \times H$. If $g$ and $h$ have finite orders $r$ and $s$ respectively, then the order of $(g,h)$ in $G \times H$ is the least common multiple of $r$ and $s$.</p>
+<p><strong>Corollary 9.18.</strong> Let $(g_1, …, g_n) \in \prod G_i$. If $g_i$ has finite order $r_i$ in $G_i$, then the order of $(g_1,…,g_n) \in \prod G_i$ is the least common multiple of $r_1,…,r_n$.</p>
+<p><strong>Theorem 9.21.</strong> The group $Z_m \times Z<em>n$ is isomorphic to $Z</em>{mn}$ if and only if $gcd(m,n)=1$.</p>
+<p><strong>Corollary 9.22.</strong> Let $n_1,…,n<em>k$ be positive integers. Then $\prod\limits</em>{i=1}^{k}Z_{n<em>i} \cong Z</em>{n_1…n_k}$  if and only if $gcd(n_i,n_j)=1$ for $i \not= j$.</p>
+<p><strong>Corollary 9.23.</strong> If $m = p_1^{e_1} \cdot \cdot \cdot p_k^{e_k}$, where the $p_is$ are distinct primes, then $Z<em>m \cong Z</em>{p_1 ^{e<em>1}} \times \cdot \cdot \cdot \times Z</em>{p_k^{e_k}}$.</p>
+<h4 id="Internal-Direct-Products"><a href="#Internal-Direct-Products" class="headerlink" title="Internal Direct Products"></a>Internal Direct Products</h4><p>Let $G$ be a group with subgroups $H$ and $K$ satisfying the following conditions.</p>
+<ul>
+<li><p>$G = H K = {hk: h\in H , k \in K}$;</p>
+</li>
+<li><p>$H \cap K = {e}$;</p>
+</li>
+<li><p>$hk=kh$ for all $k \in K$ and $h \in H$.</p>
+</li>
+</ul>
+<p>Then $G$ is the <strong>internal direct product</strong> of $H$ and $K$.</p>
+<p><strong>Theorem 9.27.</strong> Let $G$ be the internal direct product of subgroups $H$ and $K$. Then $G$ is isomorphic to $H \times K$. Then $G$ is isomorphic to $H \times K$.</p>
+<p><strong>Theorem 9.29.</strong> Let $G$ be the internal direct product of subgroups $H_i$, where $i = 1,2,…,n$. Then $G$ is isomorphic to $\prod_i H_i$.</p>
+<h4 id="Normal-Subgroups"><a href="#Normal-Subgroups" class="headerlink" title="Normal Subgroups"></a>Normal Subgroups</h4><p>A subgroup $H$ of a group $G$ is <strong>normal</strong> in $G$ if $gH = Hg$ for all $g \in G$. </p>
+<p><strong>Theorem 10.3.</strong> Let $G$ be a group and $N$ be a subgroup of $G$. Then the following statements are equivalent.</p>
+<ol>
+<li><p>The subgroup $N$ is normal in $G$.</p>
+</li>
+<li><p>For all $g \in G$, $g N g^{-1} \subset N$.</p>
+</li>
+<li><p>For all $g \in G$, $gNg^{-1} = N$.</p>
+</li>
+</ol>
+<h4 id="Factor-Groups"><a href="#Factor-Groups" class="headerlink" title="Factor Groups"></a>Factor Groups</h4><p>If $N$ is a normal subgroup of a group $G$, then the cosets of $N$ in $G$ form a group $G/N$ under the operation $(aN)(bN)=abN$. This group is called the <strong>factor</strong> or <strong>quotient group</strong> of $G$ and $N$.</p>
+<p><strong>Theorem 10.4.</strong> Let $N$ be a normal subgroup of a group $G$. The cosets of $N$ in $G$ form a group $G/N$ of order $[G:N]$.</p>
+<h4 id="The-Simplicity-of-the-Alternating-Group"><a href="#The-Simplicity-of-the-Alternating-Group" class="headerlink" title="The Simplicity of the Alternating Group"></a>The Simplicity of the Alternating Group</h4><p>Of special interest are groups with no nontrivial normal subgroups. Such groups are called <strong>simple groups</strong>.</p>
+<p><strong>Lemma 10.8.</strong> The alternating group $A_n$ is generated by $3-$cycles for $n \ge 3$.</p>
+<p><strong>Lemma 10.9.</strong> Let $N$ be a normal subgroup of $A_n$, where $n \ge 3$. If $N$ contains a $3-$cycle, then $N=A_n$.</p>
+<p><strong>Lemma 10.10.</strong> For $n \ge 5$, every nontrivial normal subgroup $N$ of $A_n$ contains a $3-$ cycle.</p>
+<p><strong>Theorem 10.11.</strong> The alternating group, $A_n$, is simple for $n \ge 5$.</p>
+<h4 id="Group-Homomorphisms"><a href="#Group-Homomorphisms" class="headerlink" title="Group Homomorphisms"></a>Group Homomorphisms</h4><p>A <strong>homomorphism</strong> between groups $(G, \cdot)$ and $(H, \circ)$ is a map $\phi: G \rightarrow H$ such that $\phi(g_1 \cdot g_2) = \phi(g_1) \circ \phi(g_2)$ for $g_1, g_2 \in G$. The range of $\phi$ in $H$ is called the <strong>homomorphic image</strong> of $\phi$. </p>
+<p><strong>Proposition 11.4.</strong>  Let $\phi : G_1 \rightarrow G_2$ be a homomorphism of groups. Then </p>
+<ol>
+<li><p>If $e$ is the identity of $G_1$, then $\phi(e)$ is the identity of $G_2$;</p>
+</li>
+<li><p>For any element $g \in G_1$, $\phi(g^{-1}) = [\phi(g)]^{-1}$;</p>
+</li>
+<li><p>If $H_1$ is a subrgoup of $G_1$, then $\phi(H_1)$ is a subrgoup of $G_2$;</p>
+</li>
+<li><p>If $H_2$ is a subgroup of $G_2$, then $\phi^{-1}(H_2) = {g \in G_1 : \phi(g) \in H_2}$ is a subgroup of $G_1$. Furthermore, if $H_2$ is normal in $G_2$, then $\phi^{-1}(H_2)$ is normal in $G_1$.</p>
+</li>
+</ol>
+<p>Let $\phi: G \rightarrow H$ be a group homomorphism and suppose that $e$ is the identity of $H$.  By Proposition 11.4, $\phi^{-1}({e})$ is a subrgoup of $G$. This subgroup is called the <strong>kernel</strong> of $\phi$ and will be denoted by ker $\phi$.</p>
+<p><strong>Theorem 11.5.</strong> Let $\phi : G \rightarrow H$ be a group homomorphism. Then the kernel of $\phi$ is a normal subgroup of $G$.</p>
+<h4 id="The-Isomorphism-Theorems"><a href="#The-Isomorphism-Theorems" class="headerlink" title="The Isomorphism Theorems"></a>The Isomorphism Theorems</h4><p>Let $H$ be a normal subgroup of $G$. Define the <strong>natural</strong> or <strong>canonical homomorphism</strong> $\phi : G \rightarrow G/H$ by $\phi(g) = g H$.</p>
+<p><strong>Theorem 11.10 First Isomorphism Theorem.</strong> If $\psi : G \rightarrow H$ is a group homomorphism with $K = ker \psi$, then $K$ is normal in $G$. Let $\phi: G \rightarrow G/K$ be the canonical homomorphism. Then there exists a unique isomorphism $\eta : G/K \rightarrow \psi(G)$ such that $\psi = \eta \phi$</p>
+<p><strong>Theorem 11.12 Second Isomorphism Theorem.</strong>  Let $H$ be a subgroup of a group $G$ (not necessarily normal in $G$) and $N$ a normal subgroup of $G$. Then $HN$ is a subgroup of $G$, $H \cap N$ is a normal subgroup of $H$, and $H/ H \cap N \cong HN/N$.</p>
+<p><strong>Theorem 11.13 Correspondence Theorem.</strong> Let $N$ be a normal subgroup of a group $G$. Then $H \mapsto H/N$ is a one-to-one correspondence between the set of subgroups $H$ containing $N$ and the set of subgroups of $G/N$. Furthermore, the normal subgroups of $G$ containing $N$ correspond to normal subgroups of $G/N$.</p>
+<p><strong>Theorem 11.14 Third Isomorphism Theorem.</strong> Let $G$ be a group and $N$ and $H$ be normal subgroups of $G$ with $N \subset H.$ Then $G/H \cong \frac{G/N}{H/N}$</p>
 
       
 
@@ -418,16 +494,18 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "<%=url%>",
-  owner: '<%=theme.gitment_owner%>',
-  repo: '<%=theme.gitment_repo%>',
+ // id: "https://ricky-ting.github.io/2019/03/06/问题求解2019Spring/",
+	id: "Wed Mar 06 2019 10:26:24 GMT+0800",
+  owner: 'Ricky-Ting',
+  repo: 'ricky-ting.github.io',
   oauth: {
-    client_id: '<%=theme.gitment_oauth.client_id%>',
-    client_secret: '<%=theme.gitment_oauth.client_secret%>',
+    client_id: '5791c5e45aa204b34d62',
+    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
   },
 })
 gitment.render('gitment-ctn')
 </script>
+
   
 
 
@@ -566,6 +644,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">solution</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
@@ -574,23 +656,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">solution</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,6 +673,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
               </li>
              
               <li class="article-tag-list-item">
