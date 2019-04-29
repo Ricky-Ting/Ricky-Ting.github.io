@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ricky-ting.github.io">
-  <title>Tag: 计划 | Ricky Ting&#39;s Blog</title>
+  <title>数据通信期中复习 | Ricky Ting&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="计科生，不定期更新">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ricky Ting&#39;s Blog">
-<meta property="og:url" content="https://ricky-ting.github.io/tags/计划/index.html">
+  <meta name="description" content="数据通信期中复习通信模型： 源点-&amp;gt;发送器-&amp;gt;传输系统-&amp;gt;接收器-&amp;gt;终点 单工、半双工、双工。 数字通信系统:利用数字信号来传递信息的通信系统 模拟通信系统: 利用模拟信号来传递信息的通信系统 混成系统 TCP/IP 5层模型  应用层：用于支持各种不同应用程序的逻辑 (SMTP,FTP,SSH,HTTP)  运输层：提供端到端的传输服务 (TCP,UDP)  网际层：提供">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据通信期中复习">
+<meta property="og:url" content="https://ricky-ting.github.io/2019/04/29/数据通信期中复习/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
-<meta property="og:description" content="计科生，不定期更新">
+<meta property="og:description" content="数据通信期中复习通信模型： 源点-&amp;gt;发送器-&amp;gt;传输系统-&amp;gt;接收器-&amp;gt;终点 单工、半双工、双工。 数字通信系统:利用数字信号来传递信息的通信系统 模拟通信系统: 利用模拟信号来传递信息的通信系统 混成系统 TCP/IP 5层模型  应用层：用于支持各种不同应用程序的逻辑 (SMTP,FTP,SSH,HTTP)  运输层：提供端到端的传输服务 (TCP,UDP)  网际层：提供">
+<meta property="og:updated_time" content="2019-04-29T14:24:25.366Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ricky Ting&#39;s Blog">
-<meta name="twitter:description" content="计科生，不定期更新">
+<meta name="twitter:title" content="数据通信期中复习">
+<meta name="twitter:description" content="数据通信期中复习通信模型： 源点-&amp;gt;发送器-&amp;gt;传输系统-&amp;gt;接收器-&amp;gt;终点 单工、半双工、双工。 数字通信系统:利用数字信号来传递信息的通信系统 模拟通信系统: 利用模拟信号来传递信息的通信系统 混成系统 TCP/IP 5层模型  应用层：用于支持各种不同应用程序的逻辑 (SMTP,FTP,SSH,HTTP)  运输层：提供端到端的传输服务 (TCP,UDP)  网际层：提供">
   
     <link rel="alternative" href="/atom.xml" title="Ricky Ting&#39;s Blog" type="application/atom+xml">
   
@@ -152,190 +153,483 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-数据通信期中复习" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据通信期中复习
+    </h1>
+  
+
+        
+        <a href="/2019/04/29/数据通信期中复习/" class="archive-article-date">
+  	<time datetime="2019-04-29T14:24:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-29</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数据通信期中复习"><a href="#数据通信期中复习" class="headerlink" title="数据通信期中复习"></a>数据通信期中复习</h1><p>通信模型： 源点-&gt;发送器-&gt;传输系统-&gt;接收器-&gt;终点</p>
+<p>单工、半双工、双工。</p>
+<p>数字通信系统:利用数字信号来传递信息的通信系统</p>
+<p>模拟通信系统: 利用模拟信号来传递信息的通信系统</p>
+<p>混成系统</p>
+<p>TCP/IP 5层模型</p>
+<ul>
+<li><p>应用层：用于支持各种不同应用程序的逻辑 (SMTP,FTP,SSH,HTTP)</p>
+</li>
+<li><p>运输层：提供端到端的传输服务 (TCP,UDP)</p>
+</li>
+<li><p>网际层：提供多个网络的路由选择功能，能够让数据跨越多个互联的网路 (IPv4,Ipv6))</p>
+</li>
+<li><p>数据链路层：为与同一个网络相连的两个系统提供网络接入 (以太网,WiFi,ATM,帧中继)</p>
+</li>
+<li><p>物理层：负责数据传输设备与传输媒体的物理接口 (双绞线,光纤,卫星,地面微波)</p>
+</li>
+</ul>
+<p>网络体系结构分层的好处：</p>
+<ul>
+<li><p>为应用提供一个抽象，对应用设计者<strong>隐藏网络的复杂性</strong></p>
+</li>
+<li><p>促进<strong>标准化</strong></p>
+</li>
+<li><p>各层互相独立，技术升级和扩展<strong>灵活性好</strong></p>
+</li>
+<li><p>便于方案设计和<strong>维护</strong></p>
+</li>
+</ul>
+<p>信源编码与译码的目的：</p>
+<ul>
+<li><p>提高信息传输的有效性</p>
+</li>
+<li><p>完成模/数转换</p>
+</li>
+</ul>
+<p>信道编码与译码的目的：</p>
+<ul>
+<li>增强抗干扰能力</li>
+</ul>
+<p>加密与解密的目的：</p>
+<ul>
+<li>保证所传信息的安全</li>
+</ul>
+<p>数字调制与解调的目的：</p>
+<ul>
+<li>形成适合在信道中传输的带通信号</li>
+</ul>
+<p>数字通信的特点</p>
+<ul>
+<li><p>优点：</p>
+<ul>
+<li><p>抗干扰能力强，且噪声不积累</p>
+</li>
+<li><p>传输差错可控</p>
+</li>
+<li><p>便于处理、变换、存储</p>
+</li>
+<li><p>便于将来自不同信源的信号综合到一起传输</p>
+</li>
+<li><p>易于集成，使通信设备微型化，重量轻</p>
+</li>
+<li><p>易于加密处理，且保密性好</p>
+</li>
+</ul>
+</li>
+<li><p>缺点：</p>
+<ul>
+<li><p>需要较大的传输带宽</p>
+</li>
+<li><p>对同步要求高</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>套接字：</p>
+<ul>
+<li><p>流套接字(TCP)： 面向连接的可靠数据传输，并保证按发送时的顺序到达</p>
+</li>
+<li><p>数据报套接字(UDP): 快速，交付没有保证，也不一定会保留初始顺序</p>
+</li>
+<li><p>原始套接字：直接访问底层协议。</p>
+</li>
+</ul>
+<h2 id="数据传输"><a href="#数据传输" class="headerlink" title="数据传输"></a>数据传输</h2><p>成功的数据传输依赖于两个因素：</p>
+<ul>
+<li><p>传输信号的质量</p>
+</li>
+<li><p>传输媒体的特性</p>
+</li>
+</ul>
+<p>传输媒体：</p>
+<ul>
+<li><p>导向媒体：电磁波在导线引导下 沿某一物理路径前进， 双绞线，光纤，同轴电缆</p>
+</li>
+<li><p>非导向媒体：无线传输，提供传输电磁波方式，但不引导传输方向，空气，真空，海水</p>
+</li>
+</ul>
+<p>傅里叶变换</p>
+<p>方波信号：$s(t) = A \times \frac{4}{\pi} \sum_{k=1,k \ is \ odd}^{\infty} \frac{sin(2\pi kft)}{k}$</p>
+<p>频谱：信号所包含的频率范围</p>
+<p>绝对带宽：信号的频谱宽度</p>
+<p>有效带宽：包含信号绝大多数能量的窄带</p>
+<p>直流分量：信号中频率为零的成份</p>
+<p>$R_b = 2f$</p>
+<p>信号的能量与功率：</p>
+<p>能量：$E<em>x = \int</em>{-\infty} ^{\infty} |x(t)|^2 dt$</p>
+<p>功率：$P_x = \frac{1}{t_2-t<em>1} \int</em>{t_1}^{t_2} |x(t)|^2 dt$.</p>
+<p>一个周期的平均功率为$P= \frac{1}{T} \int_{0}^{T} |x(t)|^2 dt$</p>
+<p>模拟信号：用连续变化电磁波来表示数据</p>
+<p>数字信号：用电压脉冲序列来表示数据</p>
+<p>3dB带宽：即$P<em>{\text{半功}} = 0.5 P</em>{\text{峰值}}$， 也就是说该区间边界的功率值比峰值功率值低3dB.</p>
+<p>数字信号传输：</p>
+<ul>
+<li><p>比传输模拟信号便宜</p>
+</li>
+<li><p>不易受噪声干扰</p>
+</li>
+<li><p>比传输模拟信号更容易受衰减影响</p>
+</li>
+</ul>
+<p>目前普遍采用数字技术的原因：</p>
+<ul>
+<li><p>大规模集成电路在体积和价格上都不断降低</p>
+</li>
+<li><p>数据完整性：不使用放大器而使用转发器，噪声和其他损伤的影响不会被累积</p>
+</li>
+<li><p>容量利用率：实现复用，数字技术(时分)比模拟技术(频分)更容易也更便宜</p>
+</li>
+<li><p>安全与保密：数字数据可以直接加密，而模拟数据还得数字化之后才能加密</p>
+</li>
+<li><p>综合性：所有信号具有相同的格式并且处理方法也相同。经济方便</p>
+</li>
+</ul>
+<p>主要考虑的损伤：</p>
+<ul>
+<li><p>衰减：解决方法：放大器和转发器</p>
+</li>
+<li><p>失真： 时延失真，码间串扰</p>
+</li>
+<li><p>噪声：包括热噪声、互调噪声、串扰、冲激噪声</p>
+</li>
+</ul>
+<p>信噪比：$SNR_{dB} = 10 lg \frac{S}{N}$.</p>
+<p>热噪声：由电子的热运动造成的。 热噪声均匀地分布在通信系统常用的频率范围内，因此通常称为白噪声。$N_0 = kT(W/Hz)$</p>
+<p>互调噪声：当不同频率的信号共享同一传输媒体时，可能会产生互调噪声。互调噪声的产生是由于在发送器、接收器中存在非线性因素，或者是传输系统受到干扰。 额外的信号，频率是两个原频率之和或差。</p>
+<p>串扰：载有多路信号的相邻双绞线之间发生电耦合，有时在同轴电缆之间也会发生。 双绞线的扭绞结构是为了减少相邻导线 间的串扰和消除外界干扰。</p>
+<p>以上噪声都是可预测的，并有着比较固定的强度。</p>
+<p>冲激噪声：是非连续的，由不规则的脉冲或持续时间短而振幅大的噪声尖峰组成。它的产生有多种原因，包括外部电磁波干扰以及通信通信系统本身的故障和缺陷。</p>
+<p>信道容量：给定条件下，某一通信信道上所能达到的最大数据传输速率。</p>
+<p>奈奎斯特带宽： $C = 2B log_2M$</p>
+<p>波特率$R_B$与比特率$R_b$</p>
+<p>$R_b = R_B log_2 M$ </p>
+<p>香农公式: $C = B log_2 (1+SNR)$</p>
+<p>$E_b$为每比特信号的能量, $N_0$ 为每赫兹噪声功率密度</p>
+<p>$\frac{E_b}{N_0} = \frac{S/R}{N_0} = \frac{S}{kTR}$</p>
+<h2 id="传输媒体"><a href="#传输媒体" class="headerlink" title="传输媒体"></a>传输媒体</h2><p>双绞线：</p>
+<ul>
+<li><p>廉价</p>
+</li>
+<li><p>方便</p>
+</li>
+<li><p>数据率低</p>
+</li>
+<li><p>传输距离短</p>
+</li>
+</ul>
+<p>插入损耗，近端串扰</p>
+<p>同轴电缆可以被用于长距离传输和更多的复用</p>
+<p>光纤的特点：</p>
+<ul>
+<li><p>容量更大</p>
+</li>
+<li><p>体积更小、质量更轻</p>
+</li>
+<li><p>衰减更小</p>
+</li>
+<li><p>隔绝电磁场 (可以提高安全性)</p>
+</li>
+<li><p>转发器的间隔更远</p>
+</li>
+</ul>
+<p>分类：</p>
+<ul>
+<li><p>多模突变传播：有多个角度可以发生反射。存在多条传播路径</p>
+</li>
+<li><p>单模传播：</p>
+</li>
+<li><p>多模渐变</p>
+</li>
+</ul>
+<p>天线增益：$G_{dB} = 10 lg(P_2/p_1)$ </p>
+<p>天线增益和有效面积的关系：$G = \frac{4 \pi A_e}{\lambda^2} = \frac{4 \pi f^2 A_e}{c^2}$ </p>
+<p>无线传播:</p>
+<ul>
+<li><p>地波： f&lt;2MHz, AM</p>
+</li>
+<li><p>天波： BBC</p>
+</li>
+<li><p>视距： f&gt;30MHz.  $d = 3.57 (\sqrt{Kh_1} + \sqrt{Kh_2})$ </p>
+</li>
+</ul>
+<p>自由空间损耗：$\frac{P_t}{P_r} = \frac{(4 \pi d)^2}{\lambda^2} = \frac{(4\pi f d)^2}{c^2}$  </p>
+<h2 id="信号编码技术"><a href="#信号编码技术" class="headerlink" title="信号编码技术"></a>信号编码技术</h2><p>极性</p>
+<ul>
+<li><p>单极性：正电平和零电平对应二进制码1和0。 有直流分量，不适用有交流耦合的远距离传输。</p>
+</li>
+<li><p>双极性：正电平和负电平对应1和0. 1和0等概率出现时无直流分量</p>
+</li>
+</ul>
+<p>归零:</p>
+<ul>
+<li><p>归零：电脉冲宽度小于码元宽度，即信号电压在一个码元终止时刻前总要回到零电平 (易于提取同步信息)</p>
+</li>
+<li><p>不归零：占空比100%</p>
+</li>
+</ul>
+<p>占空比：电脉冲宽度/码元宽度</p>
+<p>双相位：’0’用’01’两个相位表示, ‘1’用’10’两个相位表示</p>
+<p>差分波形：利用相邻码元的电平跳变和不变来表示消息代码</p>
+<p>数字信号编码：</p>
+<ul>
+<li><p>不归零电平(NRZ-L)</p>
+<ul>
+<li><p>0=高电平</p>
+</li>
+<li><p>1=低电平</p>
+</li>
+</ul>
+</li>
+<li><p>不归零1制(NRZI)</p>
+<ul>
+<li><p>0=在间隔的起始位置没有跳变</p>
+</li>
+<li><p>1=在间隔的起始位置跳变</p>
+</li>
+</ul>
+</li>
+<li><p>双极性AMI</p>
+<ul>
+<li><p>0=没有线路信号</p>
+</li>
+<li><p>1=正电平或负电平，如果是连续的比特1，则在正负电平之间不断交替</p>
+</li>
+</ul>
+</li>
+<li><p>伪三进制码</p>
+<ul>
+<li><p>0= 正电平或负电平，如果是连续的比特0，则在正负电平之间不断交替</p>
+</li>
+<li><p>1=没有线路信号</p>
+</li>
+</ul>
+</li>
+<li><p>曼彻斯特编码</p>
+<ul>
+<li><p>0=在间隔的中间位置从高向低跳变</p>
+</li>
+<li><p>1=在间隔的中间位置从低向高跳变</p>
+</li>
+</ul>
+</li>
+<li><p>差分曼彻斯特编码：在间隔的中间位置总是有一个跳变</p>
+<ul>
+<li><p>0 = 在间隔的起始位置跳变</p>
+</li>
+<li><p>1 = 在间隔的起始位置没有跳变</p>
+</li>
+</ul>
+</li>
+<li><p>8零替换(B8ZS)</p>
+<ul>
+<li>与双极性AMI类似，除了连续的8个零的比特串被另一个比特串所取代，这个比特串中有两个码是违反编码规则的</li>
+</ul>
+</li>
+<li><p>高密度双极性3零码(HDB3)</p>
+<ul>
+<li>与双极性AMI类似，除了连续的4个零的比特串被另一个比特串所取代，这个比特串中有一个码是违反编码规则的</li>
+</ul>
+</li>
+</ul>
+<p>NRZ特点：</p>
+<ul>
+<li><p>简单</p>
+</li>
+<li><p>有效利用带宽</p>
+</li>
+<li><p>具有直流成份</p>
+</li>
+<li><p>缺乏同步能力</p>
+</li>
+</ul>
+<p>扰码技术：使用扰码替代产生恒定电压的序列</p>
+<p>填充序列</p>
+<ul>
+<li><p>必须产生足够的跳变以利于同步</p>
+</li>
+<li><p>必须被接收器识别并以原始序列替换回来</p>
+</li>
+<li><p>和原始序列长度相同</p>
+</li>
+</ul>
+<p>设计目标：</p>
+<ul>
+<li><p>不含直流</p>
+</li>
+<li><p>含有丰富的定时信息</p>
+</li>
+<li><p>不会降低数据率</p>
+</li>
+<li><p>可提供差错检测</p>
+</li>
+<li><p>易于检测，不会被接收端误判</p>
+</li>
+</ul>
+<p>三角公式</p>
+<p>正交调幅： QAM : $s(t) = d_1(t)cos 2\pi f_c t + d_2(t) sin 2\pi f_c t$.</p>
+<p>在同样的载波频率上发送两个不同的信号：</p>
+<ul>
+<li><p>使用两个载波，具备90偏移</p>
+</li>
+<li><p>每个载波通过ASK调制</p>
+</li>
+<li><p>在同样的传输媒体发送两个独立的信号</p>
+</li>
+</ul>
+<p>脉码调制</p>
+<p>压扩函数</p>
+<p>AM: $S_{AM}(t) = (A_0+m(t)) cos \omega_c t$</p>
+<p>PM: $S(t) = Acos[w_ct + n_p m(t)]$</p>
+<p>FM: $S(t) = Acos[w_c t + n_f \int m(\tau) d \tau]$ </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/25/回顾与展望-2018-8-25/" class="archive-article-date">
-  	<time datetime="2018-08-25T02:05:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/25/回顾与展望-2018-8-25/">回顾与展望(2018.8.25)</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">计划</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://ricky-ting.github.io/2019/04/29/数据通信期中复习/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/23/读的书与想读的书-除计算机/" class="archive-article-date">
-  	<time datetime="2018-02-23T04:14:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/03/Android-Studio-Installation/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android Studio Installation</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/23/读的书与想读的书-除计算机/">读的书与想读的书(除计算机)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">计划</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/23/读的书与想读的书-计算机/" class="archive-article-date">
-  	<time datetime="2018-02-23T04:14:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/23/读的书与想读的书-计算机/">读的书与想读的书(计算机)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">计划</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/13/2017秋寒假待学习内容-这是一篇flag-2018-2/" class="archive-article-date">
-  	<time datetime="2018-02-13T05:14:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/13/2017秋寒假待学习内容-这是一篇flag-2018-2/">2017秋寒假待学习内容(这是一篇flag) 2018.2</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">flag</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">计划</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+ // id: "https://ricky-ting.github.io/2019/04/29/数据通信期中复习/",
+	id: "Mon Apr 29 2019 22:24:02 GMT+0800",
+  owner: 'Ricky-Ting',
+  repo: 'ricky-ting.github.io',
+  oauth: {
+    client_id: '5791c5e45aa204b34d62',
+    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
 
-    
+  
 
 
           </div>
@@ -358,9 +652,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
