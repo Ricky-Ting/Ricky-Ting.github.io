@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Ricky Ting&#39;s Blog</title>
-  <icon>https://www.gravatar.com/avatar/5c8eecd06d08187c73ea49421008f04d</icon>
+  <icon>https://www.gravatar.com/avatar/4492b8f6628f8336b7f13bd4cb84b846</icon>
   <subtitle>当时只道是寻常</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -11,7 +11,7 @@
   
   <author>
     <name>Ricky-Ting</name>
-    <email>1770048119@qq.com dbr1770048119@gmail.com</email>
+    <email>Ricky.Ting@outlook.com Ricky.B.Ting@gmail.com</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
