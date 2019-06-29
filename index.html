@@ -505,6 +505,482 @@
 <p>AM: $S_{AM}(t) = (A_0+m(t)) cos \omega_c t$</p>
 <p>PM: $S(t) = Acos[w_ct + n_p m(t)]$</p>
 <p>FM: $S(t) = Acos[w_c t + n_f \int m(\tau) d \tau]$ </p>
+<h2 id="数据链路控制协议"><a href="#数据链路控制协议" class="headerlink" title="数据链路控制协议"></a>数据链路控制协议</h2><p>性能指标</p>
+<ul>
+<li><p>传输时延: 数据量/数据率</p>
+</li>
+<li><p>传播时延: 从一端到另一端</p>
+</li>
+<li><p>处理时延</p>
+</li>
+<li><p>排队时延</p>
+</li>
+</ul>
+<h3 id="流量控制-确保发送的数据不会超出接收实体接收数据能力的技术"><a href="#流量控制-确保发送的数据不会超出接收实体接收数据能力的技术" class="headerlink" title="流量控制: 确保发送的数据不会超出接收实体接收数据能力的技术"></a>流量控制: 确保发送的数据不会超出接收实体接收数据能力的技术</h3><h4 id="停止等待流量控制"><a href="#停止等待流量控制" class="headerlink" title="停止等待流量控制"></a>停止等待流量控制</h4><p>流程:</p>
+<ol>
+<li><p>源点发送帧</p>
+</li>
+<li><p>终点接收帧并返回ACK</p>
+</li>
+<li><p>源点收到ACK后发送下一帧</p>
+</li>
+<li><p>终点可以通过不发送ACK来终止流</p>
+</li>
+</ol>
+<p>停止等待流量控制对于少量但比较长的帧是比较有效的，但对于多量但比较短的帧不是很高效。</p>
+<p>但把数据分割成较小的数据块更为常见，原因如下:</p>
+<ol>
+<li><p>接收方缓存有限</p>
+</li>
+<li><p>大数据块容易发生错误，出现错误时，重传的数据量也比较小。</p>
+</li>
+<li><p>避免一个站点长时间占用传输媒体</p>
+</li>
+</ol>
+<p>一些计算:</p>
+<ul>
+<li><p>链路的比特长度: $B = R \times \frac{d}{v}$ , $R$ 是数据率(bps), $d$ 是链路长度$m$, $V$ 是传播速度$m/s$.</p>
+</li>
+<li><p>传播时延/时间(归一化值) : $a  = \frac{t<em>{prop}}{t</em>{frame}} = \frac{d/V}{L/R} = \frac{B}{L}$   , $L$ 是一个帧中的比特数</p>
+</li>
+<li><p>链路利用率: $U = \frac{t<em>{frame}}{t</em>{all}} = \frac{t<em>{frame}}{2t</em>{prop} + t_{frame}} = \frac{1}{2a+1}$   </p>
+</li>
+</ul>
+<h4 id="滑动窗口流量控制"><a href="#滑动窗口流量控制" class="headerlink" title="滑动窗口流量控制"></a>滑动窗口流量控制</h4><p>流程:</p>
+<ul>
+<li><p>接收端缓存大小W</p>
+</li>
+<li><p>发送端在没有收到ACK前可以发送W个帧</p>
+</li>
+<li><p>每个帧通过序号来标识</p>
+<ul>
+<li><p>序号大小受字段长度限制(k bits)</p>
+</li>
+<li><p>帧以$2^k$ 为模编号($0 … 2^k - 1$) </p>
+</li>
+</ul>
+</li>
+<li><p>ACK 包含下一个期望收到的帧编号</p>
+</li>
+</ul>
+<p>协议优化</p>
+<ul>
+<li><p>接收端允许发送RNR,切断对方的帧流</p>
+</li>
+<li><p>之后，接收端必须通过一个正常的确认帧来重启滑窗</p>
+</li>
+<li><p>如果是双向链路,可以使用捎带“piggybacking”</p>
+<ul>
+<li><p>一个帧包含发送数据和ACK</p>
+</li>
+<li><p>如果没有数据发送，发送独立的确认帧</p>
+</li>
+<li><p>如果需要发送数据，但是没有新的确认，则重新发送上一次已经发送过的确认</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>计算:</p>
+<ul>
+<li><p>链路利用率: $W$ 为窗口宽度</p>
+<ul>
+<li><p>$U = 1$, $W \ge 2a+1$ </p>
+</li>
+<li><p>$U = \frac{W}{2a+1}$, $W&lt; 2a+1$ </p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="差错控制-用于检测和纠正帧传输过程中出-现差错的机制"><a href="#差错控制-用于检测和纠正帧传输过程中出-现差错的机制" class="headerlink" title="差错控制: 用于检测和纠正帧传输过程中出 现差错的机制"></a>差错控制: 用于检测和纠正帧传输过程中出 现差错的机制</h3><p>针对以下两种类型的差错:</p>
+<ul>
+<li><p>帧丢失: 帧没有到达另一方</p>
+</li>
+<li><p>帧损伤: 帧到达，但是有一些比特有差错</p>
+</li>
+</ul>
+<p>数据链路层差错控制采用自动请求重传(automatic repeat request)机制</p>
+<p>ARQ使得一个不可靠的数据链路变为可靠链路：</p>
+<ul>
+<li><p>差错检测</p>
+</li>
+<li><p>肯定确认</p>
+</li>
+<li><p>超时重传</p>
+</li>
+<li><p>否认与重传</p>
+</li>
+</ul>
+<p>三种ARQ标准:</p>
+<ul>
+<li><p>停止等待ARQ(stop-and-wait ARQ)</p>
+</li>
+<li><p>返回N ARQ(go-back-N ARQ)</p>
+</li>
+<li><p>选择拒绝ARQ(selective-reject ARQ)</p>
+</li>
+</ul>
+<p>停止等待ARQ</p>
+<ul>
+<li><p>基于停止等待流量控制</p>
+</li>
+<li><p>要保存一个发送帧的拷贝, 在终点确认返回前，源点不发送其他帧</p>
+</li>
+<li><p>帧损伤:</p>
+<ul>
+<li><p>接收端检测到差错，丢弃该帧</p>
+</li>
+<li><p>发送端超时重传</p>
+</li>
+</ul>
+</li>
+<li><p>ACK损伤:</p>
+<ul>
+<li><p>发送端超时重传</p>
+</li>
+<li><p>接收端收到用两份相同编号的帧</p>
+</li>
+<li><p>使用 ACK0 / ACK1 来确认希望接收的帧</p>
+<ul>
+<li>ACKi means“I am ready to receive frame i”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>返回N ARQ</p>
+<ul>
+<li><p>最常用的差错控制协议</p>
+</li>
+<li><p>基于滑动窗口流控机制,没有收到确认的帧的最大数目取决于窗口大小</p>
+</li>
+<li><p>如果没有差错，使用ACK确认接收就绪</p>
+</li>
+<li><p>如果错误发生，为错误帧发送rejection(negativeACK)</p>
+<ul>
+<li><p>接收端丢弃该帧和所有后来收到的帧，直到错误帧被正确接收</p>
+</li>
+<li><p>发送端必须重传有差错的帧和差错帧后所有已 经传输过的帧</p>
+</li>
+</ul>
+</li>
+<li><p>窗口大小最大为$2^k -1$ </p>
+</li>
+<li><p>Go-back-N 接收不允许乱序? </p>
+</li>
+</ul>
+<p>选择拒绝ARQ</p>
+<ul>
+<li><p>仅重传拒绝帧或超时帧，也叫做选择重传ARQ</p>
+</li>
+<li><p>后续帧被接收端接收并缓存起来</p>
+</li>
+<li><p>最小化重传帧的数量</p>
+</li>
+<li><p>接收端需要维护足够大的缓存</p>
+</li>
+<li><p>发送端和接收端逻辑更为复杂</p>
+<ul>
+<li><p>能够按照正确的顺序重组帧</p>
+</li>
+<li><p>判断并仅发送失序帧</p>
+</li>
+</ul>
+</li>
+<li><p>用于传播时延长的卫星链路</p>
+</li>
+<li><p>窗口大小最大为$2^{k-1}$</p>
+</li>
+</ul>
+<h3 id="HDLC"><a href="#HDLC" class="headerlink" title="HDLC"></a>HDLC</h3><ul>
+<li><p>站点类型:</p>
+<ul>
+<li><p>主站:负责控制链路操作. 由主站发出的帧称为命令</p>
+</li>
+<li><p>从站: 在主站的控制下操作。由从站发出的帧称为响应。主站为链路上的每个从站维护一条独立的逻辑链路。</p>
+</li>
+<li><p>混合站: 结合了主站和从站的特点。混合站发出的帧既可能是命令，也可能是响应。</p>
+</li>
+</ul>
+</li>
+<li><p>链路设置:</p>
+<ul>
+<li><p>非平衡设置 – 1个主站、 多个从站， 可支持全双工或半双工传输。</p>
+</li>
+<li><p>平衡设置 – 2个混合站组成， 可支持全双工或半双工传输。</p>
+</li>
+</ul>
+</li>
+<li><p>数据传送方式:</p>
+<ul>
+<li><p>正常响应方式(NRM)</p>
+<ul>
+<li><p>非平衡设置</p>
+</li>
+<li><p>主站能够发起到从站的数据传送</p>
+</li>
+<li><p>从站只有在接收到主站的命令式才传输数据</p>
+</li>
+</ul>
+</li>
+<li><p>异步平衡方式(ABM)</p>
+<ul>
+<li><p>平衡设置</p>
+</li>
+<li><p>两个混合站都能够发起数据传输，不需要对方混合站 的许可</p>
+</li>
+<li><p>使用最广泛</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>帧结构: </p>
+<ul>
+<li><p>使用同步传输</p>
+</li>
+<li><p>传输以帧的形式进行</p>
+</li>
+<li><p>一个帧格式满足所有数据和控制交换</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="复用"><a href="#复用" class="headerlink" title="复用"></a>复用</h2><h3 id="FDM-频分复用"><a href="#FDM-频分复用" class="headerlink" title="FDM 频分复用"></a>FDM 频分复用</h3><ul>
+<li><p>概念: 将多个信号调制到不同的载波频率上，且有足够间隙防止其带宽重叠，以同时运载</p>
+</li>
+<li><p>信道: 每个信号以各自载波频率为中心的一定的带宽。</p>
+</li>
+<li><p>防护频带: 在载波频率中，信道之间未被占用的部分</p>
+</li>
+<li><p>流程: </p>
+<ul>
+<li>信号$m_i(t)$  —副载波调制器$f_i$–&gt;  副载波$s_i(t)$ —叠加$\Sigma$ —&gt; 复合基带调制信号$m_b(t)$ —–发送器$f_c$ —&gt; FDM信号$s(t)$  —-接收器—&gt; 复合基带信号$m_b(t)$  —– 带通滤波器$f_i$ ——&gt; 副载波$s_i(t)$ —–解调器$f_i$ —-&gt; 信号$m_i(t)$. </li>
+</ul>
+</li>
+<li><p>波分复用:</p>
+<ul>
+<li><p>波分复用是光纤通信中使用的一种复用方式</p>
+</li>
+<li><p>不同波长的光信号通过同一根光纤传输</p>
+</li>
+<li><p>在概念上与频分复用相同</p>
+</li>
+<li><p>采用不同源的窄带光组成一个宽带光</p>
+<ul>
+<li>棱镜用作波分复用及其多路分解</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Synchronous-TDM-同步时分复用"><a href="#Synchronous-TDM-同步时分复用" class="headerlink" title="Synchronous TDM  同步时分复用"></a>Synchronous TDM  同步时分复用</h3><p>概念</p>
+<ul>
+<li><p>可以用于数字信号或模拟信号传输数字数据</p>
+</li>
+<li><p>数据被组织成“帧”:每帧包含一组循环使用的时隙;每个数据源可以被分配一个或多个时隙</p>
+</li>
+<li><p>间隔可以是比特级，也可以是字符级或更大的粒度</p>
+</li>
+<li><p>同步时分复用中同步是指时隙被提前分配给数据源且是固定的</p>
+</li>
+</ul>
+<p>流程:</p>
+<ul>
+<li>数据$m_i(t)$ —-缓存—&gt; 数据$m_i(t)$  —–扫描操作—-&gt; TDM流$m_c(t)$ ——调制调节器—–&gt; 经调制的TDM流$s(t)$  ——-调制解调器—–&gt;  TDM流$m_c(t)$  —–扫描操作—–&gt; 数据$m_i(t)$  —–缓存—–&gt; 数据$m_i(t)$</li>
+</ul>
+<p>链路控制:</p>
+<ul>
+<li><p>数据流不存在头部和尾部,不需要数据链路控制</p>
+</li>
+<li><p>数据率是固定的，如果没有信息将发送空时隙</p>
+</li>
+<li><p>差错控制: 基于单信道的差错控制</p>
+</li>
+</ul>
+<p>组帧:</p>
+<ul>
+<li><p>不需要flag或SYNC字符为TDM帧定界</p>
+</li>
+<li><p>仍然需要提供源和宿端的同步(clock)机制</p>
+</li>
+<li><p>增加数字组帧技术</p>
+<ul>
+<li><p>每个TDM帧附加一个控制比特</p>
+</li>
+<li><p>可识别的比特模式</p>
+</li>
+<li><p>一个典型的交替比特模式 101010……</p>
+</li>
+<li><p>同步搜索模式:接收器将接收到的帧中的比特位与预 期的模式相比较，直到这个模式在多个帧里持续传输， 建立帧同步</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>数字载波系统:</p>
+<ul>
+<li><p>E体系: PCM30/32路数字载波系统, </p>
+<ul>
+<li><p>以2.048Mbps作为基群速率(E1速率) 的数字系列</p>
+</li>
+<li><p>欧洲、中国采用，并用于国际间传输</p>
+</li>
+</ul>
+</li>
+<li><p>T体系 PCM24路数字载波系统</p>
+<ul>
+<li><p>– 以1.544Mbps作为基群速率(T1速率) 的数字系列</p>
+</li>
+<li><p>用于北美、日本</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Statistical-TDM-统计时分复用"><a href="#Statistical-TDM-统计时分复用" class="headerlink" title="Statistical TDM 统计时分复用"></a>Statistical TDM 统计时分复用</h3><ul>
+<li><p>概念</p>
+<ul>
+<li><p>每个源有一缓存，填满时作为一帧发送</p>
+</li>
+<li><p>根据需求分配时隙，解决空时隙和浪费问题</p>
+</li>
+</ul>
+</li>
+<li><p>电缆调制解调器</p>
+<ul>
+<li>让用户通过有线电视网访问Internet</li>
+</ul>
+</li>
+</ul>
+<h3 id="ADSL-非对称用户数字线路"><a href="#ADSL-非对称用户数字线路" class="headerlink" title="ADSL 非对称用户数字线路"></a>ADSL 非对称用户数字线路</h3><ul>
+<li><p>用户和广域网络之间的线路(最后一公里)</p>
+</li>
+<li><p>使用已安装好的双绞线(电话线)</p>
+</li>
+<li><p>非对称 – 下行流容量高于上行流</p>
+</li>
+<li><p>使用频分复用uses Frequency Division Multiplexing</p>
+<ul>
+<li><p>最低的 25kHz用于话音业务 (POTS)</p>
+</li>
+<li><p>使用回声抵消(echo cancellation)或者FDM提供双向传 输</p>
+</li>
+</ul>
+</li>
+<li><p>距离范围可达5.5km</p>
+</li>
+</ul>
+<h2 id="交换"><a href="#交换" class="headerlink" title="交换"></a>交换</h2><h3 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h3><ul>
+<li><p>用于公众电话网 PSTN， 为处理话音通信量(voice traffic)而开发，但 也能处理数字数据</p>
+</li>
+<li><p>在两个站点之间建立固定通路</p>
+</li>
+<li><p>通信期间在网络内部保留交换与传输资源</p>
+</li>
+<li><p>一旦电路建立，网络连接是透明的</p>
+</li>
+<li><p>流程: 建立通路，通信，断开通路</p>
+</li>
+</ul>
+<h3 id="空分交换"><a href="#空分交换" class="headerlink" title="空分交换"></a>空分交换</h3><ul>
+<li><p>Cross Switch: 两两交叉，$n$ 入$n$ 出, 有$n^2$个交叉点，至多用$n$ 个交叉点。 非阻塞</p>
+</li>
+<li><p>3-Stage Space Division Switching: </p>
+<ul>
+<li><p>第一级: $\frac{N}{n}$ 个 $N \times m$ 单元</p>
+</li>
+<li><p>第二级: $m$ 个$n \times n$ 单元</p>
+</li>
+<li><p>第三极: $\frac{N}{n}$ 个 $N \times m$ 单元</p>
+</li>
+<li><p>$m \ge 2n-1$ 时非阻塞， 否则阻塞。</p>
+</li>
+</ul>
+</li>
+<li><p>Banyan Switch: 利用输入端的二进制编码来构建空分交换, </p>
+</li>
+</ul>
+<h3 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h3><ul>
+<li><p>概念: </p>
+<ul>
+<li><p>数据交换,大数据段分为较小的数据包，包括用户数据和控制信息</p>
+</li>
+<li><p>途径多个节点，可被缓存</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>数据包交换:</p>
+<ul>
+<li><p>每个数据包都被当做单独的数据包对待</p>
+</li>
+<li><p>无建立时间，灵活，可靠</p>
+</li>
+</ul>
+<p>虚电路交换:</p>
+<ul>
+<li><p>先建立(虚拟)路径，此后数据包都按此路径发送</p>
+</li>
+<li><p>可提供排序和错误控制,可以按序发送，传送速度更快(无需选择路由)，较不可靠。</p>
+</li>
+</ul>
+<h3 id="异步传输模式-ATM"><a href="#异步传输模式-ATM" class="headerlink" title="异步传输模式 ATM"></a>异步传输模式 ATM</h3><p>概念:</p>
+<ul>
+<li><p>信元: 小的，固定长度的分组，减小时延</p>
+</li>
+<li><p>面向连接的分组交换技术，提供类似电路交换网络的性能，同时又提供分组交换的灵活性和效率</p>
+</li>
+<li><p>数据率:高</p>
+</li>
+<li><p>支持数据，语音，视频</p>
+</li>
+<li><p>传输: 基于优先级和QoS，用户可选择服务等级</p>
+</li>
+</ul>
+<p>ATM逻辑连接:</p>
+<ul>
+<li><p>虚通路: VCC,类似虚电路,速率可变，全双工，定长信元流</p>
+</li>
+<li><p>虚通道连接: VPC, 一群具有相同端点的虚通路</p>
+</li>
+</ul>
+<h2 id="蜂窝无线网络"><a href="#蜂窝无线网络" class="headerlink" title="蜂窝无线网络"></a>蜂窝无线网络</h2><p>概念:</p>
+<ul>
+<li><p>区域被分成蜂窝</p>
+</li>
+<li><p>使用低功率发送器，100W以下，控制功率防止频率逃逸</p>
+</li>
+<li><p>每个蜂窝一个基站: 发送器，接收器和控制单元。</p>
+</li>
+<li><p>相邻蜂窝频率不同:防止干扰</p>
+</li>
+<li><p>蜂窝形状为六边形: 蜂窝半径为R,则相邻蜂窝中心距离$\sqrt{3} R$ </p>
+</li>
+</ul>
+<p>频率重用:</p>
+<ul>
+<li><p>$D$: 使用相同频率的蜂窝中心之间的距离</p>
+</li>
+<li><p>$R$: 蜂窝半径</p>
+</li>
+<li><p>$d$: 相邻蜂窝中心之间的距离</p>
+</li>
+<li><p>$N$: 重复模式中的蜂窝数量，重用系数，其可能值仅有这些: $N = I^2 + J^2 + I \times J$, $I,J = 0,1,2,3,…$</p>
+</li>
+<li><p>$D/R = \sqrt{3N}$ </p>
+</li>
+</ul>
+<p>增大容量:</p>
+<ul>
+<li><p>添加新信道</p>
+</li>
+<li><p>频率借用</p>
+</li>
+<li><p>蜂窝分裂</p>
+</li>
+<li><p>蜂窝扇区化</p>
+</li>
+<li><p>微蜂窝</p>
+</li>
+</ul>
 
       
 
@@ -1288,15 +1764,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">计划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1308,11 +1784,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">solution</a>
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color4">solution</a>
               </li>
              
               <li class="article-tag-list-item">
