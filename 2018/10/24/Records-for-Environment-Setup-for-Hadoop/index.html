@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2018/10/24/Records-for-Environment-Setup-for-Hadoop/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="Hadoop环境搭建记录安装系统安装系统的时候出了很多问题，找不到引导，硬盘被锁啊，感觉不懂的还是很多，最后还是请学长帮忙装好了系统。">
-<meta property="og:updated_time" content="2019-07-26T14:26:27.718Z">
+<meta property="og:updated_time" content="2019-07-27T02:21:55.200Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Records for Environment Setup for Hadoop">
 <meta name="twitter:description" content="Hadoop环境搭建记录安装系统安装系统的时候出了很多问题，找不到引导，硬盘被锁啊，感觉不懂的还是很多，最后还是请学长帮忙装好了系统。">
@@ -180,6 +180,7 @@
 <p><a href="https://blog.csdn.net/fanxin_i/article/details/80425461" target="_blank" rel="noopener">参考教程</a></p>
 <p>教程简版： 1.获取IP，添加解析。2.关闭防火墙 3.安装jdk 4.安装ssh，配置免密通信 5. 安装hadoop，在hdfs目录下创建文件夹(tmp,name,data). 6.修改Hadoop配置文件包括以下几个文件(core-site.xml hadoop-env.sh hdfs-site.xml yarn-env.sh yarn-site.xml slaves).(这些配置文件会备份在github中) 7.用scp将文件夹传到slave上。 然后在master上初始化namenode(hdfs namenode -format)</p>
 <p>设置文件路径的时候尽量要绝对路径，不用加file</p>
+<p>注意hosts, 不要127.0.0.1 master</p>
 <p>我的理解是主要在master里执行namenode初始化就好了，初始化之前最好把master和slave里hdfs目录下删干净(以后可以写个脚本干这个事)。</p>
 <h2 id="写脚本"><a href="#写脚本" class="headerlink" title="写脚本"></a>写脚本</h2><p>写脚本实现只运行MapReduce和在HDFS上运行MapReduce。</p>
 <p>我的理解是只要改改配置文件就好，要运行哪一种方式只要把相应的配置文件拷进去就好。 因为不运行yarn，所以要把yarn的相关配置删除。</p>
@@ -468,19 +469,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">solution</a>
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
+                <a href="javascript:void(0)" class="js-tag color4">solution</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,6 +486,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">OJ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
               </li>
              
               <li class="article-tag-list-item">
