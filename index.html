@@ -154,6 +154,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-由边缘计算综述引出的一些知识点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/06/由边缘计算综述引出的一些知识点/">由边缘计算综述引出的一些知识点</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/06/由边缘计算综述引出的一些知识点/" class="archive-article-date">
+  	<time datetime="2019-11-06T11:57:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="由边缘计算综述引出的一些知识点"><a href="#由边缘计算综述引出的一些知识点" class="headerlink" title="由边缘计算综述引出的一些知识点"></a>由边缘计算综述引出的一些知识点</h1><h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p><em>Insight and Perspectives for Content Delivery Network, 2006</em> </p>
+<p>CDN的思想很简单，把内容缓存在离用户较近的服务器上。但在实际的实施过程中，有很多问题需要解决。</p>
+<p>如：</p>
+<ol>
+<li>代理服务器的选址。</li>
+<li>缓存内容的选择：把所有内容都缓存很不经济，在很多情况下也不现实。如何选择的缓存内容，(个人认为有两种方式：一种是手动的推送，由人来预判，然后推送到代理服务器，还有一种是自动地靠算法来选择，可以模仿cpu里的cache算法，也可以根据这一地区用户看的比较多的内容，预测他们的偏好(可以用一些数据挖掘和机器学习)，缓存一些他们偏好的内容。还有根据内容相关性，如同一url下的内容更有可能被同时访问到。)</li>
+<li>访问机制：<ol>
+<li>cooperative push-based: 代理服务器有去代理服务器，否则去中心服务器。代理服务器之间协作来减少备份的数量</li>
+<li>uncooperative pull-based: 去最近的代理服务器，如果没有，由代理服务器向中心服务器请求。但代理服务器之间不协作</li>
+<li>Cooperative pull-based:与上一个的区别是：代理服务器之间是协作的。</li>
+</ol>
+</li>
+<li>定价问题</li>
+</ol>
+<h2 id="移动边缘计算"><a href="#移动边缘计算" class="headerlink" title="移动边缘计算"></a>移动边缘计算</h2><p><em>The case for VM-based cloudlets in mobile computing. 2009</em></p>
+<p>这应该是工业界的一份报告，内容有点长，粗略浏览了一下：主要关注了一下它提出的应用场景。</p>
+<ol>
+<li>增强现实，如在博物馆中，可以根据用户的站立方向和眼神来给用户全方位地展示内容，因此在边缘需要一些AR的计算设备，但云也不可少，因为需要一些AR的内容，但边缘服务器也有一些缓存。我个人觉得也可以这样理解：博物馆很大，它有一个中心服务器，存放了很多内容，用户所在的是很多边缘，边缘识别和计算并缓存内容。边缘还可以为中心服务器提供数据，分析用户的偏好等等。</li>
+<li>智能视频加速，因为无线链路的不稳定性，所以网速可能会出现很大的波动，而TCP不能很好地应对，所以我们在边缘部署无线信道分析程序来分析、预测可能的信道速率并告诉视频服务器，这样视频服务器能做出调整。</li>
+<li>联网汽车，可以部署边缘设备，收集汽车上报的信息，来衡量这附近的路况等等，并能够返回信息给车辆，让它们做好准备。</li>
+</ol>
+<h2 id="NDN和SDN-待了解"><a href="#NDN和SDN-待了解" class="headerlink" title="NDN和SDN(待了解)"></a>NDN和SDN(待了解)</h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/06/由边缘计算综述引出的一些知识点/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-边缘计算：现状与展望" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -784,88 +867,6 @@
 
 
   
-    <article id="post-2019寒假计划-flag" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/16/2019寒假计划-flag/">2019寒假计划(flag)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/16/2019寒假计划-flag/" class="archive-article-date">
-  	<time datetime="2019-01-16T09:32:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="2019-寒假计划-flag"><a href="#2019-寒假计划-flag" class="headerlink" title="2019 寒假计划(flag)"></a>2019 寒假计划(flag)</h1><h2 id="必做"><a href="#必做" class="headerlink" title="必做"></a>必做</h2><ul>
-<li><p>学习数学建模，参加美赛</p>
-</li>
-<li><p>完成经典阅读论文</p>
-</li>
-<li><p>读Spark源码</p>
-</li>
-<li><p>学习线性代数、代数学引论</p>
-</li>
-<li><p>寒假HK项目准备</p>
-</li>
-<li><p>学习MATLAB</p>
-</li>
-</ul>
-<h2 id="可选"><a href="#可选" class="headerlink" title="可选"></a>可选</h2><ul>
-<li><p>学习IOS开发</p>
-</li>
-<li><p>机器学习导论、人工智能、深度学习</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/16/2019寒假计划-flag/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -984,15 +985,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">计划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1016,11 +1017,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OJ</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
