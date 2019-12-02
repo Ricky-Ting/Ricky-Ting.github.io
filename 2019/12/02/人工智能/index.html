@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2019/12/02/人工智能/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="人工智能课程概述参考教材  George F. Luger, Artificial Intelligence: Structures and Strategies for Complex Problem Solving. Fifth Edition, Addison Wesley.  Stuart Russell and Peter Norvig. Artificial Intelligence:">
-<meta property="og:updated_time" content="2019-12-02T14:42:01.963Z">
+<meta property="og:updated_time" content="2019-12-02T14:44:45.567Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人工智能">
 <meta name="twitter:description" content="人工智能课程概述参考教材  George F. Luger, Artificial Intelligence: Structures and Strategies for Complex Problem Solving. Fifth Edition, Addison Wesley.  Stuart Russell and Peter Norvig. Artificial Intelligence:">
@@ -344,6 +344,428 @@
 <p>合一算法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 递归地对表达式的初始成分合一。如果成功，这次合一返回的任何代入式被用到两个表达式的剩下部分，然后以这两个表达式为参数。</span><br><span class="line">2. 当两个参数之一为一个符号(谓词名，函词名，变元，常元)， 或两个表达式的每一元素都已匹配了，算法终止。</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">UNIFY</span><br><span class="line">case</span><br><span class="line">	E1, E2或者是常元或者是空表: %递归终止</span><br><span class="line">		If E1=E2 then return &#123;&#125;;</span><br><span class="line">		else return FAIL;</span><br><span class="line">	E1是一个变元：</span><br><span class="line">		If E1在E2中出现 then return FAIL;</span><br><span class="line">		else return &#123;E2/E1&#125;;</span><br><span class="line">	E2是一个变元：</span><br><span class="line">		If E2在E1中出现then return FAIL;</span><br><span class="line">		else return &#123;E1/E2&#125;;</span><br><span class="line">	其他情况: %E1和E2都是表</span><br><span class="line">		begin</span><br><span class="line">			HE1:=E1的第一个元素;</span><br><span class="line">			HE2:=E2的第二个元素;</span><br><span class="line">			SUBS1:=unify*HE1,HE2;</span><br><span class="line">			if(SUBS1=FAIL) then return FAIL;</span><br><span class="line">			TE1:=apply(SUBS1,E1的后半部);</span><br><span class="line">			TE2:=apply(SUBS1,E2的后半部);</span><br><span class="line">			SUBS2:=unify(TE1,TE2);</span><br><span class="line">			if(SUBS2=FAIL) then return FAIL;</span><br><span class="line">			else return SUBS1与SUBS2的并集;</span><br><span class="line">		end</span><br></pre></td></tr></table></figure>
+<h3 id="归结"><a href="#归结" class="headerlink" title="归结"></a>归结</h3><p>归结法的基本思想：</p>
+<ul>
+<li>反证法：为了证明一个命题$P$恒真，则证明其反命题$\neg P$恒假。即不存在使得$\neg P$为真的解释。</li>
+<li>设$F_1,F_2,…,F_n,G$为公式，$G$为$F_1,…,F_n$的逻辑推论,当且仅当公式$ (F_1 \wedge … \wedge F_n \wedge \neg G )$ 是不可满足的</li>
+</ul>
+<p>消解是一种应用于谓词演算中的定理证明技术，是人工智 能问题求解的一个组成部分。消解描述了如何用最少的合一次数在一个子句数据库中发现矛盾的方法。</p>
+<p>消解否证包含以下步骤：</p>
+<ul>
+<li>具体方法为把前提或公理转换成子句形式。</li>
+<li>把求证目标的否定的子句形式加到公理集合中。</li>
+<li>对所有这些子句进行消解，产生它们的逻辑结果子句。</li>
+<li>用产生空子句的方法来得出矛盾。</li>
+</ul>
+<p>产生子句的一系列过程：最后转换成不含量词的合取范式</p>
+<p>归结的策略：</p>
+<ul>
+<li>宽度优先策略：时空开销大，保证能发现最短的解路径</li>
+<li>支持策略<ul>
+<li>本策略要求每次归结的归结式之一至少有一个是由 目标公式的否定所得到的 子句，或者是它们的后裔。</li>
+<li>可以证明，该策略是完备的。</li>
+</ul>
+</li>
+<li>单个优先策略：<ul>
+<li>只要存在个体子句(一个文字的子句)就是用个体子句归结。</li>
+<li>单个优先策略与成组支持策略一起使用，可以得到 了更加有效的完备策略。</li>
+</ul>
+</li>
+</ul>
+<h2 id="知识表示"><a href="#知识表示" class="headerlink" title="知识表示"></a>知识表示</h2><p>常见的知识表示方法：</p>
+<ul>
+<li>一阶谓词表示(First Order Predicate)</li>
+<li>产生式表示(Production)</li>
+<li>语义网络表示(Semantic Network)</li>
+<li>框架表示(Framework)</li>
+<li>脚本表示(Script)</li>
+</ul>
+<h3 id="一阶谓词知识表示"><a href="#一阶谓词知识表示" class="headerlink" title="一阶谓词知识表示"></a>一阶谓词知识表示</h3><p>优点：精确、自然、严密，易于实现</p>
+<p>缺点：表示和处理分离，组合爆炸导致效率低</p>
+<h3 id="产生式表示"><a href="#产生式表示" class="headerlink" title="产生式表示"></a>产生式表示</h3><p>一阶谓词中蕴含式表示的知识是精确的(真或假)，而产生式表示的知识可以是不精确的(可信度)，产生式的推理匹配过程也可以是部分匹配。</p>
+<p>产生式系统：一组产生式，互相配合/协调，其中一个产生式产生的结论可以作为另一个产生式的事实使用，以求解问题。有三个组件：数据库、规则库、</p>
+<p>规则库：</p>
+<ul>
+<li>有效表达领域内的过程性知识。</li>
+<li>对知识进行合理的组织与管理，提高问题求解效率。</li>
+</ul>
+<p>数据库(工作内存)：</p>
+<ul>
+<li>存放问题求解过程中的各种信息的数据结构，包括初始<br>状态、原始证据、中间结论、最终结论。</li>
+<li>其内容在推理过程中在动态、不断变化的。</li>
+</ul>
+<p>控制系统：</p>
+<ul>
+<li>从规则库中选择规则，并与数据库中的已知事实进行匹配。</li>
+<li>发生冲突时调用相应策略进行消解。</li>
+<li>如果执行规则的右部是一个或多个结论，则将结论加入到数据库中。</li>
+<li>如果执行规则的右部是一个或多个的操作，则执行这些操作。并将操作产生的 事实加入到数据库中。</li>
+<li>对不确定性的知识，也计算结论的不确定性。</li>
+<li>在适当时候终止系统运行。</li>
+</ul>
+<p>产生式表示/系统的优点：</p>
+<ul>
+<li>知识和控制的分离;</li>
+<li>自然映射到状态空间搜索;</li>
+<li>产生式规则的模块性;</li>
+<li>模式导向控制;</li>
+<li>多种启发式控制;</li>
+<li>易于跟踪和解释;</li>
+<li>问题求解的模型之一。</li>
+</ul>
+<p>产生式表示适用范围</p>
+<ul>
+<li>领域中知识单元相对独立，不存在结构关系;</li>
+<li>具有经验型或者不确定性的知识，领域对这些知识缺少完整<br> 的理论模型;</li>
+<li>领域问题的求解过程可表示为一些列相对独立的操作，每个<br> 操作也可表示为一条或多条的产生式规则。</li>
+</ul>
+<h3 id="语义网络表示法"><a href="#语义网络表示法" class="headerlink" title="语义网络表示法"></a>语义网络表示法</h3><p>通过有向图，其顶点表示概念，边表示概念间的语义关系，来表达复杂的概念及其相互关系。</p>
+<p>语义网络的推理</p>
+<ul>
+<li>继承：<ul>
+<li>把对事物的描述从抽象节点传递到具体节点，通常沿着类<br>属关系ISA, AKO等具有继承关系的边进行。</li>
+</ul>
+</li>
+<li>匹配<ul>
+<li>把待求解问题构造为网络片段，其中某些节点或边的标识 是空的，称为询问点。</li>
+<li>将网络片段与知识库中的某个语义网络片段进行匹配，则 与询问点相匹配的事实就是该问题的解。</li>
+</ul>
+</li>
+</ul>
+<p>语义网络表示的优缺点：</p>
+<ul>
+<li>优点：结构性、联想性、自索引性、自然语言的转换性</li>
+<li>缺点：不严格性、处理复杂。本质和谓词演算等价。</li>
+<li>强大在于:连接和推理规则的丰富和定义!</li>
+</ul>
+<h3 id="框架表示"><a href="#框架表示" class="headerlink" title="框架表示"></a>框架表示</h3><p>定义：是描述对象(一个事物、一个事件、一个概念)属性的一 种数据结构。在框架表示法中，框架被认为是知识表示的 最基本单元</p>
+<p>表示形式：框架名、槽名(描述某一方面的属性)、侧面(描述属性的某 一方面)、值组成</p>
+<p>框架网络系统：将多个相互关联的框架连接起来组织的知识表示和推理系统</p>
+<ul>
+<li>纵向联系：通过框架中增加”继承”槽来实现</li>
+<li>横向联系：通过槽值或侧面值为另一个框架民</li>
+</ul>
+<p>框架表示的优缺点</p>
+<ul>
+<li>优点：<ul>
+<li>结构性(不同于语义网络的结构性)、继承性、自然性</li>
+<li>是语义网络的重要扩展</li>
+<li>面向对象语言OO的产生</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>缺乏过程性知识表示</li>
+</ul>
+</li>
+</ul>
+<h2 id="不确定性推理"><a href="#不确定性推理" class="headerlink" title="不确定性推理"></a>不确定性推理</h2><p>从不确定性的初始事实（证据），运用不确定性的知识，获得不确定性但却合理的结论，获得不确定性但却合理的结论。</p>
+<h3 id="反绎推理"><a href="#反绎推理" class="headerlink" title="反绎推理"></a>反绎推理</h3><p>$P \rightarrow Q$ 与$Q$, 可能推出P</p>
+<p>是一种寻找最佳解释的推理，是不可靠的推理。也称为溯因推理。</p>
+<h4 id="基于谓词逻辑的推理"><a href="#基于谓词逻辑的推理" class="headerlink" title="基于谓词逻辑的推理"></a>基于谓词逻辑的推理</h4><p>三个重要假设（传统）</p>
+<ul>
+<li>谓词对领域描述是充分的；</li>
+<li>知识库必须是一致的；</li>
+<li>应用推理规则得到的信息，必须是单调增长的</li>
+</ul>
+<p>但如果假设不成立</p>
+<h4 id="非单调推理"><a href="#非单调推理" class="headerlink" title="非单调推理"></a>非单调推理</h4><p>模态操作符的扩充</p>
+<ul>
+<li>unless操作符<ul>
+<li>$ (p(x) \text{ unless } q(x)) \rightarrow r(x) $, $r(x) \rightarrow s(x)$</li>
+<li>如果$p(W)$成立,且不知道$q(W)$是否为真，则$r(W)$, 进而$s(W)$为真</li>
+<li>进一步已知$q(W)$为真，则$r(W)$和$s(W)$需要被撤回。</li>
+<li>abnormal默认规则 $p(x) \text{ unless ab } p(x) \rightarrow r(x)$<ul>
+<li>除非$p$有个反常的实例</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>is consistent with操作符<ul>
+<li>$\forall x \ good_student(x) \wedge M \ study_hard(x) \rightarrow graduates(x) $ </li>
+<li>如何判定”与….相一致”<ul>
+<li>第一种方法：证明其反$\neg study_hard(x)$; 如果不能证明，则与…相一致</li>
+<li>第二种方法：在有限空间上做启发式搜索</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>默认逻辑<ul>
+<li>$A(x) \wedge : B(x) \rightarrow C(x)$</li>
+<li>“如果A可被证实，且它与对B的假设相一致，则…”</li>
+</ul>
+</li>
+</ul>
+<h4 id="真值维护系统"><a href="#真值维护系统" class="headerlink" title="真值维护系统"></a>真值维护系统</h4><p>目标：维持推理系统的逻辑完整性</p>
+<p>原理：通过存储每条推理的理由，再重新推断根据新的信念所得出的结论的支持情况</p>
+<p>实现方式：</p>
+<ol>
+<li>时序回溯：从死状态或者末状态返回，系统的遍历所有可能路径。(低效!)</li>
+<li>相关性指导回溯:直接回溯到出问题的点，并在那个状态 对解进行修正。<ul>
+<li>TMS实现机制<ul>
+<li>关联机制：将每条结论和其理由联系在一起</li>
+<li>定位机制：当给定矛盾和其理由时，直接定位错误的假设。</li>
+<li>回收机制：收回错误的假设</li>
+<li>追溯机制：收回错误的假设的结论</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>基于理由的真值维护系统JTMS</p>
+<ul>
+<li>检查理由网络<ul>
+<li>通过问题求解程序的查询(是否相信命题p, 为什么要相信命题p, 哪些假设支持命题p)进行触发</li>
+</ul>
+</li>
+<li>修改相关性网络<ul>
+<li>由问题求解程序所提供的信息进行修改。添加新命题、<br>添加或删除前提等</li>
+</ul>
+</li>
+<li>更新网络<ul>
+<li>重新计算与现存理由相一致的命题</li>
+</ul>
+</li>
+</ul>
+<p>构造理由网络，并将网络与推理过程分离</p>
+<p>理由网络</p>
+<ul>
+<li>结点：知识库中的信念</li>
+<li>理由：支持结点上的信念</li>
+<li>联系：IN,支持结点成立的信念集合; OUT,不支持结点成立的信念集合</li>
+</ul>
+<h4 id="基于最小模型的逻辑"><a href="#基于最小模型的逻辑" class="headerlink" title="基于最小模型的逻辑"></a>基于最小模型的逻辑</h4><p>模型:对所有变量赋值均满足谓词表达式集合S的解释</p>
+<p>存在问题:实际的领域无需任意多的谓词</p>
+<p>最小模型:对所有变量赋值满足谓词表达式S的模型中，最小的那个模型</p>
+<h4 id="集合覆盖"><a href="#集合覆盖" class="headerlink" title="集合覆盖"></a>集合覆盖</h4><p>考虑反绎推理中解释的产生:一个反绎的解释为谓词的覆盖。</p>
+<h4 id="确信度理论"><a href="#确信度理论" class="headerlink" title="确信度理论"></a>确信度理论</h4><p>MB(H|E):给定证据E时，假设H的可信度量</p>
+<p>MD(H|E):给定证据E时，假设H的不可信度量</p>
+<p>不确定性知识的表示：在CF模型中，知识是用产生式规则表示的，其一般形式为: IF E THEN H (CF(H|E))</p>
+<h4 id="不-可信度量和概率"><a href="#不-可信度量和概率" class="headerlink" title="(不)可信度量和概率"></a>(不)可信度量和概率</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$MB(H|E) = \begin&#123;cases&#125; 1 &amp; P(H)=1 \\ \frac&#123;\max\&#123;P(H|E),P(H)\&#125;-P(H) &#125;&#123;1-P(H)&#125; &amp; \text&#123;otherwise&#125; \end&#123;cases&#125;$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$MD(H|E) = \begin&#123;cases&#125; 1 &amp; P(H)=0 \\ \frac&#123;\min\&#123;P(H|E),P(H)\&#125;-P(H) &#125;&#123;-P(H)&#125; &amp; \text&#123;otherwise&#125; \end&#123;cases&#125;$</span><br></pre></td></tr></table></figure>
+<ol>
+<li>当$MB(H,E) &gt;0$时,有$P(H|E) &gt; P(H)$, $E$的出现增加了$H$的概率。</li>
+<li>当$MD(H,E)&gt;0$时,有$P(H|E)&lt;P(H)$,$E$的出现降低了$H$的概率</li>
+</ol>
+<h4 id="确信度的性质"><a href="#确信度的性质" class="headerlink" title="确信度的性质"></a>确信度的性质</h4><p>互斥性：同一证据不可能既增加对$H$的信任程度，又同时增加对$H$的不信任程序，故$MB$和$MD$是互斥的。即有如下互斥性：</p>
+<ul>
+<li>当$MB(H,E)&gt;0$时，$MD(H,E)=0$; </li>
+<li>当$MD(H,E)&gt;0$时，$MB(H,E)=0$;</li>
+</ul>
+<p>值域： $0 \le MB(H|E) \le 1$, $0 \le MD(H|E) \le 1$, $-1 \le CF(H|E) \le 1$ </p>
+<p>典型值：</p>
+<ol>
+<li>当$CF(H|E)=1$时，有$P(H|E)=1$, $E$所对应证据的出现使$H$为真。此时，$MB(H|E)=1, MD(H|E)=0$</li>
+<li>当$CF(H|E)=-1$时，有$P(H|E)=0$, $E$所对应证据的出现使$H$为真。此时，$MB(H|E)=0, MD(H|E)=1$</li>
+<li>当$CF(H|E)=0$时，有$MB(H|E)=0, MD(H|E)=0$, $E$所对应证据的出现不证实$H$,也不否认$H$.</li>
+</ol>
+<p>CF(H | E) = MB(H | E) - MD(H | E)</p>
+<p>实际应用中，P(H)和P(H|E)的值难以获得，因此CF(H|E)的值要 求由领域专家直接给出。</p>
+<ol>
+<li><p>否定证据不确定性的计算： $CF(\neg E) = - CF(E)$</p>
+</li>
+<li><p>组合证据不确定性的计算：</p>
+<ol>
+<li>合取：当规则前提(组合证据)是多个单一证据的组合，即$E = E_1 \land … \land E_n$时，若已知$CF(E_1),CF(E_2),…,CF(E_n)$ , 则$CF(E) = \min {CF(E_1,…,CF(E_n))}$</li>
+<li>析取：当规则前提(组合证据)是多个单一证据的析取，即$E = E_1 \lor … \lor E_n$时，若已知$CF(E_1),CF(E_2),…,CF(E_n)$ , 则$CF(E) = \max {CF(E_1,…,CF(E_n))}$</li>
+</ol>
+</li>
+</ol>
+<p>不确定性的更新公式： $CF(H) = CF(H,E) \times \max{0,CF(E)}$</p>
+<ol>
+<li>若$CF(E)&lt;0$,则$CF(H)=0$,即该模型没考略$E$为假对$H$的影响</li>
+<li>若$CF(E)=1$,则$CF(H) = CF(H,E)$, 即规则强度$CF(H,E)$实际上是在$E$为真时，$H$的确信度。</li>
+</ol>
+<h4 id="结论不确定性的合成"><a href="#结论不确定性的合成" class="headerlink" title="结论不确定性的合成"></a>结论不确定性的合成</h4><p>原理:多条知识支持同一个结论，且这些知识的前提相互独立， 结论的确信度不相同时，可利用不确定性的合成算法求出结论 的综合确信度。</p>
+<p>设有知识: If E1 then H (CF(H|E1)), If E2 then H (CF(H|E2))</p>
+<p>我们先计算每个CF(H): CF1(H) = CF(H|E1) <em> max{0,CF(E1)}, CF2(H) = CF(H|E2) </em> max{0,CF(E2)}, 然后用如下公式求E1与E2对H的综合确信度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$CF(H) = \begin&#123;cases&#125; CF1(H)+CF2(H)-CF1(H)*CF2(H) &amp; \text&#123;若&#125; CF1(H) \ge 0 \text&#123;且&#125; CF2(H) \ge 0 \\  CF1(H)+CF2(H)+CF1(H)*CF2(H) &amp; \text&#123;若&#125; CF1(H) &lt; 0 \text&#123;且&#125; CF2(H) &lt; 0 \\ \frac&#123;CF1(H)+CF2(H)&#125;&#123;1- \min\&#123;|CF1(H)|, |CF2(H)|\&#125;&#125; &amp; \text&#123;若&#125; CF1(H)\text&#123;与&#125; CF2(H)异号 \end&#123;cases&#125;$</span><br></pre></td></tr></table></figure>
+<p>合并计算公式所含特性：</p>
+<ul>
+<li>计算出来的CF值保证在1和-1之间</li>
+<li>在合并相反符号的CF时，它们能够相互削弱</li>
+<li>合并后的CF是一个单调函数</li>
+</ul>
+<h3 id="证据理论"><a href="#证据理论" class="headerlink" title="证据理论"></a>证据理论</h3><p>原理:基于收集到的证据数量，将概率论中的单点赋值扩展为集合赋值，<br> 处理由“不知道”所引起的不确定性。</p>
+<p>形式定义:考虑命题集，赋给区间值[belief, plausibility]，每个命题的可信度(belief<br>measure)必须在这个区间内。</p>
+<ol>
+<li>从相关问题的主观概念得到其可信度的思想</li>
+<li>基于相互独立的证据时，合并可信度的规则</li>
+</ol>
+<h4 id="信任函数"><a href="#信任函数" class="headerlink" title="信任函数"></a>信任函数</h4><p>Bel: $ 2^{\Omega} \rightarrow [0,1]$,  $Bel(A) = \sum\limits_{B \subseteq A} m(B)$, 其中 $A \subseteq \Omega$.</p>
+<p>Bel为下限函数，Bel(A)表示对$A$的总信任度</p>
+<h4 id="似然函数："><a href="#似然函数：" class="headerlink" title="似然函数："></a>似然函数：</h4><p>Pl: $2^{\Omega} \rightarrow [0,1]$, $PI(A) = 1- Bel(\neg A)$, 其中$A \subseteq \Omega$, $\neg A = \Omega -A$</p>
+<p>$PI$为上限函数，$Bel(\neg A)$表示对$\neg A$的总信任度， 即$A$为假的信任度，因此$PI(A)$ 表示对$A$为非假的信任度。</p>
+<h4 id="信任函数与似然函数"><a href="#信任函数与似然函数" class="headerlink" title="信任函数与似然函数"></a>信任函数与似然函数</h4><p>$PI(A) \ge Bel(A)$</p>
+<p>称$Bel(A)$ 和 $PI(A)$为对A信任程度的下限和上限，记为：$A[Bel(A),PI(A)]$</p>
+<p>$PI(A) - Bel(A)$:描述”不知道”的情况</p>
+<h4 id="Dempster证据合并规则"><a href="#Dempster证据合并规则" class="headerlink" title="Dempster证据合并规则"></a>Dempster证据合并规则</h4><p>对于$\forall A \subseteq \Omega, \Omega$上的两个$m$函数$m_1$, $m_2$,其Dempster合成规则为: $m_1 \oplus m<em>2 (A) = \frac{1}{K} \sum\limits</em>{B \cap C =A} m_1(B) \times m<em>2(C)$.  $K= \sum\limits</em>{B \cap C \not= \emptyset} m_1(B) \times m<em>2(C) = 1- \sum\limits</em>{B \cap C = \emptyset} m_1(B) \times m_2(C)$ </p>
+<ul>
+<li>$K$为冲突因子，反应证据的冲突程度</li>
+<li>$\frac{1}{K}$为归一化因子，相当于在组合中将空集(冲突)等比例分配给各个集合</li>
+<li>前提：证据是相互独立的。</li>
+</ul>
+<h2 id="贝叶斯网络"><a href="#贝叶斯网络" class="headerlink" title="贝叶斯网络"></a>贝叶斯网络</h2><p>先验概率 vs 后验概率</p>
+<ul>
+<li><p>先验概率：在得到任何新证据之前，统计的事件概率。即非条件概率，P(事件)</p>
+</li>
+<li><p>后验概率：给定新证据之后，统计的事件概率。即条件概率，P(事件|证据)。</p>
+</li>
+</ul>
+<p>演绎推理 vs 归纳推理</p>
+<ul>
+<li>演绎推理：不要求前件是真实的</li>
+<li>归纳推理：要求前件必须为真，结论未必为真(从特殊到一般)</li>
+<li>贝叶斯决策(贝叶斯归纳推理)：<ul>
+<li>已知先验概率和类条件概率表达式;</li>
+<li>转换成后验概率;</li>
+<li>根据后验概率大小进行决策/推理。</li>
+</ul>
+</li>
+</ul>
+<p>贝叶斯定理： 通过先验概率和类条件概率表达式，计算后验概率</p>
+<h3 id="贝叶斯信念网络"><a href="#贝叶斯信念网络" class="headerlink" title="贝叶斯信念网络"></a>贝叶斯信念网络</h3><p>贝叶斯网络</p>
+<ul>
+<li>是一个有向无环图</li>
+<li>节点代表随机变量</li>
+<li>边代表节点间的关系(因果关系)，用条件概率表达关系的强<br>度。</li>
+<li>没有父节点的用先验概率表达信息。</li>
+</ul>
+<p>贝叶斯网络中的独立性：</p>
+<ul>
+<li>顺序连接<ul>
+<li>$Z \rightarrow Y \rightarrow X$</li>
+<li>给定$Y$的知识，那么$X$和$Z$独立。如果$Y$未知，则$X$和$Z$不独立。</li>
+</ul>
+</li>
+<li>分支连接<ul>
+<li>$Y \rightarrow X, Y \rightarrow Z$</li>
+<li>给定$Y$的知识，那么$X$和$Z$独立。如果$Y$未知，则$X$和$Z$不独立。</li>
+</ul>
+</li>
+<li>汇合连接<ul>
+<li>$X \rightarrow Y, Z \rightarrow Y$</li>
+<li>$Y$ 未知时，$X$和$Z$独立，但给定$Y$, $X$和$Z$不独立</li>
+</ul>
+</li>
+<li>分支和汇合<ul>
+<li>$Z \rightarrow U, Z \rightarrow V$, $U \rightarrow X, V \rightarrow X$</li>
+<li>仅给定$U$, $Z$和$X$不独立。当且仅当给定$U$和$V$时，$Z$和$X$独立。</li>
+</ul>
+</li>
+</ul>
+<p>d-可分</p>
+<ul>
+<li><p>判断贝叶斯网络中任意两个节点之间是否独立</p>
+</li>
+<li><p>定义：$A$和$B$被一组随机变量E d-可分，当且仅当他们之间的所有路径都是堵塞的。</p>
+</li>
+<li><p>堵塞：如果$A$和$B$上有这样的一个中间节点$V$,那么路径是堵塞的。$V$满足以下两个属性之一：</p>
+<ol>
+<li><p>连接是顺序的或者分支的，$V$在$E$中</p>
+</li>
+<li><p>连接是汇合的，则$V$和它的子节点都不在$E$中</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>网络结构确定：</p>
+<ul>
+<li>选择一组刻画问题的随机变量${ X_1, X_2,…,X_n}$</li>
+<li>确定一个变量顺序$a = &lt; X_1, X_2,…,X_n&gt;$</li>
+<li>参数学习从一个空图出发，按照顺序$a$ 逐个将变量加入$\zeta$中</li>
+<li>假设当前需要加入的是变量$X_i$,此时$\zeta$中已经包含变量$X_1,X<em>2,…,X</em>{i-1}$<ul>
+<li>在$X_1,X<em>2,…,X</em>{i-1}$选择一个尽可能小的子集$\pi(X_i)$, 使得假设”给定$\pi(X_i)$, $X_i$ 与$\zeta$ 中的其他变量条件独立”合理</li>
+<li>从$\pi(X_i)$ 中的每一个节点添加一条指向$X_i$的有向边</li>
+</ul>
+</li>
+</ul>
+<p>$a$的顺序会影响网络的结构。</p>
+<p>贝叶斯信念网络推理</p>
+<ul>
+<li>因果推理(自顶向下的推理)<ul>
+<li>由原因推出结论，即根据一定的原因，推理出在该原因情况下结果发生的概率。</li>
+</ul>
+</li>
+<li>诊断推理(自底向上的推理)<ul>
+<li>由结论推出原因，即根据产生的结果，利用贝叶斯网推理算法，得出导致该结果的原因的概率</li>
+</ul>
+</li>
+<li>支持推理<ul>
+<li>对所发生的现象提供解释，目的是分析原因之间的相互影响。</li>
+</ul>
+</li>
+</ul>
+<h2 id="马尔科夫逻辑网络"><a href="#马尔科夫逻辑网络" class="headerlink" title="马尔科夫逻辑网络"></a>马尔科夫逻辑网络</h2><h3 id="Markov链"><a href="#Markov链" class="headerlink" title="Markov链"></a>Markov链</h3><p>考虑一个$N$(有限)状态${s_1,s_2,…,s_n}$的系统：在离散的时间序列中${t_1,t_2,…}$, 其在时间$t$的状态记为$X_t$. </p>
+<p>系统在时间$t$处在状态$s_j(1 \le j \le n)$ 的概率取决于其在时间${1,2,..,t-1}$的状态： $P(X_t = s_k | X_1,X<em>2,…,X</em>{t-1})$ </p>
+<p>一阶马尔科夫链：$P(X_t = s_k | X_1,X<em>2,…,X</em>{t-1}) = P(X_t = s<em>k | X</em>{t-1})$ </p>
+<h3 id="Markov网"><a href="#Markov网" class="headerlink" title="Markov网"></a>Markov网</h3><p>有向图+概率分布：Bayesian Network </p>
+<p>无向图+概率分布：Markov Network(Markov Random Field, MRF), $G=(V,E)$ </p>
+<p>顶点：随机变量$V$</p>
+<p>边：变量间的依赖关系$E$ </p>
+<p>团(Clique):各边所在的最大全联通子图(必须全连接)</p>
+<p>势函数：为非负函数，表示团的一个状态</p>
+<p>联合分布函数</p>
+<ul>
+<li>吉布斯测度：已知一种分配方案$x$,求MLN刚好为该情况的联合分布概率<ul>
+<li>$P(X=x) = \frac{1}{Z} \prod\limits_{k} f<em>k(X</em>)  $</li>
+</ul>
+</li>
+<li>配分函数：所有分配方案的测度总和<ul>
+<li>$Z = \sum\limits<em>{x \in \mathcal{X}} \prod\limits</em>{k} f<em>k(x</em>)$ </li>
+</ul>
+</li>
+</ul>
+<p>对数线性模型：</p>
+<ul>
+<li>对数线性模型：马尔可夫网络常表示为该模型，通过引入特征函数$\phi_k$ <ul>
+<li>$f_k = \exp(w_k^T \phi<em>k(x</em>))$</li>
+<li>$P(X=x) = \frac{1}{Z} \exp(\sum\limits_k w<em>k^T \phi)k(x</em>)$</li>
+</ul>
+</li>
+<li>配分函数：<ul>
+<li>$Z= \sum\limits_{x \in \mathcal{X}} \exp(w_k^T \phi<em>k(x</em>))$ </li>
+</ul>
+</li>
+<li>将每个团的势函数表示为指数函数，指数项为对应团的加权特征量</li>
+</ul>
+<p>在马尔可夫网络中，我们可以使用类似的直觉，但因为其中没有有方向的边（箭头），所以其条件独立陈述相对简单——如果节点 A 和 B 之间没有路径能使得该路径上的所有节点都被观察到，那么 A 和 B 就是相互独立的。换种说法：如果在 A 和 B 之间至少有一条路径上的所有中间节点都未被观察到，那么 A 和 B 就不是相互独立的。</p>
+<h3 id="Markov逻辑网的独立性"><a href="#Markov逻辑网的独立性" class="headerlink" title="Markov逻辑网的独立性"></a>Markov逻辑网的独立性</h3><ul>
+<li>Pairwise Markov Property: 给定所有其他变量，任意两个不相邻变量条<br>件独立。<ul>
+<li>$X_u \parallel X<em>v | X</em>{V \backslash {u,v} } $ If ${ u,v } \notin E$</li>
+</ul>
+</li>
+<li>Local Markov Property:一个变量如果给定所有邻居变量后与所有其他<br>变量条件独立。<ul>
+<li>$X<em>v \parallel X</em>{V \backslash cl(v)} | X_{ne}(v)$</li>
+</ul>
+</li>
+<li>Global Markov Property:A、B两个子集间任何一条路径都经过子集S，<br>则给定S后，A、B两个子集相互条件独立。<ul>
+<li>$X_A \parallel X_B | X_S$ </li>
+</ul>
+</li>
+</ul>
+<p>一个无向图$G=(V,E)$,是马尔科夫网络的充分必要条件是：当且仅当其满足以上三条独立性质</p>
+<h3 id="构建马尔科夫网络"><a href="#构建马尔科夫网络" class="headerlink" title="构建马尔科夫网络"></a>构建马尔科夫网络</h3><ul>
+<li>方法一：基于Pairwise Markov Property<ul>
+<li>如果满足下面条件，则在$X$和$Y$之间加边：<ul>
+<li>$P \not\models (X \perp Y | \mathcal{X} - {X,Y})$.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>方法二：基于Local Markov Property<ul>
+<li>集合$U$是$X$的马尔科夫毯(Markov blanket, $X$的邻居节点集合)，给定$U$, $X$独立于余下的变量；<ul>
+<li>$(X \perp \mathcal{X} - {X} -U | U) \in \mathcal{I}(P)$ </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="马尔科夫逻辑网"><a href="#马尔科夫逻辑网" class="headerlink" title="马尔科夫逻辑网"></a>马尔科夫逻辑网</h3><p>一个可能世界(A Possible World):为每个可能的闭谓词指定真值。</p>
+<p>可满足:一个一阶公式是可满足的，当且仅当该公式至少在一个世界中为真。</p>
+<p>一阶逻辑的推理:判断一个知识库中是否包含公式F，即F是否在 所有满足知识库的世界中为真。</p>
+<p>Markov逻辑网(Markov Logic Networks, MLNs): Markov网+一阶逻辑，其本质是公式附加权值的一阶逻辑知识库</p>
+<p>基本思想：将一阶逻辑的限制放松，即一个可能世界违反公式越多，其发生的概率越小，但未必为0。</p>
+<p>公式权重：表示公式限制强度的大小。权值越大，满足该公式世界的发生概率与不满足该公式世界的发生概率之间的差越大。</p>
 
       
 
@@ -457,16 +879,18 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "<%=url%>",
-  owner: '<%=theme.gitment_owner%>',
-  repo: '<%=theme.gitment_repo%>',
+ // id: "https://ricky-ting.github.io/2019/12/02/人工智能/",
+	id: "Mon Dec 02 2019 22:38:13 GMT+0800",
+  owner: 'Ricky-Ting',
+  repo: 'ricky-ting.github.io',
   oauth: {
-    client_id: '<%=theme.gitment_oauth.client_id%>',
-    client_secret: '<%=theme.gitment_oauth.client_secret%>',
+    client_id: '5791c5e45aa204b34d62',
+    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
   },
 })
 gitment.render('gitment-ctn')
 </script>
+
   
 
 
@@ -621,7 +1045,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -629,7 +1053,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
               </li>
              
               <li class="article-tag-list-item">
