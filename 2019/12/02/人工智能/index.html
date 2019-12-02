@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2019/12/02/人工智能/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="人工智能课程概述参考教材  George F. Luger, Artificial Intelligence: Structures and Strategies for Complex Problem Solving. Fifth Edition, Addison Wesley.  Stuart Russell and Peter Norvig. Artificial Intelligence:">
-<meta property="og:updated_time" content="2019-12-02T14:51:51.470Z">
+<meta property="og:updated_time" content="2019-12-02T14:52:14.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人工智能">
 <meta name="twitter:description" content="人工智能课程概述参考教材  George F. Luger, Artificial Intelligence: Structures and Strategies for Complex Problem Solving. Fifth Edition, Addison Wesley.  Stuart Russell and Peter Norvig. Artificial Intelligence:">
@@ -541,7 +541,7 @@
 <p>MD(H|E):给定证据E时，假设H的不可信度量</p>
 <p>不确定性知识的表示：在CF模型中，知识是用产生式规则表示的，其一般形式为: IF E THEN H (CF(H|E))</p>
 <h4 id="不-可信度量和概率"><a href="#不-可信度量和概率" class="headerlink" title="(不)可信度量和概率"></a>(不)可信度量和概率</h4><p>$MB(H|E) = \begin{cases} 1 &amp; P(H)=1 \ \frac{\max{P(H|E),P(H)}-P(H) }{1-P(H)} &amp; \text{otherwise} \end{cases}$</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$MD(H|E) = \begin&#123;cases&#125; 1 &amp; P(H)=0 \\ \frac&#123;\min\&#123;P(H|E),P(H)\&#125;-P(H) &#125;&#123;-P(H)&#125; &amp; \text&#123;otherwise&#125; \end&#123;cases&#125;$</span><br></pre></td></tr></table></figure>
+<p>$MD(H|E) = \begin{cases} 1 &amp; P(H)=0 \ \frac{\min{P(H|E),P(H)}-P(H) }{-P(H)} &amp; \text{otherwise} \end{cases}$</p>
 <ol>
 <li>当$MB(H,E) &gt;0$时,有$P(H|E) &gt; P(H)$, $E$的出现增加了$H$的概率。</li>
 <li>当$MD(H,E)&gt;0$时,有$P(H|E)&lt;P(H)$,$E$的出现降低了$H$的概率</li>
@@ -578,7 +578,7 @@
 <h4 id="结论不确定性的合成"><a href="#结论不确定性的合成" class="headerlink" title="结论不确定性的合成"></a>结论不确定性的合成</h4><p>原理:多条知识支持同一个结论，且这些知识的前提相互独立， 结论的确信度不相同时，可利用不确定性的合成算法求出结论 的综合确信度。</p>
 <p>设有知识: If E1 then H (CF(H|E1)), If E2 then H (CF(H|E2))</p>
 <p>我们先计算每个CF(H): CF1(H) = CF(H|E1) <em> max{0,CF(E1)}, CF2(H) = CF(H|E2) </em> max{0,CF(E2)}, 然后用如下公式求E1与E2对H的综合确信度</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$CF(H) = \begin&#123;cases&#125; CF1(H)+CF2(H)-CF1(H)*CF2(H) &amp; \text&#123;若&#125; CF1(H) \ge 0 \text&#123;且&#125; CF2(H) \ge 0 \\  CF1(H)+CF2(H)+CF1(H)*CF2(H) &amp; \text&#123;若&#125; CF1(H) &lt; 0 \text&#123;且&#125; CF2(H) &lt; 0 \\ \frac&#123;CF1(H)+CF2(H)&#125;&#123;1- \min\&#123;|CF1(H)|, |CF2(H)|\&#125;&#125; &amp; \text&#123;若&#125; CF1(H)\text&#123;与&#125; CF2(H)异号 \end&#123;cases&#125;$</span><br></pre></td></tr></table></figure>
+<p>$CF(H) = \begin{cases} CF1(H)+CF2(H)-CF1(H)<em>CF2(H) &amp; \text{若} CF1(H) \ge 0 \text{且} CF2(H) \ge 0 \  CF1(H)+CF2(H)+CF1(H)</em>CF2(H) &amp; \text{若} CF1(H) &lt; 0 \text{且} CF2(H) &lt; 0 \ \frac{CF1(H)+CF2(H)}{1- \min{|CF1(H)|, |CF2(H)|}} &amp; \text{若} CF1(H)\text{与} CF2(H)异号 \end{cases}$</p>
 <p>合并计算公式所含特性：</p>
 <ul>
 <li>计算出来的CF值保证在1和-1之间</li>
@@ -1382,16 +1382,18 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "<%=url%>",
-  owner: '<%=theme.gitment_owner%>',
-  repo: '<%=theme.gitment_repo%>',
+ // id: "https://ricky-ting.github.io/2019/12/02/人工智能/",
+	id: "Mon Dec 02 2019 22:38:13 GMT+0800",
+  owner: 'Ricky-Ting',
+  repo: 'ricky-ting.github.io',
   oauth: {
-    client_id: '<%=theme.gitment_oauth.client_id%>',
-    client_secret: '<%=theme.gitment_oauth.client_secret%>',
+    client_id: '5791c5e45aa204b34d62',
+    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
   },
 })
 gitment.render('gitment-ctn')
 </script>
+
   
 
 
@@ -1506,15 +1508,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">计划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1530,11 +1532,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
+                <a href="javascript:void(0)" class="js-tag color4">solution</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">solution</a>
+                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1550,11 +1552,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
+                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
               </li>
              
               <li class="article-tag-list-item">
