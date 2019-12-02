@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2019/12/02/人工智能/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="人工智能课程概述参考教材  George F. Luger, Artificial Intelligence: Structures and Strategies for Complex Problem Solving. Fifth Edition, Addison Wesley.  Stuart Russell and Peter Norvig. Artificial Intelligence:">
-<meta property="og:updated_time" content="2019-12-02T14:48:41.139Z">
+<meta property="og:updated_time" content="2019-12-02T14:50:10.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人工智能">
 <meta name="twitter:description" content="人工智能课程概述参考教材  George F. Luger, Artificial Intelligence: Structures and Strategies for Complex Problem Solving. Fifth Edition, Addison Wesley.  Stuart Russell and Peter Norvig. Artificial Intelligence:">
@@ -771,6 +771,16 @@
 <ul>
 <li>L中的任意闭原子(ground atom)都对应了$M_{L,C}$中的一个二值节点。若此闭原子为真，则对应的二值节点取值为1;若为假，则取值为0。</li>
 <li>L中的任意闭规则(ground formula)都对应着一个特征值。若此闭规则为真，则对应的特征值为1;若为假，则特征值为0。并且这个特征值$F_i$ 的权重为二元项中该规则对应的权重$w_i$ </li>
+</ul>
+<h4 id="MLN特例：一阶逻辑"><a href="#MLN特例：一阶逻辑" class="headerlink" title="MLN特例：一阶逻辑"></a>MLN特例：一阶逻辑</h4><ul>
+<li>只有一条规则<ul>
+<li>$\forall x \ R(x) \rightarrow S(x)$, 权重为$w$,常数集$C= {A}$</li>
+</ul>
+</li>
+<li>只有4个事件<ul>
+<li>${\neg R(A), \neg S(A) }$, ${\neg R(A),  S(A) }$, ${R(A), \neg S(A) }$, ${R(A), S(A) }$</li>
+</ul>
+</li>
 </ul>
 <h3 id="MLN推理"><a href="#MLN推理" class="headerlink" title="MLN推理"></a>MLN推理</h3><ul>
 <li>条件概率查询(Conditional Probability Query)<ul>
@@ -1537,15 +1547,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">大数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
