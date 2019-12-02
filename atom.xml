@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ricky-ting.github.io/"/>
-  <updated>2019-11-14T06:22:45.569Z</updated>
+  <updated>2019-12-02T14:42:01.963Z</updated>
   <id>https://ricky-ting.github.io/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>人工智能</title>
+    <link href="https://ricky-ting.github.io/2019/12/02/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <id>https://ricky-ting.github.io/2019/12/02/人工智能/</id>
+    <published>2019-12-02T14:38:13.000Z</published>
+    <updated>2019-12-02T14:42:01.963Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="人工智能"><a href="#人工智能" class="headerlink" title="人工智能"></a>人工智能</h1><h2 id="课程概述"><a href="#课程概述" class="headerlink" title="课程概述"></a>课程概述</h2><p>参考教材</p><ul><li><p>George F. Luger, Artificial Intelligence: Structures and Strategies for Complex Problem Solving. Fifth Edition, Addison Wesley.</p></li><li><p>Stuart Russell and Peter Norvig. Artificial Intelligence: A Modern Approach. Third Edition.</p></li></ul><p>参考网站</p><ul><li><p>CMU, <a href="http://www.cs.cmu.edu" target="_blank" rel="noopener">http://www.cs.cmu.edu</a></p></li><li><p>MIT, <a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-034-artificial-intelligence-fall-2010/index.htm" target="_blank" rel="noopener">http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-034-artificial-intelligence-fall-2010/index.htm</a>.</p></li><li><p>Stanford University, <a href="http://www.stanford.edu/class/cs221/" target="_blank" rel="noopener">http://www.stanford.edu/class/cs221/</a>.</p></li></ul><p>前8周讲授完毕，并进行期中闭卷考试(40分)</p><p>全自动区分计算机和人类的图灵测试：Completely Automated Public Turing test to tell Computers and Humans Apart，简称CAPTCHA</p><a id="more"></a><h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><h3 id="状态空间搜索"><a href="#状态空间搜索" class="headerlink" title="状态空间搜索"></a>状态空间搜索</h3><p>状态空间的表示</p><ul><li>状态空间图：节点N和连接(弧)A</li><li>初始状态：S是N的非空子集</li><li>目标状态：G是N的非空子集</li><li>状态空间搜索：寻找从初始状态到目标状态的解路径(solution path)</li><li>状态转移图：有向无环图DAG，但也可能存在回路</li><li>状态转移树</li></ul><p>图搜索：需要检测和消除解路径上的循环</p><p>树搜索：免除检测的开销</p><p>搜索树</p><ul><li>根节点：初始状态</li><li>连接：父节点上的合法动作</li><li>后继：在父节点上采用合法动作所达到的子节点</li><li>搜索树：删除后继节点中已经出现的等价状态，所形成的树</li></ul><p>状态空间的搜索方向</p><ul><li>数据驱动-前向搜索，由数据向目标搜索</li><li>目标驱动-后向搜索，由目标向数据搜索</li></ul><p>回溯技术：通过试错方式搜索状态空间所有解路径</p><p>宽度优先搜索：</p><ul><li>先入先出FIFO，从右侧加入列表，左侧移出</li><li>可保证发现目标状态的最短路径</li><li>组合爆炸</li></ul><p>深度优先搜索：</p><ul><li>后入先出LIFO，从左侧加入列表，左侧移出</li><li>不保证发现目标状态的最短路径</li><li>“可能迷失”在深度空间中</li></ul><p>所以，将两者结合我们得到了迭代加深深度优先：有近似于BFS的时间复杂度和近似于DFS的空间复杂度，避免组合爆炸。</p><p>迭代加深深度优先与广度优先等价</p><h4 id="启发式搜索"><a href="#启发式搜索" class="headerlink" title="启发式搜索"></a>启发式搜索</h4><p>为什么需要启发：1.没有精确解；2.约简搜索的状态空间</p><p>爬山搜索：</p><ul><li>第一步:扩展当前节点以及其子节点，并进行评估;</li><li>第二步:选择“最优”的子节点作为下一节点;</li><li>第三步:如果所有子节点的评估，都比当前节点“劣”， 则算法终止。</li></ul><p>但爬山搜索容易陷入局部最优，我们可以增加回溯机制</p><p>最佳优先搜索，类似于宽度优先搜索，但把队列换成了优先队列</p><p>错位牌数是什么？？ 距离又是什么？？？</p><p>$A*$算法</p><ul><li>评估函数：$f(n)=g(n)+h(n)$</li><li>最优评估函数：$f^<em>(n) = g^</em>(n) +h^*(n)$ </li><li>$g(n) \ge g^*(n)$</li><li>如果$h(n) \le h^<em>(n)$, 则$A$算法为$A^</em>$算法</li></ul><p>把$h(n)$定义为0，且边权为1，就是BFS。DFS?</p><p>$A^*$算法具有可采纳性和单调性</p><p>可采纳性(admissible):最优评估函数一个算法是可采纳的，当存在一个解路径时，算法总是终止在此最优解路径上。</p><p>可采纳启发式是指它从不会过高估计到达目标的代价。</p><p>$A^*$算法是可采纳的：</p><ul><li>$A^*$可以终止</li><li>解路径上的节点总是会被$A^*$展开(访问到)</li><li>当存在解路径时,$A^*$算法终止在此解路径上</li></ul><p>$A^<em>$最优性：如果$h_1(n) &lt; h_2(n) $, 则$A_2^</em>$展开的节点数小于$A_1^*$  P92</p><p>$A^*$单调性：启发函数$h$是单调的</p><ul><li>$n_j$是$n_i$的后继节点，如果$h(n_i) - h(n_j) \le cost(n_i,n_j) $ 就是三角不等式</li><li>$h(goal) = 0$</li></ul><p>单调性：在首次访问的目标状态的路径，保证一定是最短路径。</p><p>$A^<em>$有如下性质：如果$h(n)$是可采纳的，那么$A^</em>$的树搜索版本是最优的；如果$h(n)$是一致的，那么图搜索的$A^*$算法是最优的。</p><h4 id="博弈树搜索"><a href="#博弈树搜索" class="headerlink" title="博弈树搜索"></a>博弈树搜索</h4><p>极小极大过程</p><ul><li>MAX:代表我方玩家，最大化其收益(赢得博弈)</li><li>MIN:代表对手，最小化MAX的收益</li></ul><p>将启发值自底向上传播</p><ul><li>如果父状态是MAX节点，将孩子节点中最大值传给它</li><li>如果父状态是MIN节点，将孩子节点中最小值传给它</li></ul><p>但这样状态数仍然很多，本质上还是穷竭搜索，所以要剪枝：</p><p>$\alpha - \beta$ 过程</p><p>极小极大过程：</p><ul><li>在预判层应用启发式评估</li><li>展开所有的后继分支</li><li>沿树向上传播评估值</li></ul><p>$\alpha -\beta$剪枝</p><ul><li>当确定是一个dead end时，停止展开其后继节点</li><li>对博弈树的深度优先搜索，且维护<ul><li>$\alpha$:与MAX节点关联，从不减小</li><li>$\beta$:与MIN节点关联，从不增大</li></ul></li><li>剪枝规则<ul><li>$Alpha$剪枝：任一MIN节点，如果其Beta值小于等于其祖先MAX节点的Alpha值，则停止搜索</li><li>Beta剪枝：任一MAX节点，如果其Alpha值大于等于其祖先MIN节点的Beta值，则停止搜索。</li></ul></li><li>特点<ul><li>对子节点排序非常敏感</li><li>静态启发：吃子启发</li><li>动态启发：历史启发、杀手启发、置换表启发</li></ul></li></ul><h3 id="Monte-Caro-树搜索"><a href="#Monte-Caro-树搜索" class="headerlink" title="Monte Caro 树搜索"></a>Monte Caro 树搜索</h3><p><a href="https://www.jiqizhixin.com/articles/monte-carlo-tree-search-beginners-guide" target="_blank" rel="noopener">参考资料</a></p><p>基本原理；随机抽样+假设检验+树搜索</p><p>解决：迭代产生游戏树，解决树空间太大的问题</p><p>性质：用概率的方式，产生合理的推理，但并不保证一定最优</p><p>预测值：</p><ul><li>第一个数字：代表在这个子树上赢的次数</li><li>第二个数字：在这个子树上模拟的次数</li></ul><p>SELECTION步骤：利用树策略选择节点</p><p>蒙特卡洛树的选择策略：</p><ul><li>UCT策略：<ul><li>平衡Exploration和Exploitation。</li><li>Exploration approach 促使去探索尚未发现的树的其他领域。 这会将倾向于探索树的广度，而不是深度。</li><li>Exploitation approach 倾向于选择拥有最大预测值的路径。这 种是属于贪心算法，趋于探索树的深度。</li><li>$UCT(node) = \frac{W(node)}{N(node)} + c \sqrt{\frac{\ln{N(parentNode)}}{N(node)}}$ </li></ul></li></ul><p>Expansion:添加一个 “?”的叶子节点。这是每次迭代中唯一添加的节点。</p><p>SImulation:又称 playout 或者 rollout。执行操作，直到达到结束状态，或者 满足设定的阈值，就停止该操作。然后基于模拟的结果，建立新 添加节点的值。</p><p>Backpropagation:利用新添加节点的值，对之前的树进行更新。从新的节点开始，<br>算法反向遍历回到根节点。</p><h2 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h2><p>合取范式(CNF),析取范式(DNF)</p><p>谓词演算的五大推理规则:取式假言推理、拒式假言推理、与消除、与引入、全称例化</p><ul><li>取式假言推理：如果已知语句$P$和$P \rightarrow Q$ 为真，那么$Q$为真</li><li>拒式假言推理：如果已知$P \rightarrow Q$ 为真，且$Q$为假，那么$P$为假</li><li>与消除：$P \wedge Q$ 为真，那么$P$、$Q$分别为真</li><li>与引入：$P$和$Q$都为真，$P \wedge Q$ 为真</li><li>全称例化：$\forall X, p(X)$ 为真，且$a$ 为$X$定义域中一值，$p(a)$为真。</li></ul><h3 id="合一"><a href="#合一" class="headerlink" title="合一"></a>合一</h3><p>合一：判断什么样的替换可以使两个谓词表达式匹配的算法。</p><p>合一表明了两个或多个表达式在什么条件下可以称为等价的。</p><p>替换：一个替换(Substitution)就是形如${t1/x1,t2/x2,…,tn/xn}$的有限集合，$x1,x2,…,xn$是互不相同的个体变元，$ti$不同于$xi$, $xi$也不循环出现在$tj$中。</p><p>斯柯伦标准化:去掉所有的存在量词：$(\forall X)(\exists Y) (mother(X,Y))$ 转换为$(\forall X) (mother(X,m(X))) $ </p><p>组合：在合一过程中，如果先后产生$S$和$S’$的替换，那么将S中的某个元素应用$S’$,所产生的新的替换，称为组合</p><p>最一般的合一式(MGU,Most Generalize Unify): 如果$g$是表达式$E$的最一般合一式，那么对于任何的其他合一式$s$,都存在另一个合一式$s’$,使$Es = Egs’$. 其中$Es$和$Egs’$是应用到表达式$E$的合一式的组合。</p><p>合一算法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 递归地对表达式的初始成分合一。如果成功，这次合一返回的任何代入式被用到两个表达式的剩下部分，然后以这两个表达式为参数。</span><br><span class="line">2. 当两个参数之一为一个符号(谓词名，函词名，变元，常元)， 或两个表达式的每一元素都已匹配了，算法终止。</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">UNIFY</span><br><span class="line">case</span><br><span class="line">E1, E2或者是常元或者是空表: %递归终止</span><br><span class="line">If E1=E2 then return &#123;&#125;;</span><br><span class="line">else return FAIL;</span><br><span class="line">E1是一个变元：</span><br><span class="line">If E1在E2中出现 then return FAIL;</span><br><span class="line">else return &#123;E2/E1&#125;;</span><br><span class="line">E2是一个变元：</span><br><span class="line">If E2在E1中出现then return FAIL;</span><br><span class="line">else return &#123;E1/E2&#125;;</span><br><span class="line">其他情况: %E1和E2都是表</span><br><span class="line">begin</span><br><span class="line">HE1:=E1的第一个元素;</span><br><span class="line">HE2:=E2的第二个元素;</span><br><span class="line">SUBS1:=unify*HE1,HE2;</span><br><span class="line">if(SUBS1=FAIL) then return FAIL;</span><br><span class="line">TE1:=apply(SUBS1,E1的后半部);</span><br><span class="line">TE2:=apply(SUBS1,E2的后半部);</span><br><span class="line">SUBS2:=unify(TE1,TE2);</span><br><span class="line">if(SUBS2=FAIL) then return FAIL;</span><br><span class="line">else return SUBS1与SUBS2的并集;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;人工智能&quot;&gt;&lt;a href=&quot;#人工智能&quot; class=&quot;headerlink&quot; title=&quot;人工智能&quot;&gt;&lt;/a&gt;人工智能&lt;/h1&gt;&lt;h2 id=&quot;课程概述&quot;&gt;&lt;a href=&quot;#课程概述&quot; class=&quot;headerlink&quot; title=&quot;课程概述&quot;&gt;&lt;/a&gt;课程概述&lt;/h2&gt;&lt;p&gt;参考教材&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;George F. Luger, Artificial Intelligence: Structures and Strategies for Complex Problem Solving. Fifth Edition, Addison Wesley.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Stuart Russell and Peter Norvig. Artificial Intelligence: A Modern Approach. Third Edition.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参考网站&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;CMU, &lt;a href=&quot;http://www.cs.cmu.edu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.cs.cmu.edu&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MIT, &lt;a href=&quot;http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-034-artificial-intelligence-fall-2010/index.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-034-artificial-intelligence-fall-2010/index.htm&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Stanford University, &lt;a href=&quot;http://www.stanford.edu/class/cs221/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.stanford.edu/class/cs221/&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;前8周讲授完毕，并进行期中闭卷考试(40分)&lt;/p&gt;
+&lt;p&gt;全自动区分计算机和人类的图灵测试：Completely Automated Public Turing test to tell Computers and Humans Apart，简称CAPTCHA&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>SQL学习</title>
@@ -461,32 +496,6 @@
     
     
       <category term="记录" scheme="https://ricky-ting.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Debian install sudo</title>
-    <link href="https://ricky-ting.github.io/2018/09/06/Debian-install-sudo/"/>
-    <id>https://ricky-ting.github.io/2018/09/06/Debian-install-sudo/</id>
-    <published>2018-09-06T01:08:13.000Z</published>
-    <updated>2018-09-06T07:39:19.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Debian-install-sudo"><a href="#Debian-install-sudo" class="headerlink" title="Debian install sudo"></a>Debian install sudo</h1><ol><li><code>su</code>切换至root</li><li><code>apt-get install sudo</code></li><li><code>visudo</code> 在<code>root ALL(ALL:ALL) ALL</code>后面加入一行<code>&lt;user&gt; ALL=(ALL:ALL) ALL</code></li><li>然后Ctrl-O 保存文件，要把文件名里的<code>.tmp</code>删除，两次yes， Ctrl-X退出编辑</li></ol><p><code>sudoers</code>文件目录为<code>/etc/sudoers</code></p><p><code>su</code>进入root, <code>exit</code>退出root</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Debian-install-sudo&quot;&gt;&lt;a href=&quot;#Debian-install-sudo&quot; class=&quot;headerlink&quot; title=&quot;Debian install sudo&quot;&gt;&lt;/a&gt;Debian install sudo&lt;/h1&gt;&lt;ol&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="bug" scheme="https://ricky-ting.github.io/tags/bug/"/>
-    
-      <category term="solution" scheme="https://ricky-ting.github.io/tags/solution/"/>
     
   </entry>
   
