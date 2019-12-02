@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://ricky-ting.github.io/2019/12/02/人工智能/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
 <meta property="og:description" content="人工智能课程概述参考教材  George F. Luger, Artificial Intelligence: Structures and Strategies for Complex Problem Solving. Fifth Edition, Addison Wesley.  Stuart Russell and Peter Norvig. Artificial Intelligence:">
-<meta property="og:updated_time" content="2019-12-02T14:52:14.130Z">
+<meta property="og:updated_time" content="2019-12-02T14:54:27.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="人工智能">
 <meta name="twitter:description" content="人工智能课程概述参考教材  George F. Luger, Artificial Intelligence: Structures and Strategies for Complex Problem Solving. Fifth Edition, Addison Wesley.  Stuart Russell and Peter Norvig. Artificial Intelligence:">
@@ -540,7 +540,7 @@
 <h4 id="确信度理论"><a href="#确信度理论" class="headerlink" title="确信度理论"></a>确信度理论</h4><p>MB(H|E):给定证据E时，假设H的可信度量</p>
 <p>MD(H|E):给定证据E时，假设H的不可信度量</p>
 <p>不确定性知识的表示：在CF模型中，知识是用产生式规则表示的，其一般形式为: IF E THEN H (CF(H|E))</p>
-<h4 id="不-可信度量和概率"><a href="#不-可信度量和概率" class="headerlink" title="(不)可信度量和概率"></a>(不)可信度量和概率</h4><p>$MB(H|E) = \begin{cases} 1 &amp; P(H)=1 \ \frac{\max{P(H|E),P(H)}-P(H) }{1-P(H)} &amp; \text{otherwise} \end{cases}$</p>
+<h4 id="不-可信度量和概率"><a href="#不-可信度量和概率" class="headerlink" title="(不)可信度量和概率"></a>(不)可信度量和概率</h4><p>$MB(H|E) = \begin{cases} 1 &amp; P(H)=1 // \frac{\max{P(H|E),P(H)}-P(H) }{1-P(H)} &amp; \text{otherwise} \end{cases}$</p>
 <p>$MD(H|E) = \begin{cases} 1 &amp; P(H)=0 \ \frac{\min{P(H|E),P(H)}-P(H) }{-P(H)} &amp; \text{otherwise} \end{cases}$</p>
 <ol>
 <li>当$MB(H,E) &gt;0$时,有$P(H|E) &gt; P(H)$, $E$的出现增加了$H$的概率。</li>
@@ -1382,18 +1382,16 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
- // id: "https://ricky-ting.github.io/2019/12/02/人工智能/",
-	id: "Mon Dec 02 2019 22:38:13 GMT+0800",
-  owner: 'Ricky-Ting',
-  repo: 'ricky-ting.github.io',
+  id: "<%=url%>",
+  owner: '<%=theme.gitment_owner%>',
+  repo: '<%=theme.gitment_repo%>',
   oauth: {
-    client_id: '5791c5e45aa204b34d62',
-    client_secret: 'f4f3816ce8c1e68e2500bd1611a22f3adc796044',
+    client_id: '<%=theme.gitment_oauth.client_id%>',
+    client_secret: '<%=theme.gitment_oauth.client_secret%>',
   },
 })
 gitment.render('gitment-ctn')
 </script>
-
   
 
 
@@ -1548,7 +1546,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1556,7 +1554,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">创新项目</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1572,15 +1570,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
