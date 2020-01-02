@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ricky-ting.github.io">
-  <title>BST | Ricky Ting&#39;s Blog</title>
+  <title>Computer Network Review | Ricky Ting&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="下面是基于C++的BST类实现">
-<meta name="keywords" content="algorithm">
+  <meta name="description" content="计算机网络课程概述参考教材 James F. Kurose, Keith W. Ross. 计算机网络-自顶向下方法(7th)  William Stallings. 数据与计算机通信(10th)   课程考核 分组实践，课程报告 (30%)  课后作业(30%)  期末考试(40%)   nju2019autumn@163.com 课程内容 端网络  前端网络：客户端  后端网络：服务端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BST">
-<meta property="og:url" content="https://ricky-ting.github.io/2018/06/07/BST/index.html">
+<meta property="og:title" content="Computer Network Review">
+<meta property="og:url" content="https://ricky-ting.github.io/2020/01/02/Computer-Network-Review/index.html">
 <meta property="og:site_name" content="Ricky Ting&#39;s Blog">
-<meta property="og:description" content="下面是基于C++的BST类实现">
-<meta property="og:updated_time" content="2018-06-07T07:11:04.000Z">
+<meta property="og:description" content="计算机网络课程概述参考教材 James F. Kurose, Keith W. Ross. 计算机网络-自顶向下方法(7th)  William Stallings. 数据与计算机通信(10th)   课程考核 分组实践，课程报告 (30%)  课后作业(30%)  期末考试(40%)   nju2019autumn@163.com 课程内容 端网络  前端网络：客户端  后端网络：服务端">
+<meta property="og:updated_time" content="2020-01-02T02:04:19.152Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BST">
-<meta name="twitter:description" content="下面是基于C++的BST类实现">
+<meta name="twitter:title" content="Computer Network Review">
+<meta name="twitter:description" content="计算机网络课程概述参考教材 James F. Kurose, Keith W. Ross. 计算机网络-自顶向下方法(7th)  William Stallings. 数据与计算机通信(10th)   课程考核 分组实践，课程报告 (30%)  课后作业(30%)  期末考试(40%)   nju2019autumn@163.com 课程内容 端网络  前端网络：客户端  后端网络：服务端">
   
     <link rel="alternative" href="/atom.xml" title="Ricky Ting&#39;s Blog" type="application/atom+xml">
   
@@ -154,32 +153,1110 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-BST" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Computer-Network-Review" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      BST
+      Computer Network Review
     </h1>
   
 
         
-        <a href="/2018/06/07/BST/" class="archive-article-date">
-  	<time datetime="2018-06-07T07:09:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-07</time>
+        <a href="/2020/01/02/Computer-Network-Review/" class="archive-article-date">
+  	<time datetime="2020-01-02T02:03:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>下面是基于C++的BST类实现</p>
- <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  main.cpp</span><br><span class="line">//  debugger</span><br><span class="line">//</span><br><span class="line">//  Created by 丁保荣 on 2018/6/6.</span><br><span class="line">//  Copyright © 2018 丁保荣. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct node</span><br><span class="line">&#123;</span><br><span class="line">    node * p;</span><br><span class="line">    node * l;</span><br><span class="line">    node * r;</span><br><span class="line">    int key;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class BST</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    node * root;</span><br><span class="line">    node mynil;</span><br><span class="line">    void Initial()</span><br><span class="line">    &#123;</span><br><span class="line">        root=&amp;mynil;</span><br><span class="line">    &#125;</span><br><span class="line">    void Inorder_tree_walk(node * x);</span><br><span class="line">    void Preorder_tree_walk(node * x);</span><br><span class="line">    void Postorder_tree_walk(node * x);</span><br><span class="line">    node * Search(node * x, int k);</span><br><span class="line">    node * Minimum(node * z);</span><br><span class="line">    node * Maximum(node * z);</span><br><span class="line">    node * Successor(node * x);</span><br><span class="line">    node * Predecessor(node * x);</span><br><span class="line">    void Insert(node * z);</span><br><span class="line">    void Transplant(node * u, node * v);</span><br><span class="line">    void Delete(node * z);</span><br><span class="line">    </span><br><span class="line">private:</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void BST::Inorder_tree_walk(node * x)</span><br><span class="line">&#123;</span><br><span class="line">    if(x!=&amp;mynil)</span><br><span class="line">    &#123;</span><br><span class="line">        BST::Inorder_tree_walk((*x).l);</span><br><span class="line">        cout&lt;&lt;(*x).key;</span><br><span class="line">        BST::Inorder_tree_walk((*x).r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void BST::Preorder_tree_walk(node * x)</span><br><span class="line">&#123;</span><br><span class="line">    if(x!=&amp;mynil)</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;(*x).key;</span><br><span class="line">        BST::Preorder_tree_walk((*x).l);</span><br><span class="line">        BST::Preorder_tree_walk((*x).r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void BST::Postorder_tree_walk(node * x)</span><br><span class="line">&#123;</span><br><span class="line">    if(x!=&amp;mynil)</span><br><span class="line">    &#123;</span><br><span class="line">        BST::Postorder_tree_walk((*x).l);</span><br><span class="line">        BST::Postorder_tree_walk((*x).r);</span><br><span class="line">        cout&lt;&lt;(*x).key;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">node * BST::Search(node * x,int k)</span><br><span class="line">&#123;</span><br><span class="line">    if(x==&amp;mynil || k==(*x).key)</span><br><span class="line">        return x;</span><br><span class="line">    if(k&lt;(*x).key)</span><br><span class="line">        return BST::Search((*x).l,k);</span><br><span class="line">    else</span><br><span class="line">        return BST::Search((*x).r,k);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">node * BST::Minimum(node * z)</span><br><span class="line">&#123;</span><br><span class="line">    while((*z).l!=&amp;mynil)</span><br><span class="line">        z=(*z).l;</span><br><span class="line">    return z;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">node * BST::Maximum(node * z)</span><br><span class="line">&#123;</span><br><span class="line">    while((*z).r!=&amp;mynil)</span><br><span class="line">        z=(*z).r;</span><br><span class="line">    return z;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">node * BST::Successor(node * x)</span><br><span class="line">&#123;</span><br><span class="line">    if((*x).r!=&amp;mynil)</span><br><span class="line">        return BST::Minimum((*x).r);</span><br><span class="line">    node * y=(*x).p;</span><br><span class="line">    while(y!=&amp;mynil &amp;&amp; x==(*y).r)</span><br><span class="line">    &#123;</span><br><span class="line">        x=y;</span><br><span class="line">        y=(*y).p;</span><br><span class="line">    &#125;</span><br><span class="line">    return y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">node * BST::Predecessor(node * x)</span><br><span class="line">&#123;</span><br><span class="line">    if((*x).l!=&amp;mynil)</span><br><span class="line">        return BST::Maximum((*x).l);</span><br><span class="line">    node * y=(*x).p;</span><br><span class="line">    while(y!=&amp;mynil &amp;&amp; x==(*y).l)</span><br><span class="line">    &#123;</span><br><span class="line">        x=y;</span><br><span class="line">        y=(*y).p;</span><br><span class="line">    &#125;</span><br><span class="line">    return y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void BST::Insert(node * z)</span><br><span class="line">&#123;</span><br><span class="line">    node * y=&amp;mynil;</span><br><span class="line">    node * x=root;</span><br><span class="line">    while(x!=&amp;mynil)</span><br><span class="line">    &#123;</span><br><span class="line">        y=x;</span><br><span class="line">        if((*z).key&lt;(*x).key)</span><br><span class="line">            x=(*x).l;</span><br><span class="line">        else</span><br><span class="line">            x=(*x).r;</span><br><span class="line">    &#125;</span><br><span class="line">    (*z).p=y;</span><br><span class="line">    if(y==&amp;mynil)</span><br><span class="line">        root=z;</span><br><span class="line">    else if((*z).key&lt;(*y).key)</span><br><span class="line">        (*y).l=z;</span><br><span class="line">    else</span><br><span class="line">        (*y).r=z;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void BST::Transplant(node * u, node * v)</span><br><span class="line">&#123;</span><br><span class="line">    if((*u).p==&amp;mynil)</span><br><span class="line">        root=v;</span><br><span class="line">    else if(u==(*(*u).p).l)</span><br><span class="line">        (*(*u).p).l=v;</span><br><span class="line">    else</span><br><span class="line">        (*(*u).p).r=v;</span><br><span class="line">    if(v!=&amp;mynil)</span><br><span class="line">        (*v).p=(*u).p;</span><br><span class="line">&#125;</span><br><span class="line">void BST::Delete(node * z)</span><br><span class="line">&#123;</span><br><span class="line">    node * y;</span><br><span class="line">    if((*z).l==&amp;mynil)</span><br><span class="line">        BST::Transplant(z,(*z).r);</span><br><span class="line">    else if((*z).r==&amp;mynil)</span><br><span class="line">        BST::Transplant(z,(*z).l);</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        y=BST::Minimum((*z).r);</span><br><span class="line">        if((*y).p!=z)</span><br><span class="line">        &#123;</span><br><span class="line">            BST::Transplant(y,(*y).r);</span><br><span class="line">            (*y).r=(*z).r;</span><br><span class="line">            (*(*y).r).p=y;</span><br><span class="line">        &#125;</span><br><span class="line">        BST::Transplant(z,y);</span><br><span class="line">        (*y).l=(*z).l;</span><br><span class="line">        (*(*y).l).p=y;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">BST T;</span><br><span class="line"></span><br><span class="line">void myinsert(int key)</span><br><span class="line">&#123;</span><br><span class="line">    node * p=new node;</span><br><span class="line">    (*p).key=key;</span><br><span class="line">    p-&gt;l=&amp;T.mynil;</span><br><span class="line">    p-&gt;r=&amp;T.mynil;</span><br><span class="line">    T.Insert(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void mydelete(int key)</span><br><span class="line">&#123;</span><br><span class="line">    node * p = T.Search(T.root,key);</span><br><span class="line">    T.Delete(p);</span><br><span class="line">    delete(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以下是基于C++的RB-Tree类实现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  main.cpp</span><br><span class="line">//  debugger</span><br><span class="line">//</span><br><span class="line">//  Created by 丁保荣 on 2018/6/6.</span><br><span class="line">//  Copyright © 2018 丁保荣. All rights reserved.</span><br><span class="line">//</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int counter=0;</span><br><span class="line">struct node</span><br><span class="line">&#123;</span><br><span class="line">    bool c; // true is black and false is red.</span><br><span class="line">    int key;</span><br><span class="line">    node * p;</span><br><span class="line">    node * l;</span><br><span class="line">    node * r;</span><br><span class="line">&#125;;</span><br><span class="line">class myRB_Tree</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    node mynil;</span><br><span class="line">    node * root;</span><br><span class="line">    void Initial()</span><br><span class="line">    &#123;</span><br><span class="line">        mynil.c=true;</span><br><span class="line">        mynil.p=mynil.l=mynil.r=NULL;</span><br><span class="line">        mynil.key=-1;</span><br><span class="line">        root=&amp;mynil;</span><br><span class="line">    &#125;</span><br><span class="line">    void Insert(node * z);</span><br><span class="line">    void Delete(node * z);</span><br><span class="line">    node * Search(node * x, int k);</span><br><span class="line">    node * Minimum(node * z);</span><br><span class="line">    void Preorder_tree_walk(node * x);</span><br><span class="line">    </span><br><span class="line">private:</span><br><span class="line">    void Insert_Fixup(node * z);</span><br><span class="line">    void Transplant(node * u, node * v);</span><br><span class="line">    void Left_Rotate(node * x);</span><br><span class="line">    void Right_Rotate(node * x);</span><br><span class="line">    void Delete_Fixup(node * x);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void myRB_Tree::Preorder_tree_walk(node * x)</span><br><span class="line">&#123;</span><br><span class="line">    if(x!=&amp;mynil)</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;(*x).key&lt;&lt;&quot;:&quot;&lt;&lt;((*x).c?&quot;black&quot;:&quot;red&quot;)&lt;&lt;endl;</span><br><span class="line">        myRB_Tree::Preorder_tree_walk((*x).l);</span><br><span class="line">        myRB_Tree::Preorder_tree_walk((*x).r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void myRB_Tree::Insert(node * z)</span><br><span class="line">&#123;</span><br><span class="line">    node * y=&amp;mynil;</span><br><span class="line">    node * x=root;</span><br><span class="line">    while(x!=&amp;mynil)</span><br><span class="line">    &#123;</span><br><span class="line">        y=x;</span><br><span class="line">        if((*z).key&lt;(*x).key)</span><br><span class="line">            x=(*x).l;</span><br><span class="line">        else</span><br><span class="line">            x=(*x).r;</span><br><span class="line">    &#125;</span><br><span class="line">    (*z).p=y;</span><br><span class="line">    if(y==&amp;mynil)</span><br><span class="line">        root=z;</span><br><span class="line">    else if((*z).key&lt;(*y).key)</span><br><span class="line">        (*y).l=z;</span><br><span class="line">    else</span><br><span class="line">        (*y).r=z;</span><br><span class="line">    (*z).l=&amp;mynil;</span><br><span class="line">    (*z).r=&amp;mynil;</span><br><span class="line">    (*z).c=0;</span><br><span class="line">    myRB_Tree::Insert_Fixup(z);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void myRB_Tree::Insert_Fixup(node * z)</span><br><span class="line">&#123;</span><br><span class="line">    while((*(*z).p).c==false)</span><br><span class="line">    &#123;</span><br><span class="line">        if((*z).p==(*(*(*z).p).p).l)</span><br><span class="line">        &#123;</span><br><span class="line">            node * y=(*(*(*z).p).p).r;</span><br><span class="line">            if((*y).c==false)</span><br><span class="line">            &#123;</span><br><span class="line">                (*(*z).p).c=true;</span><br><span class="line">                (*y).c=true;</span><br><span class="line">                (*(*(*z).p).p).c=false;</span><br><span class="line">                z=(*(*z).p).p;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                if(z==(*(*z).p).r)</span><br><span class="line">                &#123;</span><br><span class="line">                    z=(*z).p;</span><br><span class="line">                    myRB_Tree::Left_Rotate(z);</span><br><span class="line">                &#125;</span><br><span class="line">                (*(*z).p).c=true;</span><br><span class="line">                (*(*(*z).p).p).c=false;</span><br><span class="line">                myRB_Tree::Right_Rotate((*(*z).p).p);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            node * y=(*(*(*z).p).p).l;</span><br><span class="line">            if((*y).c==false)</span><br><span class="line">            &#123;</span><br><span class="line">                (*(*z).p).c=true;</span><br><span class="line">                (*y).c=true;</span><br><span class="line">                (*(*(*z).p).p).c=false;</span><br><span class="line">                z=(*(*z).p).p;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                if(z==(*(*z).p).l)</span><br><span class="line">                &#123;</span><br><span class="line">                    z=(*z).p;</span><br><span class="line">                    myRB_Tree::Right_Rotate(z);</span><br><span class="line">                &#125;</span><br><span class="line">                (*(*z).p).c=true;</span><br><span class="line">                (*(*(*z).p).p).c=false;</span><br><span class="line">                myRB_Tree::Left_Rotate((*(*z).p).p);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    (*root).c=true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void myRB_Tree::Left_Rotate(node * x)</span><br><span class="line">&#123;</span><br><span class="line">    node * y= (*x).r;</span><br><span class="line">    (*x).r=(*y).l;</span><br><span class="line">    if((*y).l!=&amp;mynil)</span><br><span class="line">        (*(*y).l).p=x;</span><br><span class="line">    (*y).p=(*x).p;</span><br><span class="line">    if((*x).p==&amp;mynil)</span><br><span class="line">        root=y;</span><br><span class="line">    else if(x==(*(*x).p).l)</span><br><span class="line">        (*(*x).p).l=y;</span><br><span class="line">    else</span><br><span class="line">        (*(*x).p).r=y;</span><br><span class="line">    (*y).l=x;</span><br><span class="line">    (*x).p=y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void myRB_Tree::Right_Rotate(node * x)</span><br><span class="line">&#123;</span><br><span class="line">    node * y= (*x).l;</span><br><span class="line">    (*x).l=(*y).r;</span><br><span class="line">    if((*y).r!=&amp;mynil)</span><br><span class="line">        (*(*y).r).p=x;</span><br><span class="line">    (*y).p=(*x).p;</span><br><span class="line">    if((*x).p==&amp;mynil)</span><br><span class="line">        root=y;</span><br><span class="line">    else if(x==(*(*x).p).r)</span><br><span class="line">        (*(*x).p).r=y;</span><br><span class="line">    else</span><br><span class="line">        (*(*x).p).l=y;</span><br><span class="line">    (*y).r=x;</span><br><span class="line">    (*x).p=y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void myRB_Tree::Transplant(node * u, node * v)</span><br><span class="line">&#123;</span><br><span class="line">    if((*u).p==&amp;mynil)</span><br><span class="line">        root=v;</span><br><span class="line">    else if(u==(*(*u).p).l)</span><br><span class="line">        (*(*u).p).l=v;</span><br><span class="line">    else</span><br><span class="line">        (*(*u).p).r=v;</span><br><span class="line">    (*v).p=(*u).p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void myRB_Tree::Delete(node * z)</span><br><span class="line">&#123;</span><br><span class="line">    node * y=z;</span><br><span class="line">    node * x;</span><br><span class="line">    bool y_original_color=(*y).c;</span><br><span class="line">    if((*z).l==&amp;mynil)</span><br><span class="line">    &#123;</span><br><span class="line">        x=(*z).r;</span><br><span class="line">        myRB_Tree::Transplant(z,(*z).r);</span><br><span class="line">    &#125;</span><br><span class="line">    else if((*z).r==&amp;mynil)</span><br><span class="line">    &#123;</span><br><span class="line">        x=(*z).l;</span><br><span class="line">        myRB_Tree::Transplant(z,(*z).l);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        y=myRB_Tree::Minimum((*z).r);</span><br><span class="line">        y_original_color=(*y).c;</span><br><span class="line">        x=(*y).r;</span><br><span class="line">        if((*y).p==z)</span><br><span class="line">            (*x).p=y;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            myRB_Tree::Transplant(y,(*y).r);</span><br><span class="line">            (*y).r=(*z).r;</span><br><span class="line">            (*(*y).r).p=y;</span><br><span class="line">        &#125;</span><br><span class="line">        myRB_Tree::Transplant(z,y);</span><br><span class="line">        (*y).l=(*z).l;</span><br><span class="line">        (*(*y).l).p=y;</span><br><span class="line">        (*y).c=(*z).c;</span><br><span class="line">    &#125;</span><br><span class="line">    if(y_original_color==true)</span><br><span class="line">        myRB_Tree::Delete_Fixup(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void myRB_Tree::Delete_Fixup(node * x)</span><br><span class="line">&#123;</span><br><span class="line">    node * w;</span><br><span class="line">    while(x!=root and (*x).c==true)</span><br><span class="line">    &#123;</span><br><span class="line">        if(x==(*(*x).p).l)</span><br><span class="line">        &#123;</span><br><span class="line">            w=(*(*x).p).r;</span><br><span class="line">            if((*w).c==false)</span><br><span class="line">            &#123;</span><br><span class="line">                (*w).c=true;</span><br><span class="line">                (*(*x).p).c=false;</span><br><span class="line">                myRB_Tree::Right_Rotate((*x).p);</span><br><span class="line">                w=(*(*x).p).r;</span><br><span class="line">            &#125;</span><br><span class="line">            if((*(*w).l).c==true &amp;&amp; (*(*w).r).c==true)</span><br><span class="line">            &#123;</span><br><span class="line">                (*w).c=false;</span><br><span class="line">                x=(*x).p;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                if((*(*w).r).c==true)</span><br><span class="line">                &#123;</span><br><span class="line">                    (*(*w).l).c=true;</span><br><span class="line">                    (*w).c=false;</span><br><span class="line">                    myRB_Tree::Left_Rotate(w);</span><br><span class="line">                    w=(*(*x).p).r;</span><br><span class="line">                &#125;</span><br><span class="line">                (*w).c=(*(*x).p).c;</span><br><span class="line">                (*(*x).p).c=true;</span><br><span class="line">                (*(*w).r).c=true;</span><br><span class="line">                myRB_Tree::Right_Rotate((*x).p);</span><br><span class="line">                x=root;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            w=(*(*x).p).l;</span><br><span class="line">            if((*w).c==false)</span><br><span class="line">            &#123;</span><br><span class="line">                (*w).c=true;</span><br><span class="line">                (*(*x).p).c=false;</span><br><span class="line">                myRB_Tree::Right_Rotate((*x).p);</span><br><span class="line">                w=(*(*x).p).l;</span><br><span class="line">            &#125;</span><br><span class="line">            if((*(*w).r).c==true &amp;&amp; (*(*w).l).c==true)</span><br><span class="line">            &#123;</span><br><span class="line">                (*w).c=false;</span><br><span class="line">                x=(*x).p;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                if((*(*w).l).c==true)</span><br><span class="line">                &#123;</span><br><span class="line">                    (*(*w).r).c=true;</span><br><span class="line">                    (*w).c=false;</span><br><span class="line">                    myRB_Tree::Left_Rotate(w);</span><br><span class="line">                    w=(*(*x).p).l;</span><br><span class="line">                &#125;</span><br><span class="line">                (*w).c=(*(*x).p).c;</span><br><span class="line">                (*(*x).p).c=true;</span><br><span class="line">                (*(*w).l).c=true;</span><br><span class="line">                myRB_Tree::Right_Rotate((*x).p);</span><br><span class="line">                x=root;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">node * myRB_Tree::Minimum(node * z)</span><br><span class="line">&#123;</span><br><span class="line">    while((*z).l!=&amp;mynil)</span><br><span class="line">        z=(*z).l;</span><br><span class="line">    return z;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">node * myRB_Tree::Search(node * x,int k)</span><br><span class="line">&#123;</span><br><span class="line">    if(x==&amp;mynil || k==(*x).key)</span><br><span class="line">        return x;</span><br><span class="line">    if(k&lt;(*x).key)</span><br><span class="line">    &#123;</span><br><span class="line">        counter++;</span><br><span class="line">        return myRB_Tree::Search((*x).l,k);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        counter++;</span><br><span class="line">        return myRB_Tree::Search((*x).r,k);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">myRB_Tree T;</span><br><span class="line">void myinsert(int key)</span><br><span class="line">&#123;</span><br><span class="line">    node * p=new node;</span><br><span class="line">    (*p).key=key;</span><br><span class="line">    p-&gt;l=&amp;T.mynil;</span><br><span class="line">    p-&gt;r=&amp;T.mynil;</span><br><span class="line">    T.Insert(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void mydelete(int key)</span><br><span class="line">&#123;</span><br><span class="line">    node * p = T.Search(T.root,key);</span><br><span class="line">    T.Delete(p);</span><br><span class="line">    delete(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><h2 id="课程概述"><a href="#课程概述" class="headerlink" title="课程概述"></a>课程概述</h2><h3 id="参考教材"><a href="#参考教材" class="headerlink" title="参考教材"></a>参考教材</h3><ul>
+<li><p>James F. Kurose, Keith W. Ross. 计算机网络-自顶向下方法(7th)</p>
+</li>
+<li><p>William Stallings. 数据与计算机通信(10th)</p>
+</li>
+</ul>
+<h3 id="课程考核"><a href="#课程考核" class="headerlink" title="课程考核"></a>课程考核</h3><ul>
+<li><p>分组实践，课程报告 (30%)</p>
+</li>
+<li><p>课后作业(30%)</p>
+</li>
+<li><p>期末考试(40%)</p>
+</li>
+</ul>
+<p>nju2019autumn@163.com</p>
+<h3 id="课程内容"><a href="#课程内容" class="headerlink" title="课程内容"></a>课程内容</h3><ul>
+<li><p>端网络</p>
+<ul>
+<li><p>前端网络：客户端</p>
+</li>
+<li><p>后端网络：服务端</p>
+</li>
+</ul>
+</li>
+<li><p>骨干网</p>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>服务质量：</p>
+<ul>
+<li><p>“best effort”(unreliable) data delivery  –IP</p>
+</li>
+<li><p>Reliable data delivery from source to destination –TCP</p>
+</li>
+<li><p>Guaranteed delay and throughout  – QoS</p>
+</li>
+</ul>
+<p>Network Protocols</p>
+<ul>
+<li>HTTP, TCP, IP, PPP, Ethernet</li>
+</ul>
+<p>Internet standards</p>
+<ul>
+<li><p>IETF: Internet Engineering Task Force</p>
+</li>
+<li><p>RFC: Request for comments</p>
+</li>
+<li><p>Client/server model</p>
+<ul>
+<li><p>Client host requests, receives service from always-on server</p>
+</li>
+<li><p>e.g. Web browser/server; Email client/server</p>
+</li>
+</ul>
+</li>
+<li><p>Peer-to-peer model</p>
+<ul>
+<li><p>Minimal(or no) use of dedicated servers</p>
+</li>
+<li><p>eg. Skype, Bit Torrent</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Magnitude of Different Delay：</p>
+<ul>
+<li><p>Transmission delay</p>
+<ul>
+<li>Significant for low-speed links, now typically a few microseconds or less</li>
+</ul>
+</li>
+<li><p>Propagation delay</p>
+<ul>
+<li>A few micro-seconds to hundreds of milliseconds</li>
+</ul>
+</li>
+<li><p>Nodal processing delay</p>
+<ul>
+<li>Nodal processing delay</li>
+</ul>
+</li>
+<li><p>Queuing delay</p>
+<ul>
+<li>Depends on congestion, maybe seconds</li>
+</ul>
+</li>
+</ul>
+<p>Queuing Delay：</p>
+<ul>
+<li><p>R=link bandwidth (bps)</p>
+</li>
+<li><p>L=packet length (bits)</p>
+</li>
+<li><p>$\alpha$=average packet arrival rate</p>
+</li>
+<li><p>Traffic intensity $\rho = L \times \alpha / R$ </p>
+</li>
+<li><p>Intensity $\rho$ ~ 0 : average queuing delay small</p>
+</li>
+<li><p>Intensity $\rho \rightarrow$1 : delays become large, and huge</p>
+</li>
+<li><p>Intensity $\rho \ge $1 : average delay infinite</p>
+</li>
+</ul>
+<p>Different Types of Malware</p>
+<ul>
+<li><p>Virus</p>
+<ul>
+<li><p>Infection by receiving and running (unwarily) executables</p>
+</li>
+<li><p>Self-replicating: propagate itself to other executables</p>
+</li>
+</ul>
+</li>
+<li><p>Worm</p>
+<ul>
+<li>Actively transmitting itself over a network to infect other hosts</li>
+</ul>
+</li>
+<li><p>Trojan horses</p>
+<ul>
+<li>Disguised as something innocuous or desirable, tempting the user to run it</li>
+</ul>
+</li>
+<li><p>Backdoor </p>
+<ul>
+<li>Providing a method of bypassing normal authentication procedures</li>
+</ul>
+</li>
+<li><p>Adware</p>
+<ul>
+<li>Playing, displaying, or downloading advertisements to the user host</li>
+</ul>
+</li>
+<li><p>Spyware</p>
+<ul>
+<li>Recording keystrokes, web sites visited, uploading info to collection site</li>
+</ul>
+</li>
+</ul>
+<p>Denial of Service (DOS)</p>
+<ul>
+<li><p>Attackers make resources (server, bandwidth) unavailable by overwhelming resource with bogus traffic</p>
+</li>
+<li><p>e.g. multiple coordinated sources swamp server with TCP SYN message</p>
+</li>
+</ul>
+<p>How to handle Masquerade</p>
+<ul>
+<li>Encryption: the message cannot be understood</li>
+<li>MAC: the message cannot be altered</li>
+<li>Sign: the source cannot be forged</li>
+</ul>
+<p>交换机通常位于接入网中，而路由器通常用于网络核心中。</p>
+<p>一个分组所经历的一系列通信链路和分组交换机称为通过该网络的路径(route或path).</p>
+<p>因特网工程任务组(Internet Engineering Task Force, IETF)</p>
+<p>请求评论(Request For Comment, RFC) </p>
+<p>接入网：是指将端系统物理连接到其边缘路由器(edge router)的网络。边缘路由器是端系统到任何其他远程端系统的路径上的第一台路由器。</p>
+<p>存储转发传输(store-and-forward transmission):是指在交换机能够开始向输出链路传输该分组的第一个比特之前，必须接收到整个分组。</p>
+<p>接入ISP-区域ISP(regional ISP)- 第一层ISP(tier-1 ISP)</p>
+<h2 id="第二章：应用层"><a href="#第二章：应用层" class="headerlink" title="第二章：应用层"></a>第二章：应用层</h2><p>两种主流体系结构：</p>
+<ul>
+<li>客户-服务器体系架构</li>
+<li>对等(P2P)体系结构</li>
+</ul>
+<h3 id="Web和HTTP"><a href="#Web和HTTP" class="headerlink" title="Web和HTTP"></a>Web和HTTP</h3><p>HTTP是一个无状态协议(stateless protocol)</p>
+<p>非持续连接(non-persistent connection): 每个请求/响应是经一个单独的TCP连接发送</p>
+<p>持续连接(persistent connection): 所有的请求及其响应经相同的TCP连接发送</p>
+<h4 id="HTTP报文格式"><a href="#HTTP报文格式" class="headerlink" title="HTTP报文格式"></a>HTTP报文格式</h4><p>HTTP请求报文的第一行叫做请求行(request line), 其后继的行叫做首部行(header line)，后面还可能有实体体(entity body).</p>
+<p>请求行有三个字段：方法字段、URL字段和HTTP版本字段</p>
+<p>HTTP响应报文包括三个部分：状态行、首部行、实体体</p>
+<h2 id="第三章：运输层"><a href="#第三章：运输层" class="headerlink" title="第三章：运输层"></a>第三章：运输层</h2><h3 id="3-1-概述和运输层服务"><a href="#3-1-概述和运输层服务" class="headerlink" title="3.1 概述和运输层服务"></a>3.1 概述和运输层服务</h3><p>运输层协议只工作在端系统</p>
+<p>运输层协议能够提供的服务常常受制于底层网络层协议的服务模型。然而，即使底层网络协议不能在网络层提供相应的服务，运输层协议也能提供某些服务。</p>
+<ul>
+<li>UDP(用户数据报协议):不可靠、无连接的服务。</li>
+<li>TCP(传输控制协议):可靠的、面向连接的服务。</li>
+</ul>
+<p>端口号是一个16比特的数，其大小在0~65535之间。0~1023范围的端口号称为周知端口号(well-known port).</p>
+<ul>
+<li>如果两个UDP报文段有不同的源IP地址和/或源端口号，但具有相同的目的IP地址和目的端口号，那么这两个报文段将通过相同的目的套接字被定向到相同的目的进程。</li>
+<li>但TCP与UDP不同：两个具有不同源IP地址或源端口号的到达TCP报文段被定向到两个不同的套接字，除非TCP报文段携带了初始创建连接的请求。当一个TCP报文段到达主机时，所有4个字段被用来将报文段定向(分解)到相应的套接字。</li>
+</ul>
+<p>端口扫描：可以用nmap</p>
+<ul>
+<li>对于TCP，nmap顺序地扫描端口，寻找能够接受TCP连接的端口</li>
+<li>对于UDP，nmap也是顺序地扫描端口，寻找对传输的UDP报文段进行响应的UDP端口。</li>
+</ul>
+<h3 id="3-3-无连接运输：UDP"><a href="#3-3-无连接运输：UDP" class="headerlink" title="3.3 无连接运输：UDP"></a>3.3 无连接运输：UDP</h3><p>UDP特点：</p>
+<ul>
+<li>关于发送什么数据以及何时发送的应用层控制更为精细</li>
+<li>无须连接建立, goole(QUIC)</li>
+<li>无连接状态</li>
+<li>分组首部开销小。每个TCP报文段都有20字节的首部开销，而UDP仅有8字节开销。</li>
+<li>NAT穿透可以用UDP，UDP打洞</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">|源端口号(2byte)|目的端口号(2byte)|</span><br><span class="line">| 长度(2byte)   |检验和(2byte)  |</span><br><span class="line">| 应用数据(报文) |</span><br></pre></td></tr></table></figure>
+<p>UDP校验和：即因特网校验和。2字节相加，溢出回卷，最后取反码。</p>
+<p>端到端原则(end-end principle),该原则表述为因为某种功能必须基于端到端实现：”与在较高级别提供这些功能(比如这里的差错检测)的代价相比，在较低级别上设置的功能可能是冗余的或几乎没有价值的。”</p>
+<p>虽然UDP提供差错检测，但它对差错恢复无能无力。UDP的某种实现只是丢弃受损的报文段，其他实现是将受损的报文段交给应用程序并给出警告。</p>
+<h3 id="3-4-可靠数据传输原理"><a href="#3-4-可靠数据传输原理" class="headerlink" title="3.4 可靠数据传输原理"></a>3.4 可靠数据传输原理</h3><p>可靠数据传输为上层实体提供的服务抽象是：数据可以通过一条可靠的信道进行传输。借助于可靠信道，传输数据比特就不会受到损坏或丢弃，而且所有数据都是按照其发送顺序进行交付。</p>
+<p>GoBackN协议：</p>
+<p>SR协议：</p>
+<ul>
+<li>窗口长度必须小于或等于序号空间大小的一半。</li>
+</ul>
+<h3 id="3-5-面向连接的运输：TCP"><a href="#3-5-面向连接的运输：TCP" class="headerlink" title="3.5 面向连接的运输：TCP"></a>3.5 面向连接的运输：TCP</h3><p>最大报文段长度(Maximum Segement Size,MSS): MSS通常根据最初确定的由本地发送主机发送的最大链路层帧长度(即所谓的最大传输单元(Maximum Transimission Unit, MTU))来设置。如以太网和PPP链路层协议都具有1500字节的MTU，因此MSS的典型值为1460字节。MSS不包括首部。</p>
+<p>TCP协议没有规定收到失序的报文段应该怎么办，这一问题可以给实现TCP的编程人员去处理。他们可以丢弃或者缓存，现实中通常采用缓存。</p>
+<p>TCP的首部：</p>
+<ul>
+<li>源端口号(16比特)</li>
+<li>目的端口号(16比特)</li>
+<li>序号(32比特)</li>
+<li>确认号(32比特)</li>
+<li>首部长度(4比特)</li>
+<li>一些标志位</li>
+<li>接收窗口(16比特)</li>
+<li>因特网校验和(16比特)</li>
+<li>紧急数据指针(16比特)</li>
+</ul>
+<p>TCP提供累积确认(cumulative acknowledgment)</p>
+<h4 id="3-5-3-往返时间的估计与超时"><a href="#3-5-3-往返时间的估计与超时" class="headerlink" title="3.5.3 往返时间的估计与超时"></a>3.5.3 往返时间的估计与超时</h4><ol>
+<li>估计往返时间<ul>
+<li>做SampleRTT的测量：在任意时刻，仅为一个已发送的但目前尚未被确认的报文段测量一个SampleRTT。TCP绝不为已被重传的报文段计算SampleRTT。</li>
+<li>更新公式：EstimatedRTT = $(1-\alpha)$ EstimatedRTT + $\alpha$ SampleRTT</li>
+<li>$\alpha$的推荐值是$\alpha=0.125$ </li>
+<li>指数加权移动平均(Exponential Weighted Moving Average, EWMA)</li>
+<li>RTT偏差DevRTT,用于估算SampleRTT一般会偏离EstimatedRTT的程度：<ul>
+<li>DevRTT = $(1- \beta)$ DevRTT + $\beta$ |SampleRTT - EstimatedRTT|</li>
+<li>$\beta$的推荐值为0.25</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>设置和管理重传超时间隔<ul>
+<li>TimeoutInterval=EstimatedRTT+4DevRTT</li>
+<li>推荐初始TimeoutInterval值为1秒。出现超时后，TimeoutInterval值将加倍。然而，只要收到报文段并更新EstimatedRTT，就使用上述公式再次计算TimeoutInterval.</li>
+</ul>
+</li>
+</ol>
+<h4 id="3-5-4-可靠数据传输"><a href="#3-5-4-可靠数据传输" class="headerlink" title="3.5.4 可靠数据传输"></a>3.5.4 可靠数据传输</h4><p>定时器太多会带了很多开销，所以使用单一定时器</p>
+<ol>
+<li>一些有趣的情况：关于超时和重传</li>
+<li>超时间隔加倍</li>
+<li>快速重传：一旦收到3个冗余ACK，TCP就执行快速重传(fast retransmit)</li>
+<li>是回退N步还是选择重传：<ul>
+<li>TCP只会重传一个分组</li>
+<li>TCP的差错恢复机制更像是GBN协议和SR协议的混合体。</li>
+</ul>
+</li>
+</ol>
+<h4 id="3-5-5-流量控制-flow-control"><a href="#3-5-5-流量控制-flow-control" class="headerlink" title="3.5.5 流量控制(flow control)"></a>3.5.5 流量控制(flow control)</h4><ul>
+<li>不同于拥塞控制</li>
+<li>缓存不溢出，需要：LastByteRcvd - LastByteRead $\le$ RcvBuffer</li>
+<li>所以接收窗口: rwnd=RcvBuffer-[LastByteRcvd-LastByteRead]</li>
+<li>所以A要保持： LastByteSent - LastByteAcked $\le$ rwnd</li>
+<li>即使B的缓存满了，$A$也会继续发送只有一个字节数据的报文段</li>
+</ul>
+<h4 id="3-5-6-TCP连接管理"><a href="#3-5-6-TCP连接管理" class="headerlink" title="3.5.6 TCP连接管理"></a>3.5.6 TCP连接管理</h4><p>建立连接(三次握手，three-way handshake)：</p>
+<ol>
+<li>客户端-&gt; [SYN=1,seq=client_isn] -&gt; 服务器端</li>
+<li>客户端 &lt;- [SYN=1, seq=server_isn, ack=client_isn+1] &lt;- 服务器端</li>
+<li>客户端-&gt; [SYN=0,seq=client_isn+1,ack=server_isn+1] -&gt;服务器端</li>
+</ol>
+<ul>
+<li>第二步中的允许连接的报文段被称为SYNACK报文段(SYNACK segment). 第二步中通常服务器会分配变量和缓存，但为了应对洪泛攻击，服务器也可以不这么做。</li>
+<li>第三步中可携带数据</li>
+<li>P168 状态图</li>
+</ul>
+<p>关闭连接：</p>
+<ol>
+<li>客户端 -&gt;[FIN]-&gt;服务器端</li>
+<li>客户端 &lt;- [ACK] &lt;- 服务器端</li>
+<li>客户端 &lt;- [FIN] &lt;- 服务器端</li>
+<li>客户端 -&gt; [ACK] -&gt;服务器端</li>
+</ol>
+<p>P169 状态图</p>
+<p>SYN洪泛攻击</p>
+<ul>
+<li>攻击者发送大量的TCP SYN报文段，而不完成第三次握手，导致服务器的连接资源被消耗殆尽</li>
+<li>解决方法：服务器返回的seq是源和目的IP地址与端口号的hash值，这样就不需要记住任何关于该TCP连接的信息，当客户端发送第三步的时候，服务器可以将ack-1然后判断该连接是否合法，如果合法就分配相应的资源。</li>
+</ul>
+<p>当服务器端不在某端口接收TCP连接，会发送RST。</p>
+<p>当服务器端不在某端口接收UDP连接，会发送一个特殊的ICMP的数据报。</p>
+<p>nmap工作原理：向目标主机的特定TCP端口发送一个特殊的TCP SYN报文段：</p>
+<ol>
+<li>源主机收到一个TCP SYNACK报文段：意味着目标主机上一个程序该端口接收TCP连接，所以结果是“打开”。</li>
+<li>源主机收到一个TCP RST报文段：该端口没有运行接收TCP连接的程序，但至少没有被防火墙阻拦。 </li>
+<li>什么也收不到：被防火墙阻拦。</li>
+</ol>
+<h3 id="3-6-拥塞控制原理"><a href="#3-6-拥塞控制原理" class="headerlink" title="3.6 拥塞控制原理"></a>3.6 拥塞控制原理</h3><p>我们可以根据网络层是否为运输层拥塞控制提供了显式帮助，来区分拥塞控制方法。</p>
+<ul>
+<li>端到端拥塞控制</li>
+<li>网络辅助的拥塞控制</li>
+</ul>
+<h3 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h3><p>TCP使用端到端拥塞控制</p>
+<p>TCP采用的方法是让每一个发送方根据所感知到的网络拥塞程度来限制其能向连接发送流量的速率。</p>
+<p>三个问题：</p>
+<ol>
+<li>一个TCP发送方如何限制它向连接发送流量的速率<ul>
+<li>发送方跟踪一个额外的变量：拥塞窗口(congestion window),表示为cwnd</li>
+<li>我们维护：LastByteSent - LastByteAcked $\le $ min{cwnd, rwnd}</li>
+</ul>
+</li>
+<li>一个TCP发送方如何感知从它到目的地之间的路径上存在拥塞呢？<ul>
+<li>超时或收到三个冗余的ACK。</li>
+</ul>
+</li>
+<li>当发送方感知到端到端的拥塞时，采用何种算法来改变其发送速率呢？<ul>
+<li>基本原则：<ul>
+<li>一个丢失的报文段意味着拥塞，因此当丢失报文段时应当降低TCP发送方的速率。</li>
+<li>一个确认报文段指示该网络正在向接收方交付发送方的报文段，因此，当对先前未确认报文段的确认到达时，能够增加发送方的速率。</li>
+<li>带宽探测。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="TCP拥塞控制算法"><a href="#TCP拥塞控制算法" class="headerlink" title="TCP拥塞控制算法"></a>TCP拥塞控制算法</h4><p>主要包括三个部分：慢启动、拥塞避免、快速恢复</p>
+<ol>
+<li>慢启动<ul>
+<li>cwnd初始值较小，但每个RTT时刻翻倍直到下列三种情况<ul>
+<li>存在一个由超时指示的丢包事件<ul>
+<li>把cwnd设置为1并重新开始慢启动过程。并且将ssthresh(慢启动阈值)设置为cwnd/2</li>
+</ul>
+</li>
+<li>达到或超过ssthresh的值，结束慢启动并且TCP转移到拥塞避免模式</li>
+<li>检测到3个冗余ACK，TCP执行一种快速重传并进入快速恢复状态</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>拥塞避免<ul>
+<li>线性增长：每RTT 1MSS</li>
+<li>当拥塞时，ssthresh设置为cwnd的一半。<ul>
+<li>如果是超时， cwnd设置为1</li>
+<li>如果是3个冗余ACK，cwnd减半</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>快速恢复</li>
+</ol>
+<p>详细待了解！！！</p>
+<p>TCP拥塞控制常常被称为加性增、乘性减(Additive-Increase, Multiplicative-Decrease, AIMD)拥塞控制方式。</p>
+<h2 id="第四章：网络层-数据平面"><a href="#第四章：网络层-数据平面" class="headerlink" title="第四章：网络层(数据平面)"></a>第四章：网络层(数据平面)</h2><ul>
+<li>数据平面<ul>
+<li>转发：将一个分组从一个输入链路接口转移到适当的输出链路接口的路由器本地动作。</li>
+</ul>
+</li>
+<li>控制平面<ul>
+<li>路由选择：确定分组从源到目的地所采取的端到端路径的网络范围处理过程。</li>
+</ul>
+</li>
+</ul>
+<p>因特网的网络层提供了单一的服务，称为尽力而为服务(best-effort service).</p>
+<h3 id="4-2-路由器工作原理"><a href="#4-2-路由器工作原理" class="headerlink" title="4.2 路由器工作原理"></a>4.2 路由器工作原理</h3><p>路由器的结构：</p>
+<ul>
+<li>输入端口</li>
+<li>交换结构</li>
+<li>输出端口</li>
+<li>路由选择处理器: 执行控制平面的功能。在传统的路由器中，它执行路由选择协议，维护路由选择表与关联链路状态信息，并为该路由器计算转发表。在SDN路由器中，路由器选择处理器负责与远程控制器通信，目的是接收由远程控制器计算的转发表项，并在该路由器的输入端口安装这些表项。路由选择处理器还执行网络管理功能。</li>
+</ul>
+<p>输入端口、输出端口和交换结构几乎总是用硬件实现的。控制平面的功能通常用软件实现并在路由选择处理器上执行。</p>
+<ul>
+<li>基于目的地的转发</li>
+<li>通用转发</li>
+</ul>
+<h4 id="4-2-1-输入端口处理和基于目的地转发"><a href="#4-2-1-输入端口处理和基于目的地转发" class="headerlink" title="4.2.1 输入端口处理和基于目的地转发"></a>4.2.1 输入端口处理和基于目的地转发</h4><p>结构：$\rightarrow$ 线路端接 $\rightarrow$  数据链路处理(协议，拆封) $\rightarrow$ 查找、转发、排队 $\rightarrow$ 交换结构</p>
+<p>使用在每个输入端口的影子副本，转发决策能在每个输入端口本地做出，无须基于每个分组调用集中式路由选择处理器，因此避免了集中式处理的瓶颈。</p>
+<p>转发表保存前缀，进行匹配，最长前缀匹配规则。</p>
+<p>输入端口除了做查找，还要进行下列：</p>
+<ol>
+<li>必须出现物理层和链路层处理</li>
+<li>必须检查分组的版本号、校验和以及寿命字段，并且重写后两个字段</li>
+<li>必须更新用于网络管理的计数器。</li>
+</ol>
+<h4 id="4-2-2-交换"><a href="#4-2-2-交换" class="headerlink" title="4.2.2 交换"></a>4.2.2 交换</h4><ul>
+<li>经内存交换：许多现代路由器通过内存进行交换。但他们看起来更像共享内存的多处理器。</li>
+<li>经总线交换：输入端口经一根共享总线将分组直接传送到输出端口，不需要路由选择处理器的干预</li>
+<li>经互联网络交换</li>
+</ul>
+<h4 id="4-2-3-输出端口处理"><a href="#4-2-3-输出端口处理" class="headerlink" title="4.2.3 输出端口处理"></a>4.2.3 输出端口处理</h4><p>结构：交换结构 $\rightarrow$ 排队(缓存管理) $\rightarrow$ 数据链路处理(协议，封装)  $\rightarrow$ 线路端接 $\rightarrow$ </p>
+<h4 id="4-2-4-何处出现排队"><a href="#4-2-4-何处出现排队" class="headerlink" title="4.2.4 何处出现排队"></a>4.2.4 何处出现排队</h4><ol>
+<li>输入排队<ul>
+<li>线路前部(Head-Of-the-Line,HOL)阻塞</li>
+</ul>
+</li>
+<li>输出排队<ul>
+<li>丢弃到达的分组:弃尾(drop)</li>
+<li>在缓存填满之前便丢弃一个分组：主动队列管理(Active Queue Management, AQM)算法。</li>
+</ul>
+</li>
+</ol>
+<p>用于缓存长度的经验方法：缓存数量($B$)应当等于平均往返时延(RTT)乘以链路的容量($C$) . 最近的研究： $B = RTT * C / \sqrt{N}$. $N$为TCP流的条数。</p>
+<h4 id="4-2-5-分组调度"><a href="#4-2-5-分组调度" class="headerlink" title="4.2.5 分组调度"></a>4.2.5 分组调度</h4><ol>
+<li>先进先出(FIFO)</li>
+<li>优先权排队(priority queuing)<ul>
+<li>有非抢占式优先权排队(non-preemptive priority queuing)</li>
+</ul>
+</li>
+<li>循环和加权公平排队<ul>
+<li>循环排队规则(round robin queuing discipline)</li>
+<li>加权公平排队(Weighted Fair Queuing, WFQ)规则</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-3-网际协议：IPv4、寻址、IPv6及其他"><a href="#4-3-网际协议：IPv4、寻址、IPv6及其他" class="headerlink" title="4.3 网际协议：IPv4、寻址、IPv6及其他"></a>4.3 网际协议：IPv4、寻址、IPv6及其他</h3><h4 id="4-3-1-IPv4数据报格式"><a href="#4-3-1-IPv4数据报格式" class="headerlink" title="4.3.1 IPv4数据报格式"></a>4.3.1 IPv4数据报格式</h4><ul>
+<li>版本(号)：4比特，一般为0100, 即4</li>
+<li>首部长度：4比特，一般为0101，即5， 5*4byte=20bytes</li>
+<li>服务类型(TOS)：8比特，</li>
+<li>数据报长度：16比特，以字节记</li>
+<li>标识、标志、片偏移 (32比特)：这三个字段与所谓IP分片有关。新版本的IP(即IPv6)不允许在路由器上对分组分片</li>
+<li>寿命(Time-To-Live, TTL) (8比特): 用来保证数据报不会永远在网络中循环。若TTL减为0，则该数据报必须丢弃。</li>
+<li>协议(8比特)：该字段值指示了IP数据报的数据部分应交给哪个特定的运输层协议。值为6表示是TCP，值为17表示UDP</li>
+<li>首部检验和(16比特)：IP层只对IP首部计算校验和，而TCP/UDP检验和是对整个TCP/UDP报文段进行的。</li>
+<li>源和目的IP地址</li>
+<li>选项字段：允许IP首部被扩展。 在IPv6首部中已去掉了IP选项。</li>
+<li>数据(有效载荷)。</li>
+</ul>
+<h4 id="4-3-2-IPv4数据报分片"><a href="#4-3-2-IPv4数据报分片" class="headerlink" title="4.3.2 IPv4数据报分片"></a>4.3.2 IPv4数据报分片</h4><p>一个链路层帧能承载的最大数据量叫做最大传送单元(Maximum Transimission Unit, MTU). 对IP数据报长度具有严格限制并不是主要问题。问题在于在发送方与目的地路径上的每段链路可能使用不同的链路层协议，且每种协议可能具有不同的MTU。</p>
+<p>IPv4的设计者感到在路由器中重新组装数据报会给协议带来相当大的复杂性并且影响路由器的性能。为坚持网络内核保持简单的原则，IPv4的设计者决定将数据报的重新组装工作放到端系统中，而不是放到网络路由器中。</p>
+<p>所以分片可以发生在端系统和路由器上。重组只会发生在端系统上。</p>
+<p>16比特标识唯一标识了一个数据报(发送主机通常将它发送的每个数据报的标识号加1)。13比特片偏移记录了该分片在原数据报中的偏移(以8字节为单位，所以13对应16)。最后一个片的标志比特被设为0，而所有其他片的标志比特被设为1.</p>
+<h4 id="4-3-3-IPv4编址"><a href="#4-3-3-IPv4编址" class="headerlink" title="4.3.3 IPv4编址"></a>4.3.3 IPv4编址</h4><p>子网(subbet), 子网掩码(network mask) </p>
+<p>因特网的地址分配策略被称为无类别域间路由选择(Classless Interdomain Routing, CIDR).</p>
+<p>使用单个网络前缀通告多个网络的能力通常被称为地址聚合(address aggregation), 也称为路由聚合(route aggregation) 或路由摘要(route summarization) </p>
+<p>a.b.c.d/x</p>
+<p>一个地址的剩余32-x比特可认为是用于区分该组织内部设备的，其中的所有设备具有相同的网络前缀。</p>
+<p>具有8、16和24比特子网地址的子网分别被称为A、B和C类网络。</p>
+<p>255.255.255.255 广播地址</p>
+<p>组织内的地址：动态主机配置协议(Dynamic Host Configuration, DHCP).DHCP除了分配IP地址，还会告诉主机它的子网掩码，它的第一跳路由器地址(常被称为默认网关)与它的本地DNS服务器的地址。 DHCP又常被称为即插即用协议(plug-and-play protocol) 或零配置(zeroconf)协议。</p>
+<p>通常情况下，每个子网需要一个DHCP服务器，但也可以用一个DHCP中继代理(通常是一台路由器)，这个代理知道用于该网络的DHCP服务器的地址。</p>
+<p>DHCP协议是一个4个步骤的过程：</p>
+<ol>
+<li>DHCP服务器发现<ul>
+<li>发送DHCP发现报文(DHCP discover message), 使用UDP， 端口67。使用广播地址为目的IP，使用0.0.0.0为本机IP</li>
+</ul>
+</li>
+<li>DHCP服务器提供<ul>
+<li>DHCP服务器收到一个DHCP发现报文时，用DHCP提供报文(DHCP offer message)向客户做出响应，使用广播地址为目的IP，使用本机IP为源IP。 这个报文里包含有收到的发现报文的事物ID、向客户推荐的IP地址。网络掩码以及IP地址租用期(address lease time). 服务器租用期通常设置为几小时或几天。</li>
+</ul>
+</li>
+<li>DHCP请求<ul>
+<li>从一个或多个服务器提供中选择一个，并向选中的服务器提供用DHCP请求报文(DHCP request message)进行响应，回显配置的参数。这一步中仍用广播地址为目的IP，使用0.0.0.0位源IP</li>
+</ul>
+</li>
+<li>DHCP ACK<ul>
+<li>服务器用DHCP ACK报文(DHCP ACK message) 对DHCP请求报文进行响应。 仍然是广播消息。</li>
+</ul>
+</li>
+</ol>
+<p>DHCP协议的所有消息都是广播消息。</p>
+<p>从移动性角度看，DHCP确实有非常严重的缺陷。因为每到一个新的子网，就会获取一个新的IP地址。</p>
+<h4 id="4-3-4-网络地址转换-Network-Address-Translation-NAT"><a href="#4-3-4-网络地址转换-Network-Address-Translation-NAT" class="headerlink" title="4.3.4 网络地址转换(Network Address Translation, NAT)"></a>4.3.4 网络地址转换(Network Address Translation, NAT)</h4><p>NAT转换表(NAT translation table)</p>
+<h4 id="4-3-5-IPv6"><a href="#4-3-5-IPv6" class="headerlink" title="4.3.5 IPv6"></a>4.3.5 IPv6</h4><p>IPv6有已下特性</p>
+<ul>
+<li>IPv6将IP地址长度从32比特增加到128比特。还引入了任播地址(anycast address)的新型地址，这种地址可以使数据报交付给一组主机中的任意一个。(例如，这种特性可用于向一组包含特定文档的镜像站点中的最近一个发送HTTP GET报文)。</li>
+<li>简化高效的40字节首部</li>
+<li>流标签</li>
+</ul>
+<p>IPv6的一些字段：</p>
+<ul>
+<li>版本(4比特)：设置为6</li>
+<li>流量类型(8比特)：与我们在iPv4中看到的TOS字段的含义类似</li>
+<li>流标签(20比特)：标识一条数据报的流，能够对一条流中的某些数据报给出优先权</li>
+<li>有效载荷长度(16比特)</li>
+<li>下一个首部(8比特)：标识数据报中的内容需要交付给哪个协议，跟IPv4首部字段中协议字段的值一样</li>
+<li>跳限制(8比特)：类似于TTL</li>
+<li>源地址和目标地址(各128比特)</li>
+<li>数据</li>
+</ul>
+<p>在IPv4数据报中没有的部分：</p>
+<ul>
+<li>分片/重新组装</li>
+<li>首部检验和</li>
+<li>选项</li>
+</ul>
+<p>在实践中已经得到广泛采用的IPv4到IPv6迁移的方法包括建隧道(tunneling)</p>
+<h3 id="4-4-通用转发和SDN"><a href="#4-4-通用转发和SDN" class="headerlink" title="4.4 通用转发和SDN"></a>4.4 通用转发和SDN</h3><p>通用转发：每台分组交换机包含一张匹配加动作表，该表示由远程控制器计算和分发的</p>
+<h2 id="第五章：网络层：控制平面"><a href="#第五章：网络层：控制平面" class="headerlink" title="第五章：网络层：控制平面"></a>第五章：网络层：控制平面</h2><h3 id="5-1-概述"><a href="#5-1-概述" class="headerlink" title="5.1 概述"></a>5.1 概述</h3><p>完成转发表和流表的计算和维护有两种方法：</p>
+<ol>
+<li>每路由器控制：每台路由器内运行这一种路由选择算法</li>
+<li>逻辑集中式控制：由逻辑集中式路由选择控制器计算并分发转发表给每台路由器。路由器主要负责和其通信即可，获取转发表。</li>
+</ol>
+<h3 id="5-2-路由选择算法"><a href="#5-2-路由选择算法" class="headerlink" title="5.2 路由选择算法"></a>5.2 路由选择算法</h3><p>其目的是从发送方到接收方的过程中确定一条通过路由器网络好的路径。这里的好可能是具有最低开销的，也有策略上的考量(比如某ISP不转发另一ISP的流量)</p>
+<p>我们对路由选择算法有三种分类方式：</p>
+<ol>
+<li>根据该算法是集中式还是分散式：<ul>
+<li>集中式路由选择算法(centralized routing algorithm): 指需要关于网络的完整的、全局性的知识。具有全局状态信息的算法常被称作链路状态(Link State, LS)算法。</li>
+<li>分散式路由选择算法(decentralized routing algorithm): 没有节点拥有关于所有网络链路开销的完整信息。</li>
+</ul>
+</li>
+<li>根据算法是静态的还是动态的：<ul>
+<li>静态路由选择算法(static route algorithm): 路由随时间变化缓慢，通常可以人工进行调整。</li>
+<li>动态路由选择算法(dynamic routing algorithm): 可周期性地运行或直接响应拓扑或链路开销的变化而运行。但也容易受路由选择循环、路由震荡之类问题的影响。</li>
+</ul>
+</li>
+<li>根据它是负载敏感的还是负载迟钝的：<ul>
+<li>负载敏感算法(load-sensitive algorithm): 链路开销会动态地变化以反映出底层链路的当前拥塞水平。</li>
+<li>负载迟钝的(load-insensitive): 当今的因特网路由选择算法都是负载迟钝的。</li>
+</ul>
+</li>
+</ol>
+<h4 id="5-2-1-链路状态路由选择算法"><a href="#5-2-1-链路状态路由选择算法" class="headerlink" title="5.2.1 链路状态路由选择算法"></a>5.2.1 链路状态路由选择算法</h4><p>可以用Dijkstra算法。</p>
+<h4 id="5-2-2-距离向量路由算法"><a href="#5-2-2-距离向量路由算法" class="headerlink" title="5.2.2 距离向量路由算法"></a>5.2.2 距离向量路由算法</h4><p>距离向量(Distance-Vector, DV)算法是一种迭代的、异步的和分布式的算法。</p>
+<p>一旦更新，向邻居发送更新后的。</p>
+<p>毒性逆转(poisoned reverse)：如果$z$通过$y$路由选择到目的地$x$，则$z$将通告$y$,它$z$到$x$的距离是无穷大。涉及3个或更多节点(而不只是两个直接相连的邻居节点)的环路将无法用毒性逆转技术检测到。</p>
+<p>LS和DV路由选择算法的比较：</p>
+<ul>
+<li>报文复杂性：LS算法需要发送$O(|N||E|)$个报文。 DV则在每次迭代时，在两个直接相连邻居之间交换报文。</li>
+<li>收敛速度：LS是一个$O(|N|^2)$的算法。DV算法收敛较慢，且在收敛时遇到路由选择环路，DV算法还会遭遇无穷计数问题。</li>
+<li>健壮性：LS算法有一定程度的健壮性。DV算法中一个不正确的节点计算值会扩展到整个网络。</li>
+</ul>
+<h3 id="5-3-因特网中自治系统内部的路由选择：OSPF"><a href="#5-3-因特网中自治系统内部的路由选择：OSPF" class="headerlink" title="5.3 因特网中自治系统内部的路由选择：OSPF"></a>5.3 因特网中自治系统内部的路由选择：OSPF</h3><p>自治的原因：规模和管理自治</p>
+<p>一个自治系统由其全局唯一的AS号(ASN)所标识，就像IP地址那样，AS号由ICANN区域注册机构所分配。</p>
+<p>在相同AS中的路由器都运行着相同的路由选择算法并且有彼此的信息。在一个自治系统内运行的路由选择算法叫做自治系统内部路由选择协议(intra-autonomous system routing protocol).</p>
+<p>开放最短路优先(OSPF): OSPF路由选择及其关系密切的协议IS-IS都被广泛用于因特网的AS内部路由选择。</p>
+<p>OSPF是一种链路状态协议，它是用洪泛链路状态信息和Dijkstra最低开销路径算法。</p>
+<p>使用OSPF，一台路由器构建了一幅关于整个自治系统的完整拓扑图。于是，每台路由器在本地运行Dijkstra的最短路径算法，以确定一个以自身为根节点到所有子网的最短路径树。</p>
+<p>当链路状态发生变化时，路由器就会广播链路状态信息，即使为发生变换，也会周期性地广播链路状态。链路状态通告的这种周期性更新增加了链路状态算法的健壮性。</p>
+<p>OSPF的通告包含在OSPF报文中，由IP承载，对OSPF其上层协议的值是89。</p>
+<p>OSPF的优点：</p>
+<ul>
+<li>安全</li>
+<li>多条相同开销的路径：当到达某目的地的多条路径具有相同的开销时，OSPF允许使用多条路径。</li>
+<li>对单播与多播路由选择的综合支持</li>
+<li>支持在单个AS中的层次结构：一个OSPF自治系统能够层次化地配置多个区域。每个区域都运行自己的OSPF链路状态路由选择算法。</li>
+</ul>
+<h3 id="5-4-ISP之间的路由选择：BGP"><a href="#5-4-ISP之间的路由选择：BGP" class="headerlink" title="5.4 ISP之间的路由选择：BGP"></a>5.4 ISP之间的路由选择：BGP</h3><p>自治系统间路由选择协议(inter-autonomous system routing protocol). 边界网关协议(Broder Gateway Protocol, BGP)</p>
+<p>正是这个协议将因特网中数以千计的ISP黏合起来。</p>
+<p>BGP是一种分布式和异步的协议</p>
+<h4 id="5-4-1-BGP的作用"><a href="#5-4-1-BGP的作用" class="headerlink" title="5.4.1 BGP的作用"></a>5.4.1 BGP的作用</h4><ol>
+<li>从邻居AS获得前缀的可达性信息。BGP允许每个子网向因特网的其余部分通告它的存在。BGP确保在因特网中的所有AS知道该子网。</li>
+<li>确定到该前缀的”最好的”路由</li>
+</ol>
+<h4 id="5-4-2-通告BGP路由信息"><a href="#5-4-2-通告BGP路由信息" class="headerlink" title="5.4.2 通告BGP路由信息"></a>5.4.2 通告BGP路由信息</h4><p>对于每个AS，每台路由器要么是一台网关路由器(gateway router), 要么是一台内部路由器(internal router). </p>
+<p>在BGP中，每对路由器通过使用179端口的半永久TCP连接交换路由选择信息。每条直连连接以及所有通过该连接发送的BGP报文，称为BGP连接(BGP connection). 跨越两个AS的BGP连接称为外部BGP(eBGP)连接，而在相同AS中的两台路由器之间的BGP会话称为内部BGP(iBGP)连接。</p>
+<h4 id="5-4-3-确定最好的路由"><a href="#5-4-3-确定最好的路由" class="headerlink" title="5.4.3 确定最好的路由"></a>5.4.3 确定最好的路由</h4><p>一些术语：当路由器通过BGP连接通告前缀时，它在前缀中包括一些BGP属性(BGP attribute). 用BGP路由来说，前缀及其属性称为路由(route).  两个较为重要的属性是AS-PATH和NEXT-HOP。 AS-PATH属性包含了通告已经通过的AS列表。如果一台路由器在路径列表中看到包含了它自己的AS，它将拒绝该通告。NEXT-HOP是AS-PATH起始的路由器接口的IP地址</p>
+<p>热土豆路由选择</p>
+<p>在路由器转发表中增加AS外部目的地的步骤：</p>
+<ol>
+<li>从AS间协议学到经多个网关可达子网x</li>
+<li>使用来自AS内部协议的路由选择信息，以决定到达每个网关的最低开销路径的开销</li>
+<li>热土豆路由选择：选择具有最小最低开销的网关</li>
+<li>从转发表确定通往最低开销网关的接口$I$。在转发表中加入表项$(x,I)$ </li>
+</ol>
+<p>热土豆路由选择依据的思想是：对于路由器1b，尽可能快地将分组送出其AS(更明确地说，用可能的最低开销)，而不担心其AS外部到目的地的余下部分的开销。</p>
+<p>路由选择算法</p>
+<p>在实践中，BGP使用了一种比热土豆路由选择更为复杂但却结合了其特点的算法。对于任何给定的目的地前缀，进入BGP的路由选择算法的输入是到某前缀的所有路由的集合，该前缀是已被路由器学习和接收的。如果仅有一条这样的路由，BGP显然选择该路由。如果到相同的前缀有两条或多条路由，则顺序地调用下列消除规则直到余下一条路由：</p>
+<ol>
+<li>路由被指派一个本地偏好值作为其属性之一(除了AS-PATH和NEXT-HOP以外)。一条路由的本地偏好可能由该路由器设置或可能由在相同AS中的另一台路由器学习到。本地偏好属性的值是一种策略决定，它完全取决于该AS的网络管理员。具有最高本地偏好值的路由将被选择。</li>
+<li>从余下的路由中(所有具有相同的最高本地偏好值)，将选择具有最短AS-PATH的路由。如果该规则是路由选择的唯一规则，则BGP将使用距离向量算法决定路径，其中距离测度使用AS跳的跳数而不是路由器跳的跳数。</li>
+<li>从余下的路由中(所有都具有相同的最高本地偏好值和相同的AS-PATH长度)，使用热土豆路由选择，即选择具有最靠近NEXT-HOP路由器的路由。</li>
+<li>如果仍留下多条路由，该路由器使用BGP标识符来选择路由。</li>
+</ol>
+<h4 id="5-4-4-IP任播"><a href="#5-4-4-IP任播" class="headerlink" title="5.4.4 IP任播"></a>5.4.4 IP任播</h4><p>多台服务器使用相同的IP地址，由BGP路由来选择某一服务器。CDN一般不使用IP任播，而DNS一般使用IP任播。</p>
+<h4 id="5-4-5-路由选择策略"><a href="#5-4-5-路由选择策略" class="headerlink" title="5.4.5 路由选择策略"></a>5.4.5 路由选择策略</h4><p>任何穿越某ISP主干网的流量必须是其源或目的位于该ISP的某个客户网络中。</p>
+<h3 id="5-5-SDN控制平面"><a href="#5-5-SDN控制平面" class="headerlink" title="5.5 SDN控制平面"></a>5.5 SDN控制平面</h3><h3 id="5-6-ICMP-因特网控制报文协议"><a href="#5-6-ICMP-因特网控制报文协议" class="headerlink" title="5.6 ICMP:因特网控制报文协议"></a>5.6 ICMP:因特网控制报文协议</h3><p>ICMP最典型的用途是差错报告。</p>
+<p>ping和traceroute就是用ICMP实现的</p>
+<h3 id="5-7-网络管理和SNMP"><a href="#5-7-网络管理和SNMP" class="headerlink" title="5.7 网络管理和SNMP"></a>5.7 网络管理和SNMP</h3><h2 id="第六章：链路层和局域网"><a href="#第六章：链路层和局域网" class="headerlink" title="第六章：链路层和局域网"></a>第六章：链路层和局域网</h2><h3 id="6-1-链路层概述"><a href="#6-1-链路层概述" class="headerlink" title="6.1 链路层概述"></a>6.1 链路层概述</h3><h3 id="6-1-1-链路层提供的服务"><a href="#6-1-1-链路层提供的服务" class="headerlink" title="6.1.1 链路层提供的服务"></a>6.1.1 链路层提供的服务</h3><p>任一链路层的基本服务都是将数据报通过单一通信链路从一个节点移动到相邻节点。</p>
+<p>链路层协议能够提供的可能服务包括：</p>
+<ul>
+<li>成帧(framing)</li>
+<li>链路接入：媒体访问控制(Medium Access Control, MAC)协议规定了帧在链路上传输的规则</li>
+<li>可靠交付：当链路层协议提供可靠交付服务时，它保证无差错地经链路层移动每个网络层数据报。链路层的可靠交付服务通常是通过确认和重传取得的。链路层可靠交付服务通常用于易于产生高差错率的链路，例如无线链路。许多有线的链路层协议不提供可靠交付服务。</li>
+<li>差错检测和纠正：</li>
+</ul>
+<h4 id="6-1-2-链路层在何处实现"><a href="#6-1-2-链路层在何处实现" class="headerlink" title="6.1.2 链路层在何处实现"></a>6.1.2 链路层在何处实现</h4><p>链路层的主体部分是在网络适配器(network adapter)中实现。位于网络适配器核心的是链路层控制器。尽管大部分链路层是在硬件中实现的，但部分链路层是在运行于主机CPU上的软件中实现的。链路层的软件组件实现了高层链路层功能，如组装链路层寻址信息和激活控制器硬件。</p>
+<h3 id="6-2-差错检测和纠正技术"><a href="#6-2-差错检测和纠正技术" class="headerlink" title="6.2 差错检测和纠正技术"></a>6.2 差错检测和纠正技术</h3><p>三种技术：奇偶校验、检验和方法 和 循环冗余检测。</p>
+<h4 id="6-2-1-奇偶校验"><a href="#6-2-1-奇偶校验" class="headerlink" title="6.2.1 奇偶校验"></a>6.2.1 奇偶校验</h4><p>二维奇偶校验</p>
+<p>接收方检测和纠正差错的能力被称为前向纠错。</p>
+<h4 id="6-2-2-检验和方法"><a href="#6-2-2-检验和方法" class="headerlink" title="6.2.2 检验和方法"></a>6.2.2 检验和方法</h4><p>运输层使用检验和，链路层使用CRC。why?</p>
+<p>因为运输层差错检测用软件实现，采用简单而快速如检验和这样的差错检测方案是重要的。在另一方面，链路层的差错检测在适配器中用专门的硬件实现，它能够快速执行更复杂的CRC操作。</p>
+<h4 id="6-2-3-循环冗余检测"><a href="#6-2-3-循环冗余检测" class="headerlink" title="6.2.3 循环冗余检测"></a>6.2.3 循环冗余检测</h4><p>现今的计算机网络中广泛应用的差错检测技术基于循环冗余检测(Cyclic Redundancy Check, CRC)编码。CRC编码也称为多项式编码(polynomial code).</p>
+<p>每个CRC标准都能检测小于$r+1$比特的突发差错。(这意味着所有连续的$r$比特或者更少的差错都可以检测到。)此外，在适当的假设下，长度大于$r+1$比特的突发差错以概率$1-0.5^r$被检测到。每个CRC标准也都能检测任何奇数个比特差错。</p>
+<h3 id="6-3-多路访问链路和协议"><a href="#6-3-多路访问链路和协议" class="headerlink" title="6.3 多路访问链路和协议"></a>6.3 多路访问链路和协议</h3><p>有两种类型的网络链路：</p>
+<ul>
+<li>点对点链路：PPP,HDLC</li>
+<li>广播链路：以太网、WiFi</li>
+</ul>
+<p>一个对链路层很重要的问题：如何协调多个发送和接收节点对一个共享广播信道的访问，这就是多路访问问题(multiple access problem).</p>
+<p>多路访问协议(multiple access protocol).我们能够将任何多路访问协议分为3种类型之一：</p>
+<ul>
+<li>信道划分协议(channel partitioning protocol)<ul>
+<li>FDM,TDM,CDMA</li>
+</ul>
+</li>
+<li>随机接入协议(random access protocol)<ul>
+<li>时隙ALOHA(以概率p重传)，需要在节点间对时隙同步</li>
+<li>ALOHA，不需要时隙同步</li>
+<li>载波侦听多路访问(CSMA)<ul>
+<li>载波侦听(carrier sensing)</li>
+<li>碰撞检测(collision detection): CSMA/CD</li>
+<li>二进制指数后退(binary exponential backoff)算法</li>
+<li>CSMA/CD效率:<ul>
+<li>$\frac{1}{1+ 5 d<em>{prop}/d</em>{trans}}$</li>
+<li>$d_{prop}$ 表示信号能量在任意两个适配器之间传播所需的最大时间</li>
+<li>$d_{trans}$ 表示传输一个最大长度的以太网帧的时间</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>轮流协议(taking-turns protocol)<ul>
+<li>轮询协议(taking-turns protocol)</li>
+<li>令牌传递协议(token-passing protocol)</li>
+</ul>
+</li>
+</ul>
+<p>我们希望多路访问协议应该具有下列所希望的特性：</p>
+<ol>
+<li>当仅有一个节点发送数据时，该节点具有$R$ bps的吞吐量</li>
+<li>当有$M$个节点发送数据时，每个节点吞吐量为$R/M $ bps. 这不必要求$M$个节点中的每一个节点总是有$R/M$的瞬间速率，而是每个节点在一些适当定义的时间间隔内应该有$R/M$的平均传输速率。</li>
+<li>协议是分散的；这就是说不会因某主节点故障而使整个系统崩溃</li>
+<li>协议是简单的，使实现不昂贵</li>
+</ol>
+<h4 id="6-3-1-信道划分协议"><a href="#6-3-1-信道划分协议" class="headerlink" title="6.3.1 信道划分协议"></a>6.3.1 信道划分协议</h4><p>FDM,TDM,CDMA</p>
+<h4 id="6-3-2-随机接入协议"><a href="#6-3-2-随机接入协议" class="headerlink" title="6.3.2 随机接入协议"></a>6.3.2 随机接入协议</h4><ol>
+<li>时隙ALOHA<ul>
+<li>同步的，有一系列的时隙，只在时隙开始时传送，且在某一时隙发生碰撞，在该时隙结束前能检测到</li>
+<li>当一个节点有新的帧发送，它将在下一个时隙的开始进行传输</li>
+<li>如果没有检测到碰撞，则成功</li>
+<li>如果有碰撞，该节点以概率$p$在后续的每个时隙中重传它的帧，直到该帧被无碰撞地传输出去。</li>
+<li>成功的概率： $Np(1-p)^{N-1}$, 最大效率为$\frac{1}{e}$, 即0.37 </li>
+</ul>
+</li>
+<li>ALOHA<ul>
+<li>不需要同步</li>
+<li>成功的概率：$Np(1-p)^{2(N-1)}$, 最大效率为$\frac{1}{2e}$ </li>
+</ul>
+</li>
+<li>载波侦听多路访问(CSMA)<ul>
+<li>两个重要规则：<ul>
+<li>说话之前先听： 载波侦听(carrier sensing)</li>
+<li>如果与他人同时开始说话，停止说话：碰撞检测(collision detection)</li>
+</ul>
+</li>
+<li>既然侦听了，又怎么会碰撞呢？：因为有广播信道端到端信道传播时延(channel propagation delay). 该传播时延越大，载波侦听节点不能侦听到网络中另一个节点已经开始传输的机会就越大。</li>
+<li>CSMA不包含碰撞检测</li>
+</ul>
+</li>
+<li>具有碰撞检测的载波侦听多路访问(CSMA/CD)<ul>
+<li>协议步骤：<ol>
+<li>适配器从网络层一条获得数据报，准备链路层帧，并将其放入帧适配器缓存中。</li>
+<li>如果适配器侦听到信道空闲(即无信号能量从信道进入适配器)，它开始传输帧。在另一方面，如果适配器侦听到信道正在忙，它将等待，直到侦听到没有信号能量时才开始传输帧。</li>
+<li>在传输过程中，适配器监视来自其他使用该广播信道的适配器的信号能量的存在。</li>
+<li>如果适配器传输整个帧而未检测到来自其他适配器的信号能量，该适配器就完成了该帧。在另一方面，如果适配器在传输时检测到来自其他适配器的信号能量，它中止传输(即它停止了传输帧)。<strong>帧长得有下限</strong>， 不然在碰撞可能在传输结束后发送。</li>
+<li>中止传输后，适配器等待一个随机时间量，然后返回步骤2</li>
+</ol>
+</li>
+<li>随机等待的时间量不能一样的，不然一直碰撞。我们采用二进制指数后退算法(binary exponential backoff)。<ul>
+<li>当传输一个给定帧时，在该帧经历了一连串的$n$次碰撞后，节点随机地从${ 0,1,2,…,2^n-1 }$ 中选择一个$K$值。因此一个帧经历的碰撞越多，$K$选择的间隔越大。对于以太网，一个节点等待的实际时间量是$K \cdot 512$ 比特时间(即发送512比特进入以太网所需时间量的$K$倍)， $n$能够取的最大值在$10$以内。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CSMA/CD 效率<ul>
+<li>$d_{prop}$ 表示信号能量在任意两个适配器之间传播所需的最大时间</li>
+<li>$d_{trans}$ 表示传输一个最大长度的以太网帧的时间</li>
+<li>效率 =$\frac{1}{1+ 5 d<em>{prop}/d</em>{trans} }$ </li>
+<li>当$d_{prop}$ 接近$0$时，效率接近1</li>
+<li>当$d_{trans}$变得很大时，效率也接近于1</li>
+</ul>
+</li>
+</ol>
+<h4 id="6-3-3-轮流协议-taking-turns-protocol"><a href="#6-3-3-轮流协议-taking-turns-protocol" class="headerlink" title="6.3.3 轮流协议(taking-turns protocol)"></a>6.3.3 轮流协议(taking-turns protocol)</h4><p>两种：</p>
+<ul>
+<li>轮询协议(polling protocol)<ul>
+<li>引入了轮询时延</li>
+<li>主节点的单点故障</li>
+<li>主要应用：802.15协议和蓝牙协议</li>
+</ul>
+</li>
+<li>令牌传递协议(token-passing protocol)<ul>
+<li>一个节点的故障可能会使整个信道崩溃</li>
+<li>或者一个节点忘记了释放令牌</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-4-交换局域网"><a href="#6-4-交换局域网" class="headerlink" title="6.4 交换局域网"></a>6.4 交换局域网</h3><h4 id="6-4-1-链路层寻址和ARP"><a href="#6-4-1-链路层寻址和ARP" class="headerlink" title="6.4.1 链路层寻址和ARP:"></a>6.4.1 链路层寻址和ARP:</h4><ul>
+<li>MAC地址：6字节<ul>
+<li>MAC地址是扁平结构，而IP地址是层次结构</li>
+<li>广播地址是:<code>FF-FF-FF-FF-FF-FF</code> </li>
+</ul>
+</li>
+<li>地址解析协议(Address Resolution Protocol, ARP)<ul>
+<li>将网络层地址和链路层地址进行互相转换</li>
+<li>与DNS类似，但不同的是ARP只为在同一个子网上的主机和路由器解析IP地址，而DNS为在因特网中任何地方的主机解析主机名</li>
+<li>每台主机或路由器在其内存中具有一个ARP表，有IP地址和MAC地址的映射，还有TTL</li>
+<li>ARP查询，构造一个ARP分组，通过广播帧发送，回应通过普通帧发送</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-4-2-以太网："><a href="#6-4-2-以太网：" class="headerlink" title="6.4.2 以太网："></a>6.4.2 以太网：</h4><ul>
+<li>集线器(hub):是一种物理层设备，它作用于各个比特而不是作用于帧。当一个比特到达接口后，集线器只是重新生成这个比特，放大它的能量强度，将其向其他所有接口发送出去。</li>
+<li>以太网帧格式： <code>前同步码(8字节)|目的地址(6字节)|源地址(6字节)|类型(2字节)|数据(46-1500字节)|CRC(4字节)</code><ul>
+<li>前同步码中前7个字节的值都是10101010；最后一个字节是10101011, 为了同步时钟，</li>
+</ul>
+</li>
+<li>所有的以太网技术都向网络层提供无连接的服务</li>
+<li>以太网技术都向网络层提供不可靠服务。无论CRC校验是否正确，都不回应。</li>
+<li>在基于交换机的以太局域网中，不会有碰撞，因此没有必要使用MAC协议了。</li>
+</ul>
+<h4 id="6-4-3-链路层交换机"><a href="#6-4-3-链路层交换机" class="headerlink" title="6.4.3 链路层交换机"></a>6.4.3 链路层交换机</h4><ol>
+<li>交换机转发和过滤<ul>
+<li>过滤是决定一个帧应该转发到某个接口还是应当将其丢弃的交换机功能。</li>
+<li>转发是决定一个帧应该被导向哪个接口，并把该帧移动到那些接口的交换机功能。</li>
+<li>交换机的过滤和转发借助于交换机表(switch table), 表项中包含：MAC地址，通过该MAC地址的交换机接口</li>
+<li>表项放置在表中的时间</li>
+<li>当有一个帧从接口$x$进来，目的地址为$A$<ul>
+<li>如果表中没有$A$的表项，向除了接口$x$的接口转发该帧</li>
+<li>如果表中$A$对应接口$x$, 丢弃该帧</li>
+<li>如果表中$A$对应接口$y \not= x$, 转发该帧到接口$y$ </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>自学习<ul>
+<li>步骤如下：<ol>
+<li>交换表初始为空</li>
+<li>对于在每个接口接收到的每个入帧，该交换机在其表中存储：源MAC地址，到达的接口，当前时间</li>
+<li>如果在一段时间(称为老化期(aging time))后，交换机没有接受到以该地址作为源地址的帧，就在表中删除这个地址。</li>
+</ol>
+</li>
+<li>交换机是即插即用设备(plug-and-play device) </li>
+</ul>
+</li>
+<li>链路层交换机的性质<ul>
+<li>消除碰撞</li>
+<li>异质的链路</li>
+<li>管理</li>
+<li>延伸知识：交换机毒化(switch poisoning). 它向交换机发送大量的具有不同伪造源MAC地址的分组，因为用伪造表项填满了交换机表，没有为合法主机留下空间。这使该交换机广播大多数帧，这些帧能够由嗅探器俘获到。由于这种攻击只有技艺高超的攻击者才能做到，因此交换机比起集线器和无线局域网来更难受到嗅探</li>
+</ul>
+</li>
+<li>交换机和路由器比较</li>
+</ol>
+<p>交换和路由的区别 </p>
+<p>交换功能 $\begin{cases} \text{主机为单位} \ \text{网段为单位} \end{cases}$</p>
+<p>交换：交换表。 </p>
+<p>不选最短路——支撑树算法</p>
+<ol>
+<li>帧转发——目的MAC</li>
+<li>地址学习——源MAC</li>
+<li>环路检测——</li>
+</ol>
+<p>链路层交换机</p>
+<ul>
+<li>交换机转发和过滤<ul>
+<li>过滤(filtering)是决定一个帧应该转发到某个接口还是应当将其丢弃的交换机功能</li>
+<li>转发(forwarding)是决定一个帧应该被导向哪个接口，并把该帧移动到那些接口的交换机功能。</li>
+<li>交换机的过滤和转发借助于交换机表(switch table). 交换机表包括MAC地址，相应的交换机接口和时间戳</li>
+</ul>
+</li>
+<li>自学习<pre><code>1. 交换表最初为空
+ 2. 每个收到的帧，记录其源MAC地址和接口还有时间戳
+ 3. 一段时间后，会删除该地址(aging time)老化期
+</code></pre></li>
+<li>交换机是即插即用设备(plug-and-play device)</li>
+<li>性质<ul>
+<li>消除碰撞</li>
+<li>异质的链路</li>
+<li>管理</li>
+</ul>
+</li>
+<li>交换机毒化<ul>
+<li>向交换机发送大量具有不同伪造源MAC地址的分组，填满交换机的表项，没有为合法主机留下空间，使得交换机不得不广播帧，从而能嗅探。</li>
+</ul>
+</li>
+<li>交换机是第二层的分组交换机</li>
+<li>路由器是第三层的分组交换机</li>
+</ul>
+<h4 id="6-4-4-虚拟局域网"><a href="#6-4-4-虚拟局域网" class="headerlink" title="6.4.4 虚拟局域网"></a>6.4.4 虚拟局域网</h4><p>等级交换结构的缺点：</p>
+<ul>
+<li>缺乏流量隔离：尽管该等级结构把组流量局域化到一个单一交换机中，但广播流量(例如携带ARP和DHCP报文或那些目的地还没有被自学习交换机学习到的帧)仍然必须跨越整个机构网络</li>
+<li>交换机的无效使用：每个组都比较小，交换机得不到充分的利用</li>
+<li>管理用户</li>
+</ul>
+<p>我们可以通过支持虚拟局域网(Virtual Local Network, VLAN)的交换机来处理。支持VLAN的交换机允许经一个单一的物理局域网基础设施定义多个虚拟局域网。在一个基于端口的VLAN中，交换机的端口(接口)由网络管理员划分为组。每个组构成一个VLAN，在每个VLAN中的端口形成一个广播域。</p>
+<h3 id="6-5-链路虚拟化：网络作为链路层"><a href="#6-5-链路虚拟化：网络作为链路层" class="headerlink" title="6.5 链路虚拟化：网络作为链路层"></a>6.5 链路虚拟化：网络作为链路层</h3><h3 id="6-6-数据中心网络"><a href="#6-6-数据中心网络" class="headerlink" title="6.6 数据中心网络"></a>6.6 数据中心网络</h3><ul>
+<li>机架顶部(Top of Rack, TOR)交换机</li>
+<li>负载均衡<ul>
+<li>负载均衡器(load balancer)</li>
+<li>“第四层交换机”</li>
+<li>还提供类似NAT的功能</li>
+</ul>
+</li>
+<li>等级体系结构<ul>
+<li>路由器和交换机等级结构(hierarchy of router and switch)</li>
+</ul>
+</li>
+<li>数据中心网络的发展趋势<ul>
+<li>一个趋势是部署能够克服传统等级设计缺陷的新型互联体系结构和网络协议<ul>
+<li>一种方法是采用全连接拓扑(fully connected topology)来替代交换机和路由器的等级结构</li>
+</ul>
+</li>
+<li>另一个主要的趋势是采用基于船运集装箱的模块化数据中心(Modular Data Center, MDC)</li>
+<li>另一种重要趋势是，大型云提供商正在其数据中心越来越多地建造或定制几乎所有东西，包括网络适配器。交换机路由器、TOR、软件和网络协议。</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-7-Web页面请求的历程"><a href="#6-7-Web页面请求的历程" class="headerlink" title="6.7 Web页面请求的历程"></a>6.7 Web页面请求的历程</h3><h2 id="第七章：无线网络和移动网络"><a href="#第七章：无线网络和移动网络" class="headerlink" title="第七章：无线网络和移动网络"></a>第七章：无线网络和移动网络</h2><h3 id="7-1-概述"><a href="#7-1-概述" class="headerlink" title="7.1 概述"></a>7.1 概述</h3><p>无线网络分类：</p>
+<ul>
+<li>单跳，基于基础设施<ul>
+<li>WiFi, 4G</li>
+</ul>
+</li>
+<li>单跳，无基础设施<ul>
+<li>蓝牙</li>
+</ul>
+</li>
+<li>多跳，基于基础设施</li>
+<li>多跳，无基础设施</li>
+</ul>
+<h3 id="7-2-无线链路和网络特征"><a href="#7-2-无线链路和网络特征" class="headerlink" title="7.2 无线链路和网络特征"></a>7.2 无线链路和网络特征</h3><p>无线链路与有线链路的区别：</p>
+<ul>
+<li>递减的信号强度</li>
+<li>来自其他源的干扰</li>
+<li>多径传播</li>
+</ul>
+<p>无线链路协议不仅采用有效的CRC错误检测码，还采用了链路层ARQ协议来重传受损的帧。</p>
+<p>信噪比(Signal-to-Noise Ratio, SNR), 比特差错率(BER)</p>
+<p>$SNR = 10 \log<em>{10} (\frac{P</em>{signal}}{P_{noise}})$ </p>
+<ul>
+<li>对于给定的调制方案，SNR越高，BER越低</li>
+<li>对于给定的SNR，具有较高比特传输率的调制技术(无论差错与否)将具有较高的BER</li>
+<li>物理层调制技术的动态选择能用于适配对信道条件的调制技术。</li>
+</ul>
+<p>隐藏终端问题(hidden terminal problem)： 即使A和C的传输确实是在目的地B发生干扰，环境的物理阻挡(例如，一座大山或者一座建筑)也可能会妨碍A和C互相听到对方的传输。</p>
+<p>衰减可能也会导致无法检测碰撞。</p>
+<h3 id="CDMA"><a href="#CDMA" class="headerlink" title="CDMA"></a>CDMA</h3><h3 id="7-3-WiFi-802-11-无线LAN"><a href="#7-3-WiFi-802-11-无线LAN" class="headerlink" title="7.3 WiFi: 802.11 无线LAN"></a>7.3 WiFi: 802.11 无线LAN</h3><p>802.11有好几个标准，它们都使用了相同的媒体访问协议CSMA/CA. 它们的链路层帧也都使用相同的帧结构</p>
+<p>802.11设备工作在两个不同的频段上：2.4~2.485GHz(2.4GHz频段)和5.1~5.8GHz(称之为5GHz频段)。</p>
+<h4 id="802-11体系结构"><a href="#802-11体系结构" class="headerlink" title="802.11体系结构"></a>802.11体系结构</h4><p>基本服务集(Basic Service Set, BSS)：一个BSS包含一个或多个无线站点和一个被称为接入点(Access Point, AP)的中央基站(base station).</p>
+<p>配置AP的无线LAN经常被称作基础设施无线LAN(infrastructure wireless LAN). 其中基础设置是指AP连同互联AP和一台路由器的有线以太网。</p>
+<p>信道与关联</p>
+<ul>
+<li>每个无线站点在能够发送或者接受网络层数据之前，必须与一个AP相关联</li>
+<li>当管理员安装一个AP时，需要给接入点分配一个单字或双字的服务集标识符(Service Set Identifier, SSID). 管理员还必须为该AP分配一个信道号。SSID就是常用的WiFi名称，而BSSID是无线AP的MAC地址。</li>
+<li>802.11定义了11个部分重叠的信道。当且仅当两个信道由4个或更多信道隔开时它们才无重叠。</li>
+<li>WiFi丛林(WiFi jungle)是一个任意物理位置，在这里无线站点能从两个或多个AP中收到很强的信号。</li>
+<li>802.11标准要求每个AP周期性地发送信标帧(beacon frame).每个信标帧包含了该AP的SSID和MAC地址。你的终端会扫描十一个信道以获取信标帧</li>
+<li>扫描信道和监听信标帧的过程被称为被动扫描(passive scanning) 无线主机也能执行主动扫描(active scanning). 这是通过向位于无线主机范围内的所有AP广播探测帧完成的。</li>
+<li>选定与之关联的AP后，无线主机向AP发送一个关联请求帧，并且该AP以一个关联响应帧进行响应。一旦与一个AP关联，该主机希望加入该AP所属的子网中。因此，该主机通常将通过关联的AP向该子网发送一个DHCP发现报文，以获取在该AP子网中的一个IP地址。一旦获得地址，网络的其他部分将直接视你为该子网中的另一台主机。</li>
+<li>802.11无线LAN提供了几种不同的鉴别和接入方法。一种被许多公司采用的方法是，基于一个站点的MAC地址允许其接入一个无线网络。第二种，用用户名和口令。在两种情况下，AP通常与一个鉴别服务器进行通信。分离鉴别服务器和AP，使得一个鉴别服务器可以服务于多个AP。</li>
+</ul>
+<h4 id="7-3-2-802-11-MAC协议"><a href="#7-3-2-802-11-MAC协议" class="headerlink" title="7.3.2 802.11 MAC协议"></a>7.3.2 802.11 MAC协议</h4><p>802.11的设计者为802.11无线LAN选择了一种随机访问协议：带碰撞避免的CSMA(CSMA with collision avoidance),或简称为CSMA/CA</p>
+<p>以太网和802.11虽然都使用载波侦听随机接入，但他们有区别：</p>
+<ol>
+<li>802.11使用碰撞避免而非碰撞检测</li>
+<li>802.11使用链路层确认/重传(ARQ)方案</li>
+</ol>
+<p>802.11MAC协议使用碰撞避免而非碰撞检测。主要有两个原因</p>
+<ul>
+<li>检测碰撞的能力要求站点具有同时发送和接收的能力。</li>
+<li>由于隐藏终端问题和衰减问题而无法检测到所有的碰撞。</li>
+</ul>
+<p>一旦一个站点开始发送一个帧，它就完全地发送该帧。</p>
+<p>链路层确认方案(link-layer acknowledgment):目的站点收到一个通过CRC检验的帧后，它等待一个被称作短帧间间隔(Short Inter-Frame Spacing, SIFS)的一小段时间，然后发回一个确认帧。如果发送站点在给定的时间内未收到确认帧，它假定出现了错误并重传该帧，使用CSMA/CA协议访问该信道。如果在若干固定次重传后仍未收到确认，发送站点将放弃发送并丢弃该帧。</p>
+<p>CSMA/CA协议：</p>
+<ol>
+<li>如果某站点最初监听到信道空闲，它将在一个被称作分布式帧间间隔(Distributed Inter-Frame Space, DIFS)的短时间段后发送该帧。</li>
+<li>否则，该站点选取一个随机回退值并且在侦听信道空闲时递减该值。当侦听到信道忙时，计数值保持不变。</li>
+<li>当计数值减为0时，该站点发送整个数据帧并等待确认。</li>
+<li>如果收到确认，发送站点知道它的帧已被目的站正确接受了。如果该站点要发送另一帧，它将从第二步开始CSMA/CA协议。如果未收到确认，发送站点将重新进入第二步中的回退阶段，并从一个更大范围内选取随机值。</li>
+</ol>
+<p>IEEE 802.11协议允许站点使用一个短请求发送(Request to Send, RTS)控制帧和一个短允许发送(Clear to Send, CTS)控制帧来预约对信道的访问。尽管RTS/CTS交换有助于降低碰撞，但它同样引入了时延以及消耗了信道资源。因此RTS/CTS交换仅仅用于为长数据预约信道。在实际中，每个无线站点可以设置一个RTS门限值，仅当帧长超过门限值时，才使用RTS/CTS序列。对许多无线站点而言，默认的RTS门限值大于最大帧长值，因此对所有发送的DATA帧，RTS/CTS序列都被跳过。 </p>
+<p>可以使用802.11 作为一个点对点链路。</p>
+<h4 id="7-3-3-IEEE-802-11帧"><a href="#7-3-3-IEEE-802-11帧" class="headerlink" title="7.3.3 IEEE 802.11帧"></a>7.3.3 IEEE 802.11帧</h4><ol>
+<li>有效载荷与CRC字段<ul>
+<li>有限载荷允许的最大长度为2312字节，但它通常小于1500字节</li>
+</ul>
+</li>
+<li>地址字段<ul>
+<li>802.11帧中有4个地址字段，每个都可以包括一个6字节的MAC地址<ul>
+<li>地址2是传输该帧站点的MAC地址。相当于源地址</li>
+<li>地址1是要接受该帧的无线站点的MAC地址，相当于目标地址</li>
+<li>地址3包含这个路由器接口的MAC地址。地址3在BSS和有限局域网互联中起着关键作用。</li>
+<li>当AP在自组织模式中互相转发时使用第四个地址。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>序号、持续期和帧控制字段<ul>
+<li>使用序号可以使接收方区分新传输的帧和以前帧的重传。</li>
+<li>802.11协议允许传输节点预约信道一段时间，包括传输其数据帧的时间和传输确认的时间。这个持续期值被包括在该帧的持续期字段中(在数据帧和RTS和CTS帧中均存在)。</li>
+<li>帧控制字段包含很多子字段<ul>
+<li>类型和子类型字段用于区分关联、RTS、CTS、ACK和数据帧</li>
+<li>WEP字段指示了是否使用加密</li>
+<li>To和From字段用于定义不同地址字段的含义。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="7-3-4-在相同的IP子网中的移动性"><a href="#7-3-4-在相同的IP子网中的移动性" class="headerlink" title="7.3.4 在相同的IP子网中的移动性"></a>7.3.4 在相同的IP子网中的移动性</h4><p>保持自己的IP地址和所有正在进行的TCP连接</p>
+<p>保持IP地址不变，两个AP有着相同的SSID，那交换机如何知道设备已经更换了AP(更换了交换机的端口)呢，可以通过新的AP，发送一个广播帧，那么就能更新交换机的表项。</p>
+<h4 id="802-11中的高级特色"><a href="#802-11中的高级特色" class="headerlink" title="802.11中的高级特色"></a>802.11中的高级特色</h4><ol>
+<li>802.11速率自适应：类似于TCP的拥塞控制</li>
+<li>功率管理：节点睡眠。AP先缓存目标帧</li>
+</ol>
+<h4 id="6-3-6-个人域网络：蓝牙和ZigBee"><a href="#6-3-6-个人域网络：蓝牙和ZigBee" class="headerlink" title="6.3.6 个人域网络：蓝牙和ZigBee"></a>6.3.6 个人域网络：蓝牙和ZigBee</h4><ol>
+<li>蓝牙<ul>
+<li>802.15.1 也被称为无线个人域网络(Wireless Personal Area Network, WPAN)</li>
+<li>以TDM方式工作于无须许可证的2.4GHz无线电波段，每个时隙长度为625 $\mu s$</li>
+<li>在每个时隙内，发送方利用79个信道中的一个进行传输，同时从时隙到时隙以一个已知的伪随机方式变更信道。这种被称作跳频扩展频谱(frequency-Hopping Spread Spectrum, FHSS).</li>
+<li>802.15.1网络是自组织网络</li>
+<li>802.15.1设备首先组织成一个多达8个活动设备的皮可网(piconet). 这些设备之一被指定为主设备，其余充当从设备。</li>
+<li>主节点真正控制皮可网，它的时钟确定了皮可网中的时间，它可以在每个奇数时隙中发送，而从设备仅当主设备在前一时隙与其通信后才可以发送，并且只能发送给主设备。除了从设备，网络中还可以有多达255个的寄放(parked)设备.这些设备仅其状态被主节点从寄放转换为活动之后才可以进行通信。</li>
+</ul>
+</li>
+<li>ZigBee<ul>
+<li>IEEE标准化的第二个个人域网络是802.14.5</li>
+<li>ZigBee较之蓝牙其服务目标是低功率、低数据率、低周期的应用。</li>
+</ul>
+</li>
+</ol>
+<h2 id="第八章：计算机网络中的安全"><a href="#第八章：计算机网络中的安全" class="headerlink" title="第八章：计算机网络中的安全"></a>第八章：计算机网络中的安全</h2><h3 id="8-1-什么是网络安全"><a href="#8-1-什么是网络安全" class="headerlink" title="8.1 什么是网络安全"></a>8.1 什么是网络安全</h3><p>安全通信具有下列所需要的特性：</p>
+<ul>
+<li>机密性</li>
+<li>报文完整性</li>
+<li>端点鉴别</li>
+<li>运行安全性</li>
+</ul>
+<h3 id="8-2-密码学原则"><a href="#8-2-密码学原则" class="headerlink" title="8.2 密码学原则"></a>8.2 密码学原则</h3><h4 id="8-2-1-对称密钥密码体制"><a href="#8-2-1-对称密钥密码体制" class="headerlink" title="8.2.1 对称密钥密码体制"></a>8.2.1 对称密钥密码体制</h4><ul>
+<li>单码代替密码(monoalphabetic cipher)<ul>
+<li>凯撒密码(Caesar cipher)</li>
+</ul>
+</li>
+<li>多码代替密码(polyalphabetic encryption)</li>
+</ul>
+<p>攻击分三种：</p>
+<ul>
+<li>唯密文攻击</li>
+<li>已知明文攻击</li>
+<li>选择明文攻击</li>
+</ul>
+<h4 id="8-2-2-公开密钥加密"><a href="#8-2-2-公开密钥加密" class="headerlink" title="8.2.2 公开密钥加密"></a>8.2.2 公开密钥加密</h4><ol>
+<li>RSA<ol>
+<li>选择两个大素数$p$和$q$</li>
+<li>计算$n=pq$ 和 $z=(p-1)(q-1)$</li>
+<li>选择一个小于$n$的数$e$, 且使$e$ 和$z$ 没有(非1的)公因数</li>
+<li>求一个数$d$ 使得$ed-1$ 可以被$z$整除</li>
+<li>公钥是$(n,e)$ , 私钥是$(n,d)$ </li>
+</ol>
+</li>
+<li>会话密钥<ul>
+<li>用RSA加密会话密钥，使用对称的会话密钥进行通信。</li>
+</ul>
+</li>
+</ol>
+<h3 id="8-3-报文完整性和数字签名"><a href="#8-3-报文完整性和数字签名" class="headerlink" title="8.3 报文完整性和数字签名"></a>8.3 报文完整性和数字签名</h3><h4 id="8-3-1-密码散列函数"><a href="#8-3-1-密码散列函数" class="headerlink" title="8.3.1 密码散列函数"></a>8.3.1 密码散列函数</h4><p>密码散列函数要具有下列性质：找到任意两个不同的报文$x$和$y$使得$H(x)=H(y)$，在计算上是不可能的。</p>
+<ul>
+<li>MD5 散列算法：计算得到128比特的散列</li>
+<li>SHA-1散列算法：生成一个160比特的报文摘要</li>
+</ul>
+<h4 id="8-3-2-报文鉴别码"><a href="#8-3-2-报文鉴别码" class="headerlink" title="8.3.2 报文鉴别码"></a>8.3.2 报文鉴别码</h4><p>Alice和Bob共享秘密$s$,被称为鉴别密钥(authentication key).</p>
+<ol>
+<li>Alice生成报文$m$, 加上$s$, 得到$m+s$, 然后计算散列$H(m+s)$(例如使用SHA-1). $H(m+s)$ 被称为报文鉴别码(Message Authentication Code, MAC). </li>
+<li>然后Alice发送$(m,H(m+s))$</li>
+<li>Bob根据$m$ 和$s$ 计算$H(m+s)$ 来判断是否正常。 </li>
+</ol>
+<h4 id="8-3-3-数字签名"><a href="#8-3-3-数字签名" class="headerlink" title="8.3.3 数字签名"></a>8.3.3 数字签名</h4><p>用公钥加密</p>
+<p>公钥认证：</p>
+<p>将公钥与特定实体绑定通常是认证中心(Certification Authority, CA)完成的，CA的职责就是使识别和发行证书合法化。</p>
+<h3 id="8-4-端点鉴别-end-point-authentication"><a href="#8-4-端点鉴别-end-point-authentication" class="headerlink" title="8.4 端点鉴别(end-point authentication)"></a>8.4 端点鉴别(end-point authentication)</h3><h3 id="8-5-安全电子邮件"><a href="#8-5-安全电子邮件" class="headerlink" title="8.5 安全电子邮件"></a>8.5 安全电子邮件</h3><p>PGP</p>
+<h3 id="8-6-使TCP连接安全：SSL"><a href="#8-6-使TCP连接安全：SSL" class="headerlink" title="8.6 使TCP连接安全：SSL"></a>8.6 使TCP连接安全：SSL</h3><p>安全套接字层(Secure Socket Layer, SSL)</p>
+<p>运输层安全性(Transport Layer Security, TLS)</p>
+<p>SSL记录： <code>类型| 版本 | 长度 | 数据 | MAC</code> </p>
+<h4 id="8-6-2-更完整的描述"><a href="#8-6-2-更完整的描述" class="headerlink" title="8.6.2 更完整的描述"></a>8.6.2 更完整的描述</h4><ol>
+<li>SSL握手<ol>
+<li>客户发送它支持的密码算法的列表，连同一个客户的不重数</li>
+<li>从该列表中，服务器选择一种对称算法(例如AES)、一种公钥算法(例如具有特定密钥长度的RSA)和一种MAC算法。它把它的选择以及证书和一个服务器不重数返回给客户。</li>
+<li>客户验证该证书，提取服务器的公钥，生成一个前主密钥(Pre-Master Secret, PMS), 用服务器的公钥加密该PMS，并将加密的PMS发送给服务器。</li>
+<li>使用相同的密钥导出函数，客户和服务器独立地从PMS和不重数中计算出主密钥(Master Secret, MS). 然后该MS被切片以生成两个密码和两个MAC密钥。此外，当选择的对称密码应用于CBC，则两个初始化向量(Initialization Vector, IV)也从该MS获得，这两个IV分别用于该连接的两段。自此以后，客户和服务器之间发送的所有报文均被加密和鉴别(使用MAC)。</li>
+<li>客户发送所有握手报文的一个MAC</li>
+<li>服务器发送所有握手报文的一个MAC</li>
+</ol>
+</li>
+</ol>
+<p>在SSL中，不重数用于防御”连接重放”，而序号用于防御在一个进行中的会话中重放个别分组。</p>
+<ol>
+<li>连接关闭</li>
+</ol>
+<h3 id="8-7-网络层安全性：IPsec和虚拟专用网"><a href="#8-7-网络层安全性：IPsec和虚拟专用网" class="headerlink" title="8.7 网络层安全性：IPsec和虚拟专用网"></a>8.7 网络层安全性：IPsec和虚拟专用网</h3><p>IP安全(IP Security)协议更常被称为IPsec，它为网络层提供了安全性。许多机构使用IPsec创建了运行在公共因特网之上的虚拟专用网(Virtual Private Network, VPN).</p>
+<h4 id="8-7-1-IPsec和虚拟专用网"><a href="#8-7-1-IPsec和虚拟专用网" class="headerlink" title="8.7.1 IPsec和虚拟专用网"></a>8.7.1 IPsec和虚拟专用网</h4><p>当总部中的一台主机向某旅馆中的某销售员发送一个IP数据报时，总部中的网关路由器将经典的IPv4转换成为IPsec数据报，然后将该IPsec数据报转发进因特网。该IPsec数据报实际上具有传统的IPv4首部，因此在公共因特网中的路由器处理该数据报，仿佛它对路由器而言是一个传统的IPv4数据报。但是，IPsec数据报的载荷包括了一个IPsec首部，该首部被用于IPsec处理；此外，IPsec数据报的载荷是被加密的。当该IPsec数据报到达销售员的便携机时，便携机的操作系统解密载荷，并将解密的载荷传递给上层协议。</p>
+<h4 id="8-7-2-AH协议和ESP协议"><a href="#8-7-2-AH协议和ESP协议" class="headerlink" title="8.7.2 AH协议和ESP协议"></a>8.7.2 AH协议和ESP协议</h4><p>在IPsec协议族中，有两个主要协议：鉴别首部(Authentication Header, AH) 协议 和 封装安全性载荷(Encapsulation Security Payload, ESP)协议。</p>
+<ul>
+<li>AH协议：提供源鉴别和数据完整性服务，但不提供机密性服务</li>
+<li>ESP协议：提供源鉴别、数据完整性和机密性服务</li>
+</ul>
+<p>ESP协议的使用比AH协议要广泛得多。</p>
+<h4 id="8-7-3-安全关联"><a href="#8-7-3-安全关联" class="headerlink" title="8.7.3 安全关联"></a>8.7.3 安全关联</h4><p>在从源实体向目的实体发送IPsec数据报之前，源和目的实体创建了一个网络层的逻辑连接。这个逻辑连接称为安全关联(Security Association, SA). 一个SA是一个单工逻辑连接；也就是说它是从源到目的地单向的。如果两个实体要互相发送安全数据报，则需创建两个SA，每个方向一个。</p>
+<h3 id="8-9-运行安全性：防火墙和入侵检测系统"><a href="#8-9-运行安全性：防火墙和入侵检测系统" class="headerlink" title="8.9 运行安全性：防火墙和入侵检测系统"></a>8.9 运行安全性：防火墙和入侵检测系统</h3><h4 id="8-9-1-防火墙"><a href="#8-9-1-防火墙" class="headerlink" title="8.9.1 防火墙"></a>8.9.1 防火墙</h4><p>防火墙是一个硬件和软件的结合体，它将一个机构的内部网络与整个因特网隔离开，允许一些数据分组通过而阻止另一些分组通过。</p>
+<p>防火墙具有3个目标：</p>
+<ul>
+<li>从外部到内部和从内部到外部的所有流量都通过防火墙</li>
+<li>仅被授权的流量(由本地安全策略定义)允许通过</li>
+<li>防火墙自身免于渗透</li>
+</ul>
+<p>防火墙能够分为3类：</p>
+<ul>
+<li>传统的分组过滤器(traditional packet filetr)<ul>
+<li>在网关路由器设置过滤规则</li>
+<li>过滤决定通常基于下列因素：<ul>
+<li>IP源或目的地址</li>
+<li>在IP数据报中的协议类型字段：TCP、UDP、ICMP、OSPF等</li>
+<li>TCP或UDP的源或目的端口</li>
+<li>TCP标志比特：SYN、ACK等</li>
+<li>ICMP报文类型</li>
+<li>数据报离开和进入网络的不同规则</li>
+<li>对不同路由器接口的不同规则</li>
+</ul>
+</li>
+<li>可以通过过滤所有ACK比特为0的包，这样外部无法发起TCP连接，只有内部能发起TCP连接</li>
+</ul>
+</li>
+<li>状态过滤器(stateful filter)<ul>
+<li>状态过滤器实际地跟踪TCP连接，并使用这种知识做出过滤决定</li>
+<li>状态过滤器通过用一张连接表来跟踪所有进行中的TCP连接</li>
+<li>此时的访问控制列表里多了一列，为是否核对连接。如果是的话，就要核对该TCP连接的状态。</li>
+</ul>
+</li>
+<li>应用程序网关(application gateway)<ul>
+<li>一个应用程序网关(application gateway)是一个应用程序特定的服务器，所有应用程序数据(入和出的)都必须通过它。该服务器还充当中继。</li>
+</ul>
+</li>
+</ul>
+<h4 id="8-9-2-入侵检测系统"><a href="#8-9-2-入侵检测系统" class="headerlink" title="8.9.2 入侵检测系统"></a>8.9.2 入侵检测系统</h4><p>为了检测多种攻击类型，我们需要执行深度分组检查(deep packet inspection)</p>
+<p>当观察到潜在恶意流量时能产生告警的设备成为入侵检测系统(Instrusion Detection System, IDS). </p>
+<p>滤除可疑流量的设备称为入侵防止系统(Intrusion Prevention System, IPS)</p>
+<p>一个机构可能在它的机构网络中部署一个或多个IDS传感器。</p>
+<p>IDS系统大致可分为两类：</p>
+<ul>
+<li>基于特征的系统(signature-based system)<ul>
+<li>基于特征的IDS维护了一个范围广泛的攻击特征数据库。每个特征是与一个入侵活动相关联的规则集。<ul>
+<li>缺点：<ul>
+<li>对新攻击完全缺乏判断力</li>
+<li>即使与一个特征相匹配，它也可能不是一个攻击的结果，因此产生了一个虚假告警</li>
+<li>因为每个分组必须与范围广泛的特征集合相比较，IDS可能处于处理过载状态并因此难以检测出许多恶意分组</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基于异常的系统(anomaly-based system)<ul>
+<li>当基于异常的IDS观察正常运行的流量，它会生成一个流量概况文件。然后，它寻找统计上不寻常的分组流，例如，ICMP分组不寻常的百分比，或端口扫描和ping掠过导致指数性突然增长。</li>
+<li>最大特点：不依赖现有攻击的以前知识</li>
+<li>但区分正常流量和统计异常流量是一个极具挑战性的问题。</li>
+<li>迄今为止，大多数部署的IDS主要是基于特征的，尽管某些IDS包括了某些基于异常的特性</li>
+</ul>
+</li>
+</ul>
+<h2 id="第九章：多媒体网络"><a href="#第九章：多媒体网络" class="headerlink" title="第九章：多媒体网络"></a>第九章：多媒体网络</h2><h3 id="9-1-多媒体网络应用"><a href="#9-1-多媒体网络应用" class="headerlink" title="9.1 多媒体网络应用"></a>9.1 多媒体网络应用</h3><h4 id="9-1-1-视频的性质"><a href="#9-1-1-视频的性质" class="headerlink" title="9.1.1 视频的性质"></a>9.1.1 视频的性质</h4><p>视频最为显著的特点或许是它的高比特率(high bit rate).</p>
+<p>视频有两种冗余：空间冗余和时域冗余。他们都可以用来进行视频压缩(video compression)</p>
+<p>我们可以使用压缩来生成相同视频的多重版本(multiple version) </p>
+<h4 id="9-1-2-音频的性质"><a href="#9-1-2-音频的性质" class="headerlink" title="9.1.2 音频的性质"></a>9.1.2 音频的性质</h4><h4 id="9-1-3-多媒体网络应用的类型"><a href="#9-1-3-多媒体网络应用的类型" class="headerlink" title="9.1.3 多媒体网络应用的类型"></a>9.1.3 多媒体网络应用的类型</h4><ol>
+<li>流式存储音频和视频</li>
+<li>会话式IP语音和视频<ul>
+<li>高度时延敏感(delay-sensitive)</li>
+<li>容忍丢包(loss-tolerant)</li>
+</ul>
+</li>
+<li>流式实况音频和视频</li>
+</ol>
+<h3 id="9-2-流式存储视频"><a href="#9-2-流式存储视频" class="headerlink" title="9.2 流式存储视频"></a>9.2 流式存储视频</h3><p>流式视频系统可分为三种类型：</p>
+<ul>
+<li>UDP流(UDP streaming)</li>
+<li>HTPP流(HTTP streaming)</li>
+<li>适应性HTTP流(adaptive HTTP streaming) </li>
+</ul>
+<p>绝大多数今天的系统应用了HTTP流和适应性HTTP流</p>
+<p>这三种形式的视频流的共同特点是广泛使用了客户端应用缓存，以此来缓解变化的端到端时延和变化的服务器和客户之间可用带宽量的影响。</p>
+<h4 id="9-2-1-UDP流"><a href="#9-2-1-UDP流" class="headerlink" title="9.2.1 UDP流"></a>9.2.1 UDP流</h4><p>UDP流除了服务器到客户的视频流外，两者间还并行地维护一个单独的控制连接，通过该连接，客户可以发送有关会话状态的命令(如暂停、重新开始、重定位等)。</p>
+<p>UDP流有三个重大不足：</p>
+<ul>
+<li>由于服务器和客户端之间的可用带宽无法预测且是变化的，恒定速率UDP流不能够提供连续的播放。</li>
+<li>要求如RTSP服务器这样的媒体控制服务器，增加了部署大规模的按需视频系统的总体成本和复杂性</li>
+<li>许多防火墙配置为阻塞UDP流量</li>
+</ul>
+<h4 id="9-2-2-HTTP流"><a href="#9-2-2-HTTP流" class="headerlink" title="9.2.2 HTTP流"></a>9.2.2 HTTP流</h4><p>客户端应用缓存</p>
+<h3 id="9-3-IP语音"><a href="#9-3-IP语音" class="headerlink" title="9.3 IP语音"></a>9.3 IP语音</h3><h4 id="9-3-1-尽力而为的服务限制"><a href="#9-3-1-尽力而为的服务限制" class="headerlink" title="9.3.1 尽力而为的服务限制"></a>9.3.1 尽力而为的服务限制</h4><p>几乎所有现有的VoIP应用默认运行在UDP上。Skype使用了UDP，除非用户位于阻碍UDP报文段的NAT或防火墙之后。</p>
+<h3 id="9-4-实时会话式应用的协议"><a href="#9-4-实时会话式应用的协议" class="headerlink" title="9.4 实时会话式应用的协议"></a>9.4 实时会话式应用的协议</h3><h4 id="9-4-1-RTP"><a href="#9-4-1-RTP" class="headerlink" title="9.4.1 RTP"></a>9.4.1 RTP</h4><p>RTP通常运行在UDP之上。发送端在RTP分组中封装媒体块，然后在UDP报文段中封装该分组。</p>
+<h4 id="9-4-2-SIP"><a href="#9-4-2-SIP" class="headerlink" title="9.4.2 SIP"></a>9.4.2 SIP</h4><h3 id="9-5-支持多媒体的网络"><a href="#9-5-支持多媒体的网络" class="headerlink" title="9.5 支持多媒体的网络"></a>9.5 支持多媒体的网络</h3>
       
 
       
@@ -187,17 +1264,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -248,7 +1314,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://ricky-ting.github.io/2018/06/07/BST/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://ricky-ting.github.io/2020/01/02/Computer-Network-Review/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -262,18 +1328,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/01/数字逻辑电路笔记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数字逻辑电路笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/14/微积分五讲/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">微积分五讲</div>
+    <a href="/2019/12/02/人工智能/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">人工智能</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -312,8 +1369,8 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
- // id: "https://ricky-ting.github.io/2018/06/07/BST/",
-	id: "Thu Jun 07 2018 15:09:17 GMT+0800",
+ // id: "https://ricky-ting.github.io/2020/01/02/Computer-Network-Review/",
+	id: "Thu Jan 02 2020 10:03:14 GMT+0800",
   owner: 'Ricky-Ting',
   repo: 'ricky-ting.github.io',
   oauth: {

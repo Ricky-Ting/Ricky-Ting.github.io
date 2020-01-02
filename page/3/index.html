@@ -154,6 +154,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-PA拾慧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/16/PA拾慧/">PA拾慧</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/16/PA拾慧/" class="archive-article-date">
+  	<time datetime="2018-09-16T15:03:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>天将降PA于斯人也，必先使其STFW,RTFM,RTFSC, 所以动心忍性，曾益其所不能</strong></p>
+<h1 id="tmux-分屏工具"><a href="#tmux-分屏工具" class="headerlink" title="tmux(分屏工具)"></a>tmux(分屏工具)</h1><p>Prefix: <code>Ctrl+B</code></p>
+<p>左右分屏:<code>Prefix + %</code> 上下分屏: <code>Prefix + &quot;</code></p>
+<p>切换: <code>Prefix + 方向键</code></p>
+<h1 id="Vim配置"><a href="#Vim配置" class="headerlink" title="Vim配置"></a>Vim配置</h1><h2 id="vim分屏："><a href="#vim分屏：" class="headerlink" title="vim分屏："></a>vim分屏：</h2><p><code>Ctrl+W s</code>:上下分割当前打开的文件</p>
+<p><code>:sp filename</code>:上下分割，并打开一个新的文件</p>
+<p><code>Ctrl+W v</code>: 左右分割当前打开的文件</p>
+<p><code>:vsp filename</code>: 左右分割，并打开一个新的文件</p>
+<p><code>Ctrl+W l,h,k,j</code>: 在窗格见切换</p>
+<h2 id="vim函数跳转"><a href="#vim函数跳转" class="headerlink" title="vim函数跳转:"></a>vim函数跳转:</h2><ol>
+<li>安装ctags: ‘sudo apt-get install ctags’</li>
+<li>测试ctags是否安装成功: <code>whereis ctags</code></li>
+<li>为源代码生成tags文件，建议在项目根目录下生成: <code>ctags -R</code>,更多高级选项请自行查询或man</li>
+<li>配置vimrc: <code>sudo vim ~/.vimrc</code></li>
+<li>修改vimrc: 加入下面两行 </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set tags=[path]/tags</span><br><span class="line">set tags=./tags,tags;$HOME</span><br></pre></td></tr></table></figure>
+<h2 id="vim配置选项"><a href="#vim配置选项" class="headerlink" title="vim配置选项"></a>vim配置选项</h2><p><code>set laststatus=2</code></p>
+<p>跳转快捷键: <code>Ctrl+]</code>跳转,  <code>Ctrl+t</code> or <code>Ctrl+o</code>返回.</p>
+<p>在终端里输入<code>vim -t functionname</code> 可以直接跳转至你想跳转的函数.(来自StardustDL的补充)</p>
+<p>vim函数跳转部分参考<a href="https://mengzelev.github.io/2018/09/12/pa-inspirations/" target="_blank" rel="noopener">Mengzelve’s Blog</a> </p>
+<h1 id="C语言相关"><a href="#C语言相关" class="headerlink" title="C语言相关"></a>C语言相关</h1><p>顺时针法则</p>
+<p>strcmp返回值为0是两个字符串相等</p>
+<p>结构体里利用位域实现位级访问</p>
+<h1 id="Linux相关"><a href="#Linux相关" class="headerlink" title="Linux相关"></a>Linux相关</h1><p>linux里的管道(pipeline)将不同程序的输入输出连起来。</p>
+<p><code>time ./a.out</code> 可以测程序运行的时间。</p>
+<p>在shell中使用终端设置别名:<code>alias cdblog=&#39;cd ~/Desktop/Github/Blog&#39;</code></p>
+<p>统计代码行数: <code>find . | grep -E &#39;\.c$|\.h$&#39; | xargs cat | wc -l</code></p>
+<p>统计代码行数(不含空格): <code>find . | grep -E &#39;\.c$|\.h$&#39; | xargs cat | grep -v ‘^$’ | wc -l</code></p>
+<h1 id="一些好的文章："><a href="#一些好的文章：" class="headerlink" title="一些好的文章："></a>一些好的文章：</h1><p><a href="https://i.linuxtoy.org/docs/guide/index.html" target="_blank" rel="noopener">开源世界旅行手册</a></p>
+<p><a href="http://songshuhui.net/archives/70194" target="_blank" rel="noopener">计算的极限</a></p>
+<p><a href="https://eli.thegreenplace.net/2011/01/23/how-debuggers-work-part-1/#id7" target="_blank" rel="noopener">How debuggers work</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/16/PA拾慧/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Debian-install-sudo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -876,85 +981,6 @@
 
 
   
-    <article id="post-数字逻辑电路笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/01/数字逻辑电路笔记/">数字逻辑电路笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/01/数字逻辑电路笔记/" class="archive-article-date">
-  	<time datetime="2018-07-01T04:55:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="数字逻辑电路笔记"><a href="#数字逻辑电路笔记" class="headerlink" title="数字逻辑电路笔记"></a>数字逻辑电路笔记</h1><p>给定输入 给出输出 用布尔逻辑实现</p>
-<p>晶体管的开关特性是数字电路研究的重点。</p>
-<p>数字逻辑中考虑电路模拟的特性，如时延问题。</p>
-<p>数字设计中一些层次问题</p>
-        
-          <a class="article-more-a" href="/2018/07/01/数字逻辑电路笔记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/01/数字逻辑电路笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -969,7 +995,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Ricky-Ting
+    		&copy; 2020 Ricky-Ting
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1081,6 +1107,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
@@ -1089,15 +1123,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">solution</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1106,10 +1136,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">OJ</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTex</a>
               </li>
              
               <li class="article-tag-list-item">
