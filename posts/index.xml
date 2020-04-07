@@ -15,9 +15,8 @@
 			<pubDate>Tue, 07 Apr 2020 22:46:23 +0800</pubDate>
 			
 			<guid>https://ricky-ting.github.io/posts/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%AE%B0%E5%BD%95/</guid>
-			<description>博客迁移记录 前言 为什么要迁移博客 之前的博客效果不是很满意(太丑)，文章的质量也不是很满意(基本都是抄抄书，记记笔记)，正好改头换面，希望后面</description>
-			<content type="html"><![CDATA[<h1 id="博客迁移记录">博客迁移记录</h1>
-<h2 id="前言">前言</h2>
+			<description>前言 为什么要迁移博客 之前的博客效果不是很满意(太丑)，文章的质量也不是很满意(基本都是抄抄书，记记笔记)，正好改头换面，希望后面能提高文章的</description>
+			<content type="html"><![CDATA[<h2 id="前言">前言</h2>
 <h3 id="为什么要迁移博客">为什么要迁移博客</h3>
 <p>之前的博客效果不是很满意(<del>太丑</del>)，文章的质量也不是很满意(<del>基本都是抄抄书，记记笔记</del>)，正好改头换面，希望后面能提高文章的质量。</p>
 <h3 id="从hexo到hugo">从Hexo到Hugo</h3>
@@ -38,12 +37,49 @@
 ├── layouts 			# 生成html用的模板文件
 ├── static 				# 放一些图片、CSS、js等静态资源文件
 └── themes 				# 存放主题
-</code></pre><h3 id="安装主题">安装主题</h3>
+</code></pre><p>建议在这个时候进行<code>git init</code>, 为后续的博客备份做准备</p>
+<h3 id="安装主题">安装主题</h3>
 <p>我这里选择的是Hermit主题</p>
-<pre><code>git clone https://github.com/Track3/hermit.git themes/hermit
+<pre><code>git submodule add https://github.com/Track3/hermit.git themes/hermit
 </code></pre><p>覆盖原有的配置文件</p>
 <pre><code>cp cp themes/hermit/exampleSite/config.toml ./
 </code></pre><p>然后根据配置文件中的提示做相应的修改。</p>
+<h2 id="旧博文迁移">旧博文迁移</h2>
+<p>就博文的head是用hexo生成的，要转换成hugo的话，主要是时间的格式，还有多了<code>draft</code>字段，所以只要改改head就可以了。</p>
+<h2 id="迁移到github上">迁移到Github上</h2>
+<p>你可以首先在github上建立一个<code>Blog</code>私有仓库，作为整个blog的备份。</p>
+<p>将本地的仓库关联到github上：</p>
+<pre><code>git remote add origin git@github.com:&lt;your-username&gt;/Blog.git
+</code></pre><p>然后<code>public</code>和github pages相关联：</p>
+<pre><code>git submodule add -b master git@github.com &lt;your-username&gt;/&lt;your-username&gt;.github.io.git public
+
+</code></pre><p>然后就可以进行部署了：</p>
+<pre><code>cd public
+git add .
+git commit -m &quot;msg&quot;
+git push origin master
+cd ..
+</code></pre><p>我们可以把这个写进一个自动化脚本里：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Generating your websites</span>
+<span class="nb">echo</span> <span class="s2">&#34;Generating websites&#34;</span>
+
+<span class="c1"># Build website</span>
+hugo -t hermit
+
+<span class="c1"># commit public</span>
+<span class="nb">cd</span> public
+git add .
+<span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;update website `date`&#34;</span>
+git commit --allow-empty  -m <span class="s2">&#34;</span><span class="nv">$msg</span><span class="s2">&#34;</span>
+
+<span class="c1"># push to origin</span>
+git push origin master
+
+<span class="c1"># Back to Blog</span>
+<span class="nb">cd</span> ..
+</code></pre></div><h2 id="后续待做">后续待做</h2>
+<p>为博客添加评论</p>
+<p>希望为博客添加自动化部署，每次commit就能自动发布。</p>
 ]]></content>
 		</item>
 		
