@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+<meta itemprop="name" content="2018 Spring Problem Solving 2">
+<meta itemprop="description" content="2018春问题求解笔记 2-1 算法正确性(2018.3.7) 程序和算法不等同 算法正确性是基础 &ldquo;Program testing can be used to show the presence of bugs, but never to show their absence!&rdquo; 封闭环境内同一个输入">
+<meta itemprop="datePublished" content="2018-07-08T09:12:08&#43;08:00" />
+<meta itemprop="dateModified" content="2018-07-08T09:12:08&#43;08:00" />
+<meta itemprop="wordCount" content="1853">
+
+
+
+<meta itemprop="keywords" content="untagged," /><meta property="og:title" content="2018 Spring Problem Solving 2" />
+<meta property="og:description" content="2018春问题求解笔记 2-1 算法正确性(2018.3.7) 程序和算法不等同 算法正确性是基础 &ldquo;Program testing can be used to show the presence of bugs, but never to show their absence!&rdquo; 封闭环境内同一个输入" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ricky-ting.github.io/notes/2018-spring-problem-solving-2/" />
+<meta property="article:published_time" content="2018-07-08T09:12:08+08:00" />
+<meta property="article:modified_time" content="2018-07-08T09:12:08+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2018 Spring Problem Solving 2"/>
+<meta name="twitter:description" content="2018春问题求解笔记 2-1 算法正确性(2018.3.7) 程序和算法不等同 算法正确性是基础 &ldquo;Program testing can be used to show the presence of bugs, but never to show their absence!&rdquo; 封闭环境内同一个输入"/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>2018 Spring Problem Solving 2</title>
+	<link rel="stylesheet" href="https://ricky-ting.github.io/css/style.min.657bcb7af31123e4156b1a3d2ff60a636717e54ead74f882136b5114cf72b55e.css" integrity="sha256-ZXvLevMRI+QVaxo9L/YKY2cX5U6tdPiCE2tRFM9ytV4=" crossorigin="anonymous">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://ricky-ting.github.io">Ricky Ting&#39;s Blog</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="https://ricky-ting.github.io/posts/">Posts</a>
+				<a href="https://ricky-ting.github.io/notes/">Notes</a>
+				<a href="https://ricky-ting.github.io/about-hugo/">About</a>
+				<a href="https://ricky-ting.github.io/links/">Links</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="toc-btn" class="hdr-btn desktop-only-ib" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg></button><span class="hdr-social hide-in-mobile"><a href="https://github.com/Ricky-Ting/" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://ricky-ting.github.io/posts/">Posts</a></li>
+			<li><a href="https://ricky-ting.github.io/notes/">Notes</a></li>
+			<li><a href="https://ricky-ting.github.io/about-hugo/">About</a></li>
+			<li><a href="https://ricky-ting.github.io/links/">Links</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>2018 Spring Problem Solving 2</h1>
+		<div class="content">
+			<h1 id="2018春问题求解笔记">2018春问题求解笔记<a href="#2018春问题求解笔记" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<h2 id="2-1-算法正确性201837">2-1 算法正确性(2018.3.7)<a href="#2-1-算法正确性201837" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>程序和算法不等同</p>
+<p>算法正确性是基础</p>
+<!-- raw HTML omitted -->
+<p>&ldquo;Program testing can be used to show the presence of bugs, but never to show their absence!&rdquo;</p>
+<p>封闭环境内同一个输入会产生同样的错误，但网络环境以及并行下不一定。错误的难重现</p>
+<p>部分正确性(if terminates)和完全正确性(indeed terminates)</p>
+<p>循环不变式</p>
+<p>show converge</p>
+<p>assertion和checkpoint：我们可以在算法的任意位置，设置assertion，这个“位置”就是check point</p>
+<p>证明就是断言的序列</p>
+<p>一条链</p>
+<p>递归：数学归纳法</p>
+<p>证明多个变量的数学归纳法：$\forall$ m, 对n做归纳</p>
+<h3 id="习题讲解2018312">习题讲解(2018.3.12)<a href="#习题讲解2018312" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>totalwork = workdone + worktodo</p>
+<p>(1)-&gt;(2)-&gt;(2&rsquo;)-&gt;(3)-&gt;(4)</p>
+<h3 id="open-topic">open topic<a href="#open-topic" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<h4 id="1证明插入排序的完全正确性">1.证明插入排序的完全正确性<a href="#1证明插入排序的完全正确性" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>两层循环 内层 外层</p>
+<h4 id="2证明旋转汉诺塔的完全正确性">2.证明旋转汉诺塔的完全正确性<a href="#2证明旋转汉诺塔的完全正确性" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>状态数 操作数：操作数&gt;状态数，则非最优解</p>
+<h2 id="2-2-算法的效率">2-2 算法的效率<a href="#2-2-算法的效率" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<h3 id="open-topic-1">open topic<a href="#open-topic-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<h4 id="algorithmic-gap">Algorithmic Gap<a href="#algorithmic-gap" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>Decision Tree</p>
+<p>Adversary Argument</p>
+<h2 id="2-3-组合与计数">2-3 组合与计数<a href="#2-3-组合与计数" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>计数在算法分析中很重要</p>
+<p>抽象</p>
+<p>加法原理 乘法原理</p>
+<p>kth falling factorial power of n</p>
+<p>Pascal’s triangle</p>
+<p>Pascal relationship</p>
+<p>multiset：放入k个后取</p>
+<p>等价关系用于计数 等价类 商集</p>
+<h2 id="2-4-分治法与递归">2-4 分治法与递归<a href="#2-4-分治法与递归" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>Divide-and-Conquer: 3steps(Divid -&gt; Conquer -&gt; Combine)</p>
+<p>递归中subproblem出现的两种case:recursive case, base case</p>
+<h3 id="three-methods-for-solving-recurrences">three methods for solving recurrences:<a href="#three-methods-for-solving-recurrences" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<ul>
+<li>substitution method</li>
+<li>recursion-tree method</li>
+<li>master method</li>
+</ul>
+<h3 id="maximum-subarray-problem">maximum-subarray problem<a href="#maximum-subarray-problem" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>consider the daily change in price</p>
+<p>divide-and-conquer解法: 把序列一分为二，然后最长的有三种情况，全在左边一半，全在右边一半，横跨中点。然后重点如何处理第三种情况，在中点向两边分别找，然后合并。复杂度为O(nlogn).</p>
+<p>有O(n)算法 类似于DP</p>
+<h3 id="strassens-algorithm-for-matrix-multiplication">Strassen&rsquo;s algorithm for matrix multiplication<a href="#strassens-algorithm-for-matrix-multiplication" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>$O(n^3) -&gt; O(n^{2.81})[O(n^{lg7})]$</p>
+<h3 id="substituition-method">substituition method<a href="#substituition-method" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>Guess and then prove. Mathematical Induction.</p>
+<ol>
+<li>Guess the form of the solution.</li>
+<li>Use mathemarical induction to find the constants and show that the solution works.</li>
+</ol>
+<p>一些证明中的小技巧:改变起始项，更换变量</p>
+<h3 id="recursion-tree-method">Recursion-tree method<a href="#recursion-tree-method" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>A recursion-tree is best used to generate a good guess.</p>
+<p>Analyse and then sum.</p>
+<h3 id="master-method">master method<a href="#master-method" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>prove</p>
+<p>为什么分治法能降低时间复杂度？</p>
+<h2 id="2-5-递归及其数学基础">2-5 递归及其数学基础<a href="#2-5-递归及其数学基础" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>求解精确解</p>
+<h3 id="mathematical-induction">Mathematical Induction<a href="#mathematical-induction" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<ul>
+<li>base case</li>
+<li>inductive hypothesis</li>
+<li>inductive step</li>
+<li>inductive conclusion</li>
+</ul>
+<p>The terms weak and strong arise from what is assumed in the inductive hypothesis. Adding more restrictions strengthens an assertion, while removing restrictions weakens the assertion</p>
+<p>recursion和mathematical induction有密切联系
+一个自上而下(分解问题) 一个自下而上(组合问题)</p>
+<p>structural induction</p>
+<p>triangulated polygon
+Ear Lemma</p>
+<p>等比数列</p>
+<p>ﬁrst-order linear recurrence ：T(n) = f (n)T(n − 1) + g(n)</p>
+<p>巧用微积分知识</p>
+<p>解一阶线性：直接展开</p>
+<p>解线性齐次：解特征方程</p>
+<h2 id="2-6-算法方法">2-6 算法方法<a href="#2-6-算法方法" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>问题求解：压缩解空间</p>
+<p>Maximal Polygon Distance问题</p>
+<p>Minimal Spanning Tree</p>
+<p>Greedy DP(本质上还是穷竭搜索 但空间换时间)</p>
+<p>DFS BFS</p>
+<p>Bin packing NPC问题</p>
+<h2 id="2-7-离散概率">2-7 离散概率<a href="#2-7-离散概率" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>Complementary Probabilities</p>
+<p>The Uniform Probability Distribution</p>
+<p>(Principle of Inclusion and Exclusion for Probability)
+Proof1: 算P(x)的系数 用二项式定理 Proof2:待理解</p>
+<p>Conditional probability: P(E|F)=P(E \cap F) / P(F) [P(E|F)=P(E) when P(F)=0]</p>
+<p>We say E is independent of F if P(E|F) = P(E). 我认为P(E|F)不是由公式导出的。存疑</p>
+<p><strong>Bayes’ Theorem</strong>：P(E|F)P(F) = P(F|E)P(E).</p>
+<p>product principle for independent probabilities: P(E \cap F) = P(E)P(F)</p>
+<p>independent trials process</p>
+<p>our model of hashing is an independent trials process.</p>
+<p>probability tree</p>
+<p>A random variable for an experiment with a sample space S is a function that assigns a number to each element of S.</p>
+<p>Bernoulli trials process</p>
+<p>expected value</p>
+<p>indicator random variable</p>
+<p>The Number of Trials until the First Success</p>
+<p>指示器随机变量提供了一个便利的工具实现事件A发生的概率和期望之间的转换：求某个随机变量的期望往往可以简化为若干个和该随机变量相关的事件的概率之和</p>
+<h2 id="2-8-概率分析与随机化算法">2-8 概率分析与随机化算法<a href="#2-8-概率分析与随机化算法" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>conditional expected value</p>
+<p>Randomized Algorithms</p>
+<p>Quicksort分析</p>
+<p>normal curve</p>
+<p>variance</p>
+<p>Central limit theorem.</p>
+<p>normal distribution</p>
+<h2 id="2-9-排序与选择">2-9 排序与选择<a href="#2-9-排序与选择" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>The Coupon Collector&rsquo;s Problem</p>
+<p>$n log n + (m-1)nloglogn + nC_m + o(n), n \rightarrow \infty, m fixed$</p>
+<p>Tony Hoare: Quicksort, Hoare Logic: {P}S{Q}, null pointer &ldquo;I call it my billion-dollar mistake&rdquo;.</p>
+<p>证明下界：1. decision tree 2. adversary strategy</p>
+<p>Adversary Argument：证下界</p>
+<p>检测01、同时找最大最小、找第二小，k=3 is still open， 找中间值</p>
+<h2 id="2-10-基本数据结构">2-10 基本数据结构<a href="#2-10-基本数据结构" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>tail指向最后一个元素的后一个 为什么</p>
+<p>Why Numbering Should Start at Zero(EWD831)</p>
+<h2 id="2-11-堆与堆排序">2-11 堆与堆排序<a href="#2-11-堆与堆排序" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<h2 id="2-12-hashing方法">2-12 Hashing方法<a href="#2-12-hashing方法" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<h2 id="2-13-搜索树">2-13 搜索树<a href="#2-13-搜索树" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>A tree is a recursive abstract data type</p>
+<h3 id="binary-search-tree">Binary Search Tree<a href="#binary-search-tree" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>Operations: Search(用while), Minimum(当子节点不为nil一直下去), Maximum, Predecessor(分两种情况:有右子树 无右子树), Successor, Insert and Delete(分三种情况).  Transplant(不管子节点)</p>
+<p>The expected height of a randomly built binary search tree is $O(\lg{n})$.</p>
+<p>B-trees are particularly good for maintaining databases on secondary(disk) storage</p>
+<h4 id="binary-search-tree-property">Binary-search-tree property<a href="#binary-search-tree-property" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>If y is a node of left subtree of x, then $y.key \le x.key$.</p>
+<p>If x is a node of right subtree of x, then $y.key \ge x.key$</p>
+<h4 id="tree-walk">tree walk<a href="#tree-walk" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>inorder tree walk   Inorder-tree-walk(T.root)</p>
+<pre><code>INORDER-TREE-WALK(x)
+if x!=NIL
+	INORDER-TREE-WALK(x.left)
+	print x.key
+	INORDER-TREE-WALK(x.right)
+</code></pre><p>如何证明其正确性
+效率$\Theta(n) 用master直观 用替代法证明$</p>
+<p>preorder tree walk</p>
+<p>postorder tree walk.</p>
+<h4 id="tree-search-and-tree-insert">Tree-Search and Tree-Insert<a href="#tree-search-and-tree-insert" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<h4 id="minimum-and-maximum">Minimum and maximum<a href="#minimum-and-maximum" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<h4 id="successor-and-predecessor">Successor and Predecessor<a href="#successor-and-predecessor" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<pre><code>Tree-Successor(x)
+if x.right!=NIL
+	return Tree-Minimum(x.right)
+y=x.p
+while y!=NIL &amp;&amp; x=y.right
+	x=y
+	y=x.p
+return y
+</code></pre><h4 id="insertion-and-deletion">Insertion and Deletion<a href="#insertion-and-deletion" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>插入找空位就可</p>
+<p>删除分三种情况：没有孩子(直接删除)、有一个孩子(直接登基)、有两个孩子(找后继)</p>
+<pre><code>Transplant(T,u,v)
+if u.p==NIL
+	T.root=v
+elseif u==u.p.left
+	u.p.left=v
+else
+	u.p.right=v
+if v!=NIL
+	v.p=u.p
+</code></pre><pre><code>Tree-Delete(T,z)
+if z.left==NIL
+	Transplant(T,z,z.right)
+elseif z.right==NIL
+	Transplant(T,z,z.left)
+else
+	y=Tree-Minimum(z.right)
+	if y.p!=z
+		Transplant(T,y,y.right)
+		y.right=z.right
+		y.right.p=y
+	Transplant(T,z,y)
+	y.left=z.left
+	y.left.p=y
+	
+</code></pre><h3 id="red-black-tree">Red Black Tree<a href="#red-black-tree" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<h4 id="red-black-properties">red-black properties<a href="#red-black-properties" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<ol>
+<li>Every node is either red or black</li>
+<li>The root is black</li>
+<li>Every leaf(NIL) is black</li>
+<li>If a node is red, then both its children are black.</li>
+<li>For each node, all simple paths from the node to descendant leaves contain the same number of black nodes.</li>
+</ol>
+<p>A red-black tree with n internal nodes has height at most $2\lg{n+1}$</p>
+<h4 id="rotations">Rotations<a href="#rotations" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<pre><code>Left-Rotate(T,x)
+y=x.right
+x.right=y.left
+if y.left!=T.nil
+	y.left.p=x
+y.p=x.p
+if x.p==T.nil
+	T.root=y
+elseif x==x.p.left
+	x.p.left=y
+else
+	x.p.right=y
+y.left=x
+x.p=y
+</code></pre><p>In every n-node binary search tree, there are exactly n-1 possible rotations.</p>
+<h4 id="insertion">Insertion<a href="#insertion" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<pre><code>RB-INSERT(T,z)
+y=T.nil
+x=T.root
+while x!=T.nil
+	y=x
+	if z.key&lt;x.key
+		x=x.left
+	else x=x.right
+z.p=y
+if y==T.nil
+	T.root=z
+elseif z.key&lt;y.key
+	y.left=z
+else y.right=z
+z.left=T.nil
+z.right=T.nil
+z.color = RED
+RB-INSERT-FIXUP(T,z)
+</code></pre><pre><code>RB-INSERT-FIXUP(T,z)
+while z.p.color==RED
+	if z.p==z.p.p.left
+		y=z.p.p.right
+		if y.color==RED
+			z.p.color=BLACK				//case1
+			y.color=BLACK					//case1
+			z.p.p.color=RED				//case1
+			z=z.p.p						//case1
+		else if z==z.p.right			
+				z=z.p						//case2
+				LEFT-ROTATE(T,z)			//case2
+			z.p.color=BLACK				//case3
+			z.p.p.color=RED				//case3
+			RIGHT-ROTATE(T,z.p.p)		//case3
+		else (same as then clause with &quot;right&quot; and &quot;left&quot; exchanged) 
+T.root.color=BLACK
+</code></pre><h2 id="2-14-b树">2-14 B树<a href="#2-14-b树" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<h2 id="appendix-c">Appendix C<a href="#appendix-c" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>Binomial bounds: C_n^k &gt;= (n/k)^k</p>
+<p>对于自然数集N: <code>E[X]=\sum_{i=0}^{\infty} i*Pr{X=i} =\sum_{i=0}^{\infty} i*(Pr{X&gt;=i}-Pr{X&gt;=i+1}) = \sum_{i=1}^{\infty} Pr{X&gt;=i}</code></p>
+<p>Var[X]=E[X^2]-E^2[X]</p>
+<p>Var[aX]=a^2Var[X]</p>
+<p>Var[X+Y]=Var[X]+Var[Y]</p>
+
+		</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2020 <a href="https://ricky-ting.github.io">Ricky Ting</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://ricky-ting.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+
+	<script src="https://ricky-ting.github.io/js/bundle.min.4a9a0ac3d2217822c7865b4161e6c2a71de1d70492264337755427898dd718f6.js" integrity="sha256-SpoKw9IheCLHhltBYebCpx3h1wSSJkM3dVQniY3XGPY=" crossorigin="anonymous"></script>
+	
+
+</body>
+
+</html>

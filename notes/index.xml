@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on Ricky Ting&#39;s Blog</title>
+    <link>https://ricky-ting.github.io/notes/</link>
+    <description>Recent content in Notes on Ricky Ting&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 04 Jan 2020 15:16:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://ricky-ting.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Digital Image Processing Review</title>
+      <link>https://ricky-ting.github.io/notes/digital-image-processing-review/</link>
+      <pubDate>Sat, 04 Jan 2020 15:16:00 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/notes/digital-image-processing-review/</guid>
+      <description>数字图像处理 课程概述 参考教材 数字图像处理(冈萨雷斯) 考核 三个作业(15+15+10=40%) 期末考试(60%) 课程主页：http://lam</description>
+    </item>
+    
+    <item>
+      <title>Computer Network Review</title>
+      <link>https://ricky-ting.github.io/notes/computer-network-review/</link>
+      <pubDate>Thu, 02 Jan 2020 10:03:14 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/notes/computer-network-review/</guid>
+      <description>&lt;h1 id=&#34;计算机网络&#34;&gt;计算机网络&lt;/h1&gt;
+&lt;h2 id=&#34;课程概述&#34;&gt;课程概述&lt;/h2&gt;
+&lt;h3 id=&#34;参考教材&#34;&gt;参考教材&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;James F. Kurose, Keith W. Ross. 计算机网络-自顶向下方法(7th)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;William Stallings. 数据与计算机通信(10th)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;课程考核&#34;&gt;课程考核&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;分组实践，课程报告 (30%)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;课后作业(30%)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;期末考试(40%)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;mailto:nju2019autumn@163.com&#34;&gt;nju2019autumn@163.com&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;课程内容&#34;&gt;课程内容&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;端网络&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;前端网络：客户端&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;后端网络：服务端&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;骨干网&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>人工智能</title>
+      <link>https://ricky-ting.github.io/notes/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</link>
+      <pubDate>Mon, 02 Dec 2019 22:38:13 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/notes/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</guid>
+      <description>人工智能 课程概述 参考教材 George F. Luger, Artificial Intelligence: Structures and Strategies for Complex Problem Solving. Fifth Edition, Addison Wesley. Stuart Russell and Peter Norvig. Artificial Intelligence: A Modern Approach. Third Edition. 参考网站 CMU, http://www.cs.cmu.edu MIT, http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-034-artificial-intelligence-fall-2010/index.htm. Stanford University, http://www.stanford.edu/class/cs221/. 前8周讲授完毕，并进行期中闭卷考试(4</description>
+    </item>
+    
+    <item>
+      <title>SQL学习</title>
+      <link>https://ricky-ting.github.io/notes/sql%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Thu, 14 Nov 2019 14:22:19 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/notes/sql%E5%AD%A6%E4%B9%A0/</guid>
+      <description>SQL学习 MySQL相关使用 show databases; --展示所有数据库 use db1; --使用db1数据库 show tables; --展示当前数据库里所有的表 describe tb1; --展示tb1的相关信息 /*这</description>
+    </item>
+    
+    <item>
+      <title>数据通信期中复习</title>
+      <link>https://ricky-ting.github.io/notes/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</link>
+      <pubDate>Mon, 29 Apr 2019 22:24:02 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/notes/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</guid>
+      <description>数据通信期中复习 通信模型： 源点-&amp;gt;发送器-&amp;gt;传输系统-&amp;gt;接收器-&amp;gt;终点 单工、半双工、双工。 数字通信系统:利用数字信号</description>
+    </item>
+    
+    <item>
+      <title>数据通信笔记</title>
+      <link>https://ricky-ting.github.io/notes/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Tue, 12 Mar 2019 14:02:49 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/notes/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%AC%94%E8%AE%B0/</guid>
+      <description>数据通信笔记 课程介绍 课程主页：http://cs.nju.edu.cn/yafeng/ 考核形式： 课程习题：考试重点(6-8次) 课外作业：文档</description>
+    </item>
+    
+    <item>
+      <title>问题求解2019Spring</title>
+      <link>https://ricky-ting.github.io/notes/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A32019spring/</link>
+      <pubDate>Wed, 06 Mar 2019 10:26:24 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/notes/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A32019spring/</guid>
+      <description>问题求解 2019Spring 4.1线性规划 In linear programming, we do not allow strict inequalities. minimization linear program and maximization program The simplex algorithm does not run in polynomial time in the worst case, but it is fairly efficient and widely used in practice. We use two forms, standard and slack. Informally, a linear program in standard form is the maximization of a linear</description>
+    </item>
+    
+    <item>
+      <title>MATLAB学习笔记</title>
+      <link>https://ricky-ting.github.io/notes/matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 19 Jan 2019 15:50:56 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/notes/matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>MATLAB学习笔记 常用命令 quit: 退出命令 clc: 擦除MATLAB工作窗中的所有显示内容，相当于命令行中的clear clf: 擦除MATLAB的当前图形窗中的</description>
+    </item>
+    
+    <item>
+      <title>Summary of definitions and theorems in graph theory</title>
+      <link>https://ricky-ting.github.io/notes/summary-of-definitions-and-theorems-in-graph-theory/</link>
+      <pubDate>Mon, 15 Oct 2018 22:06:07 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/notes/summary-of-definitions-and-theorems-in-graph-theory/</guid>
+      <description>Summary of definitions and theorems in graph theory Introduction 1.1 Graphs and Graph Models A Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets of $V$ called edges. The ses $V$ and $E$ are the vertex set and edge set of $G$, respectively. Write $G=(V,E)$. Two graphs $G$ and $H$ are equal if $V(G)=V(H)$ and $E(G)=E(H)$, in which case</description>
+    </item>
+    
+    <item>
+      <title>数学之美笔记</title>
+      <link>https://ricky-ting.github.io/notes/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 24 Aug 2018 19:18:55 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/notes/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E%E7%AC%94%E8%AE%B0/</guid>
+      <description>数学之美笔记 一、统计语言模型 利用数学犯法来解决自然语言处理问题，而非传统的语法分析。基于概率的模型 P(S)=P(w1)P(w2|w1)P(w3|w1&amp;amp;w2)&amp;hellip;P(wn|w1&amp;amp;w2&amp;hellip;&amp;amp;wn-1) 利用马尔可夫假设，可以简化为： P(S)=P(w1)P(w2|w1)P(w3|w2)&amp;hellip;P(wi|wi-1) 二、谈谈</description>
+    </item>
+    
+  </channel>
+</rss>

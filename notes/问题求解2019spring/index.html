@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+<meta itemprop="name" content="问题求解2019Spring">
+<meta itemprop="description" content="问题求解 2019Spring 4.1线性规划 In linear programming, we do not allow strict inequalities. minimization linear program and maximization program The simplex algorithm does not run in polynomial time in the worst case, but it is fairly efficient and widely used in practice. We use two forms, standard and slack. Informally, a linear program in standard form is the maximization of a linear">
+<meta itemprop="datePublished" content="2019-03-06T10:26:24&#43;08:00" />
+<meta itemprop="dateModified" content="2019-03-06T10:26:24&#43;08:00" />
+<meta itemprop="wordCount" content="3567">
+
+
+
+<meta itemprop="keywords" content="untagged," /><meta property="og:title" content="问题求解2019Spring" />
+<meta property="og:description" content="问题求解 2019Spring 4.1线性规划 In linear programming, we do not allow strict inequalities. minimization linear program and maximization program The simplex algorithm does not run in polynomial time in the worst case, but it is fairly efficient and widely used in practice. We use two forms, standard and slack. Informally, a linear program in standard form is the maximization of a linear" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ricky-ting.github.io/notes/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A32019spring/" />
+<meta property="article:published_time" content="2019-03-06T10:26:24+08:00" />
+<meta property="article:modified_time" content="2019-03-06T10:26:24+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="问题求解2019Spring"/>
+<meta name="twitter:description" content="问题求解 2019Spring 4.1线性规划 In linear programming, we do not allow strict inequalities. minimization linear program and maximization program The simplex algorithm does not run in polynomial time in the worst case, but it is fairly efficient and widely used in practice. We use two forms, standard and slack. Informally, a linear program in standard form is the maximization of a linear"/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>问题求解2019Spring</title>
+	<link rel="stylesheet" href="https://ricky-ting.github.io/css/style.min.657bcb7af31123e4156b1a3d2ff60a636717e54ead74f882136b5114cf72b55e.css" integrity="sha256-ZXvLevMRI+QVaxo9L/YKY2cX5U6tdPiCE2tRFM9ytV4=" crossorigin="anonymous">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://ricky-ting.github.io">Ricky Ting&#39;s Blog</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="https://ricky-ting.github.io/posts/">Posts</a>
+				<a href="https://ricky-ting.github.io/notes/">Notes</a>
+				<a href="https://ricky-ting.github.io/about-hugo/">About</a>
+				<a href="https://ricky-ting.github.io/links/">Links</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="toc-btn" class="hdr-btn desktop-only-ib" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg></button><span class="hdr-social hide-in-mobile"><a href="https://github.com/Ricky-Ting/" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://ricky-ting.github.io/posts/">Posts</a></li>
+			<li><a href="https://ricky-ting.github.io/notes/">Notes</a></li>
+			<li><a href="https://ricky-ting.github.io/about-hugo/">About</a></li>
+			<li><a href="https://ricky-ting.github.io/links/">Links</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>问题求解2019Spring</h1>
+		<div class="content">
+			<h1 id="问题求解-2019spring">问题求解 2019Spring<a href="#问题求解-2019spring" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<h2 id="41线性规划">4.1线性规划<a href="#41线性规划" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>In linear programming, we do not allow strict inequalities.</p>
+<p><strong>minimization linear program</strong> and <strong>maximization program</strong></p>
+<p>The simplex algorithm does not run in polynomial time in the worst case, but it is fairly efficient and widely used in practice.</p>
+<p>We use two forms, <strong>standard</strong> and <strong>slack</strong>.</p>
+<p>Informally, a linear program in standard form is the maximization of a linear function subject to linear inequalities, whereas a linear program in slack form is the maximization of a linear function subject to linear equalities.</p>
+<!-- raw HTML omitted -->
+<p>We call the feasible region formed by the intersection of these half-spaces a <strong>simplex</strong>.</p>
+<p>The <strong>simplex</strong> algorithm starts at some vertex of the simplex and performs a sequence of iterations. In each iteration, it moves along an edge of the simplex from a current vertex to a neighboring vertex whose objective value is no smaller than that of the current vertex(and usually is larger.) The simplex algorithm terminates when it reaches a local maximum, which is a vertex from which all neighboring vertices have a smaller objective value.</p>
+<p>If we add to a linear program the additional requirement that all variables take on integer values, we have an <strong>integer linear program</strong>.</p>
+<p>An arbitrary linear program need not have nonnegativity constraints, but standard form requires them.</p>
+<p>We say that two maximization linear programs $L$ and $L'$ are <strong>equivalent</strong> if for each feasible solution $\bar{x}$ to $L$ with objective value $z$, there is a corresponding feasible solution $\bar{x}&lsquo;$ to $L'$  with objective value $z$ and for each feasible solution $\bar{x}&lsquo;&lsquo;$ to $L'$ with objective value $z$, there is a corresponding feasible solution $\bar{x}$ to $L$ with objective value $z$.(This definition does not imply a one-to-one correspondence between feasible solutions.)</p>
+<p>How to convert linear programs into standard form?</p>
+<p>如何添加非负限制的设计很精巧</p>
+<p>How to convert linear programs into slack form?</p>
+<p>We call $s$ a <strong>slack variable</strong> because it measures the <strong>slack</strong>, or the difference, between the left-hand and right-hand sides of equation.</p>
+<p>We call the variables on the left-hand side of the equalities <strong>basic variables</strong> and those on the right-hand side <strong>nonbasic variables</strong>.</p>
+<h2 id="42-群论初步">4.2 群论初步<a href="#42-群论初步" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<h3 id="some-definations">Some definations<a href="#some-definations" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>A <strong>symmetry</strong> of a geometric figure is a rearrangement of the figure preserving the arrangement of its sides and vertices as well as its distances and angles.</p>
+<p>A map from the plane to itself preserving the symmetry of an object is called a <strong>rigid motion</strong>.</p>
+<p>A <strong>binary operation</strong> or <strong>law of composition</strong> on a set $G$ is a function $G \times G \rightarrow G$ that assigns to each pair $(a,b) \in G \times G$  a unique element  $a \circ b$, or $ab$ in $G$, called the composition of $a$ and $b$. A <strong>group</strong> $(G,\circ)$ is a set $G$ together with a law of composition $(a,b) \mapsto a \circ b$ that satisfies the following axioms.</p>
+<ul>
+<li>
+<p><strong>associative</strong>:     $(a \circ b) \circ c = a \circ (b \circ c)$</p>
+</li>
+<li>
+<p><strong>identity element</strong>:  $e \circ a = a \circ e =a$</p>
+</li>
+<li>
+<p><strong>inverse element</strong> : $a \circ a^{-1} = a^{-1} \circ a =e$</p>
+</li>
+</ul>
+<p>A group $G$ with the property that $a \circ b = b \circ a$ for all $a,b \in G$  is called <strong>abelian</strong> or <strong>commutative</strong>. Groups not satisfying this property are said to be <strong>nonabelian</strong> or <strong>noncommutative</strong>.</p>
+<p><img src="/images/" alt=""></p>
+<p>A <strong>Cayley table</strong> .</p>
+<p>Every nonzero $k$ does have an inverse in $Z_{n}$ if $k$ is relatively prime to $n$. Denote the set of all such nonzero elements in $Z_{n}$ by $U(n)$. Then $U(n)$  is  a group called the **group of units** of $Z_{n}$ .</p>
+<p>The set of invertible matrices forms a group  called the <strong>general linear group</strong>.</p>
+<p>A group is <strong>finite</strong>, or has <strong>finite order</strong>, if it contains a finite number of elements; otherwise, the group is said to be <strong>infinite</strong> or to have <strong>infinite</strong> order. The <strong>order</strong> of a finite group is the number of elements that it contains.</p>
+<h3 id="basic-properties-of-groups">Basic Properties of Groups<a href="#basic-properties-of-groups" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p><strong>Proposition 3.17.</strong> The identity element in a group $G$ is unique; that is, there exists only one element $e \in G$</p>
+<p>such that $eg=ge=g$ for all $g \in G$.</p>
+<p><strong>Proposition 3.18.</strong> If $g$ is any element in a group $G$, then the inverse of $g$ , denoted by $g^{-1}$ , is unique.</p>
+<p><strong>Proposition 3.19</strong> Let $G$  be a group. If $a,b \in G$, then $(ab)^{-1} = b^{-1}a^{-1}$.</p>
+<p><strong>Proposition 3.20.</strong> Let $G$ be a group. For any $a \in G$, $(a^{-1})^{-1}=a$.</p>
+<p><strong>Proposition 3.21</strong> Let $G$ be a group and $a$ and $b$ be any two elements in $G$. Then the equations $ax=b$ and $xa=b$ have unique solutions in $G$.</p>
+<p><strong>Proposition 3.22. (right and left cancellation laws)</strong>  If $G$ is a group and $a,b,c\in G$, then $ba=ca$ implies $b=c$ and $ab=ac$ implies $b=c$.</p>
+<p><strong>Theorem 3.23.</strong> In a group, the usual laws of exponents hold; that is, for all $g,h \in G$,</p>
+<ol>
+<li>
+<p>$g^m G^n = g^{m+n}$ for all $m,n \in Z$</p>
+</li>
+<li>
+<p>$(g^m)^n = g^{mn}$ for all $m,n \in Z$</p>
+</li>
+<li>
+<p>$(gh)^n = (h^{-1} g^{-1})^{-n}$ for all $n\in Z$. Furthermore, if $G$ is abelian, then $(gh)^n = g^n h^n$.</p>
+</li>
+</ol>
+<h3 id="subgroups">Subgroups<a href="#subgroups" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>We define a <strong>subgroup</strong> $H$ of a group $G$ to be a subset $H$ of $G$ such that when the group operation of $G$ is restricted to $H$, $H$ is a group in its own right.</p>
+<p>Every group has at least two subgroups. The subgroup $H={e}$ of a group $G$ is called the <strong>trivial subgroup</strong>. A subgroup that is a proper subset of $G$ is called a <strong>proper subgroup</strong>.</p>
+<h3 id="some-subgroup-theorems">Some Subgroup Theorems<a href="#some-subgroup-theorems" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p><strong>Proposition 3.30</strong> A subset $H$ of $G$ is a subgroup if and only if it satisfies the following conditions.</p>
+<ol>
+<li>
+<p>The identity of $e$ of $G$ is in $H$.</p>
+</li>
+<li>
+<p>If $h_1,h_2 \in H$, thne $h_1h_2 \in H$.</p>
+</li>
+<li>
+<p>If $h \in H$, then $h^{-1} \in H$.</p>
+</li>
+</ol>
+<p><strong>Proposition 3.31</strong> Let $H$ be a subset of a group $G$. Then $H$ is a subgroup of $G$ if and only if $H \not= \emptyset$, and whenever $g,h \in H$ then $gh^{-1}$ is in $H$.</p>
+<h3 id="cyclic-subgroups">Cyclic Subgroups<a href="#cyclic-subgroups" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p><strong>Theorem 4.3</strong> Let $G$ be a group and $a$ be any element in $G$. Then the set $<!-- raw HTML omitted --> = { a^k : k \in Z }$ is a subgroup of $G$. Furthermore, $<!-- raw HTML omitted -->$ is the smallest subgroup of $G$ that contains $a$.</p>
+<p>For  $a\in G$, we call $<!-- raw HTML omitted -->$ the <strong>cyclic subgroup</strong> generated by $a$. If $G$ contains some element $a$ such that $G=<!-- raw HTML omitted -->$, then $G$ is a <strong>cyclic group</strong>. In this case $a$ is a <strong>generator</strong> of $G$. If $a$ is an element of a group $G$, we define the <strong>order</strong> of $a$ to be the smallest positive integer $n$ such that $a^n =e$, and we write $|a|=n$. If there is no such integer $n$, we say that the order of $a$ is inifinte and write $|a|= \infty$ to denote the order of $a$.</p>
+<p><strong>Theorem 4.9.</strong> Every cyclic group is abelian.</p>
+<p><strong>Theorem 4.10</strong> Every subgroup of a cyclic group is cyclic.</p>
+<p><strong>Corollary 4.11</strong> The subgroups of $Z$ are exactly $nZ$ for $n=0,1,2,&hellip;.$</p>
+<p><strong>Proposition 4.12</strong> Let $G$ be a cyclic group of order $n$ and suppose that $a$ is a generator for $G$. Then $a^k=e$ if and only if $n$ divides $k$.</p>
+<p><strong>Theorem 4.13</strong> Let $G$ be a cyclic group of order $n$ and suppose that $a \in G$ is a generator of the group. If $b= a^k$, then the order of $b$ is $n/d$, where $d=gcd(k,n)$.</p>
+<p><strong>Corollary 4.14</strong> The generators of $Z_n$ are the integers $r$ such that $1 \le r &lt; n$ and $gcd(r,n)=1$.</p>
+<h3 id="置换群与拉格朗日定理">置换群与拉格朗日定理<a href="#置换群与拉格朗日定理" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>In general, the permutations of a set $X$ form a group $S_X$. If $X$ is a finite set, we can assume $X={1,2,&hellip;,n}$. In this case we write $S_n$ instead of $S_X$.  We call this group the <strong>symmetric group</strong> on $n$ letters.</p>
+<p><strong>Theorem 5.1</strong> The symmetric group on $n$ letters, $S_n$ is a group with $n!$ elements, where the binary operation is the composition of maps.</p>
+<p>A subgroup of $S_n$ is called a <strong>permutation group</strong>.</p>
+<p>Permutation multiplication is not usually commutative.</p>
+<p>A permutation $\sigma \in S_X$ is a <strong>cycle of length</strong> $k$ if there exist elements $a_1, a_2, &hellip;, a_k \in X$ such that $ \sigma(a_1)=a_2,\sigma(a_2)=a_3,&hellip;,\sigma(a_k)=a_1  $ and $\sigma(x)=x$ for all other elements $x \in X$. We will write $(a_1,a_2,..,a_k)$ to denote the cycle $\sigma$.</p>
+<p>Cycles are the building blocks of all permutations.</p>
+<p>Two cycles in $S_X$ , $\sigma = (a_1, a_2,&hellip;,a_k)$ and $\tau = (b_1,b_2,&hellip;,b_l)$, are <strong>disjoint</strong> of $a_i \not= b_i$ for all $i$ and $j$.</p>
+<p><strong>Proposition 5.8.</strong> Let $\sigma$ and $\tau$ be two disjoint cycles in $S_X$. Then $\sigma \tau = \tau \sigma$.</p>
+<p><strong>Theorem 5.9</strong> Every permutation in $S_n$ can be written as the product of disjoint cycles.</p>
+<h4 id="transpositions">Transpositions<a href="#transpositions" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>The simplest permutation is a cycle of length $2$. Such cycles are called <strong>transpositions</strong>. Since $(a_1,a_2,&hellip;,a_n)=(a_1a_n)(a_1 a_{n-1})&hellip;(a_1a_3)(a_1a_2)$</p>
+<p><strong>Proposition 5.12.</strong> Any permutation of a finite set containing at least two elements can be written as the product of transpositions.</p>
+<p>No permutation can be written as the product of both an even number of transpositions and an odd number of transpositions.</p>
+<p><strong>Lemma 5.14</strong> If the identity is written as the product of $r$ transpositions, $id = \tau_1 \tau_2 \cdot \cdot \cdot \tau_r , $  then $r$ is an even number.   (Proof need to be understood)</p>
+<p><strong>Theorem 5.15</strong> If a permutation $\sigma$ can be expressed as the product of an even number of transpositions, then any other product of transpositions equaling $\sigma$ must also contain an even number of transpositions. Similarly, if $\sigma$ can be expressed as the product of an odd number of transpositions, then any other product of transpositions equaling $\sigma$ must also contain an odd number of transpositions.</p>
+<p><strong>My comment on the proof of 5.14:</strong>  The fact that the inverse of $\sigma$ is $\sigma_m \cdot \cdot \cdot  \sigma_1$ confuses me some time. By introducing the fact that two identity transpositions equals to the identity, it is much clear.  Also note that the inverse of any transposition is itself.</p>
+<p>We define a permutation to be <strong>even</strong> if it can be expressed as an even number of transpostions and <strong>odd</strong> if it can be expressed as an odd number of transpositions.</p>
+<h4 id="the-alternating-groups">The Alternating Groups<a href="#the-alternating-groups" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>One of the most important subgroups of $S_n$ is the set of all even permutations, $A_n$. The group $A_n$ is called the <strong>alternating group on $n$ letters</strong>.</p>
+<p><strong>Theorem 5.16</strong> The set $A_n$ is a subgroup of $S_n$.</p>
+<p><strong>Proposition 5.17</strong> The number of even permutations in $S_n, n&gt;2$, is equal to the number of odd permutations; hence, the order of $A_n$ is $n!/2$ .</p>
+<h4 id="dihedral-groups">Dihedral Groups<a href="#dihedral-groups" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>For $n=3,4,&hellip;,$, we define the $n$<strong>th dihedral group</strong> to be the group of rigid motions of a regular $n$-gon.</p>
+<p><strong>Theorem 5.20.</strong> The dihedral group, $D_n$, is a subgroup of $S_n$ of order $2n$.</p>
+<p><strong>Theorem 5.23.</strong> The group $D_n$ , $n \ge 3$, consists of all products of two elements $r$ and $s$, satisfying the relations $r^n=1, s^2=1, srs=r^{-1}$.</p>
+<p><strong>Proposition 5.27.</strong> The group of rigid motions of a cube contains $24$ elements.</p>
+<p><strong>Theorem 5.28.</strong> The group of rigid motions of a cube is $S_4$.</p>
+<h4 id="cosets">Cosets<a href="#cosets" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>Let $G$ be a group and $H$ a subgroup of $G$. Define a <strong>left coset</strong> of $H$ with <strong>representative</strong> $g \in G$ to be the set $gH = { gh : h \in H }$. <strong>Right cosets</strong> can be defined similarly by $Hg = { hg:h \in H }$.</p>
+<p><strong>Lemma 6.3.</strong> Let $H$ be a subgroup of a group $G$ and suppose that $g_1,g_2 \in G$. The following conditions are equivalent.</p>
+<ol>
+<li>
+<p>$g_1 H = g_2 H$</p>
+</li>
+<li>
+<p>$H g_1^{-1} = H g_2^{-1}$</p>
+</li>
+<li>
+<p>$g_1 H \subset g_2 H $</p>
+</li>
+<li>
+<p>$g_2 \in g_1 H$</p>
+</li>
+<li>
+<p>$ g_1^{-1} g_2 \in H$.</p>
+</li>
+</ol>
+<p><strong>Theorem 6.4</strong> Let $H$ be a subgroup of a group $G$. Then the left cosets of $H$ in $G$ partition $G$. That is, the group $G$ is the disjoint union of the left cosets of $H$ in $G$.</p>
+<p>Let $G$ be a group and $H$ be a subgroup of $G$. Define the <strong>index</strong> of $H$ in $G$ to be the number of left cosets of $H$ in $G$. We will denote the index by $[G:H]$.</p>
+<p><strong>Theorem 6.8.</strong>  Let $H$ be a subgroup of a group $G$. The number of left cosets of $H$ in $G$ is the same as the number of right cosets of $H$ in $G$.</p>
+<p><strong>Proposition 6.9.</strong> Let $H$ be a subgroup of $G$ with $g \in G$ and define a map $\phi : H \rightarrow gH$ by $\phi(h) = gh$. The map $\phi$ is bijective; hence, the number of elements in $H$ is the same as the number of elements in $gH$.</p>
+<p><strong>Theorem 6.10 Lagrange.</strong> Let $G$ be a finite group and let $H$ be a subgroup of $G$. Then $|G|/|H|=[G:H]$ is the number of distinct left cosets in $G$. In particular, the number of elements in $H$ must divide the number of elements in $G$.</p>
+<p><strong>Corollary 6.11.</strong> Suppose that $G$ is a finite group and $g \in G$. Then the order of $g$ must divide the number of elements in $G$.</p>
+<p><strong>Corollary 6.12</strong> Let $|G|=p$ with $p$ a prime number. Then $G$ is cyclic and any $g \in G$ such that $g\not= e$ is a generator.</p>
+<p><strong>Corollary 6.13.</strong> Let $H$ and $K$ be subgroups of a finite group $G$ such that $G \supset H \supset K.$ Then $[G:K]=[G:H][H:K].$</p>
+<p><strong>Proposition 6.15</strong> The group $A_4$ has no subgroup of order $6$.</p>
+<p><strong>Theorem 6.16.</strong> Two cycles $\tau$ and $\mu$ in $S_n$ have the same length if and only if there exists $a \sigma \in S_n$ such that $\mu = \sigma \tau \sigma^{-1}$.</p>
+<h4 id="fermats-and-eulers-theorems">Fermat&rsquo;s and Euler&rsquo;s Theorems<a href="#fermats-and-eulers-theorems" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>The <strong>Euler</strong> $\phi$ <strong>-function</strong> is the map $\phi:N \rightarrow N$ defined by $\phi(n)=1$ for $n=1$, and, for $n&gt;1$, $\phi(n)$ is the number of positive integers $m$ with $1 \le m &lt; n$ and $gcd(m,n)=1$.</p>
+<p><strong>Theorem 6.17.</strong> Let $U(n)$ be the group of units in $Z_n$. Then $|U(n)| = \phi(n)$.</p>
+<p><strong>Theorem 6.18 Euler&rsquo;s Theorem.</strong> Let $a$ and $n$ be integers such that $n&gt;0$ and $gcd(a,n)=1$. Then $a^{\phi(n)} \equiv 1$(mod $n$).</p>
+<p><strong>Theorem 6.19. Fermat&rsquo;s Little Theorem.</strong> Let $p$ be any prime number and suppose that $ p \nmid a$ ($p$ does not divide $a$). Then $a^{p-1} \equiv 1$ (mod $p$). Furthermore, for any integer $b$, $b^p \equiv b$ (mod $p$).</p>
+<h3 id="群同态基本定理与正规子群">群同态基本定理与正规子群<a href="#群同态基本定理与正规子群" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<h4 id="isomorphisms">Isomorphisms<a href="#isomorphisms" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>Two groups $(G, \cdot )$ and $(H, \circ)$ are <strong>isomorphic</strong> if there exists a one-to-one and onto map $\phi : G \rightarrow H$ such that the group operation is preserved; that is, $\phi (a \cdot b) = \phi(a) \circ \phi (b)$ for all $a$ and $b$ in $G$. If $G$ is isomorphic to $H$, we write $G \cong H$. The map $\phi$ is called an <strong>isomorphism</strong>.</p>
+<p><strong>Theorem 9.6.</strong> Let $\phi : G \rightarrow H$ be an isomorphism of two subgroups. Then the following statements are true.</p>
+<ol>
+<li>
+<p>$\phi^{-1}: H \rightarrow G$ is an isomorphism.</p>
+</li>
+<li>
+<p>$|G| = |H|.$</p>
+</li>
+<li>
+<p>If $G$ is abelian, then $H$ is abelian.</p>
+</li>
+<li>
+<p>If $G$ is cyclic, then $H$ is cyclic.</p>
+</li>
+<li>
+<p>If $G$ has a subgroup of order $n$, then $H$ has a subgroup of order $n$.</p>
+</li>
+</ol>
+<p><strong>Theorem 9.7.</strong> All cyclic groups of infinite order are isomorphic to $Z$.</p>
+<p><strong>Theorem 9.8.</strong> If $G$ is a cyclic group of order $n$, then $G$ is isomorphic to $Z_n$.</p>
+<p><strong>Corollary 9.9.</strong> If $G$ is a group of order $p$, where $p$ is a prime number, then $G$ is isomorphic to $Z_p$.</p>
+<p><strong>Theorem 9.10.</strong> The isomorphism of groups determines an equivalence relation on the class of all groups.</p>
+<p><strong>Theorem 9.12 Cayley.</strong> Every group is isomorphic to a group of permutations.</p>
+<p>The isomorphism $g \mapsto \lambda_g$ is known as the <strong>left regular representation</strong> of $G$.</p>
+<h4 id="external-direct-products">External Direct Products<a href="#external-direct-products" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>If $(G, \cdot)$ and $(H,\circ)$ are groups, then we can make the Cartesian product of $G$ and $H$ into a new group. As a set, our group is just the ordered pairs $(g,h) \in G \times H$ where $g \in G$ and $h \in H$. We can define a binary operation on $G \times H$ by $(g_1,h_1)(g_2,h_2) = (g_1 \cdot g_2, h_1 \cdot h_2)$.</p>
+<p><strong>Proposition 9.13.</strong> Let $G$ and $H$ be groups. The set $G \times H$ is a group under the operation $(g_1,h_2)(g_2,h_2) = (g_1g_2, h_1h_2)$ where $g_1,g_2 \in G$ and $h_1,h_2 \in H$.</p>
+<p>The group $G \times H$ is called the <strong>external direct product</strong> of $G$ and $H$.</p>
+<p><strong>Theorem 9.17.</strong> Let $(g,h) \in G \times H$. If $g$ and $h$ have finite orders $r$ and $s$ respectively, then the order of $(g,h)$ in $G \times H$ is the least common multiple of $r$ and $s$.</p>
+<p><strong>Corollary 9.18.</strong> Let $(g_1, &hellip;, g_n) \in \prod G_i$. If $g_i$ has finite order $r_i$ in $G_i$, then the order of $(g_1,&hellip;,g_n) \in \prod G_i$ is the least common multiple of $r_1,&hellip;,r_n$.</p>
+<p><strong>Theorem 9.21.</strong> The group $Z_m \times Z_n$ is isomorphic to $Z_{mn}$ if and only if $gcd(m,n)=1$.</p>
+<p><strong>Corollary 9.22.</strong> Let $n_1,&hellip;,n_k$ be positive integers. Then $\prod\limits_{i=1}^{k}Z_{n_i} \cong Z_{n_1&hellip;n_k}$  if and only if $gcd(n_i,n_j)=1$ for $i \not= j$.</p>
+<p><strong>Corollary 9.23.</strong> If $m = p_1^{e_1} \cdot \cdot \cdot p_k^{e_k}$, where the $p_is$ are distinct primes, then $Z_m \cong Z_{p_1 ^{e_1}} \times \cdot \cdot \cdot \times Z_{p_k^{e_k}}$.</p>
+<h4 id="internal-direct-products">Internal Direct Products<a href="#internal-direct-products" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>Let $G$ be a group with subgroups $H$ and $K$ satisfying the following conditions.</p>
+<ul>
+<li>
+<p>$G = H K = {hk: h\in H , k \in K}$;</p>
+</li>
+<li>
+<p>$H \cap K = {e}$;</p>
+</li>
+<li>
+<p>$hk=kh$ for all $k \in K$ and $h \in H$.</p>
+</li>
+</ul>
+<p>Then $G$ is the <strong>internal direct product</strong> of $H$ and $K$.</p>
+<p><strong>Theorem 9.27.</strong> Let $G$ be the internal direct product of subgroups $H$ and $K$. Then $G$ is isomorphic to $H \times K$. Then $G$ is isomorphic to $H \times K$.</p>
+<p><strong>Theorem 9.29.</strong> Let $G$ be the internal direct product of subgroups $H_i$, where $i = 1,2,&hellip;,n$. Then $G$ is isomorphic to $\prod_i H_i$.</p>
+<h4 id="normal-subgroups">Normal Subgroups<a href="#normal-subgroups" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>A subgroup $H$ of a group $G$ is <strong>normal</strong> in $G$ if $gH = Hg$ for all $g \in G$.</p>
+<p><strong>Theorem 10.3.</strong> Let $G$ be a group and $N$ be a subgroup of $G$. Then the following statements are equivalent.</p>
+<ol>
+<li>
+<p>The subgroup $N$ is normal in $G$.</p>
+</li>
+<li>
+<p>For all $g \in G$, $g N g^{-1} \subset N$.</p>
+</li>
+<li>
+<p>For all $g \in G$, $gNg^{-1} = N$.</p>
+</li>
+</ol>
+<h4 id="factor-groups">Factor Groups<a href="#factor-groups" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>If $N$ is a normal subgroup of a group $G$, then the cosets of $N$ in $G$ form a group $G/N$ under the operation $(aN)(bN)=abN$. This group is called the <strong>factor</strong> or <strong>quotient group</strong> of $G$ and $N$.</p>
+<p><strong>Theorem 10.4.</strong> Let $N$ be a normal subgroup of a group $G$. The cosets of $N$ in $G$ form a group $G/N$ of order $[G:N]$.</p>
+<h4 id="the-simplicity-of-the-alternating-group">The Simplicity of the Alternating Group<a href="#the-simplicity-of-the-alternating-group" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>Of special interest are groups with no nontrivial normal subgroups. Such groups are called <strong>simple groups</strong>.</p>
+<p><strong>Lemma 10.8.</strong> The alternating group $A_n$ is generated by $3-$cycles for $n \ge 3$.</p>
+<p><strong>Lemma 10.9.</strong> Let $N$ be a normal subgroup of $A_n$, where $n \ge 3$. If $N$ contains a $3-$cycle, then $N=A_n$.</p>
+<p><strong>Lemma 10.10.</strong> For $n \ge 5$, every nontrivial normal subgroup $N$ of $A_n$ contains a $3-$ cycle.</p>
+<p><strong>Theorem 10.11.</strong> The alternating group, $A_n$, is simple for $n \ge 5$.</p>
+<h4 id="group-homomorphisms">Group Homomorphisms<a href="#group-homomorphisms" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>A <strong>homomorphism</strong> between groups $(G, \cdot)$ and $(H, \circ)$ is a map $\phi: G \rightarrow H$ such that $\phi(g_1 \cdot g_2) = \phi(g_1) \circ \phi(g_2)$ for $g_1, g_2 \in G$. The range of $\phi$ in $H$ is called the <strong>homomorphic image</strong> of $\phi$.</p>
+<p><strong>Proposition 11.4.</strong>  Let $\phi : G_1 \rightarrow G_2$ be a homomorphism of groups. Then</p>
+<ol>
+<li>
+<p>If $e$ is the identity of $G_1$, then $\phi(e)$ is the identity of $G_2$;</p>
+</li>
+<li>
+<p>For any element $g \in G_1$, $\phi(g^{-1}) = [\phi(g)]^{-1}$;</p>
+</li>
+<li>
+<p>If $H_1$ is a subrgoup of $G_1$, then $\phi(H_1)$ is a subrgoup of $G_2$;</p>
+</li>
+<li>
+<p>If $H_2$ is a subgroup of $G_2$, then $\phi^{-1}(H_2) = {g \in G_1 : \phi(g) \in H_2}$ is a subgroup of $G_1$. Furthermore, if $H_2$ is normal in $G_2$, then $\phi^{-1}(H_2)$ is normal in $G_1$.</p>
+</li>
+</ol>
+<p>Let $\phi: G \rightarrow H$ be a group homomorphism and suppose that $e$ is the identity of $H$.  By Proposition 11.4, $\phi^{-1}({e})$ is a subrgoup of $G$. This subgroup is called the <strong>kernel</strong> of $\phi$ and will be denoted by ker $\phi$.</p>
+<p><strong>Theorem 11.5.</strong> Let $\phi : G \rightarrow H$ be a group homomorphism. Then the kernel of $\phi$ is a normal subgroup of $G$.</p>
+<h4 id="the-isomorphism-theorems">The Isomorphism Theorems<a href="#the-isomorphism-theorems" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>Let $H$ be a normal subgroup of $G$. Define the <strong>natural</strong> or <strong>canonical homomorphism</strong> $\phi : G \rightarrow G/H$ by $\phi(g) = g H$.</p>
+<p><strong>Theorem 11.10 First Isomorphism Theorem.</strong> If $\psi : G \rightarrow H$ is a group homomorphism with $K = ker \psi$, then $K$ is normal in $G$. Let $\phi: G \rightarrow G/K$ be the canonical homomorphism. Then there exists a unique isomorphism $\eta : G/K \rightarrow \psi(G)$ such that $\psi = \eta \phi$</p>
+<p><strong>Theorem 11.12 Second Isomorphism Theorem.</strong>  Let $H$ be a subgroup of a group $G$ (not necessarily normal in $G$) and $N$ a normal subgroup of $G$. Then $HN$ is a subgroup of $G$, $H \cap N$ is a normal subgroup of $H$, and $H/ H \cap N \cong HN/N$.</p>
+<p><strong>Theorem 11.13 Correspondence Theorem.</strong> Let $N$ be a normal subgroup of a group $G$. Then $H \mapsto H/N$ is a one-to-one correspondence between the set of subgroups $H$ containing $N$ and the set of subgroups of $G/N$. Furthermore, the normal subgroups of $G$ containing $N$ correspond to normal subgroups of $G/N$.</p>
+<p><strong>Theorem 11.14 Third Isomorphism Theorem.</strong> Let $G$ be a group and $N$ and $H$ be normal subgroups of $G$ with $N \subset H.$ Then $G/H \cong \frac{G/N}{H/N}$.</p>
+<h3 id="串匹配">串匹配<a href="#串匹配" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<h4 id="the-naive-string-matching-algorithm">The naive string-matching algorithm<a href="#the-naive-string-matching-algorithm" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+		</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2020 <a href="https://ricky-ting.github.io">Ricky Ting</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://ricky-ting.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+
+	<script src="https://ricky-ting.github.io/js/bundle.min.4a9a0ac3d2217822c7865b4161e6c2a71de1d70492264337755427898dd718f6.js" integrity="sha256-SpoKw9IheCLHhltBYebCpx3h1wSSJkM3dVQniY3XGPY=" crossorigin="anonymous"></script>
+	
+
+</body>
+
+</html>

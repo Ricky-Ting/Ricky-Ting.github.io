@@ -1,0 +1,791 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on Ricky Ting&#39;s Blog</title>
+		<link>https://ricky-ting.github.io/posts/</link>
+		<description>Recent content in Posts on Ricky Ting&#39;s Blog</description>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>zh-CN</language>
+		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+		<lastBuildDate>Tue, 07 Apr 2020 22:46:23 +0800</lastBuildDate>
+		<atom:link href="https://ricky-ting.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>博客迁移记录</title>
+			<link>https://ricky-ting.github.io/posts/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%AE%B0%E5%BD%95/</link>
+			<pubDate>Tue, 07 Apr 2020 22:46:23 +0800</pubDate>
+			
+			<guid>https://ricky-ting.github.io/posts/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%AE%B0%E5%BD%95/</guid>
+			<description>博客迁移记录 前言 为什么要迁移博客 之前的博客效果不是很满意(太丑)，文章的质量也不是很满意(基本都是抄抄书，记记笔记)，正好改头换面，希望后面</description>
+			<content type="html"><![CDATA[<h1 id="博客迁移记录">博客迁移记录</h1>
+<h2 id="前言">前言</h2>
+<h3 id="为什么要迁移博客">为什么要迁移博客</h3>
+<p>之前的博客效果不是很满意(<del>太丑</del>)，文章的质量也不是很满意(<del>基本都是抄抄书，记记笔记</del>)，正好改头换面，希望后面能提高文章的质量。</p>
+<h3 id="从hexo到hugo">从Hexo到Hugo</h3>
+<p>之前的博客一直用的是hexo，感觉部署起来确实有点慢，听说Hugo是用go写的(好感度++)而且部署起来还贼快(毕竟号称&quot;The world&rsquo;s fastest framework for building websites&rdquo;)。</p>
+<h2 id="hugo安装与配置">hugo安装与配置</h2>
+<h3 id="安装hugo">安装hugo</h3>
+<p>Mac用户的福音，只需一行：</p>
+<pre><code>brew install hugo
+</code></pre><h3 id="创建站点">创建站点</h3>
+<pre><code>hugo new site blog
+</code></pre><p>然后我们就可以看到<code>blog</code>目录下一堆文件和目录：</p>
+<pre><code>blog
+├── archetypes 		# 主要是文档文件的模板，预定义了一些头部信息
+│   └── default.md
+├── config.toml 	# 配置文件
+├── content 			# 内容文件
+├── data 					# 可以存放一些JSON格式之类的数据
+├── layouts 			# 生成html用的模板文件
+├── static 				# 放一些图片、CSS、js等静态资源文件
+└── themes 				# 存放主题
+</code></pre><h3 id="安装主题">安装主题</h3>
+<p>我这里选择的是Hermit主题</p>
+<pre><code>git clone https://github.com/Track3/hermit.git themes/hermit
+</code></pre><p>覆盖原有的配置文件</p>
+<pre><code>cp cp themes/hermit/exampleSite/config.toml ./
+</code></pre><p>然后根据配置文件中的提示做相应的修改。</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Android Studio Installation</title>
+			<link>https://ricky-ting.github.io/posts/android-studio-installation/</link>
+			<pubDate>Wed, 03 Apr 2019 11:07:18 +0800</pubDate>
+			
+			<guid>https://ricky-ting.github.io/posts/android-studio-installation/</guid>
+			<description>出现错误的话，把~/.gradle删除, 并把代理全部关掉，重新打开build。</description>
+			<content type="html"><![CDATA[<p>出现错误的话，把<code>~/.gradle</code>删除, 并把代理全部关掉，重新打开build。</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>proxy for bash</title>
+			<link>https://ricky-ting.github.io/posts/proxy-for-bash/</link>
+			<pubDate>Mon, 01 Apr 2019 11:04:55 +0800</pubDate>
+			
+			<guid>https://ricky-ting.github.io/posts/proxy-for-bash/</guid>
+			<description>export ALL_PROXY=socks5://127.0.0.1:1086 </description>
+			<content type="html"><![CDATA[<pre><code>export ALL_PROXY=socks5://127.0.0.1:1086
+</code></pre>]]></content>
+		</item>
+		
+		<item>
+			<title>mac下ssh打开X11转发</title>
+			<link>https://ricky-ting.github.io/posts/mac%E4%B8%8Bssh%E6%89%93%E5%BC%80x11%E8%BD%AC%E5%8F%91/</link>
+			<pubDate>Thu, 17 Jan 2019 15:13:44 +0800</pubDate>
+			
+			<guid>https://ricky-ting.github.io/posts/mac%E4%B8%8Bssh%E6%89%93%E5%BC%80x11%E8%BD%AC%E5%8F%91/</guid>
+			<description>mac下ssh打开X11转发 1.首先确认linux下已开启X11转发： ``` sudo vim /etc/ssh/sshd_config X11Forwarding yes X11DisplayOffset 10 service ssh restart ``` 2.安装XQuartz 3.在mac端下开启： ```bash</description>
+			<content type="html"><![CDATA[<h1 id="mac下ssh打开x11转发">mac下ssh打开X11转发</h1>
+<p>1.首先确认linux下已开启X11转发：</p>
+<pre><code>```
+sudo vim /etc/ssh/sshd_config
+
+X11Forwarding yes
+X11DisplayOffset 10
+
+service ssh restart
+```
+</code></pre>
+<p>2.安装XQuartz</p>
+<p>3.在mac端下开启：</p>
+<pre><code>```bash
+sudo vim /etc/ssh/ssh_config
+
+ForwardX11 yes
+```
+</code></pre>
+<p>4.ssh登陆</p>
+<pre><code>```bash
+ssh -X username@ip
+```</code></pre>
+]]></content>
+		</item>
+		
+		<item>
+			<title>如何解决项目子模块git冲突</title>
+			<link>https://ricky-ting.github.io/posts/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E9%A1%B9%E7%9B%AE%E5%AD%90%E6%A8%A1%E5%9D%97git%E5%86%B2%E7%AA%81/</link>
+			<pubDate>Thu, 03 Jan 2019 23:02:20 +0800</pubDate>
+			
+			<guid>https://ricky-ting.github.io/posts/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E9%A1%B9%E7%9B%AE%E5%AD%90%E6%A8%A1%E5%9D%97git%E5%86%B2%E7%AA%81/</guid>
+			<description>如何解决项目子模块git冲突 起因 在将这学期做的PA提交到github时，因为ics2018中原有git与github上创建的git冲突，因此</description>
+			<content type="html"><![CDATA[<h1 id="如何解决项目子模块git冲突">如何解决项目子模块git冲突</h1>
+<h2 id="起因">起因</h2>
+<p>在将这学期做的PA提交到github时，因为ics2018中原有git与github上创建的git冲突，因此上传之后ics2018的图标为灰。</p>
+<h2 id="解决方案">解决方案</h2>
+<ul>
+<li>
+<p>git rm &ndash;cache ics2018</p>
+</li>
+<li>
+<p>git add ics2018/</p>
+</li>
+</ul>
+<h2 id="参考">参考</h2>
+<p><a href="https://upupming.site/2018/05/31/git-submodules/#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">参考链接</a></p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>How to make an installation USB for Linux or other OS in Mac OS X</title>
+			<link>https://ricky-ting.github.io/posts/how-to-make-an-installation-usb-for-linux-or-other-os-in-mac-os-x/</link>
+			<pubDate>Wed, 17 Oct 2018 20:55:11 +0800</pubDate>
+			
+			<guid>https://ricky-ting.github.io/posts/how-to-make-an-installation-usb-for-linux-or-other-os-in-mac-os-x/</guid>
+			<description>&lt;h1 id=&#34;how-to-make-an-installation-usb-for-linux-or-other-os-in-mac-os-x&#34;&gt;How to make an installation USB for Linux or other OS in Mac OS X&lt;/h1&gt;
+&lt;p&gt;Step1: Download the image(iso) file from the Internet.&lt;/p&gt;
+&lt;p&gt;Step2: Open a Terminal(the following command are all completed in a terminal)&lt;/p&gt;</description>
+			<content type="html"><![CDATA[<h1 id="how-to-make-an-installation-usb-for-linux-or-other-os-in-mac-os-x">How to make an installation USB for Linux or other OS in Mac OS X</h1>
+<p>Step1: Download the image(iso) file from the Internet.</p>
+<p>Step2: Open a Terminal(the following command are all completed in a terminal)</p>
+<p>Step3: Trun <code>.iso</code> file into <code>.img</code> file by <code>hdiutil convert -format UDRW -o ~/path/to/target.img ~/path/from/src.iso</code>(The file created may end with <code>.dmg</code>)</p>
+<p>Step4: <code>diskutil list</code> to obtain the devices mounted.</p>
+<p>Step5: Insert your USB.</p>
+<p>Step6: <code>diskutil list</code> to see which is added(/dev/diskN).</p>
+<p>Step7: <code>diskutil unmountDisk /dev/diskN</code> to unmount USB</p>
+<p>Step8: <code>sudo dd if=/path/to/target.img of=/dev/rdiskN bs=1m</code> to write the installation file into the USB</p>
+<p>Step9: <code>diskutil eject /dev/diskN</code> to eject your USB.</p>]]></content>
+		</item>
+		
+		<item>
+			<title>PA拾慧</title>
+			<link>https://ricky-ting.github.io/posts/pa%E6%8B%BE%E6%85%A7/</link>
+			<pubDate>Sun, 16 Sep 2018 23:03:19 +0800</pubDate>
+			
+			<guid>https://ricky-ting.github.io/posts/pa%E6%8B%BE%E6%85%A7/</guid>
+			<description>天将降PA于斯人也，必先使其STFW,RTFM,RTFSC, 所以动心忍性，曾益其所不能 tmux(分屏工具) Prefix: Ctrl+B 左右分屏:Prefix + % 上下</description>
+			<content type="html"><![CDATA[<p><strong>天将降PA于斯人也，必先使其STFW,RTFM,RTFSC, 所以动心忍性，曾益其所不能</strong></p>
+<h1 id="tmux分屏工具">tmux(分屏工具)</h1>
+<p>Prefix: <code>Ctrl+B</code></p>
+<p>左右分屏:<code>Prefix + %</code> 上下分屏: <code>Prefix + &quot;</code></p>
+<p>切换: <code>Prefix + 方向键</code></p>
+<h1 id="vim配置">Vim配置</h1>
+<h2 id="vim分屏">vim分屏：</h2>
+<p><code>Ctrl+W s</code>:上下分割当前打开的文件</p>
+<p><code>:sp filename</code>:上下分割，并打开一个新的文件</p>
+<p><code>Ctrl+W v</code>: 左右分割当前打开的文件</p>
+<p><code>:vsp filename</code>: 左右分割，并打开一个新的文件</p>
+<p><code>Ctrl+W l,h,k,j</code>: 在窗格见切换</p>
+<h2 id="vim函数跳转">vim函数跳转:</h2>
+<ol>
+<li>安装ctags: &lsquo;sudo apt-get install ctags&rsquo;</li>
+<li>测试ctags是否安装成功: <code>whereis ctags</code></li>
+<li>为源代码生成tags文件，建议在项目根目录下生成: <code>ctags -R</code>,更多高级选项请自行查询或man</li>
+<li>配置vimrc: <code>sudo vim ~/.vimrc</code></li>
+<li>修改vimrc: 加入下面两行</li>
+</ol>
+<pre><code>set tags=[path]/tags
+set tags=./tags,tags;$HOME
+</code></pre><h2 id="vim配置选项">vim配置选项</h2>
+<p><code>set laststatus=2</code></p>
+<p>跳转快捷键: <code>Ctrl+]</code>跳转,  <code>Ctrl+t</code> or <code>Ctrl+o</code>返回.</p>
+<p>在终端里输入<code>vim -t functionname</code> 可以直接跳转至你想跳转的函数.(来自StardustDL的补充)</p>
+<p>vim函数跳转部分参考<a href="https://mengzelev.github.io/2018/09/12/pa-inspirations/">Mengzelve&rsquo;s Blog</a></p>
+<h1 id="c语言相关">C语言相关</h1>
+<p>顺时针法则</p>
+<p>strcmp返回值为0是两个字符串相等</p>
+<p>结构体里利用位域实现位级访问</p>
+<h1 id="linux相关">Linux相关</h1>
+<p>linux里的管道(pipeline)将不同程序的输入输出连起来。</p>
+<p><code>time ./a.out </code> 可以测程序运行的时间。</p>
+<p>在shell中使用终端设置别名:<code>alias cdblog='cd ~/Desktop/Github/Blog'</code></p>
+<p>统计代码行数: <code>find . | grep -E '\.c$|\.h$' | xargs cat | wc -l</code></p>
+<p>统计代码行数(不含空格): <code>find . | grep -E '\.c$|\.h$' | xargs cat | grep -v ‘^$’ | wc -l</code></p>
+<h1 id="一些好的文章">一些好的文章：</h1>
+<p><a href="https://i.linuxtoy.org/docs/guide/index.html">开源世界旅行手册</a></p>
+<p><a href="http://songshuhui.net/archives/70194">计算的极限</a></p>
+<p><a href="https://eli.thegreenplace.net/2011/01/23/how-debuggers-work-part-1/#id7">How debuggers work</a></p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Debian install sudo</title>
+			<link>https://ricky-ting.github.io/posts/debian-install-sudo/</link>
+			<pubDate>Thu, 06 Sep 2018 09:08:13 +0800</pubDate>
+			
+			<guid>https://ricky-ting.github.io/posts/debian-install-sudo/</guid>
+			<description>Debian install sudo su切换至root apt-get install sudo visudo 在root ALL(ALL:ALL) ALL后面加入一行&amp;lt;user&amp;gt; ALL=(ALL:ALL) ALL 然后Ctrl-O 保存文件，要把文件名里的.tmp删</description>
+			<content type="html"><![CDATA[<h1 id="debian-install-sudo">Debian install sudo</h1>
+<ol>
+<li><code>su</code>切换至root</li>
+<li><code>apt-get install sudo</code></li>
+<li><code>visudo</code> 在<code>root ALL(ALL:ALL) ALL</code>后面加入一行<code>&lt;user&gt; ALL=(ALL:ALL) ALL</code></li>
+<li>然后Ctrl-O 保存文件，要把文件名里的<code>.tmp</code>删除，两次yes， Ctrl-X退出编辑</li>
+</ol>
+<p><code>sudoers</code>文件目录为<code>/etc/sudoers</code></p>
+<p><code>su</code>进入root, <code>exit</code>退出root</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>shared folder in virtual machine</title>
+			<link>https://ricky-ting.github.io/posts/shared-folder-in-virtual-machine/</link>
+			<pubDate>Sat, 01 Sep 2018 19:35:31 +0800</pubDate>
+			
+			<guid>https://ricky-ting.github.io/posts/shared-folder-in-virtual-machine/</guid>
+			<description>shared folder in virtual machine 首先在virtual box点击 Insert Guest Additions CD Image 在虚拟机中运行弹出来的窗口 在Terminal中输入sudo adduser $YourUserName vboxsf Restart Stack Overflow相关链</description>
+			<content type="html"><![CDATA[<h1 id="shared-folder-in-virtual-machine">shared folder in virtual machine</h1>
+<ol>
+<li>首先在virtual box点击 <code>Insert Guest Additions CD Image</code></li>
+<li>在虚拟机中运行弹出来的窗口</li>
+<li>在Terminal中输入<code>sudo adduser $YourUserName vboxsf</code></li>
+<li>Restart</li>
+</ol>
+<p><a href="https://stackoverflow.com/questions/26740113/virtualbox-shared-folder-permissions">Stack Overflow相关链接</a></p>
+<p>But when you cannot mount the disk automatically, you have to do it manually. Steps are as follows:</p>
+<ol>
+<li>
+<p>Devices -&gt; Install Guest Additions..</p>
+</li>
+<li>
+<p>Type the following in the guest terminal</p>
+</li>
+</ol>
+<pre><code>sudo mkdir --p /media/cdrom
+sudo mount -t auto /dev/cdrom /media/cdrom/
+cd /media/cdrom/
+sudo sh VBoxLinuxAdditions.run
+</code></pre><ol start="3">
+<li>Then<code>sudo adduser $YourUserName vboxsf</code></li>
+<li>Restart.</li>
+</ol>
+<p><a href="https://askubuntu.com/questions/80341/unable-to-mount-virtualbox-guest-additions-as-a-guest-win7-host">相关链接</a></p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>BST</title>
+			<link>https://ricky-ting.github.io/posts/bst/</link>
+			<pubDate>Thu, 07 Jun 2018 15:09:17 +0800</pubDate>
+			
+			<guid>https://ricky-ting.github.io/posts/bst/</guid>
+			<description>下面是基于C++的BST类实现 // // main.cpp // debugger // // Created by 丁保荣 on 2018/6/6. // Copyright © 2018 丁保荣. All rights reserved. // #include&amp;lt;iostream&amp;gt; using namespace std; struct node { node * p; node * l; node * r; int key; }; class BST { public: node * root; node mynil; void</description>
+			<content type="html"><![CDATA[<p>下面是基于C++的BST类实现</p>
+<!-- raw HTML omitted -->
+<pre><code>//
+//  main.cpp
+//  debugger
+//
+//  Created by 丁保荣 on 2018/6/6.
+//  Copyright © 2018 丁保荣. All rights reserved.
+//
+
+#include&lt;iostream&gt;
+using namespace std;
+struct node
+{
+    node * p;
+    node * l;
+    node * r;
+    int key;
+};
+
+class BST
+{
+public:
+    node * root;
+    node mynil;
+    void Initial()
+    {
+        root=&amp;mynil;
+    }
+    void Inorder_tree_walk(node * x);
+    void Preorder_tree_walk(node * x);
+    void Postorder_tree_walk(node * x);
+    node * Search(node * x, int k);
+    node * Minimum(node * z);
+    node * Maximum(node * z);
+    node * Successor(node * x);
+    node * Predecessor(node * x);
+    void Insert(node * z);
+    void Transplant(node * u, node * v);
+    void Delete(node * z);
+    
+private:
+    
+};
+
+void BST::Inorder_tree_walk(node * x)
+{
+    if(x!=&amp;mynil)
+    {
+        BST::Inorder_tree_walk((*x).l);
+        cout&lt;&lt;(*x).key;
+        BST::Inorder_tree_walk((*x).r);
+    }
+}
+
+void BST::Preorder_tree_walk(node * x)
+{
+    if(x!=&amp;mynil)
+    {
+        cout&lt;&lt;(*x).key;
+        BST::Preorder_tree_walk((*x).l);
+        BST::Preorder_tree_walk((*x).r);
+    }
+}
+
+void BST::Postorder_tree_walk(node * x)
+{
+    if(x!=&amp;mynil)
+    {
+        BST::Postorder_tree_walk((*x).l);
+        BST::Postorder_tree_walk((*x).r);
+        cout&lt;&lt;(*x).key;
+    }
+}
+
+node * BST::Search(node * x,int k)
+{
+    if(x==&amp;mynil || k==(*x).key)
+        return x;
+    if(k&lt;(*x).key)
+        return BST::Search((*x).l,k);
+    else
+        return BST::Search((*x).r,k);
+}
+
+node * BST::Minimum(node * z)
+{
+    while((*z).l!=&amp;mynil)
+        z=(*z).l;
+    return z;
+}
+
+node * BST::Maximum(node * z)
+{
+    while((*z).r!=&amp;mynil)
+        z=(*z).r;
+    return z;
+}
+
+node * BST::Successor(node * x)
+{
+    if((*x).r!=&amp;mynil)
+        return BST::Minimum((*x).r);
+    node * y=(*x).p;
+    while(y!=&amp;mynil &amp;&amp; x==(*y).r)
+    {
+        x=y;
+        y=(*y).p;
+    }
+    return y;
+}
+
+node * BST::Predecessor(node * x)
+{
+    if((*x).l!=&amp;mynil)
+        return BST::Maximum((*x).l);
+    node * y=(*x).p;
+    while(y!=&amp;mynil &amp;&amp; x==(*y).l)
+    {
+        x=y;
+        y=(*y).p;
+    }
+    return y;
+}
+
+void BST::Insert(node * z)
+{
+    node * y=&amp;mynil;
+    node * x=root;
+    while(x!=&amp;mynil)
+    {
+        y=x;
+        if((*z).key&lt;(*x).key)
+            x=(*x).l;
+        else
+            x=(*x).r;
+    }
+    (*z).p=y;
+    if(y==&amp;mynil)
+        root=z;
+    else if((*z).key&lt;(*y).key)
+        (*y).l=z;
+    else
+        (*y).r=z;
+}
+
+void BST::Transplant(node * u, node * v)
+{
+    if((*u).p==&amp;mynil)
+        root=v;
+    else if(u==(*(*u).p).l)
+        (*(*u).p).l=v;
+    else
+        (*(*u).p).r=v;
+    if(v!=&amp;mynil)
+        (*v).p=(*u).p;
+}
+void BST::Delete(node * z)
+{
+    node * y;
+    if((*z).l==&amp;mynil)
+        BST::Transplant(z,(*z).r);
+    else if((*z).r==&amp;mynil)
+        BST::Transplant(z,(*z).l);
+    else
+    {
+        y=BST::Minimum((*z).r);
+        if((*y).p!=z)
+        {
+            BST::Transplant(y,(*y).r);
+            (*y).r=(*z).r;
+            (*(*y).r).p=y;
+        }
+        BST::Transplant(z,y);
+        (*y).l=(*z).l;
+        (*(*y).l).p=y;
+        
+    }
+}
+
+BST T;
+
+void myinsert(int key)
+{
+    node * p=new node;
+    (*p).key=key;
+    p-&gt;l=&amp;T.mynil;
+    p-&gt;r=&amp;T.mynil;
+    T.Insert(p);
+}
+
+void mydelete(int key)
+{
+    node * p = T.Search(T.root,key);
+    T.Delete(p);
+    delete(p);
+}
+</code></pre><p>以下是基于C++的RB-Tree类实现</p>
+<pre><code>//
+//  main.cpp
+//  debugger
+//
+//  Created by 丁保荣 on 2018/6/6.
+//  Copyright © 2018 丁保荣. All rights reserved.
+//
+#include&lt;iostream&gt;
+using namespace std;
+int counter=0;
+struct node
+{
+    bool c; // true is black and false is red.
+    int key;
+    node * p;
+    node * l;
+    node * r;
+};
+class myRB_Tree
+{
+public:
+    node mynil;
+    node * root;
+    void Initial()
+    {
+        mynil.c=true;
+        mynil.p=mynil.l=mynil.r=NULL;
+        mynil.key=-1;
+        root=&amp;mynil;
+    }
+    void Insert(node * z);
+    void Delete(node * z);
+    node * Search(node * x, int k);
+    node * Minimum(node * z);
+    void Preorder_tree_walk(node * x);
+    
+private:
+    void Insert_Fixup(node * z);
+    void Transplant(node * u, node * v);
+    void Left_Rotate(node * x);
+    void Right_Rotate(node * x);
+    void Delete_Fixup(node * x);
+};
+
+
+void myRB_Tree::Preorder_tree_walk(node * x)
+{
+    if(x!=&amp;mynil)
+    {
+        cout&lt;&lt;(*x).key&lt;&lt;&quot;:&quot;&lt;&lt;((*x).c?&quot;black&quot;:&quot;red&quot;)&lt;&lt;endl;
+        myRB_Tree::Preorder_tree_walk((*x).l);
+        myRB_Tree::Preorder_tree_walk((*x).r);
+    }
+}
+
+
+
+void myRB_Tree::Insert(node * z)
+{
+    node * y=&amp;mynil;
+    node * x=root;
+    while(x!=&amp;mynil)
+    {
+        y=x;
+        if((*z).key&lt;(*x).key)
+            x=(*x).l;
+        else
+            x=(*x).r;
+    }
+    (*z).p=y;
+    if(y==&amp;mynil)
+        root=z;
+    else if((*z).key&lt;(*y).key)
+        (*y).l=z;
+    else
+        (*y).r=z;
+    (*z).l=&amp;mynil;
+    (*z).r=&amp;mynil;
+    (*z).c=0;
+    myRB_Tree::Insert_Fixup(z);
+}
+
+void myRB_Tree::Insert_Fixup(node * z)
+{
+    while((*(*z).p).c==false)
+    {
+        if((*z).p==(*(*(*z).p).p).l)
+        {
+            node * y=(*(*(*z).p).p).r;
+            if((*y).c==false)
+            {
+                (*(*z).p).c=true;
+                (*y).c=true;
+                (*(*(*z).p).p).c=false;
+                z=(*(*z).p).p;
+            }
+            else
+            {
+                if(z==(*(*z).p).r)
+                {
+                    z=(*z).p;
+                    myRB_Tree::Left_Rotate(z);
+                }
+                (*(*z).p).c=true;
+                (*(*(*z).p).p).c=false;
+                myRB_Tree::Right_Rotate((*(*z).p).p);
+            }
+            
+        }
+        else
+        {
+            node * y=(*(*(*z).p).p).l;
+            if((*y).c==false)
+            {
+                (*(*z).p).c=true;
+                (*y).c=true;
+                (*(*(*z).p).p).c=false;
+                z=(*(*z).p).p;
+            }
+            else
+            {
+                if(z==(*(*z).p).l)
+                {
+                    z=(*z).p;
+                    myRB_Tree::Right_Rotate(z);
+                }
+                (*(*z).p).c=true;
+                (*(*(*z).p).p).c=false;
+                myRB_Tree::Left_Rotate((*(*z).p).p);
+            }
+        }
+    }
+    (*root).c=true;
+}
+
+
+void myRB_Tree::Left_Rotate(node * x)
+{
+    node * y= (*x).r;
+    (*x).r=(*y).l;
+    if((*y).l!=&amp;mynil)
+        (*(*y).l).p=x;
+    (*y).p=(*x).p;
+    if((*x).p==&amp;mynil)
+        root=y;
+    else if(x==(*(*x).p).l)
+        (*(*x).p).l=y;
+    else
+        (*(*x).p).r=y;
+    (*y).l=x;
+    (*x).p=y;
+}
+
+void myRB_Tree::Right_Rotate(node * x)
+{
+    node * y= (*x).l;
+    (*x).l=(*y).r;
+    if((*y).r!=&amp;mynil)
+        (*(*y).r).p=x;
+    (*y).p=(*x).p;
+    if((*x).p==&amp;mynil)
+        root=y;
+    else if(x==(*(*x).p).r)
+        (*(*x).p).r=y;
+    else
+        (*(*x).p).l=y;
+    (*y).r=x;
+    (*x).p=y;
+}
+
+void myRB_Tree::Transplant(node * u, node * v)
+{
+    if((*u).p==&amp;mynil)
+        root=v;
+    else if(u==(*(*u).p).l)
+        (*(*u).p).l=v;
+    else
+        (*(*u).p).r=v;
+    (*v).p=(*u).p;
+}
+
+void myRB_Tree::Delete(node * z)
+{
+    node * y=z;
+    node * x;
+    bool y_original_color=(*y).c;
+    if((*z).l==&amp;mynil)
+    {
+        x=(*z).r;
+        myRB_Tree::Transplant(z,(*z).r);
+    }
+    else if((*z).r==&amp;mynil)
+    {
+        x=(*z).l;
+        myRB_Tree::Transplant(z,(*z).l);
+    }
+    else
+    {
+        y=myRB_Tree::Minimum((*z).r);
+        y_original_color=(*y).c;
+        x=(*y).r;
+        if((*y).p==z)
+            (*x).p=y;
+        else
+        {
+            myRB_Tree::Transplant(y,(*y).r);
+            (*y).r=(*z).r;
+            (*(*y).r).p=y;
+        }
+        myRB_Tree::Transplant(z,y);
+        (*y).l=(*z).l;
+        (*(*y).l).p=y;
+        (*y).c=(*z).c;
+    }
+    if(y_original_color==true)
+        myRB_Tree::Delete_Fixup(x);
+}
+
+void myRB_Tree::Delete_Fixup(node * x)
+{
+    node * w;
+    while(x!=root and (*x).c==true)
+    {
+        if(x==(*(*x).p).l)
+        {
+            w=(*(*x).p).r;
+            if((*w).c==false)
+            {
+                (*w).c=true;
+                (*(*x).p).c=false;
+                myRB_Tree::Right_Rotate((*x).p);
+                w=(*(*x).p).r;
+            }
+            if((*(*w).l).c==true &amp;&amp; (*(*w).r).c==true)
+            {
+                (*w).c=false;
+                x=(*x).p;
+            }
+            else
+            {
+                if((*(*w).r).c==true)
+                {
+                    (*(*w).l).c=true;
+                    (*w).c=false;
+                    myRB_Tree::Left_Rotate(w);
+                    w=(*(*x).p).r;
+                }
+                (*w).c=(*(*x).p).c;
+                (*(*x).p).c=true;
+                (*(*w).r).c=true;
+                myRB_Tree::Right_Rotate((*x).p);
+                x=root;
+            }
+        }
+        else
+        {
+            w=(*(*x).p).l;
+            if((*w).c==false)
+            {
+                (*w).c=true;
+                (*(*x).p).c=false;
+                myRB_Tree::Right_Rotate((*x).p);
+                w=(*(*x).p).l;
+            }
+            if((*(*w).r).c==true &amp;&amp; (*(*w).l).c==true)
+            {
+                (*w).c=false;
+                x=(*x).p;
+            }
+            else
+            {
+                if((*(*w).l).c==true)
+                {
+                    (*(*w).r).c=true;
+                    (*w).c=false;
+                    myRB_Tree::Left_Rotate(w);
+                    w=(*(*x).p).l;
+                }
+                (*w).c=(*(*x).p).c;
+                (*(*x).p).c=true;
+                (*(*w).l).c=true;
+                myRB_Tree::Right_Rotate((*x).p);
+                x=root;
+            }
+        }
+    }
+}
+
+node * myRB_Tree::Minimum(node * z)
+{
+    while((*z).l!=&amp;mynil)
+        z=(*z).l;
+    return z;
+}
+
+node * myRB_Tree::Search(node * x,int k)
+{
+    if(x==&amp;mynil || k==(*x).key)
+        return x;
+    if(k&lt;(*x).key)
+    {
+        counter++;
+        return myRB_Tree::Search((*x).l,k);
+    }
+    else
+    {
+        counter++;
+        return myRB_Tree::Search((*x).r,k);
+    }
+}
+myRB_Tree T;
+void myinsert(int key)
+{
+    node * p=new node;
+    (*p).key=key;
+    p-&gt;l=&amp;T.mynil;
+    p-&gt;r=&amp;T.mynil;
+    T.Insert(p);
+}
+
+void mydelete(int key)
+{
+    node * p = T.Search(T.root,key);
+    T.Delete(p);
+    delete(p);
+}
+</code></pre>]]></content>
+		</item>
+		
+	</channel>
+</rss>
