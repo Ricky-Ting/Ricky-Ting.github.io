@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 07 Apr 2020 22:43:35 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2020 00:02:43 +0800</lastBuildDate>
     
 	<atom:link href="https://ricky-ting.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Links</title>
+      <link>https://ricky-ting.github.io/links/</link>
+      <pubDate>Wed, 08 Apr 2020 00:02:43 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/links/</guid>
+      <description>[zzw&amp;rsquo;s blog](zzw&amp;rsquo;s blog: https://zhengzangw.github.io)</description>
+    </item>
     
     <item>
       <title>博客迁移记录</title>
@@ -131,15 +140,6 @@
       
       <guid>https://ricky-ting.github.io/posts/proxy-for-bash/</guid>
       <description>export ALL_PROXY=socks5://127.0.0.1:1086 </description>
-    </item>
-    
-    <item>
-      <title>数据通信笔记</title>
-      <link>https://ricky-ting.github.io/notes/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Tue, 12 Mar 2019 14:02:49 +0800</pubDate>
-      
-      <guid>https://ricky-ting.github.io/notes/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%AC%94%E8%AE%B0/</guid>
-      <description>数据通信笔记 课程介绍 课程主页：http://cs.nju.edu.cn/yafeng/ 考核形式： 课程习题：考试重点(6-8次) 课外作业：文档</description>
     </item>
     
   </channel>
