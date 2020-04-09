@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 08 Apr 2020 00:02:43 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2020 23:12:16 +0800</lastBuildDate>
     
 	<atom:link href="https://ricky-ting.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Slides</title>
+      <link>https://ricky-ting.github.io/slides/</link>
+      <pubDate>Thu, 09 Apr 2020 23:12:16 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/slides/</guid>
+      <description>Test</description>
+    </item>
     
     <item>
       <title>Links</title>
@@ -139,15 +148,6 @@ Michael</description>
       
       <guid>https://ricky-ting.github.io/posts/android-studio-installation/</guid>
       <description>出现错误的话，把~/.gradle删除, 并把代理全部关掉，重新打开build。</description>
-    </item>
-    
-    <item>
-      <title>proxy for bash</title>
-      <link>https://ricky-ting.github.io/posts/proxy-for-bash/</link>
-      <pubDate>Mon, 01 Apr 2019 11:04:55 +0800</pubDate>
-      
-      <guid>https://ricky-ting.github.io/posts/proxy-for-bash/</guid>
-      <description>export ALL_PROXY=socks5://127.0.0.1:1086 </description>
     </item>
     
   </channel>
