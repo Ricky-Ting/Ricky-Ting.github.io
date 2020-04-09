@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 07 Apr 2020 22:46:23 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2020 23:29:38 +0800</lastBuildDate>
     
 	<atom:link href="https://ricky-ting.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何发布slides</title>
+      <link>https://ricky-ting.github.io/posts/%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83slides/</link>
+      <pubDate>Thu, 09 Apr 2020 23:29:38 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/posts/%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83slides/</guid>
+      <description>这里介绍一下我是怎么用Markdown做slides，并发布在自己的博客 制作slides 之前一直用latex写slides，感觉还是有点麻烦</description>
+    </item>
     
     <item>
       <title>博客迁移记录</title>
@@ -131,15 +140,6 @@
       
       <guid>https://ricky-ting.github.io/notes/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%AC%94%E8%AE%B0/</guid>
       <description>数据通信笔记 课程介绍 课程主页：http://cs.nju.edu.cn/yafeng/ 考核形式： 课程习题：考试重点(6-8次) 课外作业：文档</description>
-    </item>
-    
-    <item>
-      <title>问题求解2019Spring</title>
-      <link>https://ricky-ting.github.io/notes/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A32019spring/</link>
-      <pubDate>Wed, 06 Mar 2019 10:26:24 +0800</pubDate>
-      
-      <guid>https://ricky-ting.github.io/notes/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A32019spring/</guid>
-      <description>问题求解 2019Spring 4.1线性规划 In linear programming, we do not allow strict inequalities. minimization linear program and maximization program The simplex algorithm does not run in polynomial time in the worst case, but it is fairly efficient and widely used in practice. We use two forms, standard and slack. Informally, a linear program in standard form is the maximization of a linear</description>
     </item>
     
   </channel>

@@ -6,8 +6,37 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>zh-CN</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Tue, 07 Apr 2020 22:46:23 +0800</lastBuildDate>
+		<lastBuildDate>Thu, 09 Apr 2020 23:29:38 +0800</lastBuildDate>
 		<atom:link href="https://ricky-ting.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>如何发布slides</title>
+			<link>https://ricky-ting.github.io/posts/%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83slides/</link>
+			<pubDate>Thu, 09 Apr 2020 23:29:38 +0800</pubDate>
+			
+			<guid>https://ricky-ting.github.io/posts/%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83slides/</guid>
+			<description>这里介绍一下我是怎么用Markdown做slides，并发布在自己的博客 制作slides 之前一直用latex写slides，感觉还是有点麻烦</description>
+			<content type="html"><![CDATA[<p>这里介绍一下我是怎么用Markdown做slides，并发布在自己的博客</p>
+<h1 id="制作slides">制作slides</h1>
+<p>之前一直用latex写slides，感觉还是有点麻烦，后来发现原来Markdown也可以写slides(爱了爱了)，因为最近正好有门课程需要做一个presentation，索性就试试Markdown吧。</p>
+<h2 id="安装reveal-md">安装reveal-md</h2>
+<p><a href="https://github.com/webpro/reveal-md">reveal-md</a>可以将Markdown文件转换成一个静态网页，这样就方便我们在博客上进行部署了。</p>
+<p>先安装npm:</p>
+<pre><code>brew install npm
+</code></pre><p>然后安装reveal-md</p>
+<pre><code>npm install -g reveal-md
+</code></pre><h2 id="生成静态网页">生成静态网页</h2>
+<p>用reveal-md生成静态网页</p>
+<pre><code>reveal-md slides.md --static test
+</code></pre><h1 id="部署到博客上">部署到博客上</h1>
+<p>因为网页是静态的，所以我们只要把静态网页(比如上面的test)放到<code>public</code>下面，然后通过<code>https://username.github.io/test</code>就可以访问到了。</p>
+<p>但这样手动拷贝比较麻烦，我们可以把这些slides都放入某一文件夹，比如我这里就是<code>slides_content</code>， 然后在我们之前的构建脚本里加上这样一行就可以自动部署到<code>public</code>中了</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># Add slides</span>
+rm -r public/slides_content
+cp -r slides_content public/slides_content
+</code></pre></div><p>然后我们在自己的Slides页面加入相应的链接就可以了，这个后续可以尝试用一个自动化脚本讲slides_content中的网页自动加入到Slides页面中，最好的效果是写完Markdown之后，直接用deploy.sh能够自动构建整个网站。</p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>博客迁移记录</title>
