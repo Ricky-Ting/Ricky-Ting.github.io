@@ -13,15 +13,6 @@
     
     
     <item>
-      <title>Test</title>
-      <link>https://ricky-ting.github.io/slides/test/</link>
-      <pubDate>Fri, 10 Apr 2020 20:49:16 +0800</pubDate>
-      
-      <guid>https://ricky-ting.github.io/slides/test/</guid>
-      <description>你好</description>
-    </item>
-    
-    <item>
       <title>如何发布slides</title>
       <link>https://ricky-ting.github.io/posts/%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83slides/</link>
       <pubDate>Thu, 09 Apr 2020 23:29:38 +0800</pubDate>
@@ -148,6 +139,15 @@ Michael</description>
       
       <guid>https://ricky-ting.github.io/notes/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</guid>
       <description>数据通信期中复习 通信模型： 源点-&amp;gt;发送器-&amp;gt;传输系统-&amp;gt;接收器-&amp;gt;终点 单工、半双工、双工。 数字通信系统:利用数字信号</description>
+    </item>
+    
+    <item>
+      <title>Android Studio Installation</title>
+      <link>https://ricky-ting.github.io/posts/android-studio-installation/</link>
+      <pubDate>Wed, 03 Apr 2019 11:07:18 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/posts/android-studio-installation/</guid>
+      <description>出现错误的话，把~/.gradle删除, 并把代理全部关掉，重新打开build。</description>
     </item>
     
   </channel>
