@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 09 Apr 2020 23:12:16 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2020 00:02:43 +0800</lastBuildDate>
     
 	<atom:link href="https://ricky-ting.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Test</title>
+      <link>https://ricky-ting.github.io/slides/test/</link>
+      <pubDate>Fri, 10 Apr 2020 20:49:16 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/slides/test/</guid>
+      <description>计算机网络课程实战 SSH 漏洞利用 概览 针对常间漏洞： 密码爆破 中间人攻击 密钥重用 防火墙绕过</description>
+    </item>
     
     <item>
       <title>如何发布slides</title>
@@ -19,15 +28,6 @@
       
       <guid>https://ricky-ting.github.io/posts/%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83slides/</guid>
       <description>这里介绍一下我是怎么用Markdown做slides，并发布在自己的博客 制作slides 之前一直用latex写slides，感觉还是有点麻烦</description>
-    </item>
-    
-    <item>
-      <title>Slides</title>
-      <link>https://ricky-ting.github.io/slides/</link>
-      <pubDate>Thu, 09 Apr 2020 23:12:16 +0800</pubDate>
-      
-      <guid>https://ricky-ting.github.io/slides/</guid>
-      <description>Test </description>
     </item>
     
     <item>
