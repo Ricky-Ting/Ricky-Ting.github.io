@@ -6,8 +6,74 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>zh-CN</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Thu, 09 Apr 2020 23:29:38 +0800</lastBuildDate>
+		<lastBuildDate>Sat, 11 Apr 2020 11:47:21 +0800</lastBuildDate>
 		<atom:link href="https://ricky-ting.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>How to Read a Paper</title>
+			<link>https://ricky-ting.github.io/posts/how-to-read-a-paper/</link>
+			<pubDate>Sat, 11 Apr 2020 11:47:21 +0800</pubDate>
+			
+			<guid>https://ricky-ting.github.io/posts/how-to-read-a-paper/</guid>
+			<description>前言 在这篇文章中，作者提出了一种three-pass的论文阅读方法，由浅入深，并且根据自己的需要来选择了解的深度。其实不只是论文阅读，平时的</description>
+			<content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>在<a href="https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf">这篇文章</a>中，作者提出了一种three-pass的论文阅读方法，由浅入深，并且根据自己的需要来选择了解的深度。其实不只是论文阅读，平时的文章阅读、学习也是这样的。对于电子书，我一直觉得需要比较好的TOC，而且最好能在侧边栏显示，这样在阅读的过程中，才不会迷失在细节中，在很多需要长时间努力的活动中，保持方向感是很重要的。</p>
+<h1 id="读论文的three-pass">读论文的three-pass</h1>
+<p>首先我们要明确每一个pass的目的：</p>
+<ul>
+<li>First pass: 掌握论文的general idea，梳理论文的脉络。</li>
+<li>Second pass: 抓住论文的主要内容，而不是迷失在细节中。</li>
+<li>Third pass: 更深地去理解论文。</li>
+</ul>
+<h2 id="the-first-pass">The first pass</h2>
+<p>文章中用了一个词叫&quot;bird&rsquo;s-eye view&rdquo;，这遍的目的主要是快速扫一遍，花大概五到十分钟。文章中列出了具体的步骤，如下：</p>
+<ol>
+<li>Carefully read the title, abstract, and introduction</li>
+<li>Read the section and sub-section headings, but ignore everything else</li>
+<li>Read the conclusions</li>
+<li>Glance over the references, mentally ticking off the ones you’ve already read</li>
+</ol>
+<p>那么如何才能知道这一遍是否达到想要的目的呢，你可以问自己这么几个问题：</p>
+<ol>
+<li>Category: What type of paper is this? A measure- ment paper? An analysis of an existing system? A description of a research prototype?</li>
+<li>Context: Which other papers is it related to? Which theoretical bases were used to analyze the problem?</li>
+<li>Correctness: Do the assumptions appear to be valid?</li>
+<li>Contributions: What are the paper’s main contribu-
+tions?</li>
+<li>Clarity: Is the paper well written?</li>
+</ol>
+<p>这样就能快速地了解一篇论文，看看它是否契合你的兴趣，以及是否有比较大的contribution，来决定是否要进行第二遍阅读。</p>
+<h2 id="the-second-pass">The second pass</h2>
+<p>这一遍要比第一遍更细致一点，但不要纠结于细节(比如证明)，这一遍读的时候最好能圈圈画画，标记出你认为重要的，以及需要在第三遍中进一步理解的。文章中也总结了一些步骤：</p>
+<ol>
+<li>Look carefully at the figures, diagrams and other illus- trations in the paper. Pay special attention to graphs. Are the axes properly labeled? Are results shown with error bars, so that conclusions are statistically sig- nificant? Common mistakes like these will separate rushed, shoddy work from the truly excellent.</li>
+<li>Remember to mark relevant unread references for fur- ther reading (this is a good way to learn more about the background of the paper).</li>
+</ol>
+<p>要注意参考文献，里面可能有一些比较fundamental的文章，可能会在将来需要阅读。</p>
+<p>这遍阅读大概要花一个小时，第二遍阅读完了之后，你有这么几种选择：</p>
+<ul>
+<li>放弃这篇论文</li>
+<li>先去了解一些背景知识，再接着读这篇论文。(看文章的时候也是一样，当遇到了自己context中没有概念可能会造成阅读障碍，当这些概念过多，影响到理解的时候，就需要停下来去补补相关概念。)</li>
+<li>接着读第三遍</li>
+</ul>
+<h2 id="the-third-pass">The third pass</h2>
+<p>第三遍的目的是重新发现或者发明，是一个在论文的引导下逐步自己进行整个process的过程，时不时停下来问问自己：自己面临这个问题会怎么做，这个问题论文解决地合理吗。我这里引用作者文章中的原话：</p>
+<blockquote>
+<p>The key to the third pass is to attempt to virtually re-implement the paper: that is, making the same assumptions as the authors, re-create the work. By comparing this re-creation with the actual paper, you can easily identify not only a paper’s innovations, but also its hidden failings and assumptions.</p>
+</blockquote>
+<p>在这遍的过程中，你应该把自己化身为一个&quot;杠精&rdquo;，对于论文作者的每一个assumption都要challenge。</p>
+<p>第三遍对于新手大概需要四到五个小时，但对于老司机可能一个小时就够了。第三遍完成之后，要能在脑中重建整个论文。</p>
+<h1 id="做文献调研literature-survey">做文献调研(Literature survey)</h1>
+<p>作者还介绍了应该怎么做文献调研，也要分三步走(凡事皆可三步)。</p>
+<ol>
+<li>去Google Schorlar之类的平台根据关键字去找某个领域最新的三到五篇论文。对他们进行one-pass, 然后着重看related work，如果能找到survey性质的文章，你就大功告成了。</li>
+<li>否则的话，你要找重合度比较高的参考文献，即被多篇文章引用的，一般来说这种文章都是这个领域比较fundamental或者key的文章。可以把这些文章加入你的阅读列表，你还要关注这些作者，去看看他们发的文章，也要注意他们发表的平台，一般来说，顶尖的作者都会在top conference上发表。(其实不一定要通过作者找top conference，一般每个领域都会有公认的top conference，直接去这些top conference找就可以了)。</li>
+<li>在这些top conference上找找文章。</li>
+</ol>
+<h1 id="日常学习">日常学习</h1>
+<p>我们日常学习中也会经常碰到很多新的名词、工具、概念等等。我觉得这些的学习也可以用three-pass来概括：&ldquo;是什么&rdquo;，&ldquo;怎么做&rdquo;，&ldquo;为什么&rdquo;。当然&quot;怎么做&quot;和&quot;为什么&quot;是可以交替的。但一般来说，如果我们不去深入研究的话，一般知道&quot;是什么&quot;和&quot;怎么做&quot;就可以了，然后再稍微了解一下&quot;为什么&rdquo;。当然有时间和兴趣的话，还是要去了解了解&quot;为什么&rdquo;，因为了解背后的原理更重要。</p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>如何发布slides</title>

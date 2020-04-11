@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+<meta itemprop="name" content="How to Read a Paper">
+<meta itemprop="description" content="前言 在这篇文章中，作者提出了一种three-pass的论文阅读方法，由浅入深，并且根据自己的需要来选择了解的深度。其实不只是论文阅读，平时的">
+<meta itemprop="datePublished" content="2020-04-11T11:47:21&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-11T11:47:21&#43;08:00" />
+<meta itemprop="wordCount" content="1827">
+
+
+
+<meta itemprop="keywords" content="untagged," /><meta property="og:title" content="How to Read a Paper" />
+<meta property="og:description" content="前言 在这篇文章中，作者提出了一种three-pass的论文阅读方法，由浅入深，并且根据自己的需要来选择了解的深度。其实不只是论文阅读，平时的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ricky-ting.github.io/posts/how-to-read-a-paper/" />
+<meta property="article:published_time" content="2020-04-11T11:47:21+08:00" />
+<meta property="article:modified_time" content="2020-04-11T11:47:21+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to Read a Paper"/>
+<meta name="twitter:description" content="前言 在这篇文章中，作者提出了一种three-pass的论文阅读方法，由浅入深，并且根据自己的需要来选择了解的深度。其实不只是论文阅读，平时的"/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>How to Read a Paper</title>
+	<link rel="stylesheet" href="https://ricky-ting.github.io/css/style.min.657bcb7af31123e4156b1a3d2ff60a636717e54ead74f882136b5114cf72b55e.css" integrity="sha256-ZXvLevMRI+QVaxo9L/YKY2cX5U6tdPiCE2tRFM9ytV4=" crossorigin="anonymous">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://ricky-ting.github.io">Ricky Ting&#39;s Blog</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="https://ricky-ting.github.io/posts/">Posts</a>
+				<a href="https://ricky-ting.github.io/notes/">Notes</a>
+				<a href="https://ricky-ting.github.io/slides/">Slides</a>
+				<a href="https://ricky-ting.github.io/about-hugo/">About</a>
+				<a href="https://ricky-ting.github.io/links/">Links</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/Ricky-Ting/" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://ricky-ting.github.io/posts/">Posts</a></li>
+			<li><a href="https://ricky-ting.github.io/notes/">Notes</a></li>
+			<li><a href="https://ricky-ting.github.io/slides/">Slides</a></li>
+			<li><a href="https://ricky-ting.github.io/about-hugo/">About</a></li>
+			<li><a href="https://ricky-ting.github.io/links/">Links</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Apr 11, 2020</span></div>
+				<h1>How to Read a Paper</h1>
+			</header>
+			<div class="content">
+				<h1 id="前言">前言<a href="#前言" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<p>在<a href="https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf">这篇文章</a>中，作者提出了一种three-pass的论文阅读方法，由浅入深，并且根据自己的需要来选择了解的深度。其实不只是论文阅读，平时的文章阅读、学习也是这样的。对于电子书，我一直觉得需要比较好的TOC，而且最好能在侧边栏显示，这样在阅读的过程中，才不会迷失在细节中，在很多需要长时间努力的活动中，保持方向感是很重要的。</p>
+<h1 id="读论文的three-pass">读论文的three-pass<a href="#读论文的three-pass" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<p>首先我们要明确每一个pass的目的：</p>
+<ul>
+<li>First pass: 掌握论文的general idea，梳理论文的脉络。</li>
+<li>Second pass: 抓住论文的主要内容，而不是迷失在细节中。</li>
+<li>Third pass: 更深地去理解论文。</li>
+</ul>
+<h2 id="the-first-pass">The first pass<a href="#the-first-pass" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>文章中用了一个词叫&quot;bird&rsquo;s-eye view&rdquo;，这遍的目的主要是快速扫一遍，花大概五到十分钟。文章中列出了具体的步骤，如下：</p>
+<ol>
+<li>Carefully read the title, abstract, and introduction</li>
+<li>Read the section and sub-section headings, but ignore everything else</li>
+<li>Read the conclusions</li>
+<li>Glance over the references, mentally ticking off the ones you’ve already read</li>
+</ol>
+<p>那么如何才能知道这一遍是否达到想要的目的呢，你可以问自己这么几个问题：</p>
+<ol>
+<li>Category: What type of paper is this? A measure- ment paper? An analysis of an existing system? A description of a research prototype?</li>
+<li>Context: Which other papers is it related to? Which theoretical bases were used to analyze the problem?</li>
+<li>Correctness: Do the assumptions appear to be valid?</li>
+<li>Contributions: What are the paper’s main contribu-
+tions?</li>
+<li>Clarity: Is the paper well written?</li>
+</ol>
+<p>这样就能快速地了解一篇论文，看看它是否契合你的兴趣，以及是否有比较大的contribution，来决定是否要进行第二遍阅读。</p>
+<h2 id="the-second-pass">The second pass<a href="#the-second-pass" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>这一遍要比第一遍更细致一点，但不要纠结于细节(比如证明)，这一遍读的时候最好能圈圈画画，标记出你认为重要的，以及需要在第三遍中进一步理解的。文章中也总结了一些步骤：</p>
+<ol>
+<li>Look carefully at the figures, diagrams and other illus- trations in the paper. Pay special attention to graphs. Are the axes properly labeled? Are results shown with error bars, so that conclusions are statistically sig- nificant? Common mistakes like these will separate rushed, shoddy work from the truly excellent.</li>
+<li>Remember to mark relevant unread references for fur- ther reading (this is a good way to learn more about the background of the paper).</li>
+</ol>
+<p>要注意参考文献，里面可能有一些比较fundamental的文章，可能会在将来需要阅读。</p>
+<p>这遍阅读大概要花一个小时，第二遍阅读完了之后，你有这么几种选择：</p>
+<ul>
+<li>放弃这篇论文</li>
+<li>先去了解一些背景知识，再接着读这篇论文。(看文章的时候也是一样，当遇到了自己context中没有概念可能会造成阅读障碍，当这些概念过多，影响到理解的时候，就需要停下来去补补相关概念。)</li>
+<li>接着读第三遍</li>
+</ul>
+<h2 id="the-third-pass">The third pass<a href="#the-third-pass" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>第三遍的目的是重新发现或者发明，是一个在论文的引导下逐步自己进行整个process的过程，时不时停下来问问自己：自己面临这个问题会怎么做，这个问题论文解决地合理吗。我这里引用作者文章中的原话：</p>
+<blockquote>
+<p>The key to the third pass is to attempt to virtually re-implement the paper: that is, making the same assumptions as the authors, re-create the work. By comparing this re-creation with the actual paper, you can easily identify not only a paper’s innovations, but also its hidden failings and assumptions.</p>
+</blockquote>
+<p>在这遍的过程中，你应该把自己化身为一个&quot;杠精&rdquo;，对于论文作者的每一个assumption都要challenge。</p>
+<p>第三遍对于新手大概需要四到五个小时，但对于老司机可能一个小时就够了。第三遍完成之后，要能在脑中重建整个论文。</p>
+<h1 id="做文献调研literature-survey">做文献调研(Literature survey)<a href="#做文献调研literature-survey" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<p>作者还介绍了应该怎么做文献调研，也要分三步走(凡事皆可三步)。</p>
+<ol>
+<li>去Google Schorlar之类的平台根据关键字去找某个领域最新的三到五篇论文。对他们进行one-pass, 然后着重看related work，如果能找到survey性质的文章，你就大功告成了。</li>
+<li>否则的话，你要找重合度比较高的参考文献，即被多篇文章引用的，一般来说这种文章都是这个领域比较fundamental或者key的文章。可以把这些文章加入你的阅读列表，你还要关注这些作者，去看看他们发的文章，也要注意他们发表的平台，一般来说，顶尖的作者都会在top conference上发表。(其实不一定要通过作者找top conference，一般每个领域都会有公认的top conference，直接去这些top conference找就可以了)。</li>
+<li>在这些top conference上找找文章。</li>
+</ol>
+<h1 id="日常学习">日常学习<a href="#日常学习" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<p>我们日常学习中也会经常碰到很多新的名词、工具、概念等等。我觉得这些的学习也可以用three-pass来概括：&ldquo;是什么&rdquo;，&ldquo;怎么做&rdquo;，&ldquo;为什么&rdquo;。当然&quot;怎么做&quot;和&quot;为什么&quot;是可以交替的。但一般来说，如果我们不去深入研究的话，一般知道&quot;是什么&quot;和&quot;怎么做&quot;就可以了，然后再稍微了解一下&quot;为什么&rdquo;。当然有时间和兴趣的话，还是要去了解了解&quot;为什么&rdquo;，因为了解背后的原理更重要。</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://ricky-ting.github.io/tags/untagged">untagged</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-04-11 11:47 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="prev-post" href="https://ricky-ting.github.io/posts/%E5%A6%82%E4%BD%95%E5%8F%91%E5%B8%83slides/">
+				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>如何发布slides</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2020 <a href="https://ricky-ting.github.io">Ricky Ting</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://ricky-ting.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+
+	<script src="https://ricky-ting.github.io/js/bundle.min.4a9a0ac3d2217822c7865b4161e6c2a71de1d70492264337755427898dd718f6.js" integrity="sha256-SpoKw9IheCLHhltBYebCpx3h1wSSJkM3dVQniY3XGPY=" crossorigin="anonymous"></script>
+	
+
+</body>
+
+</html>
