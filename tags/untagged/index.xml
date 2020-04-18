@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 11 Apr 2020 11:47:21 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 18 Apr 2020 22:44:55 +0800</lastBuildDate>
     
 	<atom:link href="https://ricky-ting.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>浅谈loop Unrolling</title>
+      <link>https://ricky-ting.github.io/posts/%E6%B5%85%E8%B0%88loop-unrolling/</link>
+      <pubDate>Sat, 18 Apr 2020 22:44:55 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/posts/%E6%B5%85%E8%B0%88loop-unrolling/</guid>
+      <description>最近在做体系结构的实验，正好接触到了loop unrolling，就来简单地写一写。 为什么要有loop unrolling 这要从现代处理器的微架构讲起，现代CP</description>
+    </item>
     
     <item>
       <title>How to Read a Paper</title>
@@ -131,15 +140,6 @@
       
       <guid>https://ricky-ting.github.io/posts/android-studio-installation/</guid>
       <description>出现错误的话，把~/.gradle删除, 并把代理全部关掉，重新打开build。</description>
-    </item>
-    
-    <item>
-      <title>proxy for bash</title>
-      <link>https://ricky-ting.github.io/posts/proxy-for-bash/</link>
-      <pubDate>Mon, 01 Apr 2019 11:04:55 +0800</pubDate>
-      
-      <guid>https://ricky-ting.github.io/posts/proxy-for-bash/</guid>
-      <description>export ALL_PROXY=socks5://127.0.0.1:1086 </description>
     </item>
     
   </channel>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+<meta itemprop="name" content="浅谈loop Unrolling">
+<meta itemprop="description" content="最近在做体系结构的实验，正好接触到了loop unrolling，就来简单地写一写。 为什么要有loop unrolling 这要从现代处理器的微架构讲起，现代CP">
+<meta itemprop="datePublished" content="2020-04-18T22:44:55&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-18T22:44:55&#43;08:00" />
+<meta itemprop="wordCount" content="1291">
+
+
+
+<meta itemprop="keywords" content="untagged," /><meta property="og:title" content="浅谈loop Unrolling" />
+<meta property="og:description" content="最近在做体系结构的实验，正好接触到了loop unrolling，就来简单地写一写。 为什么要有loop unrolling 这要从现代处理器的微架构讲起，现代CP" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ricky-ting.github.io/posts/%E6%B5%85%E8%B0%88loop-unrolling/" />
+<meta property="article:published_time" content="2020-04-18T22:44:55+08:00" />
+<meta property="article:modified_time" content="2020-04-18T22:44:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="浅谈loop Unrolling"/>
+<meta name="twitter:description" content="最近在做体系结构的实验，正好接触到了loop unrolling，就来简单地写一写。 为什么要有loop unrolling 这要从现代处理器的微架构讲起，现代CP"/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>浅谈loop Unrolling</title>
+	<link rel="stylesheet" href="https://ricky-ting.github.io/css/style.min.657bcb7af31123e4156b1a3d2ff60a636717e54ead74f882136b5114cf72b55e.css" integrity="sha256-ZXvLevMRI+QVaxo9L/YKY2cX5U6tdPiCE2tRFM9ytV4=" crossorigin="anonymous">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://ricky-ting.github.io">Ricky Ting&#39;s Blog</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="https://ricky-ting.github.io/posts/">Posts</a>
+				<a href="https://ricky-ting.github.io/notes/">Notes</a>
+				<a href="https://ricky-ting.github.io/slides/">Slides</a>
+				<a href="https://ricky-ting.github.io/about-hugo/">About</a>
+				<a href="https://ricky-ting.github.io/links/">Links</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/Ricky-Ting/" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://ricky-ting.github.io/posts/">Posts</a></li>
+			<li><a href="https://ricky-ting.github.io/notes/">Notes</a></li>
+			<li><a href="https://ricky-ting.github.io/slides/">Slides</a></li>
+			<li><a href="https://ricky-ting.github.io/about-hugo/">About</a></li>
+			<li><a href="https://ricky-ting.github.io/links/">Links</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Apr 18, 2020</span></div>
+				<h1>浅谈loop Unrolling</h1>
+			</header>
+			<div class="content">
+				<p>最近在做体系结构的实验，正好接触到了loop unrolling，就来简单地写一写。</p>
+<h1 id="为什么要有loop-unrolling">为什么要有loop unrolling<a href="#为什么要有loop-unrolling" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<p>这要从现代处理器的微架构讲起，现代CPU为了提升性能一般都采用了流水线(Pipeline)。流水线能够流水线的引入提升了CPU的吞吐量，也增加了CPU function unit的利用率。</p>
+<p>但流水线的引入也带来了很多问题，比如data hazard, control hazard。在现代处理器中，data hazard一般通过forwarding来解决，而control hazard一般通过分支预测(Branch prediction)来解决。</p>
+<p>我们这里着重关注control hazard，即由于条件跳转，我们得等待一定的延迟才能得到准确的跳转地址(taken or not taken, that&rsquo;s a question)。如果我们在得到准确的跳转地址之前什么都不做，我们会白白浪费很多CPU资源，这时我们就引入了分支预测，我们先去猜这个分支到底跳转还是不跳转，然后直接去执行相应的指令。当然这个猜也不是毫无根据地猜，一般会根据之前的跳转结果来猜，具体的实现可以有很多种。</p>
+<p>既然是预测，就有可能预测得不对，这就会导致CPU执行了错误的指令，需要冲刷流水线，并重新去取得正确的指令，而且现代处理器流水线都是比较深的(Intel Haswell架构有14-19级流水线)，所以预测错误的代价是比较大的。</p>
+<p>为了提升程序这部分的性能，我们有三条路：</p>
+<ol>
+<li>提升分支预测的性能，这是Intel等硬件厂商在干的事(好像现在已经能达到90%以上的正确率)。</li>
+<li>推测执行(Predicated execution)，cmov就是推测执行。</li>
+<li>减少分支的数量，这是编译器或者软件编写者去干的事</li>
+</ol>
+<p>Loop unrolling 就属于上述的第三条路，我们将循环展开来减少分支的数量。</p>
+<h1 id="如何实现loop-unrolling">如何实现loop unrolling<a href="#如何实现loop-unrolling" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<p>Loop unrolling的思路就如下所示：</p>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+  <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div><p>我们每次执行两次加法，就把分支的数量减少了一半。不过上述代码只是一个思路，其实并不正确，它没有考虑到N为奇数的情况。</p>
+<p>我们下面来看看正确的写法：</p>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="c1">// k为展开的次数，上面的代码就是k=2的情况, 注意具体代码中k应该是常数
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(;</span> <span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="o">&lt;=</span><span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">+=</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+	<span class="p">....</span>
+	<span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">for</span><span class="p">(;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div><p>第一个for循环处理0~k-1, k~2k-1,.. 这些情况，第二个循环处理最后剩下的少于k个情况。</p>
+<p>我闲逛的时候发现还有一种精巧(<del>奇技淫巧</del>)的方法，叫做Duff&rsquo;s device, 它利用了C语言switch-case语句fall-through的特性。我们来看看它的代码：</p>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="k">switch</span><span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">case</span> <span class="mi">0</span><span class="o">:</span> 
+	<span class="k">do</span> <span class="p">{</span>
+		<span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span>
+		<span class="k">case</span> <span class="nl">k</span><span class="p">:</span>
+			<span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span>
+		<span class="k">case</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="o">:</span>
+			 <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span>
+		<span class="p">...</span>
+		<span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+			<span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span>
+	<span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+</code></pre></div><p>关于循环展开的性能提升：我在做实验的时候，将循环展开了8倍(即k=8)，大概获得了40%的性能提升。</p>
+<h1 id="loop-unrolling的利弊">loop unrolling的利弊<a href="#loop-unrolling的利弊" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<p>优势:</p>
+<ul>
+<li>分支减少，如果你展开了$k$倍，分支指令就减少到$1/k$.</li>
+<li>相比较编译器的循环展开，自己做循环展开更加可控，而且能对动态循环做展开，即循环的次数不是常量。</li>
+</ul>
+<p>劣势：</p>
+<ul>
+<li>代码膨胀，如果你展开了$k$倍，代码就膨胀$k$倍，不过我们只会对critical path上的代码做优化，所以整个程序的代码不会膨胀得那么厉害。</li>
+<li>程序可读性下降。</li>
+</ul>
+<h1 id="参考文献">参考文献<a href="#参考文献" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<ul>
+<li>[1] <a href="https://en.wikipedia.org/wiki/Loop_unrolling">Wikipedia: Loop unrolling</a></li>
+<li>[2] <a href="https://en.wikipedia.org/wiki/Haswell_(microarchitecture)">Wikipedia: Haswell (microarchitecture)</a></li>
+<li>[3] <a href="https://en.wikipedia.org/wiki/Duff%27s_device">Wikipedia: Duff&rsquo;s Device</a></li>
+</ul>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://ricky-ting.github.io/tags/untagged">untagged</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-04-18 22:44 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="prev-post" href="https://ricky-ting.github.io/posts/how-to-read-a-paper/">
+				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>How to Read a Paper</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2020 <a href="https://ricky-ting.github.io">Ricky Ting</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://ricky-ting.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+
+	<script src="https://ricky-ting.github.io/js/bundle.min.4a9a0ac3d2217822c7865b4161e6c2a71de1d70492264337755427898dd718f6.js" integrity="sha256-SpoKw9IheCLHhltBYebCpx3h1wSSJkM3dVQniY3XGPY=" crossorigin="anonymous"></script>
+	
+
+</body>
+
+</html>
