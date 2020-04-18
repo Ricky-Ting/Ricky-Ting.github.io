@@ -1,0 +1,127 @@
+---
+title: "浅谈loop Unrolling"
+date: 2020-04-18T22:44:55+08:00
+draft: false
+---
+
+
+
+最近在做体系结构的实验，正好接触到了loop unrolling，就来简单地写一写。
+
+# 为什么要有loop unrolling
+
+
+
+这要从现代处理器的微架构讲起，现代CPU为了提升性能一般都采用了流水线(Pipeline)。流水线能够流水线的引入提升了CPU的吞吐量，也增加了CPU function unit的利用率。
+
+但流水线的引入也带来了很多问题，比如data hazard, control hazard。在现代处理器中，data hazard一般通过乱序执行(Out-of-Order)来解决，而control hazard一般通过分支预测(Branch prediction)来解决。
+
+我们这里着重关注control hazard，即由于条件跳转，我们得等待一定的延迟才能得到准确的跳转地址(taken or not taken, that's a question)。如果我们在得到准确的跳转地址之前什么都不做，我们会白白浪费很多CPU资源，这时我们就引入了分支预测，我们先去猜这个分支到底跳转还是不跳转，然后直接去执行相应的指令。当然这个猜也不是毫无根据地猜，一般会根据之前的跳转结果来猜，具体的实现可以有很多种。 
+
+既然是预测，就有可能预测得不对，这就会导致CPU执行了错误的指令，需要冲刷流水线，并重新去取得正确的指令，而且现代处理器流水线都是比较深的(Intel Haswell架构有14-19级流水线)，所以预测错误的代价是比较大的。
+
+为了提升程序这部分的性能，我们有三条路：
+
+1. 提升分支预测的性能，这是Intel等硬件厂商在干的事(好像现在已经能达到90%以上的正确率)。
+2. 推测执行(Predicated execution)，cmov就是推测执行。
+3. 减少分支的数量，这是编译器或者软件编写者去干的事
+
+
+
+Loop unrolling 就属于上述的第三条路，我们将循环展开来减少分支的数量。
+
+
+
+# 如何实现loop unrolling
+
+Loop unrolling的思路就如下所示：
+
+```C++
+for(int i=0; i<N; ++i) {
+	a[i] = b[i];
+}
+
+for(int i=0; i<N; i+=2) {
+  a[i] = b[i];
+  a[i+1] = b[i+1];
+}
+```
+
+我们每次执行两次加法，就把分支的数量减少了一半。不过上述代码只是一个思路，其实并不正确，它没有考虑到N为奇数的情况。
+
+
+
+我们下面来看看正确的写法：
+
+```C++
+// k为展开的次数，上面的代码就是k=2的情况, 注意具体代码中k应该是常数
+int i = 0;
+for(; i+k-1<=N; i+=k) {
+	a[i] = b[i];
+	....
+	a[i+k-1] = b[i+k-1];
+}
+
+for(; i<N; ++i) {
+	a[i] = b[i];
+}
+```
+
+
+
+第一个for循环处理0~k-1, k~2k-1,.. 这些情况，第二个循环处理最后剩下的少于k个情况。
+
+
+
+我闲逛的时候发现还有一种精巧(~~奇技淫巧~~)的方法，叫做Duff's device, 它利用了C语言switch-case语句fall-through的特性。我们来看看它的代码：
+
+```C++
+switch(i % k) {
+case 0: 
+	do {
+		a[i] = b[i++];
+		case k:
+			a[i] = b[i++];
+		case k-1:
+			 a[i] = b[i++];
+		...
+		case 1:
+			a[i] = b[i++];
+	} while(i < N);
+}
+
+
+```
+
+
+
+关于循环展开的性能提升：我在做实验的时候，将循环展开了8倍(即k=8)，大概获得了40%的性能提升。
+
+# loop unrolling的利弊
+
+优势:
+
+* 分支减少，如果你展开了$k$倍，分支指令就减少到$1/k$.
+* 相比较编译器的循环展开，自己做循环展开更加可控，而且能对动态循环做展开，即循环的次数不是常量。
+
+劣势：
+
+* 代码膨胀，如果你展开了$k$倍，代码就膨胀$k$倍，不过我们只会对critical path上的代码做优化，所以整个程序的代码不会膨胀得那么厉害。
+* 程序可读性下降。
+
+
+
+# 参考文献
+
+[url_haswell]: https://en.wikipedia.org/wiki/Haswell_(microarchitecture)
+
+* [1] [Wikipedia: Loop unrolling](https://en.wikipedia.org/wiki/Loop_unrolling)
+* [2] [Wikipedia: Haswell (microarchitecture)][url_haswell]
+* [3] [Wikipedia: Duff's Device](https://en.wikipedia.org/wiki/Duff%27s_device)
+
+
+
+
+
+
+
