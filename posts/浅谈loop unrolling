@@ -14,7 +14,7 @@ draft: false
 
 这要从现代处理器的微架构讲起，现代CPU为了提升性能一般都采用了流水线(Pipeline)。流水线能够流水线的引入提升了CPU的吞吐量，也增加了CPU function unit的利用率。
 
-但流水线的引入也带来了很多问题，比如data hazard, control hazard。在现代处理器中，data hazard一般通过乱序执行(Out-of-Order)来解决，而control hazard一般通过分支预测(Branch prediction)来解决。
+但流水线的引入也带来了很多问题，比如data hazard, control hazard。在现代处理器中，data hazard一般通过forwarding来解决，而control hazard一般通过分支预测(Branch prediction)来解决。
 
 我们这里着重关注control hazard，即由于条件跳转，我们得等待一定的延迟才能得到准确的跳转地址(taken or not taken, that's a question)。如果我们在得到准确的跳转地址之前什么都不做，我们会白白浪费很多CPU资源，这时我们就引入了分支预测，我们先去猜这个分支到底跳转还是不跳转，然后直接去执行相应的指令。当然这个猜也不是毫无根据地猜，一般会根据之前的跳转结果来猜，具体的实现可以有很多种。 
 
