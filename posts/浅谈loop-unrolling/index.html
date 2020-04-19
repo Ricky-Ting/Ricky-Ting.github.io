@@ -11,7 +11,7 @@
 <meta itemprop="description" content="最近在做体系结构的实验，正好接触到了loop unrolling，就来简单地写一写。 为什么要有loop unrolling 这要从现代处理器的微架构讲起，现代CP">
 <meta itemprop="datePublished" content="2020-04-18T22:44:55&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-18T22:44:55&#43;08:00" />
-<meta itemprop="wordCount" content="1291">
+<meta itemprop="wordCount" content="1241">
 
 
 
@@ -131,8 +131,7 @@
 <span class="p">}</span>
 
 
-</code></pre></div><p>关于循环展开的性能提升：我在做实验的时候，将循环展开了8倍(即k=8)，大概获得了40%的性能提升。</p>
-<h1 id="loop-unrolling的利弊">loop unrolling的利弊<a href="#loop-unrolling的利弊" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+</code></pre></div><h1 id="loop-unrolling的利弊">loop unrolling的利弊<a href="#loop-unrolling的利弊" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
 <p>优势:</p>
 <ul>
 <li>分支减少，如果你展开了$k$倍，分支指令就减少到$1/k$.</li>

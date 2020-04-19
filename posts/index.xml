@@ -69,8 +69,7 @@
 <span class="p">}</span>
 
 
-</code></pre></div><p>关于循环展开的性能提升：我在做实验的时候，将循环展开了8倍(即k=8)，大概获得了40%的性能提升。</p>
-<h1 id="loop-unrolling的利弊">loop unrolling的利弊</h1>
+</code></pre></div><h1 id="loop-unrolling的利弊">loop unrolling的利弊</h1>
 <p>优势:</p>
 <ul>
 <li>分支减少，如果你展开了$k$倍，分支指令就减少到$1/k$.</li>
