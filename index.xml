@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>Intel Haswell Microarchitecture</title>
+      <link>https://ricky-ting.github.io/slides/intel-haswell%E5%BE%AE%E6%9E%B6%E6%9E%84/</link>
+      <pubDate>Fri, 01 May 2020 21:15:17 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/slides/intel-haswell%E5%BE%AE%E6%9E%B6%E6%9E%84/</guid>
+      <description>概览 Haswell Introduction Haswell ISA Haswell Front End Haswell Out-of-Order Scheduling Haswell Execution Engine Haswell Memory Hierarchy Reference Haswell Introduction Intel的&amp;quot;Tick-Tock&amp;rdquo;[1] Tick(制程): 在架构不变的情况下</description>
+    </item>
+    
+    <item>
       <title>浅谈loop Unrolling</title>
       <link>https://ricky-ting.github.io/posts/%E6%B5%85%E8%B0%88loop-unrolling/</link>
       <pubDate>Sat, 18 Apr 2020 22:44:55 +0800</pubDate>
@@ -139,15 +148,6 @@ Michael</description>
       
       <guid>https://ricky-ting.github.io/notes/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</guid>
       <description>人工智能 课程概述 参考教材 George F. Luger, Artificial Intelligence: Structures and Strategies for Complex Problem Solving. Fifth Edition, Addison Wesley. Stuart Russell and Peter Norvig. Artificial Intelligence: A Modern Approach. Third Edition. 参考网站 CMU, http://www.cs.cmu.edu MIT, http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-034-artificial-intelligence-fall-2010/index.htm. Stanford University, http://www.stanford.edu/class/cs221/. 前8周讲授完毕，并进行期中闭卷考试(4</description>
-    </item>
-    
-    <item>
-      <title>SQL学习</title>
-      <link>https://ricky-ting.github.io/notes/sql%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Thu, 14 Nov 2019 14:22:19 +0800</pubDate>
-      
-      <guid>https://ricky-ting.github.io/notes/sql%E5%AD%A6%E4%B9%A0/</guid>
-      <description>SQL学习 MySQL相关使用 show databases; --展示所有数据库 use db1; --使用db1数据库 show tables; --展示当前数据库里所有的表 describe tb1; --展示tb1的相关信息 /*这</description>
     </item>
     
   </channel>

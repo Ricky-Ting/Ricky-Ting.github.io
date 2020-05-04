@@ -1,0 +1,488 @@
+<!doctype html>
+<html>
+
+<Head>
+
+    <meta charset="UTF-8">
+
+    <title>Intel Haswell Microarchitecture</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+
+    <link rel="stylesheet" type="text/css" href='/css/slides.css'>
+
+</Head>
+
+<body>
+
+    <textarea id="source">
+public: True
+class: center, middle
+
+# Intel Haswell Microarchitecture
+
+.center[丁保荣 &lt;br> &lt;a href="mailto:Ricky.Ting@qq.com">Ricky.Ting@qq.com&lt;/a> ]
+
+&lt;div id="qrcode" style="margin: 0 auto; width: 286px;">&lt;/div>
+
+.center[&lt;a href="." id="this-slide-url">f&lt;/a>]
+
+---
+
+
+
+## 概览
+
+&lt;hr size=1&gt;
+
+* **Haswell Introduction**
+* **Haswell ISA**
+* **Haswell Front End**
+* **Haswell Out-of-Order Scheduling**
+* **Haswell Execution Engine**
+* **Haswell Memory Hierarchy**
+* **Reference**
+
+
+
+---
+## Haswell Introduction
+
+&lt;hr size=1&gt;
+
+Intel的&#34;Tick-Tock&#34;[\[1\]](#refer-anchor-1)
+* Tick(制程): 在架构不变的情况下，缩小晶体管体积，以减少功耗及成本
+* Tock(架构): 在制程不变的情况下，更新处理器架构，以提高性能
+
+--
+
+但因为摩尔定律的失效，Intel在2016宣布，Tick Tock将放缓至三年一循环，增加了优化环节：
+* Process(制程)
+* Architecture(架构)
+* Optimization(优化): 在制程及架构不变的情况下，进行修复及优化，将BUG减到最低，并提升处理器频率
+
+---
+
+
+## Haswell Introduction
+
+&lt;hr size=1&gt;
+
+Haswell[\[2\]](#refer-anchor-1)架构特性：
+--
+
+* 采用22nm FinFET制造工艺
+--
+
+* 14到19级流水线（取决于uop cache是否hit） [\[3\]](#refer-anchor-1)
+--
+
+* 每个核心都有64KB L1 Cache和256KB L2 Cache
+--
+
+* AVX2指令集: 把整数SIMD提升到256bits的vector，增加了一些gather指令
+--
+
+* FMA指令集: 可以计算如：$\textbf{a} = \textbf{a} \cdot \textbf{b} &#43; \textbf{c}$
+--
+
+* BMI指令集: 比特位操作指令，对加密、网络等应用有帮助
+--
+
+* 引入TSX(transactional memory), 对并发编程很有帮助
+--
+
+* 2way-超线程技术
+
+---
+
+## Haswell ISA
+
+&lt;hr size=1&gt;
+
+Intel在Haswell引入了一些新的指令集，主要包括下面几种：
+--
+
+* AVX2指令集[\[4\]](#refer-anchor-1)：支持256bit的整数向量运算，还引入了16条gather指令
+
+--
+.center[&lt;img src=&#34;/image/Haswell/YMM.gif&#34; width=&#34;40%&#34;&gt;]
+
+---
+
+## Haswell ISA
+
+&lt;hr size=1&gt;
+
+Intel在Haswell引入了一些新的指令集，主要包括下面几种：
+* AVX2指令集[\[4\]](#refer-anchor-1)：支持256bit的整数向量运算，还引入了16条gather指令
+
+.center[&lt;img src=&#34;/image/Haswell/AVX2.png&#34; width=&#34;60%&#34;&gt;]
+
+---
+
+## Haswell ISA
+
+&lt;hr size=1&gt;
+
+Intel在Haswell引入了一些新的指令集，主要包括下面几种：
+* AVX2指令集[\[4\]](#refer-anchor-1)：支持256bit的整数向量运算，还引入了16条gather指令
+* FMA指令集[\[5\]](#refer-anchor-1)：支持类似$\textbf{a} = \textbf{a} \cdot \textbf{b} &#43; \textbf{c}$的计算
+--
+.center[&lt;img src=&#34;/image/Haswell/FMA.png&#34; width=&#34;100%&#34;&gt;]
+
+---
+
+## Haswell ISA
+
+&lt;hr size=1&gt;
+
+Intel在Haswell引入了一些新的指令集，主要包括下面几种：
+* AVX2指令集[\[4\]](#refer-anchor-1)：支持256bit的整数向量运算，还引入了16条gather指令
+* FMA指令集[\[5\]](#refer-anchor-1)：支持类似$\textbf{a} = \textbf{a} \cdot \textbf{b} &#43; \textbf{c}$的计算
+* BMI指令集[\[6\]](#refer-anchor-1)：主要是三类位操作：insert, shift and extract; bit counting; arbitrary precision integer multiply and rotation;
+--
+.center[&lt;img src=&#34;/image/Haswell/BMI.png&#34; width=&#34;60%&#34;&gt;]
+
+---
+
+## Haswell ISA
+
+&lt;hr size=1&gt;
+
+Intel在Haswell引入了一些新的指令集，主要包括下面几种：
+* AVX2指令集[\[4\]](#refer-anchor-1)：支持256bit的整数向量运算，还引入了16条gather指令。
+* FMA指令集[\[5\]](#refer-anchor-1)：支持类似$\textbf{a} = \textbf{a} \cdot \textbf{b} &#43; \textbf{c}$的计算。
+* BMI指令集[\[6\]](#refer-anchor-1)：主要是三类位操作：insert, shift and extract; bit counting; arbitrary precision integer multiply and rotation。
+* TSX指令集：主要是为并发程序设计的。
+---
+
+## Aside: Some basic terms
+
+&lt;hr size=1&gt;
+
+* uop(micro-op): Intel把x86指令翻译成RISC-like的uops. 一条x86指令可能会翻译成1, 2, 3, 4或更多的uop.
+
+--
+
+```
+add eax, ebx     // 1 uop, (add)
+add eax, [mem1]  // 2 uops, (load, add)
+add [mem1], eax  // 3 uops, (load, add, store)
+
+```
+
+--
+
+* uop fusion: 前端可能会把两个uop合并起来变成一个fused-uop, 来节省流水线的带宽。
+
+--
+
+```
+mov [esi], eax   // 1 fused uop, memory write
+add eax, [esi]   // 1 fused uop, read-modify
+add [esi], eax   // 2 signle &#43; 1 fused uop, read-modify-write
+```
+
+---
+
+## Haswell Front End
+
+&lt;hr size=1&gt;
+
+
+&lt;img align=&#34;right&#34; src=&#34;/image/Haswell/haswell-front-end.png&#34; width=&#34;45%&#34;&gt;
+
+* 2-way SMT
+--
+
+* 32KB shared I-Cache(8-way) 
+--
+
+* 4KB partitioned ITLB(4-way)
+--
+
+* 16B/cycle instruction fetch
+--
+
+* 20 entry replicated instruction queue
+--
+
+* 4 decoders(3 are simple decoder)
+--
+
+* 1.5K uop Cache(introduced since Sandy Bridge)
+--
+
+* Loop StreamDetector (LSD)
+--
+
+* Stack Engine(SE)
+
+---
+
+## Haswell Front End
+
+&lt;hr size=1&gt;
+
+**uop cache**
+
+&lt;img align=&#34;right&#34; src=&#34;/image/Haswell/haswell-front-end.png&#34; width=&#34;45%&#34;&gt;
+
+* 32B Window
+--
+
+* indexed by IP of 1st inst of the window
+--
+
+* tagged for two threads
+--
+
+* 32 sets, 8 way, 6 uops per line
+--
+
+* Each 32B window span 3 of the 8 ways in a set
+--
+
+* performs like a 6KB instruction cache and has a roughly 80% hit rate(Intel)
+--
+
+* must fully hit
+
+---
+
+## Haswell Front End
+
+&lt;hr size=1&gt;
+
+**Stack Engine**
+
+--
+
+```
+	push eax              // 1 single and 1 fused uop
+	push ebx 			// 1 single and 1 fused uop
+	mov ebp, esp  		
+	mov eax, [esp&#43;16]  
+
+```
+
+--
+
+`esp` is in the critial path: the following insts rely on the value of `esp`
+
+--
+
+Intel introduced Stack Engine, it keeps record of `ESP_d`, which is the difference of `ESP_p` and `ESP_o`.
+
+--
+
+`ESP_p = ESP_o &#43; ESP_d`
+
+--
+
+
+```
+	push eax                 // 1 fused uop, set ESP_d = -4
+	push ebx                // 1 fused uop, set ESP_d = -8
+	mov ebp, esp           // insert sync uop, set ESP_d = 0
+	mov eax, [esp&#43;16]     // No need to sync, set ESP_d = 0
+```
+
+---
+
+
+## Haswell Front End
+
+&lt;hr size=1&gt;
+
+**Stack Engine**
+
+--
+
+An example:
+
+```
+main:
+	push 1
+	call FuncA
+	pop exc
+	push 2
+	call FuncA
+	pop ecx
+
+...
+
+FuncA:
+	push ebp
+	mov ebp, esp    	; sync 
+	sub esp, 100
+	mov eax, [ebp&#43;8]
+	mov esp, ebp
+	pop ebp
+	ret
+
+```
+
+
+
+---
+
+
+
+## Haswell Front End
+
+&lt;hr size=1&gt;
+
+**Design points**
+
+&lt;img align=&#34;right&#34; src=&#34;/image/Haswell/haswell-front-end.png&#34; width=&#34;45%&#34;&gt;
+
+--
+
+* Make the comman case fast
+	* prefer Decoder than ucode
+	* 3 Simple Decoder
+	* Loop Stream Detector
+	* Stack Engine
+
+--
+
+* Locality
+	* uop Cache
+
+--
+
+* Decouple
+	* Why front-end?
+
+---
+
+## Haswell Out-of-Order Scheduling
+
+&lt;hr size=1&gt;
+
+.center[&lt;img src=&#34;/image/Haswell/haswell-out-of-order.png&#34; width=&#34;100%&#34; &gt;]
+
+--
+
+* Unified Reservation Station
+--
+
+* Register renaming
+--
+
+* Move elimination
+--
+
+* Branch Order Buffer(US6799268B1)[\[9\]](#refer-anchor-1)
+---
+
+
+
+## Haswell Execution Engine
+
+&lt;hr size=1&gt;
+
+.center[&lt;img src=&#34;/image/Haswell/haswell-exec.png&#34; width=&#34;60%&#34; &gt;]
+
+
+
+---
+
+
+## Haswell Execution Engine
+
+&lt;hr size=1&gt;
+
+.center[&lt;img src=&#34;/image/Haswell/haswell-exec2.png&#34; width=&#34;40%&#34; &gt;]
+
+--
+
+* up to 8 uops/cycle
+--
+
+* 4 INT ALU
+--
+
+* 3 INT Vect ALU(256-bit integer SIMD execution)
+--
+
+* 2 FP FMA(5 cycles)
+--
+
+* 2 Load Data
+--
+
+* 1 Store Data
+
+---
+
+## Haswell Execution Engine
+
+&lt;hr size=1&gt;
+
+Design points:
+--
+
+* Make the comman case fast
+	* More Integer ALU
+	* Less Store
+	* FMA
+--
+
+* Enable more DLP
+	
+	* AVX2: 256-bit interger SIMD
+
+---
+
+## Haswell Memory Hierarchy
+
+&lt;hr size=1&gt;
+
+.center[&lt;img src=&#34;/image/Haswell/mem.png&#34; width=&#34;80%&#34;&gt;]
+
+.center[&lt;img src=&#34;/image/Haswell/cache.png&#34; width=&#34;100%&#34;&gt;]
+
+
+
+---
+
+## Reference
+
+&lt;hr size=1&gt;
+
+&lt;div id=&#34;refer-anchor-1&#34;&gt;&lt;/div&gt;
+- [1] [Wikipedia: Tick–tock model](https://en.wikipedia.org/wiki/Tick–tock_model)
+- [2] [Wikipedia: Haswell (microarchitecture)][url_haswell] 
+- [3] [Intel&#39;s Haswell Architecture Analyzed](https://www.anandtech.com/show/6355/intels-haswell-architecture)
+- [4] [Intel&#39;s AVX2](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#techs=AVX2)
+- [5] [Intel&#39;s FMA](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#techs=FMA&amp;expand=2541)
+- [6] [Intel&#39;s BMI](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#expand=2541,3503&amp;othertechs=BMI1)
+- [7] [Intel’s Haswell Microarchitecture](https://www.realworldtech.com/haswell-cpu/)
+- [8] [Intel&#39;s Sandy Bridge Microarchitecture](https://www.realworldtech.com/sandy-bridge/)
+- [9] [Intel&#39;s Branch Order Buffer](https://patentimages.storage.googleapis.com/31/f2/42/722d2a0eed0120/US6799268.pdf)
+- [10] [The microarchitecture of Intel, AMD and
+VIA CPUs](https://www.agner.org/optimize/microarchitecture.pdf)
+[url_haswell]: https://en.wikipedia.org/wiki/Haswell_(microarchitecture)
+
+---
+class: center, middle
+# Q &amp; A
+
+
+
+    </textarea>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/remark-slide@0.14.0/out/remark.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script>
+
+    <script src='/js/slides.js'></script>
+
+</body>
+
+</html>
