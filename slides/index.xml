@@ -13,11 +13,11 @@
     
     
     <item>
-      <title>Intel Haswell Microarchitecture</title>
-      <link>https://ricky-ting.github.io/slides/intel-haswell%E5%BE%AE%E6%9E%B6%E6%9E%84/</link>
+      <title>Intel Haswell 微架构</title>
+      <link>https://ricky-ting.github.io/slides/intel-haswell-microarchitecture/</link>
       <pubDate>Fri, 01 May 2020 21:15:17 +0800</pubDate>
       
-      <guid>https://ricky-ting.github.io/slides/intel-haswell%E5%BE%AE%E6%9E%B6%E6%9E%84/</guid>
+      <guid>https://ricky-ting.github.io/slides/intel-haswell-microarchitecture/</guid>
       <description>概览 Haswell Introduction Haswell ISA Haswell Front End Haswell Out-of-Order Scheduling Haswell Execution Engine Haswell Memory Hierarchy Reference Haswell Introduction Intel的&amp;quot;Tick-Tock&amp;rdquo;[1] Tick(制程): 在架构不变的情况下</description>
     </item>
     
