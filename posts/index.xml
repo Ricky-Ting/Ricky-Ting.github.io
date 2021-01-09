@@ -75,6 +75,14 @@
 <p>节点度比较大的时候，communication会比较大，可能需要较好的划分方法，让cross edge尽量少。</p>
 <h2 id="related-works">Related Works</h2>
 <h2 id="miscs">Miscs</h2>
+<p><a href="https://static.googleusercontent.com/media/research.google.com/en//archive/googlecluster-ieee.pdf">Web search for a planet: The Google Cluster Architecture.</a>: 是03年的一篇文章，可以看到Google Web search的整个流程(比较老了，考古级文章)。从google的很多早期论文中都可以看出，google一直喜欢采用commodity PCs(注重performance per price)，把reliability放在软件(replica)上，并通过shard等机制提高scalability。P.S. 第一次看到commodity PC这个词应该就是在google的文章里。 这篇文章里也总结了这几个principle：</p>
+<ol>
+<li>Software reliability</li>
+<li>Use replication for better requset throughput and availability</li>
+<li>Price/performance beats peak performance.</li>
+<li>Using commodity PCs reduces the cost of computation.</li>
+</ol>
+<p>Google的当时的策略是选择中端产品，每隔至多三年全部替换(CPU性能在当时提升得很快)。</p>
 <h2 id="reference">Reference</h2>
 <p>[1]. <a href="https://www.slideshare.net/riyadparvez/pregel-35504069">Pregel Slides</a></p>
 <p>[2]. <a href="https://en.wikipedia.org/wiki/Bulk_synchronous_parallel">BSP wikipedia</a></p>
