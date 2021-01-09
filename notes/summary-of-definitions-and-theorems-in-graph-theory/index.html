@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-cn">
 
 <head>
 	<meta charset="UTF-8">
@@ -9,13 +9,14 @@
 	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="Summary of definitions and theorems in graph theory">
 <meta itemprop="description" content="Summary of definitions and theorems in graph theory Introduction 1.1 Graphs and Graph Models A Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets of $V$ called edges. The ses $V$ and $E$ are the vertex set and edge set of $G$, respectively. Write $G=(V,E)$. Two graphs $G$ and $H$ are equal if $V(G)=V(H)$ and $E(G)=E(H)$, in which case">
-<meta itemprop="datePublished" content="2018-10-15T22:06:07&#43;08:00" />
-<meta itemprop="dateModified" content="2018-10-15T22:06:07&#43;08:00" />
+<meta itemprop="datePublished" content="2018-10-15T22:06:07+08:00" />
+<meta itemprop="dateModified" content="2018-10-15T22:06:07+08:00" />
 <meta itemprop="wordCount" content="5545">
 
 
 
-<meta itemprop="keywords" content="untagged," /><meta property="og:title" content="Summary of definitions and theorems in graph theory" />
+<meta itemprop="keywords" content="untagged," />
+<meta property="og:title" content="Summary of definitions and theorems in graph theory" />
 <meta property="og:description" content="Summary of definitions and theorems in graph theory Introduction 1.1 Graphs and Graph Models A Graph G consists of a finite nonempty set $V$ of objects called vertices and a set $E$ of 2-element subsets of $V$ called edges. The ses $V$ and $E$ are the vertex set and edge set of $G$, respectively. Write $G=(V,E)$. Two graphs $G$ and $H$ are equal if $V(G)=V(H)$ and $E(G)=E(H)$, in which case" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ricky-ting.github.io/notes/summary-of-definitions-and-theorems-in-graph-theory/" />
@@ -114,7 +115,7 @@
 <p><strong>Theorem 1.12</strong> A nontrivial graph $G$ is a bipartite graph if and only if $G$ contains no odd cycles.</p>
 <p>A graph $G$ is a <strong>bipartite graph</strong> if $V(G)$ can be partitioned into two subsets $U$ and $W$, called <strong>partite sets</strong>, such that every edge of $G$ joins a vertex of $U$ and a vertex of $W$.</p>
 <p>If every vertex of $U$  is adjacent to every vertex of $W$ , then we call $G$  a <strong>complete bipartite graph</strong> . A complete graph with $|U|=s$  and $|W|=t$ is denoted by $K_{s,t}$ or $K_{t,s}$. If either $s=1$ or $t=1$, then $K_{s,t}$ is a **star**.</p>
-<p>A graph $G$  is a $k$**-partite graph** if $V(G)$ can be partitioned into $k$ subsets $V_1$,$V_2$,&hellip;,$V_k$,(called **partite sets**) such that if $uv$ is an edge of $G$, then $u$ and $v$ belong to different partite sets. If, in addition, every  two vertices in different partite sets are joined by an edge, then $G$ is a **complete k-partite graph**. If $|V_i|=n_i$ for $1 \le i \le k$, then we denote this graph by $K_{n1,n2,&hellip;,nk}$.</p>
+<p>A graph $G$  is a $k$<strong>-partite graph</strong> if $V(G)$ can be partitioned into $k$ subsets $V_1$,$V_2$,&hellip;,$V_k$,(called <strong>partite sets</strong>) such that if $uv$ is an edge of $G$, then $u$ and $v$ belong to different partite sets. If, in addition, every  two vertices in different partite sets are joined by an edge, then $G$ is a <strong>complete k-partite graph</strong>. If $|V_i|=n_i$ for $1 \le i \le k$, then we denote this graph by $K_{n1,n2,&hellip;,nk}$.</p>
 <p>The <strong>join</strong> $G+H$ consists of $G \cup H$ and all edges joining a vertex of $G$ and a vertex of $H$.</p>
 <p>The <strong>Cartesian product</strong> $G \times H$ has vertex set $V(G \times H) = V(G) \times V(H)$ . Two distinct vertices $(u,v$) and $(x,y)$ are adjacent in $G \times H$ if either (1) $u=x$ and $vy\in E(H)$ or (2) $v=y$ and $ux\in E(G)$.</p>
 <p>We define $Q_1 $ to be $ K_2 $ and for $n \ge 2$, define $Q_{n}$ to be $Q_{n-1} \times K_2 $. The graphs $Q_n $ are then called $n$**-cubes** or **hypercubes**.</p>
@@ -237,7 +238,7 @@
 <p>By a <strong>vertex-cut</strong> in a graph $G$, we mean a set $U$ of vertices of $G$ such that $G-U$ is disconnected. A vertex-cut of minimum cardinality in $G$ is called a <strong>minimum vertex-cut</strong>.</p>
 <p><strong>Note</strong>: A connected graph contains a vertex-cut if and only if $G$ is not complete.</p>
 <p>For a graph $G$ that is not complete, the <strong>vertex-connectivity</strong>(or simply the <strong>connectivity</strong>) $\kappa(G)$ of $G$ is defined as the cardinality of a minimum vertex-cut of $G$; if $G=K_n$ for some positive integer $n$, then $\kappa(G)$ is defined to be $n-1$. $$0 \le \kappa(G) \le n-1$$.</p>
-<p>For a nonnegative integer $k$, a graph $G$ is said to be $k$**-connected** if $\kappa(G) \ge k$.</p>
+<p>For a nonnegative integer $k$, a graph $G$ is said to be $k$<strong>-connected</strong> if $\kappa(G) \ge k$.</p>
 <p>An <strong>edge-cut</strong> in a nontrivial graph $G$  is a set $X$ of edges of $G$ such that $G-X$ is disconnected.</p>
 <p>An edge-cut $X$  of a connected graph $G$  is <strong>minimal</strong> if no proper subset of $X$ is an edge-cut of $G$. If $X$ is a minimal edge-cut of a connected graph $G$, then $G-X$ contains exactly two components $G_1$ and $G_2$. Necessarily  then , $X$ consists of all those edges of $G$  joining $G_1$ and $G_2$.</p>
 <p>An edge-cut of minimum cardinality is called a <strong>minimum edge-cut</strong>.</p>
@@ -283,12 +284,12 @@
 <p>A matching of maximum cardinality is called a <strong>maximum matching</strong>.</p>
 <p>If a graph $G$ of order $2k$ has a matching $M$ of cardinality $k$, then this (necessarily maximum)  matching $M$ is called a <strong>perfect matching</strong> as $M$ matches every vertex of $G$ to some vertex of $G$ .</p>
 <p><strong>Theorem 8.6</strong> Every r-regular bipartite graph($r \ge 1$)  has a perfect matching.</p>
-<p>The <strong>edge independence number</strong> $\alpha&rsquo;(G)$ of a graph $G$  is the maximum cardinality of an independent set of edges.</p>
+<p>The <strong>edge independence number</strong> $\alpha'(G)$ of a graph $G$  is the maximum cardinality of an independent set of edges.</p>
 <p>Furthermore, a graph $G$ of order $n$ has a perfect matching if and only if $n$ is even and $\alpha &lsquo;(G) = n/2$.</p>
 <p>A vertex and an incident edge are said to <strong>cover</strong> each other.</p>
 <p>An <strong>edge cover</strong> of a graph $G$ without isolated vertices is a set of edges of $G$ that covers all vertices of $G$.</p>
-<p>The <strong>edge covering number</strong> $\beta&rsquo;(G)$ of a graph $G$ is the minimum cardlinality of an edge cover of $G$.  An edge cover of $G$ of cardinality $\beta&rsquo;(G)$ is a <strong>minimum edge cover</strong> of $G$.</p>
-<p><strong>Theorem 8.7</strong> For every graph $G$ of order $n$ containing no isolated vertices, $$\alpha(G&rsquo;)+ \beta(G&rsquo;)=n$$.</p>
+<p>The <strong>edge covering number</strong> $\beta&rsquo;(G)$ of a graph $G$ is the minimum cardlinality of an edge cover of $G$.  An edge cover of $G$ of cardinality $\beta'(G)$ is a <strong>minimum edge cover</strong> of $G$.</p>
+<p><strong>Theorem 8.7</strong> For every graph $G$ of order $n$ containing no isolated vertices, $$\alpha(G')+ \beta(G')=n$$.</p>
 <p>A set of vertices in a graph is <strong>independent</strong> if  no two vertices in the set are adjacent. The <strong>vertex independence number</strong> (or the <strong>independence number</strong>) $\alpha(G)$ of a graph $G$ is the maximum cardinality of an independent set of vertices in $G$. An independent set in $G$ of cardinality $\alpha(G)$ is called a <strong>maximum independent set</strong>.</p>
 <p>A <strong>vertex cover</strong> in a graph $G$ is a set of vertices that covers all edges of $G$. The minimum number of vertices in a vertex cover of $G$  is the <strong>vertex covering number</strong> $\beta(G)$  of $G$. A vertex cover of cardinality $\beta(G)$ is a <strong>minimum vertex cover</strong> in $G$.</p>
 <p><strong>Theorem 8.8</strong> For every graph $G$ of order $n$ containing no isolated vertices, $$\alpha(G) + \beta(G) =n$$.</p>
@@ -338,7 +339,7 @@
 <p>In fact,  $\alpha(G)=k$ if and only if $\omega(\bar{G})=k$.</p>
 <p><strong>Theorem 10.5</strong> For every graph $G$ of order $n$, $\chi(G \ge \omega(G))$ and $\chi(G) \ge \frac{n}{\alpha(G)}$.</p>
 <p><strong>Theorem 10.7</strong> For every graph $G$, $$\chi(G) \le 1 + \Delta(G)$$</p>
-<p><strong>Theorem 10.8(Brooks&rsquo; Theorem)</strong> For every connected graph $G$ that is not an odd cycle or a complete graph, $\chi(G) \le \Delta(G)$.</p>
+<p><strong>Theorem 10.8(Brooks' Theorem)</strong> For every connected graph $G$ that is not an odd cycle or a complete graph, $\chi(G) \le \Delta(G)$.</p>
 <p><strong>Theorem 10.9</strong> For every graph $G$, $\chi(G) \le 1+ max{\delta(H)}$, where the maximum is taken over all induced subgraphs $H$ of $G$.</p>
 <p>The <strong>shadow graph</strong> $S(G)$ of a graph $G$ is obtained from $G$ by adding, for each vertex $v$ of $G$, a new vertex $v'$, called the <strong>shadow vertex</strong> of $v$ , and joining $v'$ to the neighbors of $v$ in $G$. Observe that (1) a vertex of $G$ and its shadow vertex are not adjacent in $S(G)$ and (2) no two shadow vertices are adjacent in $S(G)$.</p>
 <p><strong>Theorem 10.10</strong> For every integer $k \ge 3$, there exists a triangle-free graph with chromatic number $k$.</p>
@@ -352,7 +353,7 @@
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2020 <a href="https://ricky-ting.github.io">Ricky Ting</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2021 <a href="https://ricky-ting.github.io">Ricky Ting</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://ricky-ting.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>

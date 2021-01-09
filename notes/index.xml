@@ -5,13 +5,9 @@
     <link>https://ricky-ting.github.io/notes/</link>
     <description>Recent content in Notes on Ricky Ting&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-cn</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 04 Jan 2020 15:16:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://ricky-ting.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 04 Jan 2020 15:16:00 +0800</lastBuildDate><atom:link href="https://ricky-ting.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Digital Image Processing Review</title>
       <link>https://ricky-ting.github.io/notes/digital-image-processing-review/</link>

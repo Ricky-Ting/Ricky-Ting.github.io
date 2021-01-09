@@ -4,10 +4,82 @@
 		<link>https://ricky-ting.github.io/posts/</link>
 		<description>Recent content in Posts on Ricky Ting&#39;s Blog</description>
 		<generator>Hugo -- gohugo.io</generator>
-		<language>zh-CN</language>
+		<language>zh-cn</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Sat, 18 Apr 2020 22:44:55 +0800</lastBuildDate>
+		<lastBuildDate>Sat, 09 Jan 2021 16:49:39 +0800</lastBuildDate>
 		<atom:link href="https://ricky-ting.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Pregel</title>
+			<link>https://ricky-ting.github.io/posts/pregel/</link>
+			<pubDate>Sat, 09 Jan 2021 16:49:39 +0800</pubDate>
+			
+			<guid>https://ricky-ting.github.io/posts/pregel/</guid>
+			<description>Introduction Pregel是Google在2010年发表的一篇文章。主要提出了一个富有表达性的和易于编程的图计算框架。Pregel是Euler七桥问题中</description>
+			<content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>Pregel是Google在2010年发表的一篇文章。主要提出了一个富有表达性的和易于编程的图计算框架。Pregel是Euler七桥问题中那条河的名字。</p>
+<p>Pregel的几大特点：</p>
+<ol>
+<li>大规模(large-scale)</li>
+<li>可扩展性(scalability)</li>
+<li>容错性(fault-tolerant): 通过heartbeat、checkpointing和logging。</li>
+<li>高效(efficient): MR也可以用来进行图计算，不过太过低效。</li>
+</ol>
+<h2 id="contribution">Contribution</h2>
+<h2 id="methods">Methods</h2>
+<h3 id="why-pregelmotivation">Why Pregel?(Motivation)</h3>
+<p>进行分布式图计算的几种方法：</p>
+<ol>
+<li>使用已有的分布式基础设施：对使用者较为复杂，而且每个新的算法都需要重新实现一遍一些较为基础的功能。总的来说，还是抽象层次较低，已有的分布式基础设施的API较为难用。给使用者提供一个抽象层次更高的东西即为框架，如何把这个抽象层做的通用(general)和高效(efficient)就是值得研究的问题了。(All problems in computer science can be solved by another level of indirection.)</li>
+<li>使用类似于Mapreduce这样的已有的分布式计算框架：问题的pattern不同，可以做，但不高效。我们需要一个为图计算这种计算模式(pattern)设计一个特有的框架来提高效率。</li>
+<li>使用已有的单机图计算库：不能scale。</li>
+<li>已有的并行图计算系统(BGL、CGMgraph): 没有具体看，也不清楚这里并行是否可以进行分布式部署。文章中说：这些系统没有考虑容错性。</li>
+</ol>
+<p>因此，pregel的作者们认为这些现有的东西都不能满足他们的需求(高效、容错性、可扩展性等)，所以设计了Pregel。</p>
+<h3 id="计算模型">计算模型</h3>
+<p>采用BSP(Bulk Synchronous Parallel)和消息传递(Message Passing)，并以节点为中心(vertice-centric)。</p>
+<p>关于BSP，我从wiki上找了张图：<img src="/image/Pregel/BSP.png" alt="BSP计算模型"></p>
+<p>整个Pregel的计算模型也就是这张图，Pregel的计算是由一系列的superstep组成的，每个superstep就是上图的流程。这里的Local Computation就是每台机器对于自己所拥有的顶点展开计算。具体来说，对于每一个节点，先收集上一轮中传递过来的messages(已经存在本地了)，然后做一些计算，得出需要发送的messages。在Communication阶段，将这些messages发送出去。</p>
+<p>关于算法如何终止：只有活跃(active)的顶点才会进行Local Computation。当某一轮开始的时候，所有的顶点都不活跃了，那整个算法也就终止了。</p>
+<p>关于活跃和不活跃的状态转换，paper中给了一张图：</p>
+<p><img src="/image/Pregel/VertexStateMachine.png" alt="活跃和不活跃的状态转换"></p>
+<p>当然在第一轮的时候，所有顶点都是活跃状态的，不然程序直接结束了。</p>
+<h4 id="一些组件">一些组件</h4>
+<p>Combiners: 聚合msg来减少通信量，一般是在msg发送端部署，比如在SSSP问题中，我们可以对发往同一个顶点的所有msg取MIN。基本上是个优化操作，没有也没什么关系，本质上是把下一轮Compute()里的操作提前了，在发送之前。</p>
+<p>Aggregators: 一般用于全局通信，对所有节点提供的值进行规约，形成一个值，供下一轮使用。感觉halt的条件就可以看做是一个aggregator(AND(v1.isHalt(), v2.isHalt(), &hellip;))</p>
+<p>Topology Mutations: 这个算个feature，可以动态改变拓扑结构(增删顶点和边)。可能会导致冲突，两个解决方法：</p>
+<ul>
+<li>偏序(partial ordering): 删边-删点-增点-增边</li>
+<li>handlers: 可以user-defined，也可以default(随机选择)</li>
+</ul>
+<p>但没看明白它的同步过程：猜测也是在message passing阶段，传递mutation，然后由每个顶点handle在Computate之前。顶点管理着自己和它的出边。</p>
+<h3 id="implementation">Implementation</h3>
+<p>顶点的分配就是hash: 即 hash(ID) % N, N是划分数。</p>
+<p>整个集群的架构是Maste/Slave架构，整个流程如下：</p>
+<ol>
+<li>Worker向Master进行注册，并保持heartbeat。</li>
+<li>master进行数据集的划分，并给每个worker分配一些partition(可以多于一个)，并且所有worker都知道整体的分配情况，这样worker就知道该往哪发msg。</li>
+<li>master给每个worker分配一部分输入文件，worker读取。对于不属于自己的数据，通过msg发送给相应的worker。所有的顶点现在都是活跃状态。</li>
+<li>master让所有worker开启一轮superstep，superstep的过程前面已经说过。实现上有一点优化：计算和通信是overlap的，可以提高效率。当所有worker完成后，告诉master一些信息，包括活跃顶点数，发送的msg数量等。如果有活跃顶点或者发送的msg，继续进行这一步。</li>
+<li>计算结束，每个worker保存自己的那部分结果。</li>
+</ol>
+<p>容错性：每几轮(freq可以指定)中worker保存顶点值、边值和收到的msg，master保存聚合的值，这叫checkpoint。通过heartbeat来探测状态。如果不保存发送的msg，所有partition都需要从某一个checkpoint重新计算。但是如果保存了发送的msg，只需要失败的partition重来即可, 但会使得保存的数据变多，这叫confined recovery. 随机算法需要保存随机数种子来使用confined recovery。</p>
+<p>Worker实现：对于每个顶点：一份顶点值、一份边值、两份incoming queue(本轮和下一轮)。 对于out queue，应该是每个target worker有一个，queue是异步发送，到达一个threshold就发送。Combiner既在out queue上作用(节约带宽)，也在incoming queue上作用(节约内存)。</p>
+<p>Master实现：Master主要做一些管理工作，不多做赘述。</p>
+<p>Aggregator: tree-based 而不是streaming，提高并行度。</p>
+<h3 id="evaluation">Evaluation</h3>
+<p>Evaluation比较简单：大致是scalability比较好。</p>
+<p>我的观察：Worker越多，cross edge也就越多(对于相同的图)，因此scale不是线性的，也可能和一些固有的overhead有关。</p>
+<h2 id="drawback">Drawback</h2>
+<p>paper中没有提到，但我认为计算应该是完全基于incoming msg的，即不能随意读取非本节点的状态。</p>
+<p>节点度比较大的时候，communication会比较大，可能需要较好的划分方法，让cross edge尽量少。</p>
+<h2 id="related-works">Related Works</h2>
+<h2 id="miscs">Miscs</h2>
+<h2 id="reference">Reference</h2>
+<p>[1]. <a href="https://www.slideshare.net/riyadparvez/pregel-35504069">Pregel Slides</a></p>
+<p>[2]. <a href="https://en.wikipedia.org/wiki/Bulk_synchronous_parallel">BSP wikipedia</a></p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>浅谈loop Unrolling</title>
@@ -106,7 +178,7 @@
 <li>Third pass: 更深地去理解论文。</li>
 </ul>
 <h2 id="the-first-pass">The first pass</h2>
-<p>文章中用了一个词叫&quot;bird&rsquo;s-eye view&rdquo;，这遍的目的主要是快速扫一遍，花大概五到十分钟。文章中列出了具体的步骤，如下：</p>
+<p>文章中用了一个词叫&quot;bird&rsquo;s-eye view&quot;，这遍的目的主要是快速扫一遍，花大概五到十分钟。文章中列出了具体的步骤，如下：</p>
 <ol>
 <li>Carefully read the title, abstract, and introduction</li>
 <li>Read the section and sub-section headings, but ignore everything else</li>
@@ -141,7 +213,7 @@ tions?</li>
 <blockquote>
 <p>The key to the third pass is to attempt to virtually re-implement the paper: that is, making the same assumptions as the authors, re-create the work. By comparing this re-creation with the actual paper, you can easily identify not only a paper’s innovations, but also its hidden failings and assumptions.</p>
 </blockquote>
-<p>在这遍的过程中，你应该把自己化身为一个&quot;杠精&rdquo;，对于论文作者的每一个assumption都要challenge。</p>
+<p>在这遍的过程中，你应该把自己化身为一个&quot;杠精&quot;，对于论文作者的每一个assumption都要challenge。</p>
 <p>第三遍对于新手大概需要四到五个小时，但对于老司机可能一个小时就够了。第三遍完成之后，要能在脑中重建整个论文。</p>
 <h1 id="做文献调研literature-survey">做文献调研(Literature survey)</h1>
 <p>作者还介绍了应该怎么做文献调研，也要分三步走(凡事皆可三步)。</p>
@@ -151,7 +223,7 @@ tions?</li>
 <li>在这些top conference上找找文章。</li>
 </ol>
 <h1 id="日常学习">日常学习</h1>
-<p>我们日常学习中也会经常碰到很多新的名词、工具、概念等等。我觉得这些的学习也可以用three-pass来概括：&ldquo;是什么&rdquo;，&ldquo;怎么做&rdquo;，&ldquo;为什么&rdquo;。当然&quot;怎么做&quot;和&quot;为什么&quot;是可以交替的。但一般来说，如果我们不去深入研究的话，一般知道&quot;是什么&quot;和&quot;怎么做&quot;就可以了，然后再稍微了解一下&quot;为什么&rdquo;。当然有时间和兴趣的话，还是要去了解了解&quot;为什么&rdquo;，因为了解背后的原理更重要。</p>
+<p>我们日常学习中也会经常碰到很多新的名词、工具、概念等等。我觉得这些的学习也可以用three-pass来概括：&ldquo;是什么&rdquo;，&ldquo;怎么做&rdquo;，&ldquo;为什么&rdquo;。当然&quot;怎么做&quot;和&quot;为什么&quot;是可以交替的。但一般来说，如果我们不去深入研究的话，一般知道&quot;是什么&quot;和&quot;怎么做&quot;就可以了，然后再稍微了解一下&quot;为什么&quot;。当然有时间和兴趣的话，还是要去了解了解&quot;为什么&quot;，因为了解背后的原理更重要。</p>
 ]]></content>
 		</item>
 		
@@ -195,7 +267,7 @@ cp -r slides_content public/slides_content
 <h3 id="为什么要迁移博客">为什么要迁移博客</h3>
 <p>之前的博客效果不是很满意(<del>太丑</del>)，文章的质量也不是很满意(<del>基本都是抄抄书，记记笔记</del>)，正好改头换面，希望后面能提高文章的质量。</p>
 <h3 id="从hexo到hugo">从Hexo到Hugo</h3>
-<p>之前的博客一直用的是hexo，感觉部署起来确实有点慢，听说Hugo是用go写的(好感度++)而且部署起来还贼快(毕竟号称&quot;The world&rsquo;s fastest framework for building websites&rdquo;)。</p>
+<p>之前的博客一直用的是hexo，感觉部署起来确实有点慢，听说Hugo是用go写的(好感度++)而且部署起来还贼快(毕竟号称&quot;The world&rsquo;s fastest framework for building websites&quot;)。</p>
 <h2 id="hugo安装与配置">hugo安装与配置</h2>
 <h3 id="安装hugo">安装hugo</h3>
 <p>Mac用户的福音，只需一行：</p>

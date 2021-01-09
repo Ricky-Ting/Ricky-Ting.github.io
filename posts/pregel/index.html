@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+<meta itemprop="name" content="Pregel">
+<meta itemprop="description" content="Introduction Pregel是Google在2010年发表的一篇文章。主要提出了一个富有表达性的和易于编程的图计算框架。Pregel是Euler七桥问题中">
+<meta itemprop="datePublished" content="2021-01-09T16:49:39+08:00" />
+<meta itemprop="dateModified" content="2021-01-09T16:49:39+08:00" />
+<meta itemprop="wordCount" content="2517">
+
+
+
+<meta itemprop="keywords" content="untagged," />
+<meta property="og:title" content="Pregel" />
+<meta property="og:description" content="Introduction Pregel是Google在2010年发表的一篇文章。主要提出了一个富有表达性的和易于编程的图计算框架。Pregel是Euler七桥问题中" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ricky-ting.github.io/posts/pregel/" />
+<meta property="article:published_time" content="2021-01-09T16:49:39+08:00" />
+<meta property="article:modified_time" content="2021-01-09T16:49:39+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pregel"/>
+<meta name="twitter:description" content="Introduction Pregel是Google在2010年发表的一篇文章。主要提出了一个富有表达性的和易于编程的图计算框架。Pregel是Euler七桥问题中"/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Pregel</title>
+	<link rel="stylesheet" href="https://ricky-ting.github.io/css/style.min.657bcb7af31123e4156b1a3d2ff60a636717e54ead74f882136b5114cf72b55e.css" integrity="sha256-ZXvLevMRI+QVaxo9L/YKY2cX5U6tdPiCE2tRFM9ytV4=" crossorigin="anonymous">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://ricky-ting.github.io">Ricky Ting&#39;s Blog</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="https://ricky-ting.github.io/posts/">Posts</a>
+				<a href="https://ricky-ting.github.io/notes/">Notes</a>
+				<a href="https://ricky-ting.github.io/selected/">Selected</a>
+				<a href="https://ricky-ting.github.io/slides/">Slides</a>
+				<a href="https://ricky-ting.github.io/about-hugo/">About</a>
+				<a href="https://ricky-ting.github.io/links/">Links</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/Ricky-Ting/" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://ricky-ting.github.io/posts/">Posts</a></li>
+			<li><a href="https://ricky-ting.github.io/notes/">Notes</a></li>
+			<li><a href="https://ricky-ting.github.io/selected/">Selected</a></li>
+			<li><a href="https://ricky-ting.github.io/slides/">Slides</a></li>
+			<li><a href="https://ricky-ting.github.io/about-hugo/">About</a></li>
+			<li><a href="https://ricky-ting.github.io/links/">Links</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Jan 9, 2021</span></div>
+				<h1>Pregel</h1>
+			</header>
+			<div class="content">
+				<h2 id="introduction">Introduction<a href="#introduction" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>Pregel是Google在2010年发表的一篇文章。主要提出了一个富有表达性的和易于编程的图计算框架。Pregel是Euler七桥问题中那条河的名字。</p>
+<p>Pregel的几大特点：</p>
+<ol>
+<li>大规模(large-scale)</li>
+<li>可扩展性(scalability)</li>
+<li>容错性(fault-tolerant): 通过heartbeat、checkpointing和logging。</li>
+<li>高效(efficient): MR也可以用来进行图计算，不过太过低效。</li>
+</ol>
+<h2 id="contribution">Contribution<a href="#contribution" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<h2 id="methods">Methods<a href="#methods" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<h3 id="why-pregelmotivation">Why Pregel?(Motivation)<a href="#why-pregelmotivation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>进行分布式图计算的几种方法：</p>
+<ol>
+<li>使用已有的分布式基础设施：对使用者较为复杂，而且每个新的算法都需要重新实现一遍一些较为基础的功能。总的来说，还是抽象层次较低，已有的分布式基础设施的API较为难用。给使用者提供一个抽象层次更高的东西即为框架，如何把这个抽象层做的通用(general)和高效(efficient)就是值得研究的问题了。(All problems in computer science can be solved by another level of indirection.)</li>
+<li>使用类似于Mapreduce这样的已有的分布式计算框架：问题的pattern不同，可以做，但不高效。我们需要一个为图计算这种计算模式(pattern)设计一个特有的框架来提高效率。</li>
+<li>使用已有的单机图计算库：不能scale。</li>
+<li>已有的并行图计算系统(BGL、CGMgraph): 没有具体看，也不清楚这里并行是否可以进行分布式部署。文章中说：这些系统没有考虑容错性。</li>
+</ol>
+<p>因此，pregel的作者们认为这些现有的东西都不能满足他们的需求(高效、容错性、可扩展性等)，所以设计了Pregel。</p>
+<h3 id="计算模型">计算模型<a href="#计算模型" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>采用BSP(Bulk Synchronous Parallel)和消息传递(Message Passing)，并以节点为中心(vertice-centric)。</p>
+<p>关于BSP，我从wiki上找了张图：<img src="/image/Pregel/BSP.png" alt="BSP计算模型"></p>
+<p>整个Pregel的计算模型也就是这张图，Pregel的计算是由一系列的superstep组成的，每个superstep就是上图的流程。这里的Local Computation就是每台机器对于自己所拥有的顶点展开计算。具体来说，对于每一个节点，先收集上一轮中传递过来的messages(已经存在本地了)，然后做一些计算，得出需要发送的messages。在Communication阶段，将这些messages发送出去。</p>
+<p>关于算法如何终止：只有活跃(active)的顶点才会进行Local Computation。当某一轮开始的时候，所有的顶点都不活跃了，那整个算法也就终止了。</p>
+<p>关于活跃和不活跃的状态转换，paper中给了一张图：</p>
+<p><img src="/image/Pregel/VertexStateMachine.png" alt="活跃和不活跃的状态转换"></p>
+<p>当然在第一轮的时候，所有顶点都是活跃状态的，不然程序直接结束了。</p>
+<h4 id="一些组件">一些组件<a href="#一些组件" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>Combiners: 聚合msg来减少通信量，一般是在msg发送端部署，比如在SSSP问题中，我们可以对发往同一个顶点的所有msg取MIN。基本上是个优化操作，没有也没什么关系，本质上是把下一轮Compute()里的操作提前了，在发送之前。</p>
+<p>Aggregators: 一般用于全局通信，对所有节点提供的值进行规约，形成一个值，供下一轮使用。感觉halt的条件就可以看做是一个aggregator(AND(v1.isHalt(), v2.isHalt(), &hellip;))</p>
+<p>Topology Mutations: 这个算个feature，可以动态改变拓扑结构(增删顶点和边)。可能会导致冲突，两个解决方法：</p>
+<ul>
+<li>偏序(partial ordering): 删边-删点-增点-增边</li>
+<li>handlers: 可以user-defined，也可以default(随机选择)</li>
+</ul>
+<p>但没看明白它的同步过程：猜测也是在message passing阶段，传递mutation，然后由每个顶点handle在Computate之前。顶点管理着自己和它的出边。</p>
+<h3 id="implementation">Implementation<a href="#implementation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>顶点的分配就是hash: 即 hash(ID) % N, N是划分数。</p>
+<p>整个集群的架构是Maste/Slave架构，整个流程如下：</p>
+<ol>
+<li>Worker向Master进行注册，并保持heartbeat。</li>
+<li>master进行数据集的划分，并给每个worker分配一些partition(可以多于一个)，并且所有worker都知道整体的分配情况，这样worker就知道该往哪发msg。</li>
+<li>master给每个worker分配一部分输入文件，worker读取。对于不属于自己的数据，通过msg发送给相应的worker。所有的顶点现在都是活跃状态。</li>
+<li>master让所有worker开启一轮superstep，superstep的过程前面已经说过。实现上有一点优化：计算和通信是overlap的，可以提高效率。当所有worker完成后，告诉master一些信息，包括活跃顶点数，发送的msg数量等。如果有活跃顶点或者发送的msg，继续进行这一步。</li>
+<li>计算结束，每个worker保存自己的那部分结果。</li>
+</ol>
+<p>容错性：每几轮(freq可以指定)中worker保存顶点值、边值和收到的msg，master保存聚合的值，这叫checkpoint。通过heartbeat来探测状态。如果不保存发送的msg，所有partition都需要从某一个checkpoint重新计算。但是如果保存了发送的msg，只需要失败的partition重来即可, 但会使得保存的数据变多，这叫confined recovery. 随机算法需要保存随机数种子来使用confined recovery。</p>
+<p>Worker实现：对于每个顶点：一份顶点值、一份边值、两份incoming queue(本轮和下一轮)。 对于out queue，应该是每个target worker有一个，queue是异步发送，到达一个threshold就发送。Combiner既在out queue上作用(节约带宽)，也在incoming queue上作用(节约内存)。</p>
+<p>Master实现：Master主要做一些管理工作，不多做赘述。</p>
+<p>Aggregator: tree-based 而不是streaming，提高并行度。</p>
+<h3 id="evaluation">Evaluation<a href="#evaluation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>Evaluation比较简单：大致是scalability比较好。</p>
+<p>我的观察：Worker越多，cross edge也就越多(对于相同的图)，因此scale不是线性的，也可能和一些固有的overhead有关。</p>
+<h2 id="drawback">Drawback<a href="#drawback" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>paper中没有提到，但我认为计算应该是完全基于incoming msg的，即不能随意读取非本节点的状态。</p>
+<p>节点度比较大的时候，communication会比较大，可能需要较好的划分方法，让cross edge尽量少。</p>
+<h2 id="related-works">Related Works<a href="#related-works" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<h2 id="miscs">Miscs<a href="#miscs" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<h2 id="reference">Reference<a href="#reference" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>[1]. <a href="https://www.slideshare.net/riyadparvez/pregel-35504069">Pregel Slides</a></p>
+<p>[2]. <a href="https://en.wikipedia.org/wiki/Bulk_synchronous_parallel">BSP wikipedia</a></p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://ricky-ting.github.io/tags/untagged">untagged</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2021-01-09 16:49 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="prev-post" href="https://ricky-ting.github.io/posts/%E6%B5%85%E8%B0%88loop-unrolling/">
+				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>浅谈loop Unrolling</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2021 <a href="https://ricky-ting.github.io">Ricky Ting</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://ricky-ting.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+
+	<script src="https://ricky-ting.github.io/js/bundle.min.4a9a0ac3d2217822c7865b4161e6c2a71de1d70492264337755427898dd718f6.js" integrity="sha256-SpoKw9IheCLHhltBYebCpx3h1wSSJkM3dVQniY3XGPY=" crossorigin="anonymous"></script>
+	
+
+</body>
+
+</html>

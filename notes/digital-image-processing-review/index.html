@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-cn">
 
 <head>
 	<meta charset="UTF-8">
@@ -9,13 +9,14 @@
 	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="Digital Image Processing Review">
 <meta itemprop="description" content="数字图像处理 课程概述 参考教材 数字图像处理(冈萨雷斯) 考核 三个作业(15&#43;15&#43;10=40%) 期末考试(60%) 课程主页：http://lam">
-<meta itemprop="datePublished" content="2020-01-04T15:16:00&#43;08:00" />
-<meta itemprop="dateModified" content="2020-01-04T15:16:00&#43;08:00" />
-<meta itemprop="wordCount" content="16697">
+<meta itemprop="datePublished" content="2020-01-04T15:16:00+08:00" />
+<meta itemprop="dateModified" content="2020-01-04T15:16:00+08:00" />
+<meta itemprop="wordCount" content="16694">
 
 
 
-<meta itemprop="keywords" content="untagged," /><meta property="og:title" content="Digital Image Processing Review" />
+<meta itemprop="keywords" content="untagged," />
+<meta property="og:title" content="Digital Image Processing Review" />
 <meta property="og:description" content="数字图像处理 课程概述 参考教材 数字图像处理(冈萨雷斯) 考核 三个作业(15&#43;15&#43;10=40%) 期末考试(60%) 课程主页：http://lam" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ricky-ting.github.io/notes/digital-image-processing-review/" />
@@ -480,7 +481,7 @@
 <p>输出图像灰度值概率密度$p_s(s)$</p>
 </li>
 </ul>
-<p>$p_s(s) = p_r(r) |\frac{dr}{ds}| = p_r(r) |(\frac{ds}{dr})^{-1}| = p_r(T^{-1}(s))\frac{1}{T&rsquo;(T^{-1}(s))}$</p>
+<p>$p_s(s) = p_r(r) |\frac{dr}{ds}| = p_r(r) |(\frac{ds}{dr})^{-1}| = p_r(T^{-1}(s))\frac{1}{T'(T^{-1}(s))}$</p>
 <p>变换函数</p>
 <ul>
 <li>
@@ -2432,7 +2433,7 @@
 <li>在恒定灰度区域为零</li>
 <li>在突变(斜坡、台阶)的起点非零</li>
 <li>沿着斜坡非零</li>
-<li>$\frac{\partial f}{\partial x} = f&rsquo;(x) = f(x+1)-f(x)$</li>
+<li>$\frac{\partial f}{\partial x} = f'(x) = f(x+1)-f(x)$</li>
 </ul>
 </li>
 <li>2阶导数的性质
@@ -2440,7 +2441,7 @@
 <li>在恒定灰度区域为零</li>
 <li>在突变(斜坡、台阶)的起点和终点非零</li>
 <li>沿着恒定斜率斜坡为零</li>
-<li>$\frac{\partial^2 f}{\partial x^2} = \frac{\partial f&rsquo;(x)}{\partial x} = f&rsquo;(x+1) - f&rsquo;(x) = f(x+2)-2f(x+1)+f(x)$</li>
+<li>$\frac{\partial^2 f}{\partial x^2} = \frac{\partial f'(x)}{\partial x} = f'(x+1) - f'(x) = f(x+2)-2f(x+1)+f(x)$</li>
 <li>我们一般写成：$\frac{\partial^2 f}{\partial x^2} = f(x+1)+f(x-1)-2f(x)$</li>
 </ul>
 </li>
@@ -2884,8 +2885,8 @@
 <p>区域处理算法：</p>
 <ol>
 <li>令$P$ 是一个已排序、不重复的二值图像中的序列。指定两个起始点$A$和$B$。它们是多边形的两个起始顶点。</li>
-<li>指定一个阈值$T$,以及两个空堆栈&quot;开&rdquo;(OPEN)和&quot;闭&rdquo;(CLOSED)。</li>
-<li>如果$P$中的点对应于一条闭合曲线，则把$B$放到&quot;开&quot;和&quot;闭&quot;中，并把$A$放到&quot;开&quot;中。 如果对应于一条开放曲线，则把$A$放到&quot;开&quot;中，而把$B$放到&quot;闭&rdquo;。</li>
+<li>指定一个阈值$T$,以及两个空堆栈&quot;开&quot;(OPEN)和&quot;闭&quot;(CLOSED)。</li>
+<li>如果$P$中的点对应于一条闭合曲线，则把$B$放到&quot;开&quot;和&quot;闭&quot;中，并把$A$放到&quot;开&quot;中。 如果对应于一条开放曲线，则把$A$放到&quot;开&quot;中，而把$B$放到&quot;闭&quot;。</li>
 <li>计算从&quot;闭&quot;中最后一个顶点到&quot;开&quot;中最后一个顶点的线的参数。</li>
 <li>寻找属于序列$P$、且在步骤4中直线的两个顶点之间的点；计算这些点与直线的距离，选择具有最大距离$D_{max}$的点$V_{max}$。</li>
 <li>如果$D_{max} &gt; T$, 则把$V_{max}$作为一个新顶点放在&quot;开&quot;堆栈的末尾。转到步骤4.</li>
@@ -2987,7 +2988,7 @@
 <h2 id="ch15-图像压缩">Ch15. 图像压缩<a href="#ch15-图像压缩" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <ul>
 <li>$b$和$b'$为两种不同表示方式的比特数</li>
-<li>用$b$比特表示的相对数据冗余： $R = 1 - \frac{1}{C}$, $C = \frac{b}{b&rsquo;}$</li>
+<li>用$b$比特表示的相对数据冗余： $R = 1 - \frac{1}{C}$, $C = \frac{b}{b'}$</li>
 <li>压缩比, $C=10$ 意味着有$90%$ 的冗余</li>
 </ul>
 <p>2维灰度矩阵包含三种冗余</p>
@@ -3267,7 +3268,7 @@
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2020 <a href="https://ricky-ting.github.io">Ricky Ting</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2021 <a href="https://ricky-ting.github.io">Ricky Ting</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://ricky-ting.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>

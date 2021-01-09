@@ -5,12 +5,17 @@
     <link>https://ricky-ting.github.io/</link>
     <description>Recent content on Ricky Ting&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-cn</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 03 Sep 2020 00:02:43 +0800</lastBuildDate>
-    
-	<atom:link href="https://ricky-ting.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sat, 09 Jan 2021 16:49:39 +0800</lastBuildDate><atom:link href="https://ricky-ting.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pregel</title>
+      <link>https://ricky-ting.github.io/posts/pregel/</link>
+      <pubDate>Sat, 09 Jan 2021 16:49:39 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/posts/pregel/</guid>
+      <description>Introduction Pregel是Google在2010年发表的一篇文章。主要提出了一个富有表达性的和易于编程的图计算框架。Pregel是Euler七桥问题中</description>
+    </item>
     
     <item>
       <title>Selected</title>
@@ -27,7 +32,7 @@
       <pubDate>Fri, 01 May 2020 21:15:17 +0800</pubDate>
       
       <guid>https://ricky-ting.github.io/slides/intel-haswell-microarchitecture/</guid>
-      <description>概览 Haswell Introduction Haswell ISA Haswell Front End Haswell Out-of-Order Scheduling Haswell Execution Engine Haswell Memory Hierarchy Reference Haswell Introduction Intel的&amp;quot;Tick-Tock&amp;rdquo;[1] Tick(制程): 在架构不变的情况下</description>
+      <description>概览 Haswell Introduction Haswell ISA Haswell Front End Haswell Out-of-Order Scheduling Haswell Execution Engine Haswell Memory Hierarchy Reference Haswell Introduction Intel的&amp;quot;Tick-Tock&amp;quot;[1] Tick(制程): 在架构不变的情况下，</description>
     </item>
     
     <item>
@@ -63,7 +68,7 @@
       <pubDate>Wed, 08 Apr 2020 00:02:43 +0800</pubDate>
       
       <guid>https://ricky-ting.github.io/links/</guid>
-      <description>Here are my friends&amp;rsquo; links:
+      <description>Here are my friends&#39; links:
 zzw&amp;rsquo;s blog
 Liang&amp;rsquo;s blog
 Mengzelev&amp;rsquo;s Blog
@@ -99,55 +104,6 @@ Michael</description>
       
       <guid>https://ricky-ting.github.io/notes/digital-image-processing-review/</guid>
       <description>数字图像处理 课程概述 参考教材 数字图像处理(冈萨雷斯) 考核 三个作业(15+15+10=40%) 期末考试(60%) 课程主页：http://lam</description>
-    </item>
-    
-    <item>
-      <title>Computer Network Review</title>
-      <link>https://ricky-ting.github.io/notes/computer-network-review/</link>
-      <pubDate>Thu, 02 Jan 2020 10:03:14 +0800</pubDate>
-      
-      <guid>https://ricky-ting.github.io/notes/computer-network-review/</guid>
-      <description>&lt;h1 id=&#34;计算机网络&#34;&gt;计算机网络&lt;/h1&gt;
-&lt;h2 id=&#34;课程概述&#34;&gt;课程概述&lt;/h2&gt;
-&lt;h3 id=&#34;参考教材&#34;&gt;参考教材&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;James F. Kurose, Keith W. Ross. 计算机网络-自顶向下方法(7th)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;William Stallings. 数据与计算机通信(10th)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;课程考核&#34;&gt;课程考核&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;分组实践，课程报告 (30%)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;课后作业(30%)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;期末考试(40%)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;mailto:nju2019autumn@163.com&#34;&gt;nju2019autumn@163.com&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;课程内容&#34;&gt;课程内容&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;端网络&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;前端网络：客户端&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;后端网络：服务端&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;骨干网&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description>
     </item>
     
   </channel>

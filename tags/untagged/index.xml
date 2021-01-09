@@ -5,12 +5,17 @@
     <link>https://ricky-ting.github.io/tags/untagged/</link>
     <description>Recent content in untagged on Ricky Ting&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-cn</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 18 Apr 2020 22:44:55 +0800</lastBuildDate>
-    
-	<atom:link href="https://ricky-ting.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sat, 09 Jan 2021 16:49:39 +0800</lastBuildDate><atom:link href="https://ricky-ting.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pregel</title>
+      <link>https://ricky-ting.github.io/posts/pregel/</link>
+      <pubDate>Sat, 09 Jan 2021 16:49:39 +0800</pubDate>
+      
+      <guid>https://ricky-ting.github.io/posts/pregel/</guid>
+      <description>Introduction Pregel是Google在2010年发表的一篇文章。主要提出了一个富有表达性的和易于编程的图计算框架。Pregel是Euler七桥问题中</description>
+    </item>
     
     <item>
       <title>浅谈loop Unrolling</title>
@@ -131,15 +136,6 @@
       
       <guid>https://ricky-ting.github.io/notes/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</guid>
       <description>数据通信期中复习 通信模型： 源点-&amp;gt;发送器-&amp;gt;传输系统-&amp;gt;接收器-&amp;gt;终点 单工、半双工、双工。 数字通信系统:利用数字信号</description>
-    </item>
-    
-    <item>
-      <title>Android Studio Installation</title>
-      <link>https://ricky-ting.github.io/posts/android-studio-installation/</link>
-      <pubDate>Wed, 03 Apr 2019 11:07:18 +0800</pubDate>
-      
-      <guid>https://ricky-ting.github.io/posts/android-studio-installation/</guid>
-      <description>出现错误的话，把~/.gradle删除, 并把代理全部关掉，重新打开build。</description>
     </item>
     
   </channel>

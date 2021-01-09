@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-cn">
 
 <head>
 	<meta charset="UTF-8">
@@ -9,13 +9,14 @@
 	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="问题求解2019Spring">
 <meta itemprop="description" content="问题求解 2019Spring 4.1线性规划 In linear programming, we do not allow strict inequalities. minimization linear program and maximization program The simplex algorithm does not run in polynomial time in the worst case, but it is fairly efficient and widely used in practice. We use two forms, standard and slack. Informally, a linear program in standard form is the maximization of a linear">
-<meta itemprop="datePublished" content="2019-03-06T10:26:24&#43;08:00" />
-<meta itemprop="dateModified" content="2019-03-06T10:26:24&#43;08:00" />
+<meta itemprop="datePublished" content="2019-03-06T10:26:24+08:00" />
+<meta itemprop="dateModified" content="2019-03-06T10:26:24+08:00" />
 <meta itemprop="wordCount" content="3567">
 
 
 
-<meta itemprop="keywords" content="untagged," /><meta property="og:title" content="问题求解2019Spring" />
+<meta itemprop="keywords" content="untagged," />
+<meta property="og:title" content="问题求解2019Spring" />
 <meta property="og:description" content="问题求解 2019Spring 4.1线性规划 In linear programming, we do not allow strict inequalities. minimization linear program and maximization program The simplex algorithm does not run in polynomial time in the worst case, but it is fairly efficient and widely used in practice. We use two forms, standard and slack. Informally, a linear program in standard form is the maximization of a linear" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ricky-ting.github.io/notes/%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A32019spring/" />
@@ -88,7 +89,7 @@
 <p>The <strong>simplex</strong> algorithm starts at some vertex of the simplex and performs a sequence of iterations. In each iteration, it moves along an edge of the simplex from a current vertex to a neighboring vertex whose objective value is no smaller than that of the current vertex(and usually is larger.) The simplex algorithm terminates when it reaches a local maximum, which is a vertex from which all neighboring vertices have a smaller objective value.</p>
 <p>If we add to a linear program the additional requirement that all variables take on integer values, we have an <strong>integer linear program</strong>.</p>
 <p>An arbitrary linear program need not have nonnegativity constraints, but standard form requires them.</p>
-<p>We say that two maximization linear programs $L$ and $L'$ are <strong>equivalent</strong> if for each feasible solution $\bar{x}$ to $L$ with objective value $z$, there is a corresponding feasible solution $\bar{x}&lsquo;$ to $L'$  with objective value $z$ and for each feasible solution $\bar{x}&lsquo;&lsquo;$ to $L'$ with objective value $z$, there is a corresponding feasible solution $\bar{x}$ to $L$ with objective value $z$.(This definition does not imply a one-to-one correspondence between feasible solutions.)</p>
+<p>We say that two maximization linear programs $L$ and $L'$ are <strong>equivalent</strong> if for each feasible solution $\bar{x}$ to $L$ with objective value $z$, there is a corresponding feasible solution $\bar{x}'$ to $L'$  with objective value $z$ and for each feasible solution $\bar{x}''$ to $L'$ with objective value $z$, there is a corresponding feasible solution $\bar{x}$ to $L$ with objective value $z$.(This definition does not imply a one-to-one correspondence between feasible solutions.)</p>
 <p>How to convert linear programs into standard form?</p>
 <p>如何添加非负限制的设计很精巧</p>
 <p>How to convert linear programs into slack form?</p>
@@ -332,7 +333,7 @@
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2020 <a href="https://ricky-ting.github.io">Ricky Ting</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2021 <a href="https://ricky-ting.github.io">Ricky Ting</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://ricky-ting.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>

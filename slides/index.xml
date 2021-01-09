@@ -5,20 +5,16 @@
     <link>https://ricky-ting.github.io/slides/</link>
     <description>Recent content in Slides on Ricky Ting&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-cn</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 01 May 2020 21:15:17 +0800</lastBuildDate>
-    
-	<atom:link href="https://ricky-ting.github.io/slides/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 01 May 2020 21:15:17 +0800</lastBuildDate><atom:link href="https://ricky-ting.github.io/slides/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Intel Haswell 微架构</title>
       <link>https://ricky-ting.github.io/slides/intel-haswell-microarchitecture/</link>
       <pubDate>Fri, 01 May 2020 21:15:17 +0800</pubDate>
       
       <guid>https://ricky-ting.github.io/slides/intel-haswell-microarchitecture/</guid>
-      <description>概览 Haswell Introduction Haswell ISA Haswell Front End Haswell Out-of-Order Scheduling Haswell Execution Engine Haswell Memory Hierarchy Reference Haswell Introduction Intel的&amp;quot;Tick-Tock&amp;rdquo;[1] Tick(制程): 在架构不变的情况下</description>
+      <description>概览 Haswell Introduction Haswell ISA Haswell Front End Haswell Out-of-Order Scheduling Haswell Execution Engine Haswell Memory Hierarchy Reference Haswell Introduction Intel的&amp;quot;Tick-Tock&amp;quot;[1] Tick(制程): 在架构不变的情况下，</description>
     </item>
     
   </channel>
